@@ -1,0 +1,9 @@
+{
+    "name": "wzqr",
+
+    "requires": [
+'ext-locale'        
+    ],
+
+    "id": "64cabbf2-6945-42c7-a852-7e7b672a3ca8"
+}
