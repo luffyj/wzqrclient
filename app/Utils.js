@@ -12,6 +12,18 @@ Ext.define('wzqr.Utils', {
     mixins: {
         myConfig: "wzqr.Config"
     },
+    extraResponseData: function(response) {
+        var data = Ext.decode(response.responseText);
+        switch (data.code) {
+            case 501:
+                data.message = '数据重复';
+                break;
+            default:
+                data.message = '未知错误|' + data.originalMessage;
+                error('未识别的错误号', data);
+        }
+        return data;
+    },
     insertData: function(obj, name, value) {
         //如果发现.
         var index = name.indexOf('.');

@@ -16,19 +16,8 @@ Ext.define('wzqr.spring.data.RestProxy', {
      * */
     setException: function(operation, response) {
         this.callParent(arguments);
-        var data = Ext.decode(response.responseText);
-        if (data) {
-            switch (data.code) {
-                case 501:
-                    data.message = '数据重复';
-                    break;
-                default:
-                    data.message = '未知错误|'+data.originalMessage;
-                    error('未识别的错误号', data);
-            }
-        }
         Ext.apply(operation.error, {
-            result: data
+            result: Utils.extraResponseData(response)
         });
     },
     /**

@@ -13,9 +13,15 @@ Ext.define('wzqr.controller.BaseController', {
         'wzqr.view.Login',
         'wzqr.view.Dashboard'
     ],
+    getUserId:function(){
+        var user = this.getApplication().currentUser;
+        if (!user)
+            return null;
+        return user.id; 
+    },
     getMyorgModel: function() {
         return this.getApplication().orgModel;
-    },
+    },    
     getMyorg: function() {
         var user = this.getApplication().currentUser;
         if (!user)

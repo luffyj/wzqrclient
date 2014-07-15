@@ -15,12 +15,12 @@ Ext.define('wzqr.controller.ManageOrg', {
         var form = button.up('window').down('form');
         // conver fields into object
         var obj = Utils.fieldsToObject(form.form.getFields());
-        
-        if(!obj.type){
+
+        if (!obj.type) {
             //没有输入类型 说明是一个单位
             obj.type = '申报单位';
         }
-        
+
         var org = this.getModel('Org').create(obj);
         org.set('superOrg', this.getMyorgModel().getLink('self'));
         org.set('manager', null);
@@ -34,7 +34,7 @@ Ext.define('wzqr.controller.ManageOrg', {
                     user.set('role', null);
                     user.set('org', org.getLink('self'));
                     user.set('enabled', true);
-                    user.set('realName',obj.contact.people);
+                    user.set('realName', obj.contact.people);
                     user.save({
                         scope: this,
                         callback: function(record, operation, success) {
@@ -47,7 +47,7 @@ Ext.define('wzqr.controller.ManageOrg', {
                                         password: obj.password
                                     },
                                     callback: function(options, success, response) {
-                                        debug(response);
+                                        debug('initUserPassword response:', response);
                                         if (success) {
                                             org.set('manager', record.getLink('self'));
                                             org.save({
@@ -68,7 +68,8 @@ Ext.define('wzqr.controller.ManageOrg', {
                                                 }
                                             });
                                             Utils.stopLoading();
-                                            var message = Ext.decode(response.responseText).originalMessage;
+                                            var data = Utils.extraResponseData(response);
+                                            var message = data.message;
                                             Ext.Msg.alert('错误', message);
                                         }
                                     },

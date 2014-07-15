@@ -44,10 +44,112 @@ Ext.define('wzqr.controller.Login', {
 
                 }
             },
+            'button[name=savePassword]': {
+                click: function(button) {
+                    debug('保存密码');
+
+                    var oldPassword = button.up('form').down('textfield[name=oldPassword]').getValue();
+                    var password = button.up('form').down('textfield[name=password]').getValue();
+                    var cpassword = button.up('form').down('textfield[name=cpassword]').getValue();
+
+                    if (password !== cpassword) {
+                        Ext.Msg.alert('错误', '您2次输入的密码并不一致');
+                        return;
+                    }
+                    Utils.startLoading();
+
+                    Ext.Ajax.request({
+                        url: Utils.toApi('cpassword'),
+                        params: {
+                            oldPassword: oldPassword,
+                            password: password
+                        },
+                        callback: function(options, success, response) {
+                            debug('cpassword response:', response);
+                            Utils.stopLoading();
+                            if (success) {
+                                Ext.Msg.alert('提示', '修改成功');
+                            } else {
+                                var data = Utils.extraResponseData(response);
+                                var message = data.message;
+                                Ext.Msg.alert('错误', message);
+                            }
+                        },
+                        scope: this
+                    });
+                }
+            },
+            'xinfopeople button[name=save]': {
+                click: function(button) {
+                    Utils.startLoading();
+                    var values = button.up('form').form.getValues();
+                    debug('recived values', values);
+                    this.getApplication().userModel.set('contact', values);
+                    this.getApplication().userModel.save({
+                        callback: function(record, operation, success) {
+                            Utils.stopLoading();
+                            if (success) {
+                                Ext.Msg.alert('提示', '保存成功！');
+                            }
+                        }
+                    });
+                }
+            },
+            'xinfoorg button[name=save]': {
+                click: function(button) {
+                    Utils.startLoading();
+                    var values = button.up('form').form.getValues();
+                    debug('recived values', values);
+                    this.getApplication().orgModel.set('contact', values);
+                    this.getApplication().orgModel.save({
+                        callback: function(record, operation, success) {
+                            Utils.stopLoading();
+                            if (success) {
+                                Ext.Msg.alert('提示', '保存成功！');
+                            }
+                        }
+                    });
+                }
+            },
             'panel[name=info]': {
                 activate: function(panel) {
                     debug('activate', panel);
                     //xinfoorg
+                    var xinfoorg = panel.down('xinfoorg');
+                    if (xinfoorg) {
+                        this.getModel('Org').load(this.getMyorgModel().getId(), {
+                            scope: this,
+                            callback: function(record, operation, success) {
+                                if (success) {
+                                    this.getApplication().orgModel = record;
+                                }
+                                xinfoorg.form.setValues(this.getApplication().orgModel.get('contact'));
+                                xinfoorg.down('displayfield[name=name]').setValue(this.getApplication().orgModel.get('name'));
+                            }
+                        });
+                    }
+                    var xinfopeople = panel.down('xinfopeople');
+
+                    if (xinfopeople) {
+                        this.getModel('User').load(this.getUserId(), {
+                            scope: this,
+                            callback: function(record, operation, success) {
+                                if (success) {
+                                    this.getApplication().userModel = record;
+                                }
+                                if (this.getApplication().userModel) {
+                                    xinfopeople.form.setValues(this.getApplication().userModel.get('contact'));
+                                    xinfopeople.down('displayfield[name=realName]').setValue(this.getApplication().userModel.get('realName'));
+                                    xinfopeople.down('displayfield[name=realEnglishName]').setValue(this.getApplication().userModel.get('realEnglishName'));
+                                } else {
+                                    xinfopeople.form.setValues(this.getApplication().currentUser.contact);
+                                    xinfopeople.down('displayfield[name=realName]').setValue(this.getApplication().currentUser.realName);
+                                    xinfopeople.down('displayfield[name=realEnglishName]').setValue(this.getApplication().currentUser.realEnglishName);
+                                }
+
+                            }
+                        });
+                    }
                 }
             },
             'displayfield[name=loginName]': {
