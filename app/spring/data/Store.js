@@ -17,10 +17,10 @@ Ext.define('wzqr.spring.data.Store', {
                 extraModelNames.push(n);
             }
         }
-        
-        if(extraModelNames.length===0)
+
+        if (extraModelNames.length === 0)
             return;
-        
+
         debug('extraModelNames: ', extraModelNames);
         if (successful) {
             store.suspendEvent('load');
@@ -53,32 +53,48 @@ Ext.define('wzqr.spring.data.Store', {
             records.forEach(function(item) {
 
                 extraModelNames.forEach(function(name) {
-                    var managerLink = item.getLink(name);
-                    if (managerLink && managerLink.length > 0) {
-                        var aobj = item.get(name);
-                        if (aobj && aobj.isModel) {
+                    
+                    item.link({
+                        name: name,
+                        model: extraModels[name],
+                        scope: item,
+                        success: function() {
+//                            debug('success',this);
+                            this['_' + name + '_done'] = true;
                             conti();
-                            return;
+                        },
+                        failure: function() {
+//                            debug('failure',this);
+                            this['_' + name + '_done'] = true;
+                            conti();
                         }
-                        extraModels[name].loadFromURI({
-                            uri: managerLink,
-                            scope: item,
-                            success: function(manager) {
-                                this.set(name, manager);
-                                this['_' + name + '_done'] = true;
-                                conti();
-                                return;
-                            },
-                            failure: function(response) {
-                                this['_' + name + '_done'] = true;
-                                conti();
-                                return;
-                            }
-                        });
-                    } else {
-                        item['_' + name + '_done'] = true;
-                        conti();
-                    }
+                    });
+//                    var managerLink = item.getLink(name);
+//                    if (managerLink && managerLink.length > 0) {
+//                        var aobj = item.get(name);
+//                        if (aobj && aobj.isModel) {
+//                            conti();
+//                            return;
+//                        }
+//                        extraModels[name].loadFromURI({
+//                            uri: managerLink,
+//                            scope: item,
+//                            success: function(manager) {
+//                                this.set(name, manager);
+//                                this['_' + name + '_done'] = true;
+//                                conti();
+//                                return;
+//                            },
+//                            failure: function(response) {
+//                                this['_' + name + '_done'] = true;
+//                                conti();
+//                                return;
+//                            }
+//                        });
+//                    } else {
+//                        item['_' + name + '_done'] = true;
+//                        conti();
+//                    }
                 });
 
 

@@ -924,21 +924,29 @@ Ext.ClassManager.addNameAlternateMappings({
   "wzqr.spring.data.RestProxy": [
     "Ext.data.SpringRestProxy"
   ],
+  "wzqr.spring.data.Store": [],
+  "wzqr.spring.data.Writer": [
+    "Ext.data.SpringDataWriter"
+  ],
   "wzqr.spring.grid.Panel": [],
   "wzqr.spring.grid.View": [],
   "wzqr.store.Application": [],
   "wzqr.store.Org": [],
+  "wzqr.store.UnderApplication": [],
   "wzqr.store.UnderOrg": [],
   "wzqr.store.User": [],
   "wzqr.view.Bottom": [],
   "wzqr.view.Dashboard": [],
+  "wzqr.view.InfoOrg": [],
+  "wzqr.view.InfoPassword": [],
+  "wzqr.view.InfoPeople": [],
   "wzqr.view.Log": [],
   "wzqr.view.Login": [],
   "wzqr.view.Main": [],
   "wzqr.view.ManageApplication": [],
   "wzqr.view.ManageOrg": [],
+  "wzqr.view.ManagePeople": [],
   "wzqr.view.ManageUnit": [],
-  "wzqr.view.Mine": [],
   "wzqr.view.Top": [],
   "wzqr.view.Viewport": [],
   "wzqr.view.app.Context": [],
@@ -2026,6 +2034,12 @@ Ext.ClassManager.addNameAliasMappings({
   "wzqr.spring.data.RestProxy": [
     "proxy.springrest"
   ],
+  "wzqr.spring.data.Store": [
+    "store.springstore"
+  ],
+  "wzqr.spring.data.Writer": [
+    "writer.springWriter"
+  ],
   "wzqr.spring.grid.Panel": [
     "widget.jcgrid"
   ],
@@ -2034,12 +2048,24 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "wzqr.store.Application": [],
   "wzqr.store.Org": [],
+  "wzqr.store.UnderApplication": [],
   "wzqr.store.UnderOrg": [],
   "wzqr.store.User": [],
   "wzqr.view.Bottom": [
     "widget.xbottom"
   ],
-  "wzqr.view.Dashboard": [],
+  "wzqr.view.Dashboard": [
+    "widget.xmydashboard"
+  ],
+  "wzqr.view.InfoOrg": [
+    "widget.xinfoorg"
+  ],
+  "wzqr.view.InfoPassword": [
+    "widget.xinfopassword"
+  ],
+  "wzqr.view.InfoPeople": [
+    "widget.xinfopeople"
+  ],
   "wzqr.view.Log": [
     "widget.xlog"
   ],
@@ -2055,11 +2081,11 @@ Ext.ClassManager.addNameAliasMappings({
   "wzqr.view.ManageOrg": [
     "widget.xmanageorg"
   ],
+  "wzqr.view.ManagePeople": [
+    "widget.xmanagepeople"
+  ],
   "wzqr.view.ManageUnit": [
     "widget.xmanageunit"
-  ],
-  "wzqr.view.Mine": [
-    "widget.xmine"
   ],
   "wzqr.view.Top": [
     "widget.xtop"

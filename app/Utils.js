@@ -18,9 +18,17 @@ Ext.define('wzqr.Utils', {
             case 501:
                 data.message = '数据重复';
                 break;
+            case 540:
+                data.message = '密码不正确';
+                break;
             default:
-                data.message = '未知错误|' + data.originalMessage;
-                error('未识别的错误号', data);
+                if (data.code / 100 === 2) {
+                    data.success = true;
+                } else {
+                    data.message = '未知错误|' + data.originalMessage;
+                    error('未识别的错误号', data);
+                }
+
         }
         return data;
     },

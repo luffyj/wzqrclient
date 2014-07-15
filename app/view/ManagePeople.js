@@ -1,4 +1,4 @@
-Ext.define("wzqr.view.app.Context", {
+Ext.define("wzqr.view.ManagePeople", {
     extend: 'Ext.panel.Panel',
     requires: [
         'Ext.grid.column.RowNumberer',
@@ -7,13 +7,12 @@ Ext.define("wzqr.view.app.Context", {
         'Ext.grid.Panel',
         'wzqr.spring.grid.Panel'
     ],
-    xtype: 'xappcontext',
+    xtype: 'xmanagepeople',
     layout: 'fit',
     dockedItems: [
         {
             dock: 'top',
             xtype: 'panel',
-            name:'buttons',
             items: [
                 {
                     xtype: 'button',
@@ -28,15 +27,15 @@ Ext.define("wzqr.view.app.Context", {
     items: [
         {
             xtype: 'jcgrid',
-            store: 'UnderApplication',
+            store: 'UnderUser',
             viewConfig: {
                 stripeRows: true
             },
             columnLines: true,
             columns: [
                 {text: '序号', xtype: 'rownumberer', width: 80},
-                {text: '申报人', dataIndex: 'owner.realName', flex: 1},
-                {text: '审批批次', dataIndex: 'batch', flex: 1},
+                {text: '姓名', dataIndex: 'realName', flex: 1},
+                {text: 'Name', dataIndex: 'realEnglishName', flex: 1},
                 {text: '人才类型', flex: 1, dataIndex: 'type'},
                 {text: '专业领域', flex: 2, dataIndex: 'profession'},
                 {text: '申报单位名称', flex: 3, dataIndex: 'profession'},
@@ -52,5 +51,4 @@ Ext.define("wzqr.view.app.Context", {
             height: 300
         }
     ]
-
 });

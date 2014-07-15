@@ -46,7 +46,7 @@ Ext.define("wzqr.view.org.Add", {
                     emptyText: '请输入单位名称',
                     blankText: '请输入单位名称',
                     //<debug>
-                    value: '中国核爆控制中心',
+//                    value: '中国核爆控制中心',
                     //</debug>
                     enableKeyEvents: true,
                     listeners: {

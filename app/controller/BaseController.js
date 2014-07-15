@@ -3,6 +3,7 @@ Ext.define('wzqr.controller.BaseController', {
     models: ['Org', 'User', 'Role'],
     requires: [
         'Ext.Ajax',
+//        'wzqr.view.ManagePeople',
         'wzqr.view.ManageApplication',
         'wzqr.view.ManageOrg',
         'wzqr.view.InfoOrg',
@@ -13,15 +14,15 @@ Ext.define('wzqr.controller.BaseController', {
         'wzqr.view.Login',
         'wzqr.view.Dashboard'
     ],
-    getUserId:function(){
+    getUserId: function() {
         var user = this.getApplication().currentUser;
         if (!user)
             return null;
-        return user.id; 
+        return user.id;
     },
     getMyorgModel: function() {
         return this.getApplication().orgModel;
-    },    
+    },
     getMyorg: function() {
         var user = this.getApplication().currentUser;
         if (!user)
@@ -46,6 +47,16 @@ Ext.define('wzqr.controller.BaseController', {
         var auths = user.authorities;
         return auths.some(function(auth) {
             return auth.authority === 'admin';
+        });
+    },
+    isManagePeople: function() {
+        //managePeople
+        var user = this.getApplication().currentUser;
+        if (!user)
+            return false;
+        var auths = user.authorities;
+        return this.isAdmin() || auths.some(function(auth) {
+            return auth.authority === 'managePeople';
         });
     },
     /**
@@ -78,9 +89,9 @@ Ext.define('wzqr.controller.BaseController', {
         var auths = user.authorities;
         return this.isAdmin() || (auths.some(function(auth) {
             return auth.authority === 'manageOrganization';
-        }) && cross ? auths.some(function(auth) {
+        }) && (cross ? auths.some(function(auth) {
             return auth.authority === 'cross';
-        }) : true);
+        }) : true));
     },
     newDashboard: function() {
 
@@ -101,6 +112,12 @@ Ext.define('wzqr.controller.BaseController', {
                 xtype: 'xmanageunit'
             });
         }
+//        else if (this.isManagePeople()) {
+//            pages.push({
+//                title: '申报人',
+//                xtype: 'xmanagepeople'
+//            });
+//        }
 
         pages.push({
             title: '我的账号',

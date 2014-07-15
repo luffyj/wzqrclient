@@ -1,13 +1,26 @@
 /**
  * 在执行save之前 必须确保所有关联数据并非obj而是一个link!!!
  * 检查每一个量 如果发现这个量是Model而且拥有self 则直接设置为self
+ * 映射关系的数据 到底应该如何储存呢
+ * 还是应该和平时一样保存在实体
+ * 举例 有一个映射名为manager
+ * 
+ * 正常状态 manager
+ * 
+ * save时...不对 应该是writer工作的时候 直接拿它的self!!
+ * 
  * */
 Ext.define('wzqr.spring.data.Model', {
     extend: 'Ext.data.Model',
     requires: [
         'wzqr.spring.data.Reader',
+        'wzqr.spring.data.Writer',
         'wzqr.spring.data.RestProxy'
     ],
+    /**
+     * 覆盖
+     * 增加了直接读取子object属性的功能
+     * */
     get: function(field) {
         //查找.
         if (!field)
@@ -27,10 +40,67 @@ Ext.define('wzqr.spring.data.Model', {
         }
         return obj[propertyName];
     },
+    /**
+     * 自动连接
+     * 本来想再配置中直接配置对应关系 但涉及到互相引用的问题
+     * 为了效率暂时放弃这个功能
+     * force强制刷新
+     * */
+    link: function(config) {
+        var me = this;
+        if (typeof config === 'string') {
+            config = {name: config};
+        }
+
+        Ext.applyIf(config, {
+            scope: this,
+            success: Ext.emptyFn,
+            failure: Ext.emptyFn
+        });
+
+        var orcsuccess = config.success;
+
+        var aobj = me.get(config.name);
+        if (aobj && aobj.isModel && !config.force) {
+            Ext.callback(orcsuccess, config.scope, [aobj]);
+            return;
+        }
+
+        config.success = function(obj) {
+            if (obj)
+                debug('成功获取属性' + config.name, obj);
+            me.set(config.name, obj);
+            Ext.callback(orcsuccess, config.scope, [obj]);
+        };
+
+        var orcfailure = config.failure;
+        config.failure = function() {
+            me.set(config.name, null);
+            Ext.callback(orcfailure, config.scope);
+        };
+
+        var link = this.getLink(config.name);
+
+        if ((!link || link.length === 0) && !config.uri) {
+            Ext.callback(orcsuccess, config.scope);
+            return;
+        }
+
+        Ext.applyIf(config, {
+            uri: link
+        });
+
+        config.model.loadFromURI(config);
+    },
+    /**
+     * 获取link
+     * */
     getLink: function(name) {
         var value = this._links[name];
         if (value)
             return value.href;
+        //如果没有值可以使用
+        return null;
     },
     constructor: function(data, id, raw, convertedData) {
         //新建model时 将_links 保存起来
@@ -47,7 +117,7 @@ Ext.define('wzqr.spring.data.Model', {
         cls.setProxy({
             type: 'springrest',
             reader: 'springReader',
-            writer: 'json',
+            writer: 'springWriter',
             url: data.resourceURI
         });
 //        var onBeforeClassCreated = hooks.onBeforeCreated;

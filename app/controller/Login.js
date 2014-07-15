@@ -1,6 +1,6 @@
 Ext.define('wzqr.controller.Login', {
     extend: 'wzqr.controller.BaseController',
-    models: ['Org', 'User'],
+    models: ['Org', 'User', 'Role'],
     submitLogin: function(button) {
         var me = this;
         var image = button.up('form').down('image');
@@ -67,10 +67,10 @@ Ext.define('wzqr.controller.Login', {
                         callback: function(options, success, response) {
                             debug('cpassword response:', response);
                             Utils.stopLoading();
-                            if (success) {
-                                Ext.Msg.alert('提示', '修改成功');
+                            var data = Utils.extraResponseData(response);
+                            if (success && data.success) {
+                                Ext.Msg.alert('提示', '密码修改成功');
                             } else {
-                                var data = Utils.extraResponseData(response);
                                 var message = data.message;
                                 Ext.Msg.alert('错误', message);
                             }
@@ -84,12 +84,18 @@ Ext.define('wzqr.controller.Login', {
                     Utils.startLoading();
                     var values = button.up('form').form.getValues();
                     debug('recived values', values);
-                    this.getApplication().userModel.set('contact', values);
-                    this.getApplication().userModel.save({
+                    var model = this.getApplication().userModel;
+//                    model.set('role', model.getLink('role'));
+//                    model.set('org', model.getLink('org'));
+                    model.set('contact', values);
+                    model.save({
                         callback: function(record, operation, success) {
                             Utils.stopLoading();
                             if (success) {
                                 Ext.Msg.alert('提示', '保存成功！');
+                            } else {
+                                error(operation);
+                                Ext.Msg.alert('错误', operation.error.result.message);
                             }
                         }
                     });
@@ -100,12 +106,18 @@ Ext.define('wzqr.controller.Login', {
                     Utils.startLoading();
                     var values = button.up('form').form.getValues();
                     debug('recived values', values);
-                    this.getApplication().orgModel.set('contact', values);
-                    this.getApplication().orgModel.save({
+                    var model = this.getApplication().orgModel;
+//                    model.set('superOrg', model.getLink('superOrg'));
+//                    model.set('manager', model.getLink('manager'));
+                    model.set('contact', values);
+                    model.save({
                         callback: function(record, operation, success) {
                             Utils.stopLoading();
                             if (success) {
                                 Ext.Msg.alert('提示', '保存成功！');
+                            } else {
+                                error(operation);
+                                Ext.Msg.alert('错误', operation.error.result.message);
                             }
                         }
                     });
@@ -125,6 +137,9 @@ Ext.define('wzqr.controller.Login', {
                                 }
                                 xinfoorg.form.setValues(this.getApplication().orgModel.get('contact'));
                                 xinfoorg.down('displayfield[name=name]').setValue(this.getApplication().orgModel.get('name'));
+
+                                this.getApplication().orgModel.link({name: 'manager', model: this.getModel('User')});
+                                this.getApplication().orgModel.link({name: 'superOrg', model: this.getModel('Org')});
                             }
                         });
                     }
@@ -141,6 +156,10 @@ Ext.define('wzqr.controller.Login', {
                                     xinfopeople.form.setValues(this.getApplication().userModel.get('contact'));
                                     xinfopeople.down('displayfield[name=realName]').setValue(this.getApplication().userModel.get('realName'));
                                     xinfopeople.down('displayfield[name=realEnglishName]').setValue(this.getApplication().userModel.get('realEnglishName'));
+
+                                    this.getApplication().userModel.link({name: 'role', model: this.getModel('Role')});
+                                    this.getApplication().userModel.link({name: 'org', model: this.getModel('Org')});
+
                                 } else {
                                     xinfopeople.form.setValues(this.getApplication().currentUser.contact);
                                     xinfopeople.down('displayfield[name=realName]').setValue(this.getApplication().currentUser.realName);
