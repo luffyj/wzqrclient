@@ -5,6 +5,9 @@ Ext.define('wzqr.model.Application', {
         {name: 'id', type: 'int'},
         {name: 'batch', type: 'string'},
         {name: 'type', type: 'string'},
-        {name: 'profession', type: 'string'}
+        {name: 'profession', type: 'string'},
+        {name: 'status', type: 'string'},
+        
+        {name: 'owner'}
     ]
 });
