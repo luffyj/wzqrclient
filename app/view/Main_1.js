@@ -1,4 +1,4 @@
-Ext.define('wzqr.view.Main', {
+Ext.define('wzqr.view.Main_1', {
     extend: 'Ext.container.Container',
     requires: [
         'Ext.tab.Panel',
@@ -7,7 +7,7 @@ Ext.define('wzqr.view.Main', {
         'Ext.form.field.Date',
         'Ext.layout.container.Border'
     ],
-    xtype: 'app-main',
+//    xtype: 'app-main-1',
     layout: {
         type: 'border'
     },
