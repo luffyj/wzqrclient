@@ -2,7 +2,15 @@
 function error() {
 //<debug>    
     if (typeof console !== 'undefined') {
-        (console.error || console.log).apply(console, [].slice.call(arguments));
+        if ((console.error || console.log).apply) {
+            (console.error || console.log).apply(console, [].slice.call(arguments));
+        } else {
+            if (console.error) {
+                console.error(arguments);
+            } else if (console.log) {
+                console.log(arguments);
+            }
+        }
     }
 //</debug>    
 }
@@ -10,7 +18,15 @@ function error() {
 function log() {
 //<debug>    
     if (typeof console !== 'undefined') {
-        (console.log || console.error).apply(console, [].slice.call(arguments));
+        if ((console.log || console.error).apply) {
+            (console.log || console.error).apply(console, [].slice.call(arguments));
+        } else {
+            if (console.log) {
+                console.log(arguments);
+            } else if (console.error) {
+                console.error(arguments);
+            }
+        }
     }
 //</debug>    
 }

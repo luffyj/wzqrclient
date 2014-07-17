@@ -71,17 +71,21 @@ Ext.define("wzqr.view.Login", {
                     xtype: 'image',
                     style: 'cursor: pointer;',
                     alt: '点击刷新',
+                    name:'ccdd',
                     title: '点击刷新',
 //                            style:'width:100%;height:100%;',
                     src: Utils.toApi('jcaptcha.jpg'),
                     padding: 0,
                     height: 100,
                     listeners: {
-                        el: {
-                            click: function() {
+                        el: {                            
+                            click: function(e,t) {                                                                
                                 var dom = this.dom;
                                 var src = dom.src;
-                                dom.src = src;
+                                if(!dom.orcSrc){
+                                    dom.orcSrc = src;
+                                }
+                                dom.src = dom.orcSrc+'?rdm='+new Date().getTime();
                             }
                         }
                     }
@@ -98,10 +102,10 @@ Ext.define("wzqr.view.Login", {
                             name: 'jcaptcha',
                             emptyText: '请输入验证码',
                             blankText: '请输入验证码',
-                            allowBlank: false,  
-                            margin:'0 20 0 0'
+                            allowBlank: false,
+                            margin: '0 20 0 0'
                         }, {
-                            margin:'0 0 0 10',
+                            margin: '0 0 0 10',
                             xtype: 'text',
                             text: '忘记密码？'
                         }

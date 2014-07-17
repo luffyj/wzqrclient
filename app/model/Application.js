@@ -3,7 +3,7 @@ Ext.define('wzqr.model.Application', {
     resourceURI: Utils.toApi('api/application'),
     fields: [
         {name: 'owner'},
-        {name: 'org'},
+        {name: 'myorg'},
         {name: 'patentDesc', type: 'string'},
         {name: 'city', type: 'string'},
         {name: 'beforeOrg', type: 'string'},

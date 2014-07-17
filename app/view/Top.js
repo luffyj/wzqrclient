@@ -18,7 +18,7 @@ Ext.define("wzqr.view.Top", {
             margin: '20 20 0 0',
             xtype: 'panel',
             dock: 'right',
-            width: 360,
+            width: 420,
             dockedItems: [
                 {
                     xtype: 'panel',

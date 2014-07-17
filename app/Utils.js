@@ -32,6 +32,16 @@ Ext.define('wzqr.Utils', {
         }
         return data;
     },
+    /////兼容性    
+    ////兼容性END
+
+    /**
+     * 是一个长度不小于0的字符串
+     * @param {object} value description
+     * */
+    isValidString: function(value) {
+        return Ext.isString(value) && value.length > 0;
+    },
     insertData: function(obj, name, value) {
         //如果发现.
         var index = name.indexOf('.');

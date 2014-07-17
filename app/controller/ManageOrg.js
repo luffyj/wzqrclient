@@ -41,8 +41,10 @@ Ext.define('wzqr.controller.ManageOrg', {
                             if (success) {
                                 //设置密码 根据已经设置的部门自动设置好角色                                                                                        
                                 Ext.Ajax.request({
+                                    scope: this,
                                     url: Utils.toApi('initUserPassword'),
                                     params: {
+                                        people: 'false',
                                         userid: record.getId(),
                                         password: obj.password
                                     },
@@ -72,8 +74,7 @@ Ext.define('wzqr.controller.ManageOrg', {
                                             var message = data.message;
                                             Ext.Msg.alert('错误', message);
                                         }
-                                    },
-                                    scope: this
+                                    }
                                 });
                                 Utils.stopLoading();
                             } else {
@@ -114,7 +115,7 @@ Ext.define('wzqr.controller.ManageOrg', {
                 click: function(button) {
                     //看下org的数据而已
                     this.getOrgStore().on('load', function(store, records) {
-                        records.forEach(function(item) {
+                        Ext.Array.each(records, function(item) {
                             debug(item);
                         });
 //                        debug(records[0],records[0].getLink('self'));

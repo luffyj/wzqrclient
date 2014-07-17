@@ -26,8 +26,8 @@ Ext.define('wzqr.spring.data.Store', {
             store.suspendEvent('load');
             store.suspendEvent('refresh');
             var conti = function() {
-                if (records.every(function(item) {
-                    return extraModelNames.every(function(name) {
+                if (Ext.Array.every(records, function(item) {
+                    return Ext.Array.every(extraModelNames, function(name) {
                         return this['_' + name + '_done'];
                     }, item);
                 })) {
@@ -50,10 +50,9 @@ Ext.define('wzqr.spring.data.Store', {
                 }
             };
             //手工设置 manager
-            records.forEach(function(item) {
+            Ext.Array.each(records, function(item) {
+                Ext.Array.each(extraModelNames, function(name) {
 
-                extraModelNames.forEach(function(name) {
-                    
                     item.link({
                         name: name,
                         model: extraModels[name],
@@ -96,8 +95,6 @@ Ext.define('wzqr.spring.data.Store', {
 //                        conti();
 //                    }
                 });
-
-
             });
         }
     },

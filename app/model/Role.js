@@ -8,7 +8,7 @@ Ext.define('wzqr.model.Role', {
         {name: 'authorities', type: 'string'}
     ],
     hasAuthority: function(auth) {
-        return this.get('authorities').split(',').some(function(str) {
+        return Ext.Array.some(this.get('authorities').split(','), function(str) {
             return str === auth;
         });
     }

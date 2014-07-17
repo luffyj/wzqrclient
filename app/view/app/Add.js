@@ -1,6 +1,9 @@
 Ext.define("wzqr.view.app.Add", {
     extend: 'Ext.window.Window',
-    requires: ['Ext.form.field.ComboBox'],
+    requires: [
+        'Ext.form.field.ComboBox',
+        'Ext.form.FieldSet'
+    ],
     xtype: 'xappadd',
     title: '申报信息',
     width: 349,
@@ -62,7 +65,7 @@ Ext.define("wzqr.view.app.Add", {
                             // 单位名称 部门类型
                             xtype: 'textfield',
                             fieldLabel: '申报单位',
-                            name: 'orgName',
+                            name: 'appOrgName',
                             emptyText: '请输入单位名称',
                             blankText: '请输入单位名称',
                             //<debug>
@@ -113,17 +116,17 @@ Ext.define("wzqr.view.app.Add", {
                     items: [{
                             xtype: 'textfield',
                             fieldLabel: '联系人',
-                            name: 'contact.people',
+                            name: 'people',
                             emptyText: '请输入联系人'
                         }, {
                             xtype: 'textfield',
                             fieldLabel: '手机号码',
-                            name: 'contact.mobile',
+                            name: 'mobile',
                             emptyText: '请输入手机号码'
                         }, {
                             xtype: 'textfield',
                             fieldLabel: '办公电话',
-                            name: 'contact.phone',
+                            name: 'phone',
                             emptyText: '请输入办公电话'
                         }]//
 
@@ -142,7 +145,7 @@ Ext.define("wzqr.view.app.Add", {
                             fieldLabel: '用户名',
                             name: 'loginName',
                             //<debug>
-                            value: 'cmmm',
+                            value: 'bmmm',
                             //</debug>
                             emptyText: '请输入中文名'
                         }, {

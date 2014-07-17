@@ -1,7 +1,7 @@
 Ext.define("wzqr.view.Dashboard", {
 //    extend: 'Ext.panel.Panel',
     extend: 'Ext.container.Container',
-    xtype:'xmydashboard',
+    xtype: 'xmydashboard',
     requires: [
         'wzqr.view.Bottom',
         'wzqr.view.Top',
@@ -41,7 +41,7 @@ Ext.define("wzqr.view.Dashboard", {
 
         var mainpanel = me.down('panel[name=mainpanel]');
         var tabBar = me.down('xtop tabbar');
-        me.pages.forEach(function(item,index) {
+        Ext.Array.each(me.pages, function(item, index) {
             var added = mainpanel.add(item);
             var cfg = item.tabConfig || {};
             var defaultConfig = {
@@ -69,13 +69,13 @@ Ext.define("wzqr.view.Dashboard", {
                 iconclschange: me.onItemIconClsChange,
                 titlechange: me.onItemTitleChange
             });
-            
+
             added.tab.on({
-                scope:me,
-                activate:me.onTabActivate
+                scope: me,
+                activate: me.onTabActivate
             });
-            
-            if(index===0){
+
+            if (index === 0) {
 //                debug(added.tab);
                 tabBar.setActiveTab(added.tab);
 //                added.tab.activate();
@@ -97,7 +97,7 @@ Ext.define("wzqr.view.Dashboard", {
             }
         });
     },
-    onTabActivate:function(tab){
+    onTabActivate: function(tab) {
 //        debug(tab);
         var mainpanel = this.down('panel[name=mainpanel]');
         mainpanel.getLayout().setActiveItem(tab.card);

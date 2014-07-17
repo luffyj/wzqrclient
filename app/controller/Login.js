@@ -9,12 +9,17 @@ Ext.define('wzqr.controller.Login', {
             Utils.startLoading('登录中……');
             form.submit({
                 success: function(form, action) {
+                    Ext.log('login success');
                     Utils.stopLoading();
                     //redriver
                     me.checkAuth();
                 },
                 failure: function(form, action) {
+                    Ext.log('login failure');
                     Utils.stopLoading();
+                    if (action.response.status === 200) {
+                        me.checkAuth();
+                    }
                     if (action.response.status === 306 || action.response.status === 401) {
                         Ext.Msg.alert('错误', '您输入了错误的登录账号或登录密码。');
                     }

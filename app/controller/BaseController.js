@@ -30,6 +30,19 @@ Ext.define('wzqr.controller.BaseController', {
         return user.org.id;
     },
     /**
+     * 是管理者么？
+     * @return {boolean} true for yes
+     * */
+    isCross: function() {
+        var user = this.getApplication().currentUser;
+        if (!user)
+            return false;
+        var auths = user.authorities;
+        return this.isAdmin() || Ext.Array.some(auths,function(auth) {
+            return auth.authority === 'cross';
+        });
+    },
+    /**
      * 是一般申报人么？
      * @return {boolean} true for yes
      * */
@@ -45,7 +58,7 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return auths.some(function(auth) {
+        return Ext.Array.some(auths,function(auth) {
             return auth.authority === 'admin';
         });
     },
@@ -55,7 +68,7 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return this.isAdmin() || auths.some(function(auth) {
+        return this.isAdmin() || Ext.Array.some(auths,function(auth) {
             return auth.authority === 'managePeople';
         });
     },
@@ -68,7 +81,7 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return this.isAdmin() || auths.some(function(auth) {
+        return this.isAdmin() || Ext.Array.some(auths,function(auth) {
             return auth.authority === 'log';
         });
     },
@@ -87,9 +100,9 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return this.isAdmin() || (auths.some(function(auth) {
+        return this.isAdmin() || (Ext.Array.some(auths,function(auth) {
             return auth.authority === 'manageOrganization';
-        }) && (cross ? auths.some(function(auth) {
+        }) && (cross ? Ext.Array.some(auths,function(auth) {
             return auth.authority === 'cross';
         }) : true));
     },
@@ -196,13 +209,13 @@ Ext.define('wzqr.controller.BaseController', {
                                 Ext.TaskManager.start(this._task_checkAuth);
 
                                 this.getApplication().orgModel = record;
-                                log('当前用户的部门为', record);
+                                Ext.log('当前用户的部门为');
                                 debug('login as ', data);
                                 // 根据用户权限展开不同的管理页面
 
                                 var dashboard = Utils.viewport().down('xmydashboard');
                                 if (!dashboard) {
-                                    debug('没有找到dashboard');
+                                    Ext.log('没有找到dashboard');
                                     this.getApplication().lastRoleId = data.role.id;
                                     this.getApplication().lastOrgId = record.getId();
                                     dashboard = this.newDashboard();
@@ -211,12 +224,13 @@ Ext.define('wzqr.controller.BaseController', {
                                             && this.getApplication().lastOrgId === record.getId()) {
                                         //保持一致了
                                     } else {
-                                        debug('权限变动了');
+                                        Ext.log('权限变动了');
                                         this.getApplication().lastRoleId = data.role.id;
                                         this.getApplication().lastOrgId = record.getId();
                                         dashboard = this.newDashboard();
                                     }
                                 }
+                                Ext.log('Dash已插入！');
 
                                 dashboard.down('xtop component[name=labelName]').update(data.realName);
                                 dashboard.down('xtop component[name=labelRole]').update(data.role.name);

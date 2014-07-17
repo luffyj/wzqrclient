@@ -34,6 +34,8 @@ Ext.define('wzqr.spring.data.Model', {
         var obj = this.callParent([objName]);
         if (!Ext.isDefined(obj))
             return null;
+        if (!obj)
+            return null;
 //        debug('obj',obj);
         if (obj.isModel) {
             return obj.get(propertyName);
@@ -174,7 +176,7 @@ Ext.define('wzqr.spring.data.Model', {
                 scope: uri.scope,
                 success: function(response) {
                     var text = response.responseText;
-                    if (text === null || text.trim().length === 0) {
+                    if (text === null || Ext.String.trim(text).length === 0) {
                         Ext.callback(uri.success, uri.scope);
                         return;
                     }
