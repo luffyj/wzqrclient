@@ -31,10 +31,10 @@ Ext.define('wzqr.spring.data.Store', {
                         return this['_' + name + '_done'];
                     }, item);
                 })) {
-//                        debug('完成了');
+                        debug('完成了');
                     store.resumeEvent('load');
                     store.resumeEvent('refresh');
-                    store.fireEvent('refresh', store, eOpts);
+                    store.fireEvent('refresh', store, eOpts,1);
 
 //尝试手动触发
 //                        var listeners = store.events.load.listeners,
@@ -99,6 +99,7 @@ Ext.define('wzqr.spring.data.Store', {
         }
     },
     listeners: {
+        //尝试使用refresh
         load: 'loadExtraEntity'
     }
 });

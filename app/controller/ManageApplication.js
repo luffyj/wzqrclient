@@ -27,7 +27,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                     this.getUnderApplicationStore().reload();
                 } else {
                     if (user) {
-                        user.destory();
+                        user.destroy();
                     }
                     Utils.stopLoading();
                     Ext.Msg.alert('错误', operation.error.result.message);
@@ -76,7 +76,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                                             if (success) {
                                                 this.createApp(button, obj, record);
                                             } else {
-                                                record.destory();
+                                                record.destroy();
                                                 Utils.stopLoading();
                                                 var data = Utils.extraResponseData(response);
                                                 var message = data.message;
@@ -139,7 +139,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                         context.add(this.getView('app.ContextOrg').create());
                     }
 
-                    tstore.load();
+                    tstore.reload();
                     debug('app', this.getApplication());//orgModel
                 },
                 render: function(view) {

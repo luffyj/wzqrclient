@@ -51,6 +51,7 @@ Ext.define('wzqr.Application', {
         'Login',
         'ManageOrg',
 //        'ManagePeople',
+        'EditApplication',
         'ManageApplication'
     ],
     stores: [

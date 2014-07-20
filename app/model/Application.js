@@ -1,6 +1,9 @@
 Ext.define('wzqr.model.Application', {
     extend: 'wzqr.spring.data.Model',
     resourceURI: Utils.toApi('api/application'),
+    isWeishangbao:function(){
+        return this.get('status')==='未上报';
+    },
     fields: [
         {name: 'owner'},
         {name: 'myorg'},

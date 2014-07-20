@@ -70,7 +70,7 @@ Ext.define('wzqr.spring.data.Model', {
 
         config.success = function(obj) {
             if (obj)
-                debug('成功获取属性' + config.name, obj);
+                debug('成功获取属性' + config.name,me, obj,orcsuccess);
             me.set(config.name, obj);
             Ext.callback(orcsuccess, config.scope, [obj]);
         };
@@ -98,6 +98,8 @@ Ext.define('wzqr.spring.data.Model', {
      * 获取link
      * */
     getLink: function(name) {
+        if (!this._links)
+            return null;
         var value = this._links[name];
         if (value)
             return value.href;
@@ -114,6 +116,15 @@ Ext.define('wzqr.spring.data.Model', {
             this._links = data._links;
         }
         this.callParent(arguments);
+
+        var selfLink = this.getLink('self');
+        if (selfLink) {
+//            debug(selfLink);
+            var index = selfLink.lastIndexOf('/');
+            var idstr = selfLink.substring(index+1, selfLink.length);
+//            debug(idstr);
+            this.setId(parseInt(idstr));
+        }
     },
     onClassExtended: function(cls, data, hooks) {
         cls.setProxy({
