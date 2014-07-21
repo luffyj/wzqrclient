@@ -42,7 +42,8 @@ Ext.define("wzqr.view.app.ContextUser", {
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actiondelete', grid, record, rowIndex, colIndex, row, item, e);
                     }
-                }]}
+                }]
+        }
     ],
     dockedItems: [{
             xtype: 'pagingtoolbar',

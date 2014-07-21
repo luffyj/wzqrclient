@@ -5,6 +5,7 @@ Ext.define("wzqr.view.app.ContextManager", {
     extend: 'wzqr.spring.grid.Panel',
     requires: [
         'Ext.grid.column.RowNumberer',
+        'Ext.grid.column.Action',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check'
     ],

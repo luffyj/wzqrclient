@@ -7,6 +7,7 @@
 Ext.define('wzqr.store.MyApplication', {
     extend: 'wzqr.spring.data.Store',
     requires: [
+        'wzqr.model.Org',
         'wzqr.model.User'
     ],
     model: 'wzqr.model.Application',
@@ -16,6 +17,7 @@ Ext.define('wzqr.store.MyApplication', {
         url: Utils.toApi('api/application/search/findByOwner')
     },
     extraModels: {
+        myorg: wzqr.model.Org,
         owner: wzqr.model.User
     },
 //    autoSync: true,

@@ -14,20 +14,21 @@
  * */
 Ext.define('wzqr.controller.EditApplication', {
     extend: 'wzqr.controller.BaseController',
+    views:['app.Edit'],
     models: ['Application', 'User'],
     init: function(app) {
         this.control({
             'jcgridview': {
                 actionedit: function(grid, record, rowIndex, colIndex, row, item, e) {
-                    grid.getStore().reload();
+                    this.getView('app.Edit').create(record).show();
                 }, actiondelete: function(grid, record, rowIndex, colIndex, row, item, e) {
                     debug(record,record.get('owner'));
-//                    record.set('status','已删除');
-//                    record.save({
-//                        success: function() {
-//                            grid.getStore().reload();
-//                        }
-//                    });
+                    record.set('status','已删除');
+                    record.save({
+                        success: function() {
+                            grid.getStore().reload();
+                        }
+                    });
                 }
             }
         });

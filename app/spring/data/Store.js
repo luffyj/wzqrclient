@@ -7,7 +7,9 @@ Ext.define('wzqr.spring.data.Store', {
      *    name:ModelClass
      *  }
      * */
-    loadExtraEntity: function(store, records, successful, eOpts) {
+    loadExtraEntity: function(store, eOpts,tag) {//records, successful, 
+        if (tag)
+            return;
         var extraModels = this.extraModels;
         if (!extraModels)
             return;
@@ -20,10 +22,18 @@ Ext.define('wzqr.spring.data.Store', {
 
         if (extraModelNames.length === 0)
             return;
-
-        debug('extraModelNames: ', extraModelNames);
-        if (successful) {
-            store.suspendEvent('load');
+        
+        var records = this.data;
+        
+        if(!records)
+            return;
+        
+        records = records.items;
+        
+        debug('extraModelNames: ', extraModelNames,records);
+        if (true) {
+            debug('挂起');
+//            store.suspendEvent('load');
             store.suspendEvent('refresh');
             var conti = function() {
                 if (Ext.Array.every(records, function(item) {
@@ -32,7 +42,7 @@ Ext.define('wzqr.spring.data.Store', {
                     }, item);
                 })) {
                         debug('完成了');
-                    store.resumeEvent('load');
+//                    store.resumeEvent('load');
                     store.resumeEvent('refresh');
                     store.fireEvent('refresh', store, eOpts,1);
 
@@ -100,6 +110,6 @@ Ext.define('wzqr.spring.data.Store', {
     },
     listeners: {
         //尝试使用refresh
-        load: 'loadExtraEntity'
+        refresh: 'loadExtraEntity'
     }
 });

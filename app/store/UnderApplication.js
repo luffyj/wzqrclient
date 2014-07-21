@@ -2,6 +2,7 @@
 Ext.define('wzqr.store.UnderApplication', {
     extend: 'wzqr.spring.data.Store',
     requires: [
+        'wzqr.model.Org',
         'wzqr.model.User'
     ],
     model: 'wzqr.model.Application',
@@ -11,6 +12,7 @@ Ext.define('wzqr.store.UnderApplication', {
         url: Utils.toApi('api/application/search/findBySuperOrg')
     },
     extraModels: {
+        myorg: wzqr.model.Org,
         owner: wzqr.model.User
     },
 //    autoSync: true,

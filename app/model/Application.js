@@ -1,8 +1,17 @@
 Ext.define('wzqr.model.Application', {
     extend: 'wzqr.spring.data.Model',
     resourceURI: Utils.toApi('api/application'),
+    /**
+     * 是否未上报
+     * */
     isWeishangbao:function(){
         return this.get('status')==='未上报';
+    },
+    /**
+     * 是否是退回的
+     * */
+    isReturn:function(){
+        return this.get('status').indexOf('退回')!==-1;
     },
     fields: [
         {name: 'owner'},
