@@ -1,4 +1,10 @@
-
+/**
+ * list
+ * 
+ * 验证码难度降低
+ * 左侧统计管理处，增加一个按管理部门统计（由一级管理账号建立二级管理账号申报情况）
+ * 
+ * */
 function error() {
 //<debug>    
     if (typeof console !== 'undefined') {

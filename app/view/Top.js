@@ -9,7 +9,7 @@ Ext.define("wzqr.view.Top", {
     layout: 'fit',
     dockedItems: [
         {
-            width: 130,
+            width: 120,
             xtype: 'image',
             padding: 5,
             dock: 'left',
@@ -18,7 +18,7 @@ Ext.define("wzqr.view.Top", {
             margin: '20 20 0 0',
             xtype: 'panel',
             dock: 'right',
-            width: 420,
+            width: 365,
             dockedItems: [
                 {
                     xtype: 'panel',
@@ -99,7 +99,7 @@ Ext.define("wzqr.view.Top", {
                 {
 //            left:10,
                     xtype: 'component',
-                    margin: '20 0 0 30',
+                    margin: '20 0 0 10',
                     style: 'font-size:26px;',
                     html: '温州市“580海外精英引进计划”网上申报系统'
                 }

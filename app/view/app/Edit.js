@@ -4,7 +4,9 @@
 Ext.define("wzqr.view.app.Edit", {
     extend: 'Ext.window.Window',
     requires: [
-        'Ext.form.Label',
+        'wzqr.view.common.CommonField',
+        'wzqr.view.common.TitleLabel',
+        'wzqr.view.common.MessageLabel',
         'Ext.layout.container.Table',
         'Ext.layout.container.Column',
         'wzqr.view.app.edit.Attach',
