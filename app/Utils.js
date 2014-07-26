@@ -12,6 +12,16 @@ Ext.define('wzqr.Utils', {
     mixins: {
         myConfig: "wzqr.Config"
     },
+    /**
+     * 验证data是否是一个有效的field
+     * TODO 目前只做了针对string的
+     * */
+    isValidField:function(data,field){
+        if ('string'===field.type || 'sstring'===field.type){
+            return Ext.isString(data) && data.length>0;
+        }
+        return data!==null;
+    },
     extraResponseData: function(response) {
         var data = Ext.decode(response.responseText);
         switch (data.code) {

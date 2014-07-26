@@ -9,10 +9,14 @@
  * 
  * save时...不对 应该是writer工作的时候 直接拿它的self!!
  * 
+ * 设置field时 如果设置noarray为true 表示该属性不可以设置为array应该选择array其中有效的值
+ * 如果设置为link表示是连接到其他model的
+ * 
  * */
 Ext.define('wzqr.spring.data.Model', {
     extend: 'Ext.data.Model',
     requires: [
+        'Ext.data.Types',
         'wzqr.spring.data.Reader',
         'wzqr.spring.data.Writer',
         'wzqr.spring.data.RestProxy'
@@ -70,7 +74,7 @@ Ext.define('wzqr.spring.data.Model', {
 
         config.success = function(obj) {
             if (obj)
-                debug('成功获取属性' + config.name,me, obj,orcsuccess);
+                debug('成功获取属性' + config.name, me, obj, orcsuccess);
             me.set(config.name, obj);
             Ext.callback(orcsuccess, config.scope, [obj]);
         };
@@ -121,7 +125,7 @@ Ext.define('wzqr.spring.data.Model', {
         if (selfLink) {
 //            debug(selfLink);
             var index = selfLink.lastIndexOf('/');
-            var idstr = selfLink.substring(index+1, selfLink.length);
+            var idstr = selfLink.substring(index + 1, selfLink.length);
 //            debug(idstr);
             this.setId(parseInt(idstr));
         }
@@ -200,5 +204,29 @@ Ext.define('wzqr.spring.data.Model', {
         }
     }
 }, function(model) {
+    Ext.data.Types.SSTRING = {
+        convert: function(v) {
+            var defaultValue = this.useNull ? null : '';
+            if (v === undefined || v === null) {
+                return defaultValue;
+            }
+            if (Ext.isArray(v)) {
+                var finalValue;
+                for (var i = 0; i < v.length; i++) {
+                    if (!finalValue) {
+                        finalValue = v[i];
+                    }
+                    if (Utils.isValidField(v[i], this)) {
+                        finalValue = v[i];
+                        break;
+                    }
+                }
+                return String(finalValue);
+            }
+            return String(v);
+        },
+        sortType: Ext.data.SortTypes.asUCString,
+        type: 'sstring'
+    };
 //    debug(arguments);
 });

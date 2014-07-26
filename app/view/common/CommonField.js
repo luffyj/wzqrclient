@@ -34,14 +34,29 @@ Ext.define("wzqr.view.common.CommonField", {
         
         delete config.width;
         
+        var msg = config.msg;
+//        
+//        delete config.xxtype;
+//        delete config.name;
+//        delete config.emptyText;
+//        delete config.blankText;
+//        delete config.allowBlank;
+//        delete config.msg;
+        
+        Ext.applyIf(config,{
+            cellCls: 'wzformborder'
+        });
+        
         this.callParent(arguments);
 
         this.add(fieldConfig);
+        
+        debug(config,fieldConfig);
 
-        if (config.msg) {
+        if (msg) {
             this.add({
                 xtype: 'mlabel',
-                html: config.msg
+                html: msg
             });
         }
     }

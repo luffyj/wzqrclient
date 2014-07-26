@@ -7,6 +7,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
         // The total column count must be specified here
         columns: 10,
         tableAttrs: {
+            wzform: 1,
             style: {
                 width: '100%'
             }

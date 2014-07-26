@@ -5,6 +5,7 @@
 Ext.define("wzqr.view.common.TitleLabel", {
     extend: 'wzqr.view.common.CommonLabel',
     xtype: 'tlabel',
+    cellCls: 'wzformlabel',
     tdAttrs: {
         align: 'right'
     },

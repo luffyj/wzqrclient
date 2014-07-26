@@ -8,7 +8,7 @@ Ext.define('wzqr.model.User', {
         {name: 'position', type: 'string'},
         {name: 'realEnglishName', type: 'string'},
         {name: 'enabled', type: 'boolean'},
-        {name: 'lastLogin', type: 'date'},
+        {name: 'lastLogin', type: 'date',dateFormat:'time'},
         {name: 'role'},
         {name: 'org'},
         {name: 'contact'}

@@ -43,6 +43,7 @@ Ext.define('wzqr.Application', {
     name: 'wzqr',
     extend: 'Ext.app.Application',
     requires: [
+        'wzqr.overrides.form.Basic',
         'wzqr.spring.data.RestProxy',
         'wzqr.Utils'
     ],
@@ -61,7 +62,9 @@ Ext.define('wzqr.Application', {
         'ManageApplication'
     ],
     stores: [
-        // TODO: add stores here
+        'SexStore',
+        'CountryStore',
+        'DegreeStore'
     ],
     onLaunch: function(app) {
 //        Ext.Loader.loadScript({

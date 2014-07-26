@@ -34,6 +34,12 @@ Ext.define("wzqr.view.app.Edit", {
         this.app = app;
         this.callParent();
     },
+    initComponent: function() {
+        var me = this;
+        me.callParent(arguments);
+        debug(me.down('xappeditbasic'),me.app);
+        me.down('form').loadRecord(me.app);
+    },
     items: [
         {
             xtype: 'form',
