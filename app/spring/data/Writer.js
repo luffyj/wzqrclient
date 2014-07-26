@@ -13,7 +13,7 @@ Ext.define('wzqr.spring.data.Writer', {
                 name = field.name;
             }
             data[name] = value.getLink('self');
-        } else if (field.link) {
+        } else if (field.link && Ext.isString(value) && value.length===0) {
             //如果设置为link且无对象就无需进行任何操作
         } else if (field.noarray && Ext.isArray(value)) {
             var finalValue;

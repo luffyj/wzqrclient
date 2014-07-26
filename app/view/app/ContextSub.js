@@ -1,17 +1,16 @@
 /* 
- * 高管使用
+ * 机构使用
  */
-Ext.define("wzqr.view.app.ContextManager", {
+Ext.define("wzqr.view.app.ContextSub", {
     extend: 'wzqr.spring.grid.Panel',
     requires: [
-        'Ext.grid.column.Date',
         'Ext.grid.column.RowNumberer',
         'Ext.grid.column.Action',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check'
     ],
-    xtype: 'xappcontextmanager',
-    store: 'AllApplication',
+    xtype: 'xappcontextsub',
+    store: 'UnderApplication',
     viewConfig: {
         stripeRows: true
     },
@@ -20,11 +19,11 @@ Ext.define("wzqr.view.app.ContextManager", {
         {text: '序号', xtype: 'rownumberer', width: 80},
         {text: '编号', dataIndex: 'number', flex: 1},
         {text: '申报人', dataIndex: 'realName', flex: 1},
+        {text: '登录名', dataIndex: 'owner.loginName', flex: 1},
         {text: '审批批次', dataIndex: 'batch', flex: 1},
         {text: '人才类型', flex: 1, dataIndex: 'type'},
         {text: '专业领域', flex: 2, dataIndex: 'specialty'},
         {text: '申报单位名称', flex: 3, dataIndex: 'appOrgName'},
-        {text: '上报时间', flex: 1, dataIndex: 'submitDate', xtype: 'datecolumn', format: 'Y-m-d G:i'},
         {text: '申报状态', flex: 1, dataIndex: 'status'},
         {
             text: '操作',
@@ -33,14 +32,14 @@ Ext.define("wzqr.view.app.ContextManager", {
             items: [
                 {
                     icon: 'resources/images/check.png',
-                    tooltip: '复审',
+                    tooltip: '形审',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
-                        if (record.get('status') === '形审通过') {
-                            item.text = '复审';
-                            item.tooltip = '复审';
+                        if (record.get('status') === '等待形审') {
+                            item.text = '形审';
+                            item.tooltip = '形审';
                             return false;
                         }
-                        if (record.get('status') === '复审未过') {
+                        if (record.get('status') === '形审未过') {
                             item.text = '重审';
                             item.tooltip = '重审';
                             return false;
@@ -48,8 +47,17 @@ Ext.define("wzqr.view.app.ContextManager", {
                         return true;
                     },
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
-                        grid.fireEvent('actionfushen', grid, record, rowIndex, colIndex, row, item, e);
+                        grid.fireEvent('actionxingshen', grid, record, rowIndex, colIndex, row, item, e);
                     }
+                }, {
+                    icon: 'resources/images/edit.png',
+                    tooltip: '编辑',
+                    isDisabled: function(view, rowIndex, colIndex, item, record) {
+                        return !record.isBeableSubEdit();
+                    },
+                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
+                        grid.fireEvent('actionedit', grid, record, rowIndex, colIndex, row, item, e);
+                    }               
                 }, {
                     icon: 'resources/images/export.png',
                     tooltip: '导出',
@@ -62,7 +70,7 @@ Ext.define("wzqr.view.app.ContextManager", {
     ],
     dockedItems: [{
             xtype: 'pagingtoolbar',
-            store: 'AllApplication',
+            store: 'UnderApplication',
             dock: 'bottom',
             displayInfo: true
         }],

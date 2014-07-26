@@ -21,7 +21,7 @@ Ext.define("wzqr.view.app.ContextUser", {
         {text: '登录名', dataIndex: 'owner.loginName', flex: 1},
         {text: '审批批次', dataIndex: 'batch', flex: 1},
         {text: '人才类型', flex: 1, dataIndex: 'type'},
-        {text: '专业领域', flex: 2, dataIndex: 'profession'},
+        {text: '专业领域', flex: 2, dataIndex: 'specialty'},
         {text: '申报状态', flex: 1, dataIndex: 'status'},
         {text: '操作', flex: 2, xtype: 'actioncolumn', items: [
                 {

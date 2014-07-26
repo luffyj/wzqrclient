@@ -1,6 +1,13 @@
 Ext.define('wzqr.controller.ManageApplication', {
     extend: 'wzqr.controller.BaseController',
-    views: ['app.Add', 'app.ContextManager', 'app.ContextOrg', 'app.ContextUser'],
+    requires: [
+//        'wzqr.view.app.UnitAction'
+    ],
+    views: ['app.Add', 'app.ContextManager', 
+        'app.ContextRoot', 
+        'app.ContextSub', 
+        'app.ContextUnit', 
+        'app.ContextUser'],
     models: ['Application', 'User'],
     stores: ['UnderApplication', 'AllApplication', 'MyApplication'],
     /**
@@ -67,7 +74,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                                         scope: this,
                                         url: Utils.toApi('initUserPassword'),
                                         params: {
-                                            people:'true',
+                                            people: 'true',
                                             userid: record.getId(),
                                             password: obj.password
                                         },
@@ -103,18 +110,28 @@ Ext.define('wzqr.controller.ManageApplication', {
             },
             'xmanageapp': {
                 activate: function(view) {
+                    debug('激活了 开始梳理store', view);
+                    //xappcontextorg                    
                     var context = view.down('xappcontext');
                     var xappcontextmanager = context.down('xappcontextmanager');
+                    var xappcontextroot = context.down('xappcontextroot');
                     var xappcontextuser = context.down('xappcontextuser');
-                    var xappcontextorg = context.down('xappcontextorg');
+                    var xappcontextsub = context.down('xappcontextsub');
+                    var xappcontextunit = context.down('xappcontextunit');
+                    if (xappcontextroot) {
+                        context.remove(xappcontextroot);
+                    }
                     if (xappcontextmanager) {
                         context.remove(xappcontextmanager);
                     }
                     if (xappcontextuser) {
                         context.remove(xappcontextuser);
                     }
-                    if (xappcontextorg) {
-                        context.remove(xappcontextorg);
+                    if (xappcontextsub) {
+                        context.remove(xappcontextsub);
+                    }
+                    if (xappcontextunit) {
+                        context.remove(xappcontextunit);
                     }
 
                     //根据权限分配页面和store
@@ -126,17 +143,27 @@ Ext.define('wzqr.controller.ManageApplication', {
                         };
                         tstore = this.getMyApplicationStore();
                         context.add(this.getView('app.ContextUser').create());
+                    } else if (this.isManageOrg(true)){
+                        //市委
+                        debug('市委管理');
+                        tstore = this.getAllApplicationStore();
+                        context.add(this.getView('app.ContextRoot').create());
                     } else if (this.isCross()) {
-                        debug('管理者');
+                        debug('部门管理');
                         tstore = this.getAllApplicationStore();
                         context.add(this.getView('app.ContextManager').create());
                     } else {
+                        //
                         debug('组织和机构');
                         this.getUnderApplicationStore().proxy.extraParams = {
                             superid: this.getMyorg()
                         };
                         tstore = this.getUnderApplicationStore();
-                        context.add(this.getView('app.ContextOrg').create());
+                        if (this.isManageOrg()){
+                            context.add(this.getView('app.ContextSub').create());
+                        }else{
+                            context.add(this.getView('app.ContextUnit').create());
+                        }
                     }
 
                     tstore.reload();

@@ -16,14 +16,17 @@ Ext.define('wzqr.Utils', {
      * 验证data是否是一个有效的field
      * TODO 目前只做了针对string的
      * */
-    isValidField:function(data,field){
-        if ('string'===field.type || 'sstring'===field.type){
-            return Ext.isString(data) && data.length>0;
+    isValidField: function(data, field) {
+        if ('string' === field.type || 'sstring' === field.type) {
+            return Ext.isString(data) && data.length > 0;
         }
-        return data!==null;
+        return data !== null;
     },
     extraResponseData: function(response) {
         var data = Ext.decode(response.responseText);
+        data.alert = function() {
+            Ext.Msg.alert(this.success ? '提示' : '错误', this.message);
+        };
         switch (data.code) {
             case 501:
                 data.message = '数据重复';
@@ -34,6 +37,9 @@ Ext.define('wzqr.Utils', {
             default:
                 if (data.code / 100 === 2) {
                     data.success = true;
+                    if (!data.message && data.originalMessage){
+                        data.message = data.originalMessage;
+                    }
                 } else {
                     data.message = '未知错误|' + data.originalMessage;
                     error('未识别的错误号', data);

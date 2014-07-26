@@ -13,6 +13,12 @@ Ext.define('wzqr.model.Application', {
     isReturn:function(){
         return this.get('status').indexOf('退回')!==-1;
     },
+    /**
+     * 允许次级管理员编辑
+     * */
+    isBeableSubEdit:function(){
+        return this.get('status')==='形审未过' || this.get('status')==='形审通过' || this.get('status')==='等待形审'
+    },
     fields: [
         {name: 'owner',link:true},
         {name: 'myorg',link:true},
@@ -351,6 +357,7 @@ Ext.define('wzqr.model.Application', {
         {name: 'comletionDate', type: 'date',dateFormat:'time'},
         {name: 'sex', type: 'int'},
         {name: 'birthDate', type: 'date',dateFormat:'time'},
+        {name: 'submitDate', type: 'date',dateFormat:'time'},        
         {name: 'birthPlace', type: 'string'},
         {name: 'nationality', type: 'string'},
         {name: 'mgChineseCountry', type: 'string'},

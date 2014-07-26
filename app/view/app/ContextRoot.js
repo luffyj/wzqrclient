@@ -1,7 +1,7 @@
 /* 
  * 高管使用
  */
-Ext.define("wzqr.view.app.ContextManager", {
+Ext.define("wzqr.view.app.ContextRoot", {
     extend: 'wzqr.spring.grid.Panel',
     requires: [
         'Ext.grid.column.Date',
@@ -10,7 +10,7 @@ Ext.define("wzqr.view.app.ContextManager", {
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check'
     ],
-    xtype: 'xappcontextmanager',
+    xtype: 'xappcontextroot',
     store: 'AllApplication',
     viewConfig: {
         stripeRows: true
@@ -35,20 +35,48 @@ Ext.define("wzqr.view.app.ContextManager", {
                     icon: 'resources/images/check.png',
                     tooltip: '复审',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
-                        if (record.get('status') === '形审通过') {
-                            item.text = '复审';
-                            item.tooltip = '复审';
-                            return false;
-                        }
-                        if (record.get('status') === '复审未过') {
-                            item.text = '重审';
-                            item.tooltip = '重审';
-                            return false;
+                        switch (record.get('status')) {
+                            case '复审通过':
+                                item.text = '评审';
+                                item.tooltip = '评审';
+                                return false;
+                            case '评审未过':
+                                item.text = '重审';
+                                item.tooltip = '重审';
+                                return false;
+                            case '形审通过':
+                                item.text = '复审';
+                                item.tooltip = '复审';
+                                return false;
+                            case '复审未过':
+                                item.text = '重审';
+                                item.tooltip = '重审';
+                                return false;
                         }
                         return true;
                     },
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
-                        grid.fireEvent('actionfushen', grid, record, rowIndex, colIndex, row, item, e);
+
+                        switch (record.get('status')) {
+                            case '复审通过':
+                            case '评审未过':
+                                grid.fireEvent('actionpingshen', grid, record, rowIndex, colIndex, row, item, e);
+                                return;
+                            case '形审通过':
+                            case '复审未过':
+                                grid.fireEvent('actionfushen', grid, record, rowIndex, colIndex, row, item, e);
+                        }
+
+
+                    }
+                }, {
+                    icon: 'resources/images/edit.png',
+                    tooltip: '编辑',
+                    isDisabled: function(view, rowIndex, colIndex, item, record) {
+                        return record.isReturn();
+                    },
+                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
+                        grid.fireEvent('actionedit', grid, record, rowIndex, colIndex, row, item, e);
                     }
                 }, {
                     icon: 'resources/images/export.png',

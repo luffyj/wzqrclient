@@ -38,7 +38,7 @@ Ext.define('wzqr.spring.data.Store', {
             var conti = function() {
                 if (Ext.Array.every(records, function(item) {
                     return Ext.Array.every(extraModelNames, function(name) {
-                        return this['_' + name + '_done'];
+                        return !this.getId() || this.getId()===0 || this.getId()==='' || this['_' + name + '_done'];
                     }, item);
                 })) {
                         debug('完成了');
