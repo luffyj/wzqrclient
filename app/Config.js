@@ -1,6 +1,6 @@
 Ext.define("wzqr.Config", {
     config: {
-        apiRoot: "/",
+        apiRoot: "",
 //<debug>        
         apiRoot:'../../wzqrserver/',
 //</debug>        
