@@ -31,6 +31,10 @@ Ext.define('wzqr.spring.data.Store', {
         records = records.items;
         
         debug('extraModelNames: ', extraModelNames,records);
+        
+        if(records.length===0)
+            return;
+        
         if (true) {
             debug('挂起');
 //            store.suspendEvent('load');

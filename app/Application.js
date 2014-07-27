@@ -4,6 +4,8 @@
  * 验证码难度降低
  * 左侧统计管理处，增加一个按管理部门统计（由一级管理账号建立二级管理账号申报情况）
  * 
+ * @RepositoryEventHandler 可以处理日志
+ * 
  * */
 function error() {
 //<debug>    
@@ -62,6 +64,8 @@ Ext.define('wzqr.Application', {
         'ManageApplication'
     ],
     stores: [
+        'SpecialtyStore',
+        'AppStatusStore',
         'SexStore',
         'CountryStore',
         'DegreeStore'

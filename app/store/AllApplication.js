@@ -11,6 +11,10 @@ Ext.define('wzqr.store.AllApplication', {
     ],
     model: 'wzqr.model.Application',
     pageSize: 10,  
+    proxy: {
+        type: 'springrest',
+        url: Utils.toApi('api/application/search/findWhole')
+    },
     extraModels: {
         myorg: wzqr.model.Org,
         owner: wzqr.model.User

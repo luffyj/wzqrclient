@@ -1,12 +1,15 @@
 Ext.define('wzqr.controller.ManageApplication', {
     extend: 'wzqr.controller.BaseController',
     requires: [
+        'Ext.layout.container.Accordion',
+        'Ext.util.Filter'
 //        'wzqr.view.app.UnitAction'
     ],
-    views: ['app.Add', 'app.ContextManager', 
-        'app.ContextRoot', 
-        'app.ContextSub', 
-        'app.ContextUnit', 
+    views: ['app.Add', 'app.ContextManager',
+        'app.ReportType',
+        'app.ContextRoot',
+        'app.ContextSub',
+        'app.ContextUnit',
         'app.ContextUser'],
     models: ['Application', 'User'],
     stores: ['UnderApplication', 'AllApplication', 'MyApplication'],
@@ -134,55 +137,102 @@ Ext.define('wzqr.controller.ManageApplication', {
                         context.remove(xappcontextunit);
                     }
 
+                    var baseParams = {
+                        batch: '',
+                        realName: '',
+                        appOrgName: '',
+                        type: '',
+                        specialty: '',
+                        appOrgType: '',
+                        status: ''
+                    };
+
                     //根据权限分配页面和store
                     var tstore;
                     if (this.isPeople()) {
                         debug('申报人');
-                        this.getMyApplicationStore().proxy.extraParams = {
+                        this.getMyApplicationStore().proxy.extraParams = Ext.apply({
                             userid: this.getUserId()
-                        };
+                        }, baseParams);
                         tstore = this.getMyApplicationStore();
                         context.add(this.getView('app.ContextUser').create());
-                    } else if (this.isManageOrg(true)){
+                    } else if (this.isManageOrg(true)) {
                         //市委
                         debug('市委管理');
                         tstore = this.getAllApplicationStore();
+                        tstore.proxy.extraParams = Ext.apply({}, baseParams);
                         context.add(this.getView('app.ContextRoot').create());
                     } else if (this.isCross()) {
                         debug('部门管理');
                         tstore = this.getAllApplicationStore();
+                        tstore.proxy.extraParams = Ext.apply({}, baseParams);
                         context.add(this.getView('app.ContextManager').create());
                     } else {
                         //
                         debug('组织和机构');
-                        this.getUnderApplicationStore().proxy.extraParams = {
+                        this.getUnderApplicationStore().proxy.extraParams = Ext.apply({
                             superid: this.getMyorg()
-                        };
+                        }, baseParams);
                         tstore = this.getUnderApplicationStore();
-                        if (this.isManageOrg()){
+                        if (this.isManageOrg()) {
                             context.add(this.getView('app.ContextSub').create());
-                        }else{
+                        } else {
                             context.add(this.getView('app.ContextUnit').create());
                         }
                     }
 
                     tstore.reload();
+                    this.currentStore = tstore;
                     debug('app', this.getApplication());//orgModel
-                },
-                render: function(view) {
+
+                    //移除申报人的搜索和查询功能
                     if (this.isPeople()) {
                         //removes
-                        view.remove(view.down('xappreport'));
-                        view.remove(view.down('xappselect'));
+                        debug('申报人 意图移除xappselect', view.down('xappselect'));
+                        if (view.down('xappselect')) {
+                            view.remove(view.down('xappselect').up('container'));
+                        }
+                        if (view.down('xappreport')) {
+                            view.remove(view.down('xappreport'));
+                        }
 
                         var xappcontext = view.down('xappcontext');
-                        xappcontext.remove(xappcontext.down('button[name=export]'));
+                        if (xappcontext.down('button[name=export]')) {
+                            xappcontext.down('button[name=export]').up('panel').remove(xappcontext.down('button[name=export]'));
+                        }
+                    } else if (view.down('xappreport')) {
+                        var me = this;
+                        Ext.Ajax.request({
+                            scope: view.down('xappreport'),
+                            method: 'GET',
+                            url: Utils.toApi('countapplication'),
+                            callback: function(options, success, response) {
+                                if (success) {
+                                    var data = Utils.extraResponseData(response);
+                                    data = data.data;
+                                    if (data) {
+                                        this.down('label[name=count]').setText(data.count);
+                                        var root = this.down('panel[name=subroot]');
+                                        root.removeAll();
+                                        var toadds = [];
+                                        for (var groupType in data) {
+                                            if (data.hasOwnProperty(groupType) && groupType !== 'count') {
+                                                var dataList = data[groupType];
+                                                toadds.push(me.getView('app.ReportType').create(groupType, dataList));
+                                            }
+                                        }
+                                        root.add(toadds);
+                                    }
+                                }
+                            }
+                        });
                     }
 
                     var buttonsPanel = view.down('panel[name=buttons]');
                     debug('buttonsPanel:', buttonsPanel);
 
-                    if (this.isManagePeople()) {
+                    //添加申报单位的申报添加功能
+                    if (this.isManagePeople() && !buttonsPanel.down('button[name=addapp]')) {
                         buttonsPanel.add({
                             xtype: 'button',
                             margin: 5,
@@ -190,6 +240,42 @@ Ext.define('wzqr.controller.ManageApplication', {
                             text: '增加'
                         });
                     }
+                },
+                render: function(view) {
+                }
+            },
+            'xappselect field': {
+                change: function(field, newValue, oldValue, eOpts) {
+                    if (this.currentStore) {
+                        var toapply = {};
+                        toapply[field.getName()] = newValue;
+                        Ext.apply(this.currentStore.proxy.extraParams, toapply);
+                    }
+                }
+            },
+            'xappselect': {
+                query: function(view, form, fields) {
+                    this.currentStore.reload();
+//                    var obj = form.getForm().getValues();
+//                    debug('查询', view, form, fields, obj);
+//                    this.currentStore.clearFilter();
+//                    this.currentStore.addFilter(new Ext.util.Filter({
+//                        filterFn: function(item) {
+//                            for (var pname in obj) {
+//                                if (obj.hasOwnProperty(pname)) {
+//                                    var pvalue = obj[pname];
+//                                    if (pvalue && pvalue.length > 0) {
+//                                        var value = item.get(pname);
+//                                        if (!value)
+//                                            return false;
+//                                        if (value.indexOf(pvalue) === -1)
+//                                            return false;
+//                                    }
+//                                }
+//                            }
+//                            return true;
+//                        }
+//                    }));
                 }
             }
         });

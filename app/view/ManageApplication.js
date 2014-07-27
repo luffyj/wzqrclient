@@ -20,7 +20,16 @@ Ext.define("wzqr.view.ManageApplication", {
             xtype: 'xappreport',
             region: 'west'
         }, {
-            xtype: 'xappselect',
+            xtype: 'container',
+            layout: 'fit',
+            padding: 5,
+            style: {
+                'background-color': 'white',
+                'border-style': 'none'
+            },
+            items: {
+                xtype: 'xappselect'
+            },
             region: 'north'
         }, {
             xtype: 'xappcontext',
