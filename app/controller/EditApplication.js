@@ -112,6 +112,7 @@ Ext.define('wzqr.controller.EditApplication', {
                 Utils.stopLoading();
                 if (success) {
                     me.getAppGrid().store.reload();
+                    this.getApplication().fireEvent('reloadCount');
                     Ext.callback(config.success, this, [record, operation]);
                 } else {
                     Ext.Msg.alert('错误', operation.error.result.message);

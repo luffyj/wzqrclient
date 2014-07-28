@@ -7,14 +7,14 @@ Ext.define('wzqr.view.app.ReportType', {
     ],
     layout: 'fit',
     constructor: function(type, datas) {
-        this.store = Ext.create('Ext.data.Store', {
+        this._store = Ext.create('Ext.data.Store', {
             model: 'wzqr.model.AppGroupInfo',
             data: datas
         });
         debug('input data', datas, this);
         switch (type) {
             case 'status':
-                this.title = '按状态统计';
+                this.title = '按申报状态统计';
                 break;
             case 'specialty':
                 this.title = '按专业领域统计';
@@ -26,7 +26,7 @@ Ext.define('wzqr.view.app.ReportType', {
                 this.title = '按单位性质统计';
                 break;
             case 'batch':
-                this.title = '按批次统计';
+                this.title = '按申报批次统计';
                 break;
             case 'myorg.superOrg.name':
                 this.title = '按管理部门统计';
@@ -42,18 +42,29 @@ Ext.define('wzqr.view.app.ReportType', {
 
         Ext.applyIf(me, {items: [{
                     xtype: 'dataview',
-                    store: me.store,
+                    store: me._store,
                     height: 250,
                     width: 400,
                     itemSelector: 'div',
-                    tpl: [''],
+//                    tpl: [''],
                     itemTpl: [
-                        '&nbsp;&nbsp;&nbsp;{name}({count})'
-                    ]
+                        '<tpl for=".">',
+                        '&nbsp;&nbsp;&nbsp;{name}({count})',
+                        '</tpl>'
+                    ],
+                    listeners: {
+                        afterrender: function(view) {
+                            debug('refresh view',view);
+                            //,view.store.getTotalCount()-1
+                            view.updateIndexes(0);
+                        }
+                    }
                 }]
         });
 
         me.callParent(arguments);
+//        me.down('dataview').bindStore(me._store);
+//        me.down('dataview').refresh();
     }
 
 });

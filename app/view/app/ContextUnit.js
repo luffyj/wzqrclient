@@ -10,7 +10,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
         'Ext.grid.column.Check'
     ],
     xtype: 'xappcontextunit',
-    store: 'UnderApplication',
+    store: 'UnderUnitApplication',
     viewConfig: {
         stripeRows: true
     },
@@ -78,7 +78,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
     ],
     dockedItems: [{
             xtype: 'pagingtoolbar',
-            store: 'UnderApplication',
+            store: 'UnderUnitApplication',
             dock: 'bottom',
             displayInfo: true
         }],

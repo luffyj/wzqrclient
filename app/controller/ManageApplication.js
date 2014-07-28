@@ -12,7 +12,55 @@ Ext.define('wzqr.controller.ManageApplication', {
         'app.ContextUnit',
         'app.ContextUser'],
     models: ['Application', 'User'],
-    stores: ['UnderApplication', 'AllApplication', 'MyApplication'],
+    stores: [
+        'UnderUnitApplication',
+        'UnderApplication', 'AllApplication', 'MyApplication'
+    ],
+    reloadCount: function() {
+        var view = Ext.getCmp('xmanageappidid');
+        if (view.down('xappreport')) {
+            var me = this;
+            Ext.Ajax.request({
+                scope: view.down('xappreport'),
+                method: 'GET',
+                url: Utils.toApi('countapplication'),
+                callback: function(options, success, response) {
+                    if (success) {
+                        var data = Utils.extraResponseData(response);
+                        data = data.data;
+                        if (data) {
+                            this.down('label[name=count]').setText(data.count);
+                            var root = this.down('panel[name=subroot]');
+                            root.removeAll();
+                            var toadds = [];
+                            var orderTypes = [
+                                'status',
+                                'specialty',
+                                'type',
+                                'myorg.superOrg.type',
+                                'batch',
+                                'myorg.name',
+                                'myorg.superOrg.name'
+                            ];
+
+                            for (var i = 0; i < orderTypes.length; i++) {
+                                var groupType = orderTypes[i];
+                                if (data.hasOwnProperty(groupType) && groupType !== 'count') {
+                                    var dataList = data[groupType];
+                                    toadds.push(me.getView('app.ReportType').create(groupType, dataList));
+                                }
+                            }
+
+                            for (var groupType in data) {
+
+                            }
+                            root.add(toadds);
+                        }
+                    }
+                }
+            });
+        }
+    },
     /**
      * 创建app
      * 如果失败 将用户也删除
@@ -35,6 +83,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                     Ext.Msg.alert('成功', '成功增加！');
                     ui.up('window').close();
                     this.getUnderApplicationStore().reload();
+                    this.getApplication().fireEvent('reloadCount');
                 } else {
                     if (user) {
                         user.destroy();
@@ -168,15 +217,19 @@ Ext.define('wzqr.controller.ManageApplication', {
                         tstore.proxy.extraParams = Ext.apply({}, baseParams);
                         context.add(this.getView('app.ContextManager').create());
                     } else {
-                        //
-                        debug('组织和机构');
-                        this.getUnderApplicationStore().proxy.extraParams = Ext.apply({
-                            superid: this.getMyorg()
-                        }, baseParams);
-                        tstore = this.getUnderApplicationStore();
                         if (this.isManageOrg()) {
+                            debug('组织和机构:次级管理');
+                            this.getUnderApplicationStore().proxy.extraParams = Ext.apply({
+                                superid: this.getMyorg()
+                            }, baseParams);
+                            tstore = this.getUnderApplicationStore();
                             context.add(this.getView('app.ContextSub').create());
                         } else {
+                            debug('组织和机构:申报单位');
+                            this.getUnderUnitApplicationStore().proxy.extraParams = Ext.apply({
+                                superid: this.getMyorg()
+                            }, baseParams);
+                            tstore = this.getUnderUnitApplicationStore();
                             context.add(this.getView('app.ContextUnit').create());
                         }
                     }
@@ -201,31 +254,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                             xappcontext.down('button[name=export]').up('panel').remove(xappcontext.down('button[name=export]'));
                         }
                     } else if (view.down('xappreport')) {
-                        var me = this;
-                        Ext.Ajax.request({
-                            scope: view.down('xappreport'),
-                            method: 'GET',
-                            url: Utils.toApi('countapplication'),
-                            callback: function(options, success, response) {
-                                if (success) {
-                                    var data = Utils.extraResponseData(response);
-                                    data = data.data;
-                                    if (data) {
-                                        this.down('label[name=count]').setText(data.count);
-                                        var root = this.down('panel[name=subroot]');
-                                        root.removeAll();
-                                        var toadds = [];
-                                        for (var groupType in data) {
-                                            if (data.hasOwnProperty(groupType) && groupType !== 'count') {
-                                                var dataList = data[groupType];
-                                                toadds.push(me.getView('app.ReportType').create(groupType, dataList));
-                                            }
-                                        }
-                                        root.add(toadds);
-                                    }
-                                }
-                            }
-                        });
+                        this.getApplication().fireEvent('reloadCount');
                     }
 
                     var buttonsPanel = view.down('panel[name=buttons]');
@@ -279,5 +308,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                 }
             }
         });
+
+        app.on('reloadCount', this.reloadCount, this);
     }
 });

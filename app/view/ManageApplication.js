@@ -6,6 +6,7 @@ Ext.define("wzqr.view.ManageApplication", {
         'wzqr.view.app.Select'
     ],
     xtype: 'xmanageapp',
+    id:'xmanageappidid',
     layout: {
         type: 'border',
         regionWeights: {
