@@ -1,13 +1,36 @@
-Ext.define("wzqr.view.Log", {
+Ext.define('wzqr.view.Log', {
     extend: 'Ext.panel.Panel',
-    xtype:'xlog',
-    layout:'fit',
-    items:[
-        {
-            xtype:'image',
-            title:'我正在努力从月球飞回来……',
-            alt:'我正在努力从月球飞回来……',
-            src:'resources/images/moon.jpg'
-        }
-    ]
+    alias: 'widget.xlog',
+    requires: [
+        'wzqr.view.log.Select',
+        'wzqr.view.log.Context',
+        'Ext.panel.Panel'
+    ],
+    height: 250,
+    width: 702,
+    layout: 'border',
+    initComponent: function() {
+        var me = this;
+
+        Ext.applyIf(me, {
+            items: [
+                {
+                    xtype: 'xlogselect',
+                    padding: 5,
+                    style: {
+                        'background-color': 'white',
+                        'border-style': 'none'
+                    },
+                    region: 'north'
+                },
+                {
+                    xtype: 'xlogcontext',
+                    region: 'center'
+                }
+            ]
+        });
+
+        me.callParent(arguments);
+    }
+
 });

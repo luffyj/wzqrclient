@@ -18,6 +18,8 @@ Ext.define('wzqr.spring.data.Reader', {
         return 'k';
     },
     getRootStub: function(data) {
+        if(data.content && Ext.isArray(data.content))
+            return data.content;
         var edata = data._embedded;
         // 里面应该只有一个值如何获取？
         for (var key in edata) {

@@ -59,6 +59,7 @@ Ext.define('wzqr.Application', {
         'LoaderController',
         'Login',
         'ManageOrg',
+        'ManageLog',
 //        'ManagePeople',
         'EditApplication',
         'ManageApplication'
