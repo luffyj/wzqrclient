@@ -220,7 +220,8 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'datefield',
             colspan: 8,
             name: 'comletionDate',
-            emptyText: '请选择填表日期'
+            emptyText: '请选择填表日期',
+            submitFormat:'time'
         }
     ]
 });

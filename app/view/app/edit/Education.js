@@ -19,6 +19,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                 {
                     xtype: 'label',
                     dock: 'top',
+                    margin:10,
                     text: '教育经历(从本科填起，请写清楚每阶段经历的所在国家、院校、专业、学位。学位应同时加注英文。)  请按照从往至今的时间顺序，简要、完整描述申报人的教育经历。每一段经历均应有明确的起始和终止日期，具体到月份。'
                 }
             ],
@@ -30,7 +31,8 @@ Ext.define('wzqr.view.app.edit.Education', {
                     layout: 'column',
                     bodyPadding: '',
                     title: '',
-                    items: [
+                    maxRows:7,
+                    baseFields: [
                         {
                             xtype: 'combobox',
                             columnWidth: 0.12,
@@ -70,7 +72,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                             columnWidth: 0.25,
                             fieldLabel: '',
                             name: 'major',
-                            emptyText: '请输入起止时间'
+                            emptyText: '请输入专业'
                         }
                     ]
                 }

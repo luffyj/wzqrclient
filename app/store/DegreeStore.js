@@ -13,19 +13,23 @@ Ext.define('wzqr.store.DegreeStore', {
             data: [
                 {
                     text: '博士',
-                    entext: 'Doctor'
+                    entext: 'Doctor',
+                    fulltext: '博士 (Doctor)'
                 },
                 {
                     text: '硕士',
-                    entext: 'Master'
+                    entext: 'Master',
+                    fulltext: '硕士 (Master)'
                 },
                 {
                     text: '学士',
-                    entext: 'Bachelor'
+                    entext: 'Bachelor',
+                    fulltext: '学士 (Bachelor)'
                 },
                 {
                     text: '其他',
-                    entext: 'Other'
+                    entext: 'Other',
+                    fulltext: '其他 (Other)'
                 }
             ],
             fields: [
@@ -34,6 +38,9 @@ Ext.define('wzqr.store.DegreeStore', {
                 },
                 {
                     name: 'entext'
+                },
+                {
+                    name: 'fulltext'
                 }
             ]
         }, cfg)]);

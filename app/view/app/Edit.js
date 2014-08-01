@@ -4,6 +4,7 @@
 Ext.define("wzqr.view.app.Edit", {
     extend: 'Ext.window.Window',
     requires: [
+        'Ext.ComponentQuery',
         'wzqr.view.common.CommonField',
         'wzqr.view.common.TitleLabel',
         'wzqr.view.common.MessageLabel',
@@ -38,8 +39,11 @@ Ext.define("wzqr.view.app.Edit", {
     initComponent: function() {
         var me = this;
         me.callParent(arguments);
-        debug(me.down('xappeditbasic'),me.app);
-        me.down('form').loadRecord(me.app);
+        Ext.Array.each(Ext.ComponentQuery.query('xmutliwowpanel',me),function(view){
+            view.beforeLoadRecord(this.app);
+        },me);
+        
+        me.down('form').loadRecord(me.app);        
     },
     items: [
         {

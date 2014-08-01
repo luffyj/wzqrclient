@@ -204,6 +204,58 @@ Ext.define('wzqr.spring.data.Model', {
         }
     }
 }, function(model) {
+
+    Ext.data.Types.SDATE = {
+        convert: function(v) {
+            var df = this.dateReadFormat || this.dateFormat,
+                    parsed;
+
+            if (!v) {
+                return null;
+            }
+
+            if (Ext.isArray(v)) {
+                var finalValue;
+                for (var i = 0; i < v.length; i++) {
+                    // instanceof check ~10 times faster than Ext.isDate. Values here will not be cross-document objects
+                    if (v[i] instanceof Date) {
+                        return v[i];
+                    }
+
+                    if (!finalValue) {
+                        finalValue = v[i];
+                    }
+
+                    if (v[i] && ((Ext.isNumber(v[i] && v[i] > 0)) || (Ext.isString(v[i]) && v[i].length > 0))) {
+                        finalValue = v[i];
+                        break;
+                    }
+                }
+
+                if (df) {
+                    return Ext.Date.parse(finalValue, df);
+                }
+
+                parsed = Date.parse(finalValue);
+                return parsed ? new Date(parsed) : null;
+
+            }
+
+            // instanceof check ~10 times faster than Ext.isDate. Values here will not be cross-document objects
+            if (v instanceof Date) {
+                return v;
+            }
+            if (df) {
+                return Ext.Date.parse(v, df);
+            }
+
+            parsed = Date.parse(v);
+            return parsed ? new Date(parsed) : null;
+        },
+        sortType: Ext.data.SortTypes.asDate,
+        type: 'sdate'
+    };
+
     Ext.data.Types.SSTRING = {
         convert: function(v) {
             var defaultValue = this.useNull ? null : '';

@@ -50,9 +50,11 @@ Ext.define("wzqr.view.util.MutliRowPanel", {
         //当前已经有多少行了 请自行脑补
         for (var i = 1; i <= config.minRows; i++) {
             this.newRow(config.items);
-        }        
+        }
     },
     newRow: function(tobe) {
+        if (this.currentRows >= this.maxRows)
+            return;
         this.currentRows = this.currentRows + 1;
         Ext.Array.each(this.baseFields, function(field) {
             var config = Ext.applyIf({
@@ -75,5 +77,27 @@ Ext.define("wzqr.view.util.MutliRowPanel", {
             this.remove(found);
         }
         this.currentRows = this.currentRows - 1;
+    }, beforeLoadRecord: function(record) {
+        //在load之前 如果发现有更多的存在 则立刻创建！
+        //原则应该是任意一个数字有效
+        //第一个事情 先提取namelist
+        var names = [];
+        Ext.Array.each(this.baseFields, function(field) {
+            names.push(field.name);
+        });
+
+        while (true) {
+            if (this.currentRows >= this.maxRows)
+                return;
+            var newRow = this.currentRows + 1;
+            if (Ext.Array.some(names, function(name) {
+                var data = record.get(name + newRow);
+                return data && data !== '';
+            })) {
+                this.newRow();
+            } else {
+                return;
+            }
+        }
     }
 });

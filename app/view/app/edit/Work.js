@@ -1,5 +1,79 @@
-Ext.define("wzqr.view.app.edit.Work", {
+Ext.define('wzqr.view.app.edit.Work', {
     extend: 'Ext.panel.Panel',
-    xtype: 'xappeditwork',
-    title: '工作经历'
+    alias: 'widget.xappeditwork',
+
+    requires: [
+        'wzqr.view.util.MutliRowPanel',
+        'Ext.form.Label',
+        'Ext.panel.Panel',
+        'Ext.form.field.Text'
+    ],
+
+    height: 424,
+    width: 803,
+    layout: 'border',
+    title: '工作经历',
+
+    initComponent: function() {
+        var me = this;
+
+        Ext.applyIf(me, {
+            dockedItems: [
+                {
+                    xtype: 'label',
+                    dock: 'top',
+                    html: '<b>工作经历(兼职请注明) ：</b>请按照从往至今的时间顺序，简要、完整描述申报人的工作经历。 工作经历请写清楚每阶段经历的所在国家、单位、职务。单位和职务应同时加注英文。 兼职经历请注明。工作经历中无需描述工作业绩。',
+                    margin: 10
+                }
+            ],
+            items: [
+                {
+                    xtype: 'xmutliwowpanel',
+                    region: 'center',
+                    maxRows: 9,
+                    padding: 2,
+                    layout: 'column',
+                    bodyPadding: '',
+                    title: '',
+                    baseFields: [
+                        {
+                            xtype: 'textfield',
+                            title: '职务（加注英文）',
+                            columnWidth: 0.225,
+                            fieldLabel: '',
+                            name: 'jobPosition',
+                            emptyText: '请输入职务'
+                        },
+                        {
+                            xtype: 'textfield',
+                            title: '时间',
+                            columnWidth: 0.225,
+                            fieldLabel: '',
+                            name: 'jobTime',
+                            emptyText: '请输入工作时间'
+                        },
+                        {
+                            xtype: 'textfield',
+                            title: '国家',
+                            columnWidth: 0.25,
+                            fieldLabel: '',
+                            name: 'jobCountry',
+                            emptyText: '请输入工作所在国家'
+                        },
+                        {
+                            xtype: 'textfield',
+                            title: '单位（加注英文）',
+                            columnWidth: 0.3,
+                            fieldLabel: '',
+                            name: 'jobOrg',
+                            emptyText: '请输入工作单位'
+                        }
+                    ]
+                }
+            ]
+        });
+
+        me.callParent(arguments);
+    }
+
 });

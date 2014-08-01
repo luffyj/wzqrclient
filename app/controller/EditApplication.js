@@ -25,6 +25,10 @@ Ext.define('wzqr.controller.EditApplication', {
     models: ['Application', 'User'],
     refs: [
         {
+            ref:'editWindow',
+            selector:'xappedit'
+        },
+        {
             ref: 'editForm',
             selector: 'xappedit form'
         }, {
@@ -213,6 +217,32 @@ Ext.define('wzqr.controller.EditApplication', {
                     });
                 }
             },
+            //
+            'xappeditattach button[name=download]': {
+                click:function(button){
+                    window.open(Utils.toApi('attachment/'+this.getEditWindow().app.getId()+'.pdf'));
+                }
+            },
+            'xappeditattach button[name=upload]': {
+                //上传
+                click: function(button) {
+                    var file = button.up('form').down('filefield[name=file]').getValue();
+                    if (!file || file.length === 0) {
+                        Ext.Msg.alert('提示', '请先选择附件后再点击上传')
+                        return;
+                    }
+
+//                    Utils.startLoading();
+                    button.up('form').submit({
+                        url: Utils.toApi('uploadattachment?id='+this.getEditWindow().app.getId()),
+                        clientValidation: false,
+                        method: 'POST',
+                        waitTitle: '请稍候',
+                        waitMsg: '正在上传附件 ...',
+                        callback: this.defaultOP
+                    });
+                }
+            },
             'xappeditxingshen button[actionButton=true]': {
                 //形审完成
                 click: function(button) {
@@ -239,7 +269,7 @@ Ext.define('wzqr.controller.EditApplication', {
                 render: function(view) {
                     var label = view.down('label[name=labelManagerTitle]');
                     label.html = '<center>' + this.getMyorgModel().get('name') + '审核意见</center>';
-                    debug('部门情况label',label);
+                    debug('部门情况label', label);
                     label.update(label.html);
                 }
             }
