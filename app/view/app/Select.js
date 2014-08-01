@@ -3,6 +3,7 @@ Ext.define('wzqr.view.app.Select', {
     alias: 'widget.xappselect',
 
     requires: [
+        'Ext.form.field.Hidden',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
         'Ext.toolbar.Toolbar',
@@ -97,6 +98,9 @@ Ext.define('wzqr.view.app.Select', {
                             fieldLabel: '申报状态',
                             name: 'status',
                             store: 'AppStatusStore'
+                        },{
+                            xtype:'hiddenfield',
+                            name: 'subName'
                         }
                     ],
                     dockedItems: [

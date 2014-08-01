@@ -1,16 +1,35 @@
 Ext.define('wzqr.view.app.ReportType', {
     extend: 'Ext.panel.Panel',
     requires: [
+        'Ext.data.UuidGenerator',
+        'Ext.layout.container.VBox',
         'wzqr.model.AppGroupInfo',
-        'Ext.view.View',
         'Ext.XTemplate'
     ],
-    layout: 'fit',
+    autoScroll: true,
+    layout: {
+        type: 'vbox',
+        align: 'start'
+    },
+    defaults: {
+        xtype: 'box',
+        listeners: {
+            el: {
+                click: function(e, t) {
+                    debug(e,t,this);
+                    var box = Ext.getCmp(this.id);
+                    
+                }
+            }
+        }
+    },
     constructor: function(type, datas) {
-        this._store = Ext.create('Ext.data.Store', {
-            model: 'wzqr.model.AppGroupInfo',
-            data: datas
-        });
+//        this._store = Ext.create('Ext.data.Store', {
+//            model: 'wzqr.model.AppGroupInfo',
+//            data: datas
+//        });
+        this._template = new Ext.Template('&nbsp;&nbsp;&nbsp;{name}({count})', {compiled: true});
+        this._datas = datas;
         debug('input data', datas, this);
         switch (type) {
             case 'status':
@@ -40,31 +59,20 @@ Ext.define('wzqr.view.app.ReportType', {
     initComponent: function() {
         var me = this;
 
-        Ext.applyIf(me, {items: [{
-                    xtype: 'dataview',
-                    store: me._store,
-                    height: 250,
-                    width: 400,
-                    itemSelector: 'div',
-//                    tpl: [''],
-                    itemTpl: [
-                        '<tpl for=".">',
-                        '&nbsp;&nbsp;&nbsp;{name}({count})',
-                        '</tpl>'
-                    ],
-                    listeners: {
-                        afterrender: function(view) {
-                            debug('refresh view',view);
-                            //,view.store.getTotalCount()-1
-                            view.updateIndexes(0);
-                        }
-                    }
-                }]
+        var items = [];
+        Ext.Array.each(me._datas, function(data) {
+            items.push({
+                //其实本身也提供了 renderTpl 和 renderData
+                id:Ext.data.IdGenerator.get('uuid').generate(),
+                data:data,
+                html: this._template.apply(data)
+            });
+        }, me);
+
+        Ext.applyIf(me, {items: items
         });
 
         me.callParent(arguments);
-//        me.down('dataview').bindStore(me._store);
-//        me.down('dataview').refresh();
     }
 
 });

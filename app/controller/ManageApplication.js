@@ -193,6 +193,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                         type: '',
                         specialty: '',
                         appOrgType: '',
+                        subName: '', //主管单位
                         status: ''
                     };
 
@@ -305,6 +306,11 @@ Ext.define('wzqr.controller.ManageApplication', {
 //                            return true;
 //                        }
 //                    }));
+                }
+            },
+            'dataview[name=appreporttype]': {
+                itemclick: function(dataview, record, item, index, e, eOpts) {
+                    debug('click me', record, item)
                 }
             }
         });
