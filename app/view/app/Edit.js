@@ -22,11 +22,13 @@ Ext.define("wzqr.view.app.Edit", {
         'wzqr.view.app.edit.Specialty',
         'wzqr.view.app.edit.Summary',
         'wzqr.view.app.edit.Work',
+        'wzqr.view.app.edit.EntInfo1',
+        'wzqr.view.app.edit.EntInfo2',
         'Ext.form.field.ComboBox',
         'Ext.tab.Panel',
         'Ext.form.FieldSet'
     ],
-    maximizable:true,
+    maximizable: true,
     xtype: 'xappedit',
     title: '申报信息编辑',
     layout: 'fit',
@@ -34,65 +36,91 @@ Ext.define("wzqr.view.app.Edit", {
     height: 574,
     constructor: function(app) {
         this.app = app;
+        if ('创业人才' === app.get('type')) {
+            this._citems = [
+                {
+                    xtype: 'xappeditcover'
+                }, {
+                    xtype: 'xappeditbasic'
+                }, {
+                    xtype: 'xappediteducation'
+                }, {
+                    xtype: 'xappeditwork'
+                }, {
+                    xtype: 'xappeditentinfo1'
+                }, {
+                    xtype: 'xappeditentinfo2'
+                }, {
+                    xtype: 'xappeditperson'
+                }, {
+                    xtype: 'xappeditsummary'
+                }, {
+                    xtype: 'xappeditattach'
+                }
+            ];
+        } else {
+            this._citems = [
+                {
+                    xtype: 'xappeditcover'
+                }, {
+                    xtype: 'xappeditbasic'
+                }, {
+                    xtype: 'xappediteducation'
+                }, {
+                    xtype: 'xappeditwork'
+                }, {
+                    xtype: 'xappeditspecialty'
+                }, {
+                    xtype: 'xappeditproject'
+                }, {
+                    xtype: 'xappeditresultmain'
+                }, {
+                    xtype: 'xappeditresultother'
+                }, {
+                    xtype: 'xappeditplan'
+                }, {
+                    xtype: 'xappeditperson'
+                }, {
+                    xtype: 'xappeditsummary'
+                }, {
+                    xtype: 'xappeditattach'
+                }
+            ];
+        }
         this.callParent();
     },
     initComponent: function() {
         var me = this;
-        me.callParent(arguments);
-        Ext.Array.each(Ext.ComponentQuery.query('xmutliwowpanel',me),function(view){
-            view.beforeLoadRecord(this.app);
-        },me);
-        
-        me.down('form').loadRecord(me.app);        
-    },
-    items: [
-        {
-            xtype: 'form',
-            layout: 'fit',
+        Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'tabpanel',
-                    defaults: {
-                        margin: 5,
-                        buttons: [
-                            {
-                                name: 'save',
-                                text: '保存'
-                            }, {
-                                name: 'saveandnext',
-                                text: '保存并编辑下一页'
-                            }
-                        ]
-                    },
+                    xtype: 'form',
+                    layout: 'fit',
                     items: [
                         {
-                            xtype: 'xappeditcover'
-                        }, {
-                            xtype: 'xappeditbasic'
-                        }, {
-                            xtype: 'xappediteducation'
-                        }, {
-                            xtype: 'xappeditwork'
-                        }, {
-                            xtype: 'xappeditspecialty'
-                        }, {
-                            xtype: 'xappeditproject'
-                        }, {
-                            xtype: 'xappeditresultmain'
-                        }, {
-                            xtype: 'xappeditresultother'
-                        }, {
-                            xtype: 'xappeditplan'
-                        }, {
-                            xtype: 'xappeditperson'
-                        }, {
-                            xtype: 'xappeditsummary'
-                        }, {
-                            xtype: 'xappeditattach'
+                            xtype: 'tabpanel',
+                            defaults: {
+                                margin: 5,
+                                buttons: [
+                                    {
+                                        name: 'save',
+                                        text: '保存'
+                                    }, {
+                                        name: 'saveandnext',
+                                        text: '保存并编辑下一页'
+                                    }
+                                ]
+                            },
+                            items: me._citems
                         }
                     ]
                 }
             ]
-        }
-    ]
+        });
+        me.callParent(arguments);
+        Ext.Array.each(Ext.ComponentQuery.query('xmutliwowpanel', me), function(view) {
+            view.beforeLoadRecord(this.app);
+        }, me);
+        me.down('form').loadRecord(me.app);
+    }
 });

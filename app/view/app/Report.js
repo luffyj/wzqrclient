@@ -13,6 +13,10 @@ Ext.define('wzqr.view.app.Report', {
     titleCollapse: false,
     initComponent: function() {
         var me = this;
+        
+        me.addEvents(
+            'query'
+        );
 
         Ext.applyIf(me, {
             items: [

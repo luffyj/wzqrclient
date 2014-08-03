@@ -3,6 +3,7 @@ Ext.define('wzqr.view.app.edit.window.Fushen2', {
     alias: 'widget.xappeditfushen2',
 
     requires: [
+        'wzqr.view.app.edit.Submit',
         'wzqr.view.app.edit.Xingshen',
         'wzqr.view.app.edit.Fushen2',
         'Ext.form.Panel',
@@ -29,8 +30,12 @@ Ext.define('wzqr.view.app.edit.window.Fushen2', {
                         {
                             xtype: 'tabpanel',
                             bodyPadding: 10,
-                            activeTab: 1,
+                            activeTab: 2,
                             items: [
+                                {
+                                    xtype: 'appeditsubmit',
+                                    removeButtons: true
+                                },
                                 {
                                     xtype: 'appeditxingshen',
                                     removeButtons: true

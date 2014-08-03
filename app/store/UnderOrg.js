@@ -14,9 +14,9 @@ Ext.define('wzqr.store.UnderOrg', {
         type: 'springrest',
         url: Utils.toApi('api/org/search/findBySuperOrg')
     },    
-    extraModels: {
-        manager:wzqr.model.User,
-        superOrg:wzqr.model.Org
-    },
+//    extraModels: {
+//        manager:wzqr.model.User,
+//        superOrg:wzqr.model.Org
+//    },
     autoLoad: false
 });

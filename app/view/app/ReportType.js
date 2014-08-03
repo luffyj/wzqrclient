@@ -18,7 +18,7 @@ Ext.define('wzqr.view.app.ReportType', {
                 click: function(e, t) {
                     debug(e,t,this);
                     var box = Ext.getCmp(this.id);
-                    
+                    box.up('xappreport').fireEvent('query',box,box._type,box._data.name);
                 }
             }
         }
@@ -28,8 +28,9 @@ Ext.define('wzqr.view.app.ReportType', {
 //            model: 'wzqr.model.AppGroupInfo',
 //            data: datas
 //        });
-        this._template = new Ext.Template('&nbsp;&nbsp;&nbsp;{name}({count})', {compiled: true});
+        this._template = new Ext.Template('&nbsp;&nbsp;&nbsp;<a href="javascript:">{name}({count})</a>', {compiled: true});
         this._datas = datas;
+        this._type = type;
         debug('input data', datas, this);
         switch (type) {
             case 'status':
@@ -64,7 +65,8 @@ Ext.define('wzqr.view.app.ReportType', {
             items.push({
                 //其实本身也提供了 renderTpl 和 renderData
                 id:Ext.data.IdGenerator.get('uuid').generate(),
-                data:data,
+                _data:data,
+                _type:me._type,
                 html: this._template.apply(data)
             });
         }, me);

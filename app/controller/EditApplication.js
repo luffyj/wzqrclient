@@ -15,6 +15,7 @@
 Ext.define('wzqr.controller.EditApplication', {
     extend: 'wzqr.controller.BaseController',
     views: [
+        'app.edit.window.Submit',
         'app.edit.window.ChangeOwner',
         'app.edit.window.Xingshen',
         'app.edit.window.Fushen',
@@ -25,8 +26,8 @@ Ext.define('wzqr.controller.EditApplication', {
     models: ['Application', 'User'],
     refs: [
         {
-            ref:'editWindow',
-            selector:'xappedit'
+            ref: 'editWindow',
+            selector: 'xappedit'
         },
         {
             ref: 'editForm',
@@ -36,15 +37,21 @@ Ext.define('wzqr.controller.EditApplication', {
             selector: 'xappcontext jcgrid'
         }
     ],
+    reloadCount: function() {
+        this.getController('ManageApplication').reloadCount();
+    },
     /**
      * 执行审批
      * 众多情况都会发生
+     * 还可能是上报哦
      * */
     doApproval: function(window, button) {
         Utils.startLoading();
         window.down('form').updateRecord();
 
-        var reason = window.toReason();
+        var reason;
+        if (window.toReason)
+            reason = window.toReason();
         var result = 0;
         if (button.text.indexOf('退回') !== -1) {
             result = -1;
@@ -58,22 +65,33 @@ Ext.define('wzqr.controller.EditApplication', {
             callback: function(record, operation, success) {
                 if (success) {
 
-                    Ext.Ajax.request({
-                        scope: this,
-                        url: Utils.toApi('approvalapp'),
-                        params: {
-                            appid: record.getId(),
-                            reason: reason,
-                            result: result
-                        },
-                        callback: function(options, success, response) {
-                            Utils.stopLoading();
-                            var data = Utils.extraResponseData(response);
-                            data.alert();
-                            this.getAppGrid().store.reload();
-                            window.close();
-                        }
-                    });
+                    if (!window.toReason) {
+                        Ext.Ajax.request({
+                            scope: this,
+                            url: Utils.toApi('submitapp'),
+                            params: {
+                                appid: record.getId()
+                            },
+                            callback: this.defaultOP
+                        });
+                    } else
+                        Ext.Ajax.request({
+                            scope: this,
+                            url: Utils.toApi('approvalapp'),
+                            params: {
+                                appid: record.getId(),
+                                reason: reason,
+                                result: result
+                            },
+                            callback: function(options, success, response) {
+                                Utils.stopLoading();
+                                var data = Utils.extraResponseData(response);
+                                data.alert();
+                                this.reloadCount();
+                                this.getAppGrid().store.reload();
+                                window.close();
+                            }
+                        });
 
                 } else {
                     Utils.stopLoading();
@@ -85,6 +103,7 @@ Ext.define('wzqr.controller.EditApplication', {
     defaultOP: function(options, success, response) {
         Utils.stopLoading();
         var data = Utils.extraResponseData(response);
+        this.reloadCount();
         data.alert();
         this.getAppGrid().store.reload();
     },
@@ -164,14 +183,10 @@ Ext.define('wzqr.controller.EditApplication', {
                     win.show();
                 },
                 actionsubmit: function(grid, record, rowIndex, colIndex, row, item, e) {
-                    Ext.Ajax.request({
-                        scope: this,
-                        url: Utils.toApi('submitapp'),
-                        params: {
-                            appid: record.getId()
-                        },
-                        callback: this.defaultOP
-                    });
+                    var xs = this.getView('app.edit.window.Submit').create();
+                    xs.app = record;
+                    xs.down('form').loadRecord(xs.app);
+                    xs.show();
                 },
                 actionedit: function(grid, record, rowIndex, colIndex, row, item, e) {
                     this.getView('app.Edit').create(record).show();
@@ -219,8 +234,8 @@ Ext.define('wzqr.controller.EditApplication', {
             },
             //
             'xappeditattach button[name=download]': {
-                click:function(button){
-                    window.open(Utils.toApi('attachment/'+this.getEditWindow().app.getId()+'.pdf'));
+                click: function(button) {
+                    window.open(Utils.toApi('attachment/' + this.getEditWindow().app.getId() + '.pdf'));
                 }
             },
             'xappeditattach button[name=upload]': {
@@ -234,7 +249,7 @@ Ext.define('wzqr.controller.EditApplication', {
 
 //                    Utils.startLoading();
                     button.up('form').submit({
-                        url: Utils.toApi('uploadattachment?id='+this.getEditWindow().app.getId()),
+                        url: Utils.toApi('uploadattachment?id=' + this.getEditWindow().app.getId()),
                         clientValidation: false,
                         method: 'POST',
                         waitTitle: '请稍候',
@@ -263,6 +278,12 @@ Ext.define('wzqr.controller.EditApplication', {
                 click: function(button) {
                     this.doApproval(button.up('xappeditpingshen'), button);
                 }
+            }, 'xappeditsubmit button[actionButton=true]': {
+                click: function(button) {
+                    this.doApproval(button.up('xappeditsubmit'), button);
+                }
+                //点击了上报！
+
             }
             //labelManagerTitle 部门审核意见的标题
             , 'xappeditfushen2': {

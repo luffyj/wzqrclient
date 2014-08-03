@@ -3,6 +3,7 @@ Ext.define('wzqr.view.app.edit.window.Xingshen', {
     alias: 'widget.xappeditxingshen',
 
     requires: [
+        'wzqr.view.app.edit.Submit',
         'wzqr.view.app.edit.Xingshen',
         'Ext.form.Panel',
         'Ext.tab.Panel',
@@ -28,7 +29,12 @@ Ext.define('wzqr.view.app.edit.window.Xingshen', {
                         {
                             xtype: 'tabpanel',
                             bodyPadding: 10,
+                            activeTab: 1,
                             items: [
+                                {
+                                    xtype: 'appeditsubmit',
+                                    removeButtons: true
+                                },
                                 {
                                     xtype: 'appeditxingshen'
                                 }

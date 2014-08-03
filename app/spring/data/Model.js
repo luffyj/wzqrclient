@@ -280,5 +280,21 @@ Ext.define('wzqr.spring.data.Model', {
         sortType: Ext.data.SortTypes.asUCString,
         type: 'sstring'
     };
+    Ext.data.Types.SBOOLEAN = {
+        convert: function(v) {
+            if (typeof v === 'boolean') {
+                return v;
+            }
+            if (Ext.isArray(v)) {
+                v = v[0];
+            }
+            if (this.useNull && (v === undefined || v === null || v === '')) {
+                return null;
+            }
+            return v === 'true' || v == 1;
+        },
+        sortType: Ext.data.SortTypes.none,
+        type: 'sboolean'
+    };
 //    debug(arguments);
 });

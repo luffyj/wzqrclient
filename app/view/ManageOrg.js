@@ -48,8 +48,8 @@ Ext.define("wzqr.view.ManageOrg", {
                 {text: '部门类型', dataIndex: 'type', flex: 1},
                 {text: '联系人', flex: 1, dataIndex: 'contact.people'},
                 {text: '联系电话', flex: 1, dataIndex: 'contact.phone'},
-                {text: '登录名', flex: 1, dataIndex: 'manager.loginName'},
-                {xtype: 'checkcolumn', text: '启用状态', dataIndex: 'manager.enabled', editable: true}
+                {text: '登录名', flex: 1, dataIndex: 'managerLoginName'},
+                {xtype: 'checkcolumn', text: '启用状态', dataIndex: 'managerEnabled', editable: true}
             ],
             dockedItems: [{
                     xtype: 'pagingtoolbar',

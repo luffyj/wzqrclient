@@ -16,6 +16,12 @@ Ext.define('wzqr.controller.ManageApplication', {
         'UnderUnitApplication',
         'UnderApplication', 'AllApplication', 'MyApplication'
     ],
+    refs: [
+        {
+            ref: 'appSelect',
+            selector: 'xappselect'
+        }
+    ],
     reloadCount: function() {
         var view = Ext.getCmp('xmanageappidid');
         if (view.down('xappreport')) {
@@ -49,10 +55,6 @@ Ext.define('wzqr.controller.ManageApplication', {
                                     var dataList = data[groupType];
                                     toadds.push(me.getView('app.ReportType').create(groupType, dataList));
                                 }
-                            }
-
-                            for (var groupType in data) {
-
                             }
                             root.add(toadds);
                         }
@@ -308,9 +310,29 @@ Ext.define('wzqr.controller.ManageApplication', {
 //                    }));
                 }
             },
-            'dataview[name=appreporttype]': {
-                itemclick: function(dataview, record, item, index, e, eOpts) {
-                    debug('click me', record, item)
+            'xappreport': {
+                query: function(view, type, value) {
+                    // covter type 2 type
+                    debug('doquery', type, value);
+                    //myorg.name
+                    //myorg.superOrg.name
+
+                    //subName
+                    //appOrgName                    
+                    if (type === 'myorg.name') {
+                        type = 'appOrgName';
+                    } else if (type === 'myorg.superOrg.name') {
+                        type = 'subName';
+                    } else if (type === 'myorg.superOrg.type') {
+                        type = 'appOrgType';
+                    }
+
+                    var field = this.getAppSelect().down('field[name=' + type + ']');
+                    this.getAppSelect().down('form').getForm().getFields().each(function(f) {
+                        f.reset();
+                    });
+                    field.setValue(value);
+                    this.getAppSelect().fireEvent('query');
                 }
             }
         });

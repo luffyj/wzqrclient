@@ -17,8 +17,8 @@ Ext.define('wzqr.store.UnderUnitApplication', {
         url: Utils.toApi('api/application/search/findByUnitOrg')
     },
     extraModels: {
-        myorg: wzqr.model.Org,
-        owner: wzqr.model.User
+//        myorg: wzqr.model.Org,
+//        owner: wzqr.model.User
     },
 //    autoSync: true,
     autoLoad: false

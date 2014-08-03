@@ -38,24 +38,25 @@ Ext.define("wzqr.view.org.Add", {
 ////                align: 'stretchmax'
 //            },
             items: [
+//                {
+//                    // 单位名称 部门类型
+//                    xtype: 'textfield',
+//                    fieldLabel: '单位名称',
+//                    name: 'name',
+//                    emptyText: '请输入单位名称',
+//                    blankText: '请输入单位名称',
+//                    //<debug>
+////                    value: '中国核爆控制中心',
+//                    //</debug>
+//                    enableKeyEvents: true,
+//                    listeners: {
+//                        keypress: function(text, e) {
+//                            text.bySelect = false;
+//                        }
+//                    },
+//                    allowBlank: false
+//                },
                 {
-                    // 单位名称 部门类型
-                    xtype: 'textfield',
-                    fieldLabel: '单位名称',
-                    name: 'name',
-                    emptyText: '请输入单位名称',
-                    blankText: '请输入单位名称',
-                    //<debug>
-//                    value: '中国核爆控制中心',
-                    //</debug>
-                    enableKeyEvents: true,
-                    listeners: {
-                        keypress: function(text, e) {
-                            text.bySelect = false;
-                        }
-                    },
-                    allowBlank: false
-                }, {
                     xtype: 'combobox',
                     fieldLabel: '部门类型',
                     name: 'type',
@@ -71,7 +72,7 @@ Ext.define("wzqr.view.org.Add", {
                             //选择的值
                             var selected = combo.getValue();
                             if (selected) {
-                                var subType = combo.up('form').down('combobox[name=subType]');
+                                var subType = combo.up('form').down('combobox[name=name]');
                                 subType.setValue(null);
                                 var subStores;
                                 switch (selected) {
@@ -98,17 +99,20 @@ Ext.define("wzqr.view.org.Add", {
                         }
                     }
                 }, {
+                    fieldLabel: '单位名称',
                     xtype: 'combobox',
-                    name: 'subType',
-                    emptyText: '请选择或输入单位类型',
-                    blankText: '请选择或输入单位类型',
+                    name: 'name',
+                    emptyText: '请选择或输入单位名称',
+                    blankText: '请选择或输入单位名称',
                     listeners: {
                         select: function(combo, records, eOpts) {
-                            var name = combo.up('form').down('textfield[name=name]');
+                            var name = combo.up('form').down('combobox[name=name]');
                             if (!name.getValue() || name.getValue() === '' || name.bySelect) {
                                 name.setValue(combo.getValue());
                                 name.bySelect = true;
                             }
+                        }, keypress: function(combo, e) {
+                            combo.bySelect = false;
                         }
                     },
                     allowBlank: false,

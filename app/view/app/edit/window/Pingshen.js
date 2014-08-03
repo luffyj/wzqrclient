@@ -3,6 +3,7 @@ Ext.define('wzqr.view.app.edit.window.Pingshen', {
     alias: 'widget.xappeditpingshen',
 
     requires: [
+        'wzqr.view.app.edit.Submit',
         'wzqr.view.app.edit.Xingshen',
         'wzqr.view.app.edit.Fushen',
         'wzqr.view.app.edit.Pingshen',
@@ -30,16 +31,20 @@ Ext.define('wzqr.view.app.edit.window.Pingshen', {
                         {
                             xtype: 'tabpanel',
                             bodyPadding: 10,
-                            activeTab: 2,
+                            activeTab: 3,
                             items: [
+                                {
+                                    xtype: 'appeditsubmit',
+                                    removeButtons: true
+                                },
                                 {
                                     xtype: 'appeditxingshen',
                                     removeButtons: true
                                 },
                                 {
                                     xtype: 'appeditfushen',
-                                    height: 492,
-                                    removeButtons: true
+                                    removeButtons: true,
+                                    height: 492
                                 },
                                 {
                                     xtype: 'appeditpingshen'

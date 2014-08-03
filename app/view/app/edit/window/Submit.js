@@ -1,20 +1,18 @@
-Ext.define('wzqr.view.app.edit.window.Fushen', {
+Ext.define('wzqr.view.app.edit.window.Submit', {
     extend: 'Ext.window.Window',
-    alias: 'widget.xappeditfushen',
+    alias: 'widget.xappeditsubmit',
 
     requires: [
         'wzqr.view.app.edit.Submit',
-        'wzqr.view.app.edit.Xingshen',
-        'wzqr.view.app.edit.Fushen',
         'Ext.form.Panel',
         'Ext.tab.Panel',
         'Ext.tab.Tab'
     ],
 
-    height: 472,
+    height: 589,
     width: 706,
     layout: 'fit',
-    title: '复审',
+    title: '上报',
 
     initComponent: function() {
         var me = this;
@@ -30,19 +28,9 @@ Ext.define('wzqr.view.app.edit.window.Fushen', {
                         {
                             xtype: 'tabpanel',
                             bodyPadding: 10,
-                            activeTab: 2,
                             items: [
                                 {
-                                    xtype: 'appeditsubmit',
-                                    removeButtons: true
-                                },
-                                {
-                                    xtype: 'appeditxingshen',
-                                    removeButtons: true
-                                },
-                                {
-                                    xtype: 'appeditfushen',
-                                    height: 492
+                                    xtype: 'appeditsubmit'
                                 }
                             ]
                         }
@@ -52,10 +40,6 @@ Ext.define('wzqr.view.app.edit.window.Fushen', {
         });
 
         me.callParent(arguments);
-    },
-
-    toReason: function() {
-        return this.down('textarea[name=orgApproveReason]').getValue();
     }
 
 });

@@ -1,6 +1,7 @@
 Ext.define("wzqr.view.ManageUnit", {
     extend: 'Ext.panel.Panel',
     requires: [
+        'Ext.grid.column.Date',
         'Ext.grid.column.RowNumberer',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check',
@@ -37,10 +38,10 @@ Ext.define("wzqr.view.ManageUnit", {
                 {text: '单位名称', dataIndex: 'name', flex: 2},
                 {text: '联系人', flex: 1, dataIndex: 'contact.people'},
                 {text: '联系电话', flex: 1, dataIndex: 'contact.phone'},
-                {text: '所属部门', flex: 2, dataIndex: 'superOrg.name'},
-                {text: '登录名', flex: 1, dataIndex: 'manager.loginName'},
-                {xtype: 'checkcolumn', text: '启用状态', dataIndex: 'manager.enabled', editable: true},
-                {text: '最后登录时间', flex: 2, dataIndex: 'manager.lastLogin'}
+                {text: '所属部门', flex: 2, dataIndex: 'superOrgName'},
+                {text: '登录名', flex: 1, dataIndex: 'managerLoginName'},
+                {xtype: 'checkcolumn', text: '启用状态', dataIndex: 'managerEnabled', editable: true},
+                {text: '最后登录时间', flex: 2, dataIndex: 'managerLastLogin',xtype: 'datecolumn', format: 'Y-m-d G:i'}
             ],
             dockedItems: [{
                     xtype: 'pagingtoolbar',

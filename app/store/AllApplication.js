@@ -15,10 +15,10 @@ Ext.define('wzqr.store.AllApplication', {
         type: 'springrest',
         url: Utils.toApi('api/application/search/findWhole')
     },
-    extraModels: {
-        myorg: wzqr.model.Org,
-        owner: wzqr.model.User
-    },
+//    extraModels: {
+//        myorg: wzqr.model.Org,
+//        owner: wzqr.model.User
+//    },
 //    autoSync: true,
     autoLoad: false
 });
