@@ -146,6 +146,9 @@ Ext.define('wzqr.controller.EditApplication', {
     init: function(app) {
         this.control({
             'jcgridview': {
+                actionexport: function(grid, record, rowIndex, colIndex, row, item, e) {
+                    window.open(Utils.toApi('report/' + record.getId() + '.doc'));
+                },
                 actionpingshen: function(grid, record, rowIndex, colIndex, row, item, e) {
                     //打开形审
                     var xs = this.getView('app.edit.window.Pingshen').create();

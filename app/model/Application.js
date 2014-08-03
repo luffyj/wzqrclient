@@ -22,7 +22,10 @@ Ext.define('wzqr.model.Application', {
     fields: [
         {name: 'owner', link: true},
         {name: 'myorg', link: true},
+        
+        {name: 'orgSubName', type: 'string'},        
         {name: 'ownerLoginName', type: 'string'},
+        
         {name: 'submitReason', type: 'string'},
         {name: 'submitSupport', type: 'string'},
         //创业人才

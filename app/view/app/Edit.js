@@ -41,7 +41,9 @@ Ext.define("wzqr.view.app.Edit", {
                 {
                     xtype: 'xappeditcover'
                 }, {
-                    xtype: 'xappeditbasic'
+                    xtype: 'xappeditbasic',
+                    cdname1:'公司名称及职务',
+                    cdname2:'公司地址'
                 }, {
                     xtype: 'xappediteducation'
                 }, {
@@ -63,7 +65,9 @@ Ext.define("wzqr.view.app.Edit", {
                 {
                     xtype: 'xappeditcover'
                 }, {
-                    xtype: 'xappeditbasic'
+                    xtype: 'xappeditbasic',
+                    cdname1:'拟（现）任职单位名称<br/>Current or Expected Employer',
+                    cdname2:'单位地址<br/>Current or Expected Employer Address'
                 }, {
                     xtype: 'xappediteducation'
                 }, {

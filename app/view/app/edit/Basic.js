@@ -350,7 +350,8 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-                    html: '拟（现）任职单位名称<br/>Current or Expected Employer',
+                    html: me.cdname1,
+//                    html: '拟（现）任职单位名称<br/>Current or Expected Employer',
                     colspan: 3
                 },
                 {
@@ -375,7 +376,8 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-                    html: '单位地址<br/>Current or Expected Employer Address',
+                    html: me.cdname2,
+//                    html: '单位地址<br/>Current or Expected Employer Address',
                     colspan: 3
                 },
                 {
