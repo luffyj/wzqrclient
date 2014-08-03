@@ -15,6 +15,7 @@
 Ext.define('wzqr.controller.EditApplication', {
     extend: 'wzqr.controller.BaseController',
     views: [
+        'Ext.ComponentQuery',
         'app.edit.window.Submit',
         'app.edit.window.ChangeOwner',
         'app.edit.window.Xingshen',
@@ -146,6 +147,16 @@ Ext.define('wzqr.controller.EditApplication', {
     init: function(app) {
         this.control({
             'jcgridview': {
+                itemdblclick: function(grid, record, item, index, e, eOpts) {
+                    //先判断是否是app!!!
+                    if (grid.up('xappcontext') !== null) {
+                        var win = this.getView('app.Edit').create(record);
+                        Ext.Array.each(Ext.ComponentQuery.query('field', win), function(field) {
+                            field.setReadOnly(true);
+                        });
+                        win.show();
+                    }
+                },
                 actionexport: function(grid, record, rowIndex, colIndex, row, item, e) {
                     window.open(Utils.toApi('report/' + record.getId() + '.doc'));
                 },
@@ -233,6 +244,22 @@ Ext.define('wzqr.controller.EditApplication', {
                         params: data,
                         callback: this.defaultOP
                     });
+                }
+            },
+            'xappcontext button[name=export]':{
+                click:function(button){
+                    var records = this.getAppGrid().getSelectionModel().getSelection();
+                    //ids
+                    var ids = "";
+                    records.forEach(function(record){
+                        if(ids.length===0){
+                            ids = ""+record.getId();
+                        }else{
+                            ids = ids+","+record.getId();
+                        }
+                    });
+                    
+                    window.open(Utils.toApi('reports?ids=' + ids));
                 }
             },
             //

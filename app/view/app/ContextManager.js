@@ -16,8 +16,20 @@ Ext.define("wzqr.view.app.ContextManager", {
         stripeRows: true
     },
     columnLines: true,
+    selModel: {selType: 'rowmodel', mode: 'SIMPLE'},
     columns: [
-        {text: '序号', xtype: 'rownumberer'},
+        {text: '序号', xtype: 'rownumberer', listeners: {
+                headerclick: function(ct, column, e, t, eOpts) {
+                    var grid = ct.up('grid');
+                    debug(grid, grid.getSelectionModel());
+                    var records = grid.getSelectionModel().getSelection();
+                    if (records.length > 0) {
+                        grid.getSelectionModel().deselectAll();
+                    } else {
+                        grid.getSelectionModel().selectAll();
+                    }
+                }
+            }},
         {text: '编号', dataIndex: 'number', flex: 1},
         {text: '申报人', dataIndex: 'realName', flex: 1},
         {text: '申报批次', dataIndex: 'batch', flex: 1},

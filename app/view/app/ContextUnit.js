@@ -15,8 +15,20 @@ Ext.define("wzqr.view.app.ContextUnit", {
         stripeRows: true
     },
     columnLines: true,
+    selModel: {selType: 'rowmodel', mode: 'SIMPLE'},
     columns: [
-        {text: '序号', xtype: 'rownumberer'},
+        {text: '序号', xtype: 'rownumberer', listeners: {
+                headerclick: function(ct, column, e, t, eOpts) {
+                    var grid = ct.up('grid');
+                    debug(grid, grid.getSelectionModel());
+                    var records = grid.getSelectionModel().getSelection();
+                    if (records.length > 0) {
+                        grid.getSelectionModel().deselectAll();
+                    } else {
+                        grid.getSelectionModel().selectAll();
+                    }
+                }
+            }},
         {text: '编号', dataIndex: 'number', flex: 1},
         {text: '申报人', dataIndex: 'realName', flex: 1},
         {text: '登录名', dataIndex: 'ownerLoginName', flex: 1},
@@ -66,7 +78,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actiondelete', grid, record, rowIndex, colIndex, row, item, e);
                     }
-                },{
+                }, {
                     icon: 'resources/images/export.png',
                     tooltip: '导出',
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
