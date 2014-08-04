@@ -14,6 +14,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
     width: 803,
     autoScroll: true,
     title: '主要成果',
+    id:'gainBox',
 
     initComponent: function() {
         var me = this;

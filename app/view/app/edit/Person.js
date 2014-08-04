@@ -12,6 +12,7 @@ Ext.define('wzqr.view.app.edit.Person', {
     height: 548,
     width: 803,
     title: '个人信息',
+    id:'myinforBox',
     autoScroll: true,
     initComponent: function() {
         var me = this;

@@ -13,6 +13,7 @@ Ext.define('wzqr.view.app.edit.Work', {
     width: 803,
     layout: 'border',
     title: '工作经历',
+    id:'workBox',
 
     initComponent: function() {
         var me = this;

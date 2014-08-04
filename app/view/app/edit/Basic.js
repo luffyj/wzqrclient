@@ -3,6 +3,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
     alias: 'widget.xappeditbasic',
 
     title: '基本信息',
+    id:'baseTab',
 
     layout: {
         type: 'table',

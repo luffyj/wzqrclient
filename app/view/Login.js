@@ -6,7 +6,7 @@ Ext.define("wzqr.view.Login", {
         'Ext.form.field.Checkbox',
         'Ext.layout.container.Form',
         'Ext.ux.layout.Center'
-    ],
+    ],    
     xtype: 'xlogin',
     layout: 'ux.center',
 //<debug>                        
@@ -33,6 +33,7 @@ Ext.define("wzqr.view.Login", {
     items: [
         {
             xtype: 'form',
+            id:'loginBox',
 //            url:Utils.toApi('ajaxLogin'),            
             url: Utils.toApi('login'),
             standardSubmit: false,
@@ -106,7 +107,8 @@ Ext.define("wzqr.view.Login", {
                             margin: '0 20 0 0'
                         }, {
                             margin: '0 0 0 10',
-                            xtype: 'text',
+                            xtype: 'label',
+                            cls:'pass',
                             text: '忘记密码？'
                         }
                     ]

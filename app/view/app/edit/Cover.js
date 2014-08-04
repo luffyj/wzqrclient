@@ -2,6 +2,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
     extend: 'Ext.panel.Panel',
     xtype: 'xappeditcover',
     title: '封面',
+    id:'coverTab',
     layout: {
         type: 'table',
         // The total column count must be specified here

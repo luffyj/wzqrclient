@@ -11,6 +11,7 @@ Ext.define('wzqr.view.app.edit.Plan', {
     height: 456,
     width: 846,
     title: '工作设想',
+    id:'imagineBox',
 
     layout: {
         type: 'vbox',

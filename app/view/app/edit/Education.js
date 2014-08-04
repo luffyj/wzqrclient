@@ -11,6 +11,7 @@ Ext.define('wzqr.view.app.edit.Education', {
     width: 803,
     layout: 'border',
     title: '教育经历',
+    id:'eduBox',
     initComponent: function() {
         var me = this;
 

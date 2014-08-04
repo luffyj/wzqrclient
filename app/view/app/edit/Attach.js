@@ -11,6 +11,7 @@ Ext.define('wzqr.view.app.edit.Attach', {
     height: 250,
     width: 674,
     title: '附件',
+    id:'accesBox',
 
     initComponent: function() {
         var me = this;

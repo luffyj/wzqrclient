@@ -15,6 +15,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
     height: 539,
     width: 957,
     title: '汇总信息',
+    id:'collectinforBox',
 
     initComponent: function() {
         var me = this;

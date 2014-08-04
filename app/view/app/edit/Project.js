@@ -13,6 +13,7 @@ Ext.define('wzqr.view.app.edit.Project', {
     width: 803,
     layout: 'border',
     title: '主要项目',
+    id:'itemBox',
 
     initComponent: function() {
         var me = this;

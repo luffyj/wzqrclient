@@ -11,6 +11,7 @@ Ext.define('wzqr.view.app.edit.Specialty', {
     width: 803,
     layout: 'border',
     title: '个人专长',
+    id:'specBox',
 
     initComponent: function() {
         var me = this;
