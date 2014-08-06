@@ -84,7 +84,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                     Utils.stopLoading();
                     Ext.Msg.alert('成功', '成功增加！');
                     ui.up('window').close();
-                    this.getUnderApplicationStore().reload();
+                    this.currentStore.reload();
                     this.getApplication().fireEvent('reloadCount');
                 } else {
                     if (user) {

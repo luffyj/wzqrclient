@@ -110,8 +110,8 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     blankText: '请选择出生日期',
                     emptyText: '请选择出生日期',
                     editable: false,
-                    maxValue: 'Ext.Date.add(new Date(), Ext.Date.YEAR, -20)',
-                    minValue: 'Ext.Date.add(new Date(), Ext.Date.YEAR, -120)',
+                    maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -20),
+                    minValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -120),
                     showToday: false
                 },
                 {

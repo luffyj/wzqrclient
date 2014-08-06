@@ -3,6 +3,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
     alias: 'widget.xappeditsummary',
 
     requires: [
+        'Ext.Date',
         'Ext.panel.Panel',
         'Ext.form.Label',
         'Ext.form.field.Display',
@@ -94,8 +95,8 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             blankText: '请选择出生日期',
                             emptyText: '请选择出生日期',
                             editable: false,
-                            maxValue: 'Ext.Date.add(new Date(), Ext.Date.YEAR, -20)',
-                            minValue: 'Ext.Date.add(new Date(), Ext.Date.YEAR, -120)',
+                            maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -20),
+                            minValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -120),
                             showToday: false
                         },
                         {
@@ -181,7 +182,8 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             text: '落地市'
                         },
                         {
-                            xtype: 'displayfield',
+                            xtype: 'textfield',
+                            emptyText: '请输入落地城市',
                             cellCls: 'wzformborder',
                             colspan: 3,
                             fieldLabel: '',
@@ -212,7 +214,8 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             text: '（拟）到中国时间'
                         },
                         {
-                            xtype: 'displayfield',
+                            xtype: 'textfield',
+                            emptyText: '请输入大致到中国时间',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'borderDate'
@@ -222,7 +225,8 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             text: '签订合同时间'
                         },
                         {
-                            xtype: 'displayfield',
+                            xtype: 'textfield',
+                            emptyText: '请输入签订合同时间',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'wdate'
@@ -232,7 +236,8 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             text: '引进平台'
                         },
                         {
-                            xtype: 'displayfield',
+                            xtype: 'textfield',
+                            emptyText: '请输入引进平台',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'platform'

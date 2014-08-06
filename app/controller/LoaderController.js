@@ -1,7 +1,7 @@
 Ext.define('wzqr.controller.LoaderController', {
     extend: 'wzqr.controller.BaseController',    
     requires:[
-        'Ext.MessageBox',
+        'Ext.window.MessageBox',
         'Ext.Ajax'
     ],    
     init:function(x){
