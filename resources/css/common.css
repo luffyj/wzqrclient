@@ -910,7 +910,8 @@ body .x-container{
 }
 
 #loginBox{
-	background:url(../images/box1-bk.jpg) repeat-x 0 0;
+	/*background:url(../images/box1-bk.jpg) repeat-x 0 0;*/
+	background:url(../images/bg2.jpg) no-repeat 0 0 ;
 }
 
 #loginBox_header{
