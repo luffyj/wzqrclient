@@ -38,8 +38,8 @@ Ext.define("wzqr.view.Top", {
                             text: '退出'
                         }],
                     defaults: {
-                        xtype: 'component',
-						//id:'compossBox'
+                        //这里是作为一个默认属性 不应该设置id 这种全局唯一的东西！！谨记！！
+                        xtype: 'component'
                     },
                     items: [
                         {
