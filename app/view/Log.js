@@ -1,5 +1,6 @@
 Ext.define('wzqr.view.Log', {
     extend: 'Ext.panel.Panel',
+		cls:'contrxLog',
     alias: 'widget.xlog',
     requires: [
         'wzqr.view.log.Select',
@@ -16,6 +17,7 @@ Ext.define('wzqr.view.Log', {
             items: [
                 {
                     xtype: 'xlogselect',
+						id:'logForm',
                     padding: 5,
                     style: {
                         'background-color': 'white',
@@ -25,6 +27,7 @@ Ext.define('wzqr.view.Log', {
                 },
                 {
                     xtype: 'xlogcontext',
+						id:'logCent',
                     region: 'center'
                 }
             ]

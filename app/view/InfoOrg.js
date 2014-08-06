@@ -1,11 +1,13 @@
 Ext.define("wzqr.view.InfoOrg", {
     extend: 'Ext.form.Panel',
     xtype: 'xinfoorg',
+		cls:'baseInfor',
     title: '基本信息',
-    width: 400,
+    width: 600,
     buttons: [
         {
             formBind: true,
+				id:'baseSave',
             name: 'save',
             text: '保存'
         }

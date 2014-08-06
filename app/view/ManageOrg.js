@@ -37,6 +37,7 @@ Ext.define("wzqr.view.ManageOrg", {
     items: [
         {
             xtype: 'jcgrid',
+				cls:'glbmGrid',
             store: 'UnderOrg',
             viewConfig: {
                 stripeRows: true

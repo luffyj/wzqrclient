@@ -19,9 +19,11 @@ Ext.define("wzqr.view.ManageApplication", {
     items: [
         {
             xtype: 'xappreport',
+				id:'leftBox',
             region: 'west'
         }, {
             xtype: 'container',
+				id:'contaiBox',
             layout: 'fit',
             padding: 5,
             style: {
@@ -29,11 +31,13 @@ Ext.define("wzqr.view.ManageApplication", {
                 'border-style': 'none'
             },
             items: {
-                xtype: 'xappselect'
+                xtype: 'xappselect',
+				id:'xappsele'
             },
             region: 'north'
         }, {
             xtype: 'xappcontext',
+				id:'txtBox',
             region: 'center'
         }
     ]

@@ -1,12 +1,14 @@
 Ext.define("wzqr.view.InfoPassword", {
     extend: 'Ext.form.Panel',
     xtype: 'xinfopassword',
+		cls:'passInfor',
     title: '用户密码',
-    width: 400,
+    width: 600,
     layout: 'form',
     buttons: [
         {
             formBind: true,
+				id:'passSave',
             name: 'savePassword',
             text: '保存'
         }

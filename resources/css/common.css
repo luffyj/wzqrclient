@@ -912,9 +912,7 @@ body .x-container{
 #loginBox{
 	background:url(../images/box1-bk.jpg) repeat-x 0 0;
 }
-#loginBox .x-toolbar .x-box-inner .x-box-target a.wsimiBox{
-	top:8px !important;
-}
+
 #loginBox_header{
 	top:0 !important;
 		
@@ -982,10 +980,21 @@ body .x-container{
 #loginBox .x-docked .x-box-inner {
 	height:50px !important;	
 }
-/*.x-toolbar .x-box-inner .x-box-target a.x-btn{
-	top:5px !important;	
-}*/
 
+#loginBox .x-toolbar .x-box-inner .x-box-target a.wsimiBox{
+	width:100px;
+	height:35px;
+	line-height:35px;
+	top:2px !important;
+}
+#loginBox .x-toolbar .x-box-inner .x-box-target a.wsimiBox span span{
+	height:35px !important;
+}
+#loginBox .x-toolbar .x-box-inner .x-box-target a.wsimiBox span span span{
+	font-size:16px;
+	font-family:"微软雅黑", Arial;
+	padding:6px 5px 0
+}
 /*忘记密码*/
 #text-1019{
 	font-family:"微软雅黑", Arial;

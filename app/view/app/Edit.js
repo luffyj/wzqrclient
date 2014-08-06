@@ -39,39 +39,52 @@ Ext.define("wzqr.view.app.Edit", {
         if ('创业人才' === app.get('type')) {
             this._citems = [
                 {
-                    xtype: 'xappeditcover'
+                    xtype: 'xappeditcover',
+						id:'wcoverBox'
                 }, {
                     xtype: 'xappeditbasic',
+						id:'wbaseBox',
                     cdname1:'公司名称及职务',
                     cdname2:'公司地址'
                 }, {
-                    xtype: 'xappediteducation'
+                    xtype: 'xappediteducation',
+						id:'ducatBox'
                 }, {
-                    xtype: 'xappeditwork'
+                    xtype: 'xappeditwork',
+						id:'workBox'
                 }, {
-                    xtype: 'xappeditentinfo1'
+                    xtype: 'xappeditentinfo1',
+						id:'winforBox'
                 }, {
-                    xtype: 'xappeditentinfo2'
+                    xtype: 'xappeditentinfo2',
+						id:'winforBox2'
                 }, {
-                    xtype: 'xappeditperson'
+                    xtype: 'xappeditperson',
+						id:'wpersonBox'
                 }, {
-                    xtype: 'xappeditsummary'
+                    xtype: 'xappeditsummary',
+						id:'wmaryBox'
                 }, {
-                    xtype: 'xappeditattach'
+                    xtype: 'xappeditattach',
+						id:'wattachBox'
                 }
             ];
         } else {
             this._citems = [
                 {
-                    xtype: 'xappeditcover'
+                    xtype: 'xappeditcover',
+						id:'wcoverBox'
                 }, {
                     xtype: 'xappeditbasic',
+						id:'wbaseBox',
                     cdname1:'拟（现）任职单位名称<br/>Current or Expected Employer',
                     cdname2:'单位地址<br/>Current or Expected Employer Address'
                 }, {
-                    xtype: 'xappediteducation'
+                    xtype: 'xappediteducation',
+						id:'ducatBox'
                 }, {
-                    xtype: 'xappeditwork'
+                    xtype: 'xappeditwork',
+						id:'workBox'
                 }, {
                     xtype: 'xappeditspecialty'
                 }, {
@@ -83,11 +96,14 @@ Ext.define("wzqr.view.app.Edit", {
                 }, {
                     xtype: 'xappeditplan'
                 }, {
-                    xtype: 'xappeditperson'
+                    xtype: 'xappeditperson',
+						id:'wpersonBox'
                 }, {
-                    xtype: 'xappeditsummary'
+                    xtype: 'xappeditsummary',
+						id:'wmaryBox'
                 }, {
-                    xtype: 'xappeditattach'
+                    xtype: 'xappeditattach',
+						id:'wattachBox'
                 }
             ];
         }

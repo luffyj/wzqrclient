@@ -907,16 +907,22 @@ Ext.ClassManager.addNameAlternateMappings({
     "Utils"
   ],
   "wzqr.controller.BaseController": [],
+  "wzqr.controller.EditApplication": [],
   "wzqr.controller.LoaderController": [],
   "wzqr.controller.Login": [],
   "wzqr.controller.Main": [],
   "wzqr.controller.ManageApplication": [],
+  "wzqr.controller.ManageLog": [],
   "wzqr.controller.ManageOrg": [],
+  "wzqr.controller.ManagePeople": [],
+  "wzqr.model.AppGroupInfo": [],
   "wzqr.model.Application": [],
   "wzqr.model.ContactWay": [],
+  "wzqr.model.Log": [],
   "wzqr.model.Org": [],
   "wzqr.model.Role": [],
   "wzqr.model.User": [],
+  "wzqr.overrides.form.Basic": [],
   "wzqr.spring.data.Model": [],
   "wzqr.spring.data.Reader": [
     "Ext.data.SpringDataReader"
@@ -930,10 +936,21 @@ Ext.ClassManager.addNameAlternateMappings({
   ],
   "wzqr.spring.grid.Panel": [],
   "wzqr.spring.grid.View": [],
+  "wzqr.store.AllApplication": [],
+  "wzqr.store.AppStatusStore": [],
   "wzqr.store.Application": [],
+  "wzqr.store.CountryStore": [],
+  "wzqr.store.DegreeStore": [],
+  "wzqr.store.GxStore": [],
+  "wzqr.store.MyApplication": [],
+  "wzqr.store.MyLog": [],
   "wzqr.store.Org": [],
+  "wzqr.store.SexStore": [],
+  "wzqr.store.SpecialtyStore": [],
   "wzqr.store.UnderApplication": [],
   "wzqr.store.UnderOrg": [],
+  "wzqr.store.UnderUnitApplication": [],
+  "wzqr.store.UnderUser": [],
   "wzqr.store.User": [],
   "wzqr.view.Bottom": [],
   "wzqr.view.Dashboard": [],
@@ -943,17 +960,54 @@ Ext.ClassManager.addNameAlternateMappings({
   "wzqr.view.Log": [],
   "wzqr.view.Login": [],
   "wzqr.view.Main": [],
+  "wzqr.view.Main_1": [],
   "wzqr.view.ManageApplication": [],
   "wzqr.view.ManageOrg": [],
   "wzqr.view.ManagePeople": [],
   "wzqr.view.ManageUnit": [],
   "wzqr.view.Top": [],
   "wzqr.view.Viewport": [],
+  "wzqr.view.app.Add": [],
   "wzqr.view.app.Context": [],
+  "wzqr.view.app.ContextManager": [],
+  "wzqr.view.app.ContextRoot": [],
+  "wzqr.view.app.ContextSub": [],
+  "wzqr.view.app.ContextUnit": [],
+  "wzqr.view.app.ContextUser": [],
+  "wzqr.view.app.Edit": [],
   "wzqr.view.app.Report": [],
+  "wzqr.view.app.ReportType": [],
   "wzqr.view.app.Select": [],
+  "wzqr.view.app.edit.Attach": [],
+  "wzqr.view.app.edit.Basic": [],
+  "wzqr.view.app.edit.Cover": [],
+  "wzqr.view.app.edit.Education": [],
+  "wzqr.view.app.edit.Fushen": [],
+  "wzqr.view.app.edit.Fushen2": [],
+  "wzqr.view.app.edit.Person": [],
+  "wzqr.view.app.edit.Pingshen": [],
+  "wzqr.view.app.edit.Plan": [],
+  "wzqr.view.app.edit.Project": [],
+  "wzqr.view.app.edit.ResultMain": [],
+  "wzqr.view.app.edit.ResultOther": [],
+  "wzqr.view.app.edit.Specialty": [],
+  "wzqr.view.app.edit.Summary": [],
+  "wzqr.view.app.edit.Work": [],
+  "wzqr.view.app.edit.Xingshen": [],
+  "wzqr.view.app.edit.window.ChangeOwner": [],
+  "wzqr.view.app.edit.window.Fushen": [],
+  "wzqr.view.app.edit.window.Fushen2": [],
+  "wzqr.view.app.edit.window.Pingshen": [],
+  "wzqr.view.app.edit.window.Xingshen": [],
+  "wzqr.view.common.CommonField": [],
+  "wzqr.view.common.CommonLabel": [],
+  "wzqr.view.common.MessageLabel": [],
+  "wzqr.view.common.TitleLabel": [],
+  "wzqr.view.log.Context": [],
+  "wzqr.view.log.Select": [],
   "wzqr.view.org.Add": [],
-  "wzqr.view.org.AddUnit": []
+  "wzqr.view.org.AddUnit": [],
+  "wzqr.view.util.MutliRowPanel": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -2017,16 +2071,22 @@ Ext.ClassManager.addNameAliasMappings({
   "wzqr.Config": [],
   "wzqr.Utils": [],
   "wzqr.controller.BaseController": [],
+  "wzqr.controller.EditApplication": [],
   "wzqr.controller.LoaderController": [],
   "wzqr.controller.Login": [],
   "wzqr.controller.Main": [],
   "wzqr.controller.ManageApplication": [],
+  "wzqr.controller.ManageLog": [],
   "wzqr.controller.ManageOrg": [],
+  "wzqr.controller.ManagePeople": [],
+  "wzqr.model.AppGroupInfo": [],
   "wzqr.model.Application": [],
   "wzqr.model.ContactWay": [],
+  "wzqr.model.Log": [],
   "wzqr.model.Org": [],
   "wzqr.model.Role": [],
   "wzqr.model.User": [],
+  "wzqr.overrides.form.Basic": [],
   "wzqr.spring.data.Model": [],
   "wzqr.spring.data.Reader": [
     "reader.springReader"
@@ -2046,10 +2106,21 @@ Ext.ClassManager.addNameAliasMappings({
   "wzqr.spring.grid.View": [
     "widget.jcgridview"
   ],
+  "wzqr.store.AllApplication": [],
+  "wzqr.store.AppStatusStore": [],
   "wzqr.store.Application": [],
+  "wzqr.store.CountryStore": [],
+  "wzqr.store.DegreeStore": [],
+  "wzqr.store.GxStore": [],
+  "wzqr.store.MyApplication": [],
+  "wzqr.store.MyLog": [],
   "wzqr.store.Org": [],
+  "wzqr.store.SexStore": [],
+  "wzqr.store.SpecialtyStore": [],
   "wzqr.store.UnderApplication": [],
   "wzqr.store.UnderOrg": [],
+  "wzqr.store.UnderUnitApplication": [],
+  "wzqr.store.UnderUser": [],
   "wzqr.store.User": [],
   "wzqr.view.Bottom": [
     "widget.xbottom"
@@ -2075,6 +2146,7 @@ Ext.ClassManager.addNameAliasMappings({
   "wzqr.view.Main": [
     "widget.app-main"
   ],
+  "wzqr.view.Main_1": [],
   "wzqr.view.ManageApplication": [
     "widget.xmanageapp"
   ],
@@ -2091,20 +2163,124 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.xtop"
   ],
   "wzqr.view.Viewport": [],
+  "wzqr.view.app.Add": [
+    "widget.xappadd"
+  ],
   "wzqr.view.app.Context": [
     "widget.xappcontext"
+  ],
+  "wzqr.view.app.ContextManager": [
+    "widget.xappcontextmanager"
+  ],
+  "wzqr.view.app.ContextRoot": [
+    "widget.xappcontextroot"
+  ],
+  "wzqr.view.app.ContextSub": [
+    "widget.xappcontextsub"
+  ],
+  "wzqr.view.app.ContextUnit": [
+    "widget.xappcontextunit"
+  ],
+  "wzqr.view.app.ContextUser": [
+    "widget.xappcontextuser"
+  ],
+  "wzqr.view.app.Edit": [
+    "widget.xappedit"
   ],
   "wzqr.view.app.Report": [
     "widget.xappreport"
   ],
+  "wzqr.view.app.ReportType": [],
   "wzqr.view.app.Select": [
     "widget.xappselect"
+  ],
+  "wzqr.view.app.edit.Attach": [
+    "widget.xappeditattach"
+  ],
+  "wzqr.view.app.edit.Basic": [
+    "widget.xappeditbasic"
+  ],
+  "wzqr.view.app.edit.Cover": [
+    "widget.xappeditcover"
+  ],
+  "wzqr.view.app.edit.Education": [
+    "widget.xappediteducation"
+  ],
+  "wzqr.view.app.edit.Fushen": [
+    "widget.appeditfushen"
+  ],
+  "wzqr.view.app.edit.Fushen2": [
+    "widget.appeditfushen2"
+  ],
+  "wzqr.view.app.edit.Person": [
+    "widget.xappeditperson"
+  ],
+  "wzqr.view.app.edit.Pingshen": [
+    "widget.appeditpingshen"
+  ],
+  "wzqr.view.app.edit.Plan": [
+    "widget.xappeditplan"
+  ],
+  "wzqr.view.app.edit.Project": [
+    "widget.xappeditproject"
+  ],
+  "wzqr.view.app.edit.ResultMain": [
+    "widget.xappeditresultmain"
+  ],
+  "wzqr.view.app.edit.ResultOther": [
+    "widget.xappeditresultother"
+  ],
+  "wzqr.view.app.edit.Specialty": [
+    "widget.xappeditspecialty"
+  ],
+  "wzqr.view.app.edit.Summary": [
+    "widget.xappeditsummary"
+  ],
+  "wzqr.view.app.edit.Work": [
+    "widget.xappeditwork"
+  ],
+  "wzqr.view.app.edit.Xingshen": [
+    "widget.appeditxingshen"
+  ],
+  "wzqr.view.app.edit.window.ChangeOwner": [
+    "widget.xappeditcowner"
+  ],
+  "wzqr.view.app.edit.window.Fushen": [
+    "widget.xappeditfushen"
+  ],
+  "wzqr.view.app.edit.window.Fushen2": [
+    "widget.xappeditfushen2"
+  ],
+  "wzqr.view.app.edit.window.Pingshen": [
+    "widget.xappeditpingshen"
+  ],
+  "wzqr.view.app.edit.window.Xingshen": [
+    "widget.xappeditxingshen"
+  ],
+  "wzqr.view.common.CommonField": [
+    "widget.cfield"
+  ],
+  "wzqr.view.common.CommonLabel": [],
+  "wzqr.view.common.MessageLabel": [
+    "widget.mlabel"
+  ],
+  "wzqr.view.common.TitleLabel": [
+    "widget.tlabel"
+  ],
+  "wzqr.view.log.Context": [
+    "widget.xlogcontext"
+  ],
+  "wzqr.view.log.Select": [
+    "widget.xlogselect"
   ],
   "wzqr.view.org.Add": [
     "widget.xorgadd"
   ],
   "wzqr.view.org.AddUnit": [
     "widget.xorgaddunit"
+  ],
+  "wzqr.view.util.MutliRowPanel": [
+    "widget.xmutliwowpanel"
   ]
 });
 Ext.setVersion("ext-locale", "1.0.0");

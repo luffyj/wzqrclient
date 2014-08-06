@@ -13,6 +13,7 @@ Ext.define('wzqr.view.app.ReportType', {
     },
     defaults: {
         xtype: 'box',
+			cls:'tjcon',
         listeners: {
             el: {
                 click: function(e, t) {
@@ -28,7 +29,7 @@ Ext.define('wzqr.view.app.ReportType', {
 //            model: 'wzqr.model.AppGroupInfo',
 //            data: datas
 //        });
-        this._template = new Ext.Template('&nbsp;&nbsp;&nbsp;<a href="javascript:">{name}({count})</a>', {compiled: true});
+        this._template = new Ext.Template('<a href="javascript:">{name}({count})</a>', {compiled: true});
         this._datas = datas;
         this._type = type;
         debug('input data', datas, this);

@@ -2,6 +2,7 @@ Ext.define("wzqr.view.org.Add", {
     extend: 'Ext.window.Window',
     requires: ['Ext.form.field.ComboBox'],
     xtype: 'xorgadd',
+	id:'worgadd',
     title: '添加部门',
     style: 'background:red;',
     width: 485, // height/goldraid(0.618)
@@ -11,6 +12,7 @@ Ext.define("wzqr.view.org.Add", {
     buttons: [
         {
             disabled: true,
+			cls:'worgBtn',
             name: 'save',
             text: '保存'
         }
@@ -29,6 +31,7 @@ Ext.define("wzqr.view.org.Add", {
             },
             // height -36
             xtype: 'form',
+				id:'worgForm',
             margin: 5,
             layout: 'form',
             style: 'background:blue;',

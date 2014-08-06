@@ -13,21 +13,21 @@ Ext.define("wzqr.view.Login", {
     dockedItems: [{
             dock: 'top',
             xtype: 'text',
-            text: '测试管理账号test 密码123456'
+            text: ''
         }, {
             dock: 'bottom',
             xtype: 'text',
-            text: '测试管理账号test 密码123456'
+            text: ''
         }, {
             dock: 'left',
             xtype: 'text',
             degrees: 90,
-            text: '测试管理账号test 密码123456'
+            text: ''
         }, {
             dock: 'right',
             xtype: 'text',
             degrees: 90,
-            text: '测试管理账号test 密码123456'
+            text: ''
         }],
 //</debug>                        
     items: [
@@ -57,12 +57,14 @@ Ext.define("wzqr.view.Login", {
             items: [
                 {
                     xtype: 'textfield',
+						cls:'nameBox',
                     name: 'username',
                     emptyText: '请输入登录账号',
                     blankText: '请输入登录账号',
                     allowBlank: false
                 }, {
                     xtype: 'textfield',
+						cls:'passBox',
                     name: 'password',
                     inputType: 'password',
                     emptyText: '请输入登录密码',
@@ -70,6 +72,7 @@ Ext.define("wzqr.view.Login", {
                     allowBlank: false
                 }, {
                     xtype: 'image',
+						cls:'wlogimgBox',
                     style: 'cursor: pointer;',
                     alt: '点击刷新',
                     name:'ccdd',
@@ -92,14 +95,17 @@ Ext.define("wzqr.view.Login", {
                     }
                 }, {
                     xtype: 'container',
+						cls:'yzmBox',
                     padding: '5 0 0 15',
                     layout: {
                         type: 'hbox',
+							cls:'whbox',
                         align: 'stretch'
                     },
                     items: [
                         {
                             xtype: 'textfield',
+								cls:'wtextBox',
                             name: 'jcaptcha',
                             emptyText: '请输入验证码',
                             blankText: '请输入验证码',
@@ -108,6 +114,7 @@ Ext.define("wzqr.view.Login", {
                         }, {
                             margin: '0 0 0 10',
                             xtype: 'label',
+								cls:'wforgBox',
                             cls:'pass',
                             text: '忘记密码？'
                         }
@@ -133,8 +140,9 @@ Ext.define("wzqr.view.Login", {
                 {
                     formBind: true,
                     text: '立即登录',
-//<debug>                    
-                    tooltip: '测试管理账号test 密码123456',
+						cls:'wsimiBox',
+//<debug>               
+                    tooltip: '',
 //</debug>                    
                     name: 'login'
                 }

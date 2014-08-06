@@ -12,20 +12,24 @@ Ext.define("wzqr.view.Dashboard", {
 //    top:0,
     items: [{
             xtype: 'panel',
+			//id:'aaa',
 //            top:0,
 //            width: 1024,
             layout: 'fit',
             dockedItems: [
                 {
                     xtype: 'xtop',
+					id:'headBox',
                     dock: 'top'
                 }, {
                     xtype: 'xbottom',
+					id:'footer',
                     dock: 'bottom'
                 }
             ],
             items: [{
                     xtype: 'panel',
+					id:'centerBox',
                     name: 'mainpanel',
                     layout: 'card'
                 }]
@@ -46,6 +50,7 @@ Ext.define("wzqr.view.Dashboard", {
             var cfg = item.tabConfig || {};
             var defaultConfig = {
                 xtype: 'tab',
+				id: 'menu' + index ,
                 ui: tabBar.ui,
                 card: added,
                 disabled: item.disabled,

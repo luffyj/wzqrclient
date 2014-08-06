@@ -22,6 +22,7 @@ Ext.define('wzqr.view.app.Report', {
             items: [
                 {
                     xtype: 'panel',
+						cls:'tjTit',
                     region: 'north',
                     height: 23,
                     style: {
@@ -41,7 +42,7 @@ Ext.define('wzqr.view.app.Report', {
                         },
                         {
                             xtype: 'label',
-                            margin: '0 0 0 30',
+                            margin: '0 0 0 25',
                             text: '【总数'
                         },
                         {
@@ -57,6 +58,7 @@ Ext.define('wzqr.view.app.Report', {
                 },
                 {
                     xtype: 'panel',
+						cls:'smallTit',
                     region: 'center',
                     name:'subroot',
                     layout: 'accordion',
