@@ -1,7 +1,6 @@
 Ext.define('wzqr.view.app.edit.Fushen', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.appeditfushen',
-
     requires: [
         'Ext.form.Label',
         'Ext.form.field.TextArea',
@@ -9,16 +8,13 @@ Ext.define('wzqr.view.app.edit.Fushen', {
         'Ext.container.ButtonGroup',
         'Ext.button.Button'
     ],
-
     height: 287,
     width: 708,
     title: '市委组织部意见',
-
     layout: {
         type: 'vbox',
         align: 'stretch'
     },
-
     initComponent: function() {
         var me = this;
 
@@ -55,16 +51,37 @@ Ext.define('wzqr.view.app.edit.Fushen', {
                             top: 0,
                             right: 200,
                             bottom: 0,
-                            left: 200
+                            left: 160
                         }
                     },
                     items: [
                         {
                             xtype: 'buttongroup',
-                            width: 236,
+                            width: me.iscs ? 300 : 236,
                             title: '',
-                            columns: 3,
-                            items: [
+                            columns: me.iscs ? 4 : 3,
+                            items: me.iscs ? [
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '复审未过'
+                                },
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '复审退回'
+                                },
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '评审通过'
+                                },
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '评审退回'
+                                }
+                            ] : [
                                 {
                                     xtype: 'button',
                                     actionButton: true,
@@ -90,9 +107,8 @@ Ext.define('wzqr.view.app.edit.Fushen', {
         me.processAppeditFushen(me);
         me.callParent(arguments);
     },
-
     processAppeditFushen: function(config) {
-        if(config.removeButtons){
+        if (config.removeButtons) {
             delete config.dockedItems;
         }
     }

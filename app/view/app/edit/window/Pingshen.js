@@ -16,6 +16,12 @@ Ext.define('wzqr.view.app.edit.window.Pingshen', {
     width: 706,
     layout: 'fit',
     title: '评审',
+    
+    constructor: function(app) {
+        this.app = app;
+        //对复审已通过的重审 无法继续通过
+        this.callParent();
+    },
 
     initComponent: function() {
         var me = this;
@@ -47,7 +53,8 @@ Ext.define('wzqr.view.app.edit.window.Pingshen', {
                                     height: 492
                                 },
                                 {
-                                    xtype: 'appeditpingshen'
+                                    xtype: 'appeditpingshen',
+                                    nofs:me.app.get('status')==='复审通过'
                                 }
                             ]
                         }

@@ -55,11 +55,24 @@ Ext.define('wzqr.controller.EditApplication', {
             reason = window.toReason();
         var result = 0;
         if (button.text.indexOf('退回') !== -1) {
-            result = -1;
+            result = 2;
         } else if (button.text.indexOf('通过') !== -1) {
             result = 1;
         }
-
+        
+        //如果是将 当前通过状态 改成 当前其他状态或者通过状态
+        if(window.app.get('status')==='形审通过' && button.text.indexOf('形审') !== -1){
+            result = (1<<8)|result;
+        }
+        
+        if(window.app.get('status')==='复审通过' && button.text.indexOf('复审') !== -1){
+            result = (1<<8)|result;
+        }
+        
+        if(window.app.get('status').indexOf('评审') !== -1 && button.text.indexOf('复审') !== -1){
+            result = (1<<8)|result;
+        }
+        
         var app = window.down('form').getRecord();
         app.save({
             scope: this,
@@ -73,7 +86,14 @@ Ext.define('wzqr.controller.EditApplication', {
                             params: {
                                 appid: record.getId()
                             },
-                            callback: this.defaultOP
+                            callback: function(options, success, response) {
+                                Utils.stopLoading();
+                                var data = Utils.extraResponseData(response);
+                                data.alert();
+                                this.reloadCount();
+                                this.getAppGrid().store.reload();
+                                window.close();
+                            }
                         });
                     } else
                         Ext.Ajax.request({
@@ -161,7 +181,7 @@ Ext.define('wzqr.controller.EditApplication', {
                 },
                 actionpingshen: function(grid, record, rowIndex, colIndex, row, item, e) {
                     //打开形审
-                    var xs = this.getView('app.edit.window.Pingshen').create();
+                    var xs = this.getView('app.edit.window.Pingshen').create(record);
                     xs.app = record;
                     xs.down('form').loadRecord(xs.app);
                     xs.show();
@@ -169,7 +189,7 @@ Ext.define('wzqr.controller.EditApplication', {
                 actionfushen: function(grid, record, rowIndex, colIndex, row, item, e) {
                     var xs;
                     if (this.isManageOrg(true)) {
-                        xs = this.getView('app.edit.window.Fushen').create();
+                        xs = this.getView('app.edit.window.Fushen').create(record);
                     } else {
                         xs = this.getView('app.edit.window.Fushen2').create();
                     }
@@ -181,8 +201,7 @@ Ext.define('wzqr.controller.EditApplication', {
                 },
                 actionxingshen: function(grid, record, rowIndex, colIndex, row, item, e) {
                     //打开形审
-                    var xs = this.getView('app.edit.window.Xingshen').create();
-                    xs.app = record;
+                    var xs = this.getView('app.edit.window.Xingshen').create(record);
                     xs.down('form').loadRecord(xs.app);
                     xs.show();
                 },

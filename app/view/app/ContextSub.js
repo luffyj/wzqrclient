@@ -5,7 +5,7 @@ Ext.define("wzqr.view.app.ContextSub", {
     extend: 'wzqr.spring.grid.Panel',
     requires: [
         'Ext.grid.column.RowNumberer',
-        'Ext.grid.column.Action',
+        'wzqr.view.util.Action',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check'
     ],
@@ -40,23 +40,24 @@ Ext.define("wzqr.view.app.ContextSub", {
         {
             text: '操作',
             flex: 1,
-            xtype: 'actioncolumn',
+            xtype: 'jcactioncolumn',
             items: [
                 {
                     icon: 'resources/images/check.png',
                     tooltip: '形审',
+                    text:'形审',
+                    isDisabled: function(view, rowIndex, colIndex, item, record) {                        
+                        return record.get('status') !== '等待形审';
+                    },
+                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
+                        grid.fireEvent('actionxingshen', grid, record, rowIndex, colIndex, row, item, e);
+                    }
+                },{
+                    icon: 'resources/images/check.png',
+                    tooltip: '重审',
+                    text:'重审',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
-                        if (record.get('status') === '等待形审') {
-                            item.text = '形审';
-                            item.tooltip = '形审';
-                            return false;
-                        }
-                        if (record.get('status') === '形审未过') {
-                            item.text = '重审';
-                            item.tooltip = '重审';
-                            return false;
-                        }
-                        return true;
+                        return record.get('status') !== '形审未过' && record.get('status') !== '形审通过';
                     },
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actionxingshen', grid, record, rowIndex, colIndex, row, item, e);
@@ -64,6 +65,7 @@ Ext.define("wzqr.view.app.ContextSub", {
                 }, {
                     icon: 'resources/images/edit.png',
                     tooltip: '编辑',
+                    text:'编辑',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isBeableSubEdit();
                     },
@@ -73,6 +75,7 @@ Ext.define("wzqr.view.app.ContextSub", {
                 }, {
                     icon: 'resources/images/export.png',
                     tooltip: '导出',
+                    text:'导出',
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actionexport', grid, record, rowIndex, colIndex, row, item, e);
                     }

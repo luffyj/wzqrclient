@@ -19,7 +19,7 @@ Ext.define('wzqr.view.app.edit.Xingshen', {
         type: 'vbox',
         align: 'stretch'
     },
-
+    
     initComponent: function() {
         var me = this;
 
@@ -138,16 +138,27 @@ Ext.define('wzqr.view.app.edit.Xingshen', {
                             top: 0,
                             right: 200,
                             bottom: 0,
-                            left: 200
+                            left: me.iscs?250:200
                         }
                     },
                     items: [
                         {
                             xtype: 'buttongroup',
-                            width: 236,
+                            width: me.iscs?168:236,
                             title: '',
-                            columns: 3,
-                            items: [
+                            columns: me.iscs?2:3,
+                            items: me.iscs?[                                
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '形审未过'
+                                },
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '形审退回'
+                                }
+                            ]:[
                                 {
                                     xtype: 'button',
                                     actionButton: true,

@@ -14,6 +14,12 @@ Ext.define('wzqr.view.app.edit.window.Xingshen', {
     width: 706,
     layout: 'fit',
     title: '形审',
+    
+    constructor: function(app) {
+        this.app = app;
+        //对形审已通过的重审 无法继续通过
+        this.callParent();
+    },
 
     initComponent: function() {
         var me = this;
@@ -36,7 +42,8 @@ Ext.define('wzqr.view.app.edit.window.Xingshen', {
                                     removeButtons: true
                                 },
                                 {
-                                    xtype: 'appeditxingshen'
+                                    xtype: 'appeditxingshen',
+                                    iscs:me.app.get('status')==='形审通过'
                                 }
                             ]
                         }
