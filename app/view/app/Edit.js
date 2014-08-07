@@ -86,15 +86,20 @@ Ext.define("wzqr.view.app.Edit", {
                     xtype: 'xappeditwork',
 						id:'workBox'
                 }, {
-                    xtype: 'xappeditspecialty'
+                    xtype: 'xappeditspecialty',
+						id:'cialtyBox'
                 }, {
-                    xtype: 'xappeditproject'
+                    xtype: 'xappeditproject',
+						id:'ojectBox'
                 }, {
-                    xtype: 'xappeditresultmain'
+                    xtype: 'xappeditresultmain',
+						id:'sultmainBox'
                 }, {
-                    xtype: 'xappeditresultother'
+                    xtype: 'xappeditresultother',
+						id:'otherBox'
                 }, {
-                    xtype: 'xappeditplan'
+                    xtype: 'xappeditplan',
+						id:'editplan'
                 }, {
                     xtype: 'xappeditperson',
 						id:'wpersonBox'

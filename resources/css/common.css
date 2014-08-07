@@ -7,6 +7,7 @@
 ********/
 
 *{margin:0;padding:0;}
+
 /*header box bg*//*#xtop-1015*/
 /*.x-panel.x-docked.x-panel-default.x-docked-top.x-panel-docked-top.x-panel-default-docked-top.x-noborder-trl*/
 /*#xtop-1015, #xtop-1030*/
@@ -86,17 +87,29 @@
 	text-align:center;
 	margin:0 auto;
 }
+
+#tabbarvBox-targetEl a table tbody tr td{
+	background:none !important;
+}
+.x-grid-row-selected .x-grid-td {
+	
+}
 /*#tabbar-1018-targetEl a table tbody tr td, #tabbar-1033-targetEl a table tbody tr td*/
 #tabbarvBox-targetEl{
-	background:none;
+	overflow:hidden;
+	background:none !important;
+}
+.rightPanelBox .x-panel-body .x-box-inner .x-box-target{
+	height:16px;
+	overflow:hidden !important;
 }
 
 /*IE6 menu bg*/
 .x-tab-wzmaintab-bottom-active .x-frame-mc {
-	BACKGROUND-COLOR: none;
+	BACKGROUND-COLOR: none !important;
 }
 .x-tab-wzmaintab-bottom-mc {
-	BACKGROUND-COLOR: none;
+	BACKGROUND-COLOR: none !important;
 }
 /*#tabbar-1018-targetEl .x-tab-wzmaintab-bottom, #tabbar-1033-targetEl .x-tab-wzmaintab-bottom*/
 #tabbarvBox-targetEl .x-tab-wzmaintab-bottom{
@@ -162,15 +175,19 @@
 
 	background:url(../images/xbg20.gif) repeat-x 0 0 !important;	
 }
+
 .smallTit .x-panel-body .x-box-inner .x-box-target .x-panel .x-panel-header{
 	cursor:pointer;
 
-	border:1px solid #ddd;
+	border:1px solid #c0c0c0 !important;
 	border-top-left-radius:5px;
 	border-top-right-radius:5px;
 	border-bottom-left-radius:0px;
 	border-bottom-right-radius:0px;
 	height:32px !important;
+	*height:26px !important;
+	*padding-bottom:0px !important;
+
 }
 
 #image-1026, #image-1048{
@@ -198,15 +215,16 @@
 	border-bottom-left-radius:5px;
 	border-bottom-right-radius:5px;
 }
-/*#panel-1031-targetEl .x-panel .x-panel-body*/
-#leftBox-body .smallTit .x-panel-body .x-box-inner .x-box-target x-box-item .x-panel-body{
-	top:31px !important;
-	border: 1px solid #ddd !important;
-	border-top: 0px solid #ddd !important;
-	border-bottom-left-radius:5px !important;
-	border-bottom-right-radius:5px !important;
-}
 
+#leftBox-body .smallTit .x-panel-body .x-box-inner .x-box-target .x-panel .x-panel-body{
+	top:35px !important;
+	border:1px solid #c0c0c0 !important;
+	border-top:0px solid #c0c0c0 !important;
+	border-top-left-radius:0px;
+	border-top-right-radius:0px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
 /*
 #panel-1025-innerCt div#panel-1038-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a, #panel-1053-innerCt div#panel-1053-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a
 */
@@ -370,6 +388,10 @@ margin-top: 8px !important;
 #panel-1105-body #panel-1105-innerCt{
 	overflow:auto;
 	overflow-x:hidden;	
+}
+.x-fit-item .x-panel-body .x-box-inner{
+	overflow:auto !important;
+	overflow-x:hidden !important;	
 }
 .baseInfor{
 	
@@ -738,26 +760,125 @@ border-color: #c0c0c0 !important;
 }
 
 
-/***dialog 4 form****/
+/***dialog 3 form 工作经历****/
 #workBox label.x-docked-top{
 	color:#888;
 }
-#workBox-body .x-panel .x-panel-body{
+#workBox .x-panel .x-panel-body{
 	margin-top:10px;
 }
-#workBox-body .x-panel .x-panel-body span div label{
+#workBox .x-panel .x-panel-body span div label{
 	height:30px;
 	line-height:30px;
 	border:1px solid #c0c0c0;
 }
-#workBox-body .x-panel .x-panel-body span div table tbody tr td>input{
+#workBox .x-panel .x-panel-body span div table tbody tr td>input{
 	height:32px;
 	line-height:32px;
 }
-#workBox-body .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
+#workBox .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
 	height:30px;
 	line-height:30px;
 }
+
+
+
+/*******dialog 个人专长*********/
+#cialtyBox label.x-component{
+	color:#888;
+}
+
+
+/***dialog 4 主要项目***/
+#ojectBox label.x-docked-top{
+	color:#888;
+}
+#ojectBox .x-panel .x-panel-body{
+	margin-top:10px;
+}
+#ojectBox .x-panel .x-panel-body span div label{
+	height:30px;
+	line-height:30px;
+	border:1px solid #c0c0c0;
+}
+#ojectBox .x-panel .x-panel-body span div table tbody tr td>input{
+	height:32px;
+	line-height:32px;
+}
+#ojectBox .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
+	height:30px;
+	line-height:30px;
+}
+
+/***dialog 4 主要成果***/
+#sultmainBox label.x-docked-top{
+	color:#888;
+}
+#sultmainBox .x-panel .x-panel-body{
+	margin-top:10px;
+}
+#sultmainBox .x-panel .x-panel-body span div label{
+	height:30px;
+	line-height:30px;
+	border:1px solid #c0c0c0;
+}
+#sultmainBox .x-panel .x-panel-body span div table tbody tr td>input{
+	height:32px;
+	line-height:32px;
+}
+#sultmainBox .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
+	height:30px;
+	line-height:30px;
+}
+#sultmainBox-innerCt label.x-component{
+	color:#888;
+	height:30px;
+	line-height:30px;
+}
+#sultmainBox-innerCt .x-panel{
+	height:176px !important;
+}
+#sultmainBox-outerCt{
+	
+}
+
+/***dialog 4 企业发展情况*//*******/
+#editplan-targetEl .x-panel label.x-component{
+	color:#888;
+}
+
+
+/***dialog 4 企业发展情况*///*******/
+#winforBox-innerCt label{
+	color:#888;
+	height:30px;
+	line-height:30px;
+
+}
+#winforBox-innerCt .x-component{
+	color:#888;
+	height:30px;
+	line-height:30px;
+}
+
+#winforBox-innerCt .x-panel .x-panel-body table tr td .x-html-editor-container{
+	height:150px;
+}
+#winforBox-innerCt .x-panel .x-panel-body span{
+	padding-top:10px;
+}
+
+/***dialog 5 textarea****/
+#winforBox2-targetEl .x-panel .x-component{
+	margin:0 10px !important;
+	color:#888;
+	height:30px;
+	line-height:30px;
+}
+#winforBox2-targetEl .x-panel .x-panel-body{
+	top:40px !important;
+}
+
 
 /*dialog 5  text*/
 #specBox label.x-docked-top{
@@ -861,11 +982,17 @@ table[wzform="1"] {
 	border-left: 1px solid #c0c0c0 !important;
 	border-top: 1px solid #c0c0c0 !important;
 }
-#wpersonBox-innerCt .x-panel .x-panel-body table{
+#wpersonBox-innerCt .x-panel .x-panel-body>table{
 	border-left: 1px solid #c0c0c0 !important;
 	border-top: 1px solid #c0c0c0 !important;
 }
 
+#wpersonBox-innerCt  .x-panel label.x-component{
+	color:#888;
+}
+#wpersonBox-innerCt label.x-component{
+	color:#888;
+}
 
 /***dialog 12****/
 
