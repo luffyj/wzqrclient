@@ -40,11 +40,12 @@ Ext.define("wzqr.view.app.ContextUnit", {
         {
             text: '操作',
             flex: 1,
-            xtype: 'actioncolumn',
+            xtype: 'actioncolumn',            
             items: [
                 {
                     icon: 'resources/images/submit.png',
                     tooltip: '上报',
+                    text:'上报',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isWeishangbao() && !record.isReturn();
                     },
@@ -54,6 +55,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
                 }, {
                     icon: 'resources/images/cowner.png',
                     tooltip: '修改个人账号',
+                    text:'修改个人账号',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isWeishangbao() && !record.isReturn();
                     },
@@ -63,6 +65,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
                 }, {
                     icon: 'resources/images/edit.png',
                     tooltip: '编辑',
+                    text:'编辑',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isWeishangbao() && !record.isReturn();
                     },
@@ -72,6 +75,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
                 }, {
                     icon: 'resources/images/delete.png',
                     tooltip: '删除',
+                    text:'删除',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isWeishangbao() && !record.isReturn();
                     },
@@ -81,6 +85,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
                 }, {
                     icon: 'resources/images/export.png',
                     tooltip: '导出',
+                    text:'导出',
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actionexport', grid, record, rowIndex, colIndex, row, item, e);
                     }

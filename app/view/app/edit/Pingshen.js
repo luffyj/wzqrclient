@@ -1,7 +1,6 @@
 Ext.define('wzqr.view.app.edit.Pingshen', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.appeditpingshen',
-
     requires: [
         'Ext.form.Label',
         'Ext.form.field.TextArea',
@@ -9,16 +8,13 @@ Ext.define('wzqr.view.app.edit.Pingshen', {
         'Ext.container.ButtonGroup',
         'Ext.button.Button'
     ],
-
     height: 287,
     width: 708,
     title: '评审意见',
-
     layout: {
         type: 'vbox',
         align: 'stretch'
     },
-
     initComponent: function() {
         var me = this;
 
@@ -55,16 +51,25 @@ Ext.define('wzqr.view.app.edit.Pingshen', {
                             top: 0,
                             right: 200,
                             bottom: 0,
-                            left: 250
+                            left: me.nofs ? 250 : 200
                         }
                     },
                     items: [
                         {
                             xtype: 'buttongroup',
-                            width: 168,
+                            width: me.nofs ? 168 : 236,
                             title: '',
-                            columns: 2,
-                            items: [
+                            columns: me.nofs ? 2 : 3,
+                            items: me.nofs ? [{
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '评审通过'
+                                },
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '评审未过'
+                                }] : [
                                 {
                                     xtype: 'button',
                                     actionButton: true,
@@ -74,6 +79,11 @@ Ext.define('wzqr.view.app.edit.Pingshen', {
                                     xtype: 'button',
                                     actionButton: true,
                                     text: '评审未过'
+                                },
+                                {
+                                    xtype: 'button',
+                                    actionButton: true,
+                                    text: '复审通过'
                                 }
                             ]
                         }

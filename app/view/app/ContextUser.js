@@ -35,7 +35,8 @@ Ext.define("wzqr.view.app.ContextUser", {
         {text: '人才类型', flex: 1, dataIndex: 'type'},
         {text: '专业领域', flex: 2, dataIndex: 'specialty'},
         {text: '申报状态', flex: 1, dataIndex: 'status'},
-        {text: '操作', flex: 1, xtype: 'actioncolumn', items: [
+        {text: '操作', flex: 1, xtype: 'actioncolumn',
+            items: [
                 {
                     icon: 'resources/images/edit.png',
                     tooltip: '编辑',

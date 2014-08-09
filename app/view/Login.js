@@ -6,7 +6,7 @@ Ext.define("wzqr.view.Login", {
         'Ext.form.field.Checkbox',
         'Ext.layout.container.Form',
         'Ext.ux.layout.Center'
-    ],    
+    ],
     xtype: 'xlogin',
     layout: 'ux.center',
 //<debug>                        
@@ -33,7 +33,7 @@ Ext.define("wzqr.view.Login", {
     items: [
         {
             xtype: 'form',
-            id:'loginBox',
+            id: 'loginBox',
 //            url:Utils.toApi('ajaxLogin'),            
             url: Utils.toApi('login'),
             standardSubmit: false,
@@ -57,14 +57,14 @@ Ext.define("wzqr.view.Login", {
             items: [
                 {
                     xtype: 'textfield',
-						cls:'nameBox',
+                    cls: 'nameBox',
                     name: 'username',
                     emptyText: '请输入登录账号',
                     blankText: '请输入登录账号',
                     allowBlank: false
                 }, {
                     xtype: 'textfield',
-						cls:'passBox',
+                    cls: 'passBox',
                     name: 'password',
                     inputType: 'password',
                     emptyText: '请输入登录密码',
@@ -72,40 +72,40 @@ Ext.define("wzqr.view.Login", {
                     allowBlank: false
                 }, {
                     xtype: 'image',
-						cls:'wlogimgBox',
+                    cls: 'wlogimgBox',
                     style: 'cursor: pointer;',
                     alt: '点击刷新',
-                    name:'ccdd',
+                    name: 'ccdd',
                     title: '点击刷新',
 //                            style:'width:100%;height:100%;',
                     src: Utils.toApi('jcaptcha.jpg'),
                     padding: 0,
                     height: 100,
                     listeners: {
-                        el: {                            
-                            click: function(e,t) {                                                                
+                        el: {
+                            click: function(e, t) {
                                 var dom = this.dom;
                                 var src = dom.src;
-                                if(!dom.orcSrc){
+                                if (!dom.orcSrc) {
                                     dom.orcSrc = src;
                                 }
-                                dom.src = dom.orcSrc+'?rdm='+new Date().getTime();
+                                dom.src = dom.orcSrc + '?rdm=' + new Date().getTime();
                             }
                         }
                     }
                 }, {
                     xtype: 'container',
-						cls:'yzmBox',
+                    cls: 'yzmBox',
                     padding: '5 0 0 15',
                     layout: {
                         type: 'hbox',
-							cls:'whbox',
+                        cls: 'whbox',
                         align: 'stretch'
                     },
                     items: [
                         {
                             xtype: 'textfield',
-								cls:'wtextBox',
+                            cls: 'wtextBox',
                             name: 'jcaptcha',
                             emptyText: '请输入验证码',
                             blankText: '请输入验证码',
@@ -114,9 +114,16 @@ Ext.define("wzqr.view.Login", {
                         }, {
                             margin: '0 0 0 10',
                             xtype: 'label',
-								cls:'wforgBox',
+                            cls: 'wforgBox',
                             cls:'pass',
-                            text: '忘记密码？'
+                            text: '忘记密码？',
+                            listeners: {
+                                el: {
+                                    click: function(e, t) {
+                                        Ext.Msg.alert('提示', '请联系当地组织部');
+                                    }
+                                }
+                            }
                         }
                     ]
                 }
@@ -140,7 +147,7 @@ Ext.define("wzqr.view.Login", {
                 {
                     formBind: true,
                     text: '立即登录',
-						cls:'wsimiBox',
+                    cls: 'wsimiBox',
 //<debug>               
                     tooltip: '',
 //</debug>                    

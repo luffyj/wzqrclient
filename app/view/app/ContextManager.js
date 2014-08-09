@@ -6,7 +6,7 @@ Ext.define("wzqr.view.app.ContextManager", {
     requires: [
         'Ext.grid.column.Date',
         'Ext.grid.column.RowNumberer',
-        'Ext.grid.column.Action',
+        'wzqr.view.util.Action',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check'
     ],
@@ -41,23 +41,29 @@ Ext.define("wzqr.view.app.ContextManager", {
         {
             text: '操作',
             flex: 1,
-            xtype: 'actioncolumn',
+            xtype: 'jcactioncolumn',
             items: [
                 {
                     icon: 'resources/images/check.png',
                     tooltip: '复审',
+                    text: '复审',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
-                        if (record.get('status') === '形审通过') {
-                            item.text = '复审';
-                            item.tooltip = '复审';
-                            return false;
-                        }
+                        return record.get('status') !== '形审通过';
+                    },
+                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
+                        grid.fireEvent('actionfushen', grid, record, rowIndex, colIndex, row, item, e);
+                    }
+                }, {
+                    icon: 'resources/images/check.png',
+                    tooltip: '复审',
+                    isDisabled: function(view, rowIndex, colIndex, item, record) {
                         if (record.get('status') === '复审未过') {
                             item.text = '重审';
                             item.tooltip = '重审';
                             return false;
                         }
-                        return true;
+                        return record.get('status') !== '复审未过'
+                                || record.get('status') !== '复审通过';
                     },
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actionfushen', grid, record, rowIndex, colIndex, row, item, e);
@@ -65,6 +71,7 @@ Ext.define("wzqr.view.app.ContextManager", {
                 }, {
                     icon: 'resources/images/export.png',
                     tooltip: '导出',
+                    text: '导出',
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actionexport', grid, record, rowIndex, colIndex, row, item, e);
                     }
