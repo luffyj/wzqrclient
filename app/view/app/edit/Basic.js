@@ -99,6 +99,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'datefield',
+                    format:'Y年m月d日',
                     cellCls: 'wzformborder',
                     colspan: 2,
                     rowspan: 1,

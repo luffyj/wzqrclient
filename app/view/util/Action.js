@@ -6,7 +6,7 @@ Ext.define("wzqr.view.util.Action", {
     alias: ['widget.jcactioncolumn'],
     
     innerCls:'',    
-    disabledCls:'x-hidden',
+    disabledCls:'wz-gray',
     
     defaultRenderer: function(v, meta, record, rowIdx, colIdx, store, view){
         var me = this,

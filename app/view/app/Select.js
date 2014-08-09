@@ -1,7 +1,6 @@
 Ext.define('wzqr.view.app.Select', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.xappselect',
-
     requires: [
         'Ext.form.field.Hidden',
         'Ext.form.Panel',
@@ -9,18 +8,16 @@ Ext.define('wzqr.view.app.Select', {
         'Ext.toolbar.Toolbar',
         'Ext.button.Button'
     ],
-
     height: 81,
     width: 903,
     layout: 'fit',
     title: '',
-
     initComponent: function() {
         var me = this;
 
         me.addEvents(
-            'query'
-        );
+                'query'
+                );
 
         Ext.applyIf(me, {
             items: [
@@ -53,13 +50,21 @@ Ext.define('wzqr.view.app.Select', {
                         },
                         {
                             xtype: 'textfield',
-                            columnWidth: 0.375,
+                            columnWidth: 0.25,
                             fieldLabel: '申报人',
                             name: 'realName'
                         },
                         {
+                            xtype: 'combobox',
+                            columnWidth: 0.25,
+                            store: 'SubOrg',
+                            fieldLabel: '管理单位',
+                            displayField:'name',
+                            name: 'subName'
+                        },
+                        {
                             xtype: 'textfield',
-                            columnWidth: 0.375,
+                            columnWidth: 0.25,
                             fieldLabel: '申报单位',
                             name: 'appOrgName'
                         },
@@ -98,8 +103,8 @@ Ext.define('wzqr.view.app.Select', {
                             fieldLabel: '申报状态',
                             name: 'status',
                             store: 'AppStatusStore'
-                        },{
-                            xtype:'hiddenfield',
+                        }, {
+                            xtype: 'hiddenfield',
                             name: 'subName'
                         }
                     ],
@@ -121,7 +126,7 @@ Ext.define('wzqr.view.app.Select', {
                                     handler: function(button, e) {
                                         var form = button.up('form');
                                         var xappselect = form.up('xappselect');
-                                        form.getForm().getFields().each(function(field){
+                                        form.getForm().getFields().each(function(field) {
                                             field.reset();
                                         });
                                         xappselect.doQuery();
@@ -137,10 +142,9 @@ Ext.define('wzqr.view.app.Select', {
 
         me.callParent(arguments);
     },
-
     doQuery: function() {
         var form = this.down('form');
-        this.fireEvent('query',this,form,form.getForm().getFields());
+        this.fireEvent('query', this, form, form.getForm().getFields());
     }
 
 });

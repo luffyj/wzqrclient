@@ -5,36 +5,40 @@ Ext.define("wzqr.view.Top", {
 //    extend: 'Ext.container.Container',
     extend: 'Ext.panel.Panel',
     xtype: 'xtop',
-	//id:'xtopBox',
+    //id:'xtopBox',
     height: 100,
     layout: 'fit',
     dockedItems: [
         {
             width: 120,
             xtype: 'image',
-			//id:'logoBox',
+            //id:'logoBox',
             padding: 5,
             dock: 'left',
             src: 'resources/images/logo.jpg'
         }, {
             margin: '10 0 0 0',
             xtype: 'panel',
-			cls:'rightBox',
-			//id:'toprightBox',
+            cls: 'rightBox',
+            //id:'toprightBox',
             dock: 'right',
             width: 365,
             dockedItems: [
                 {
                     xtype: 'panel',
-					id:'rightPanelBox',
-					//id:'topPan',
+                    id: 'rightPanelBox',
+                    //id:'topPan',
                     dock: 'top',
-                    layout: 'hbox',
+                    layout: {
+                        type: 'hbox',
+                        pack:'end'
+//                        align: 'right'
+                    },
                     dockedItems: [{
                             xtype: 'button',
-							id:'quitBtn',
+                            id: 'quitBtn',
                             dock: 'right',
-                            name:'quit',
+                            name: 'quit',
                             text: '退出'
                         }],
                     defaults: {
@@ -44,21 +48,13 @@ Ext.define("wzqr.view.Top", {
                     items: [
                         {
                             xtype: 'image',
-							id:'perssImg',
+                            id: 'perssImg',
                             src: 'resources/images/person.png'
                         }, {
                             html: '欢迎你，'
                         }, {
                             name: 'labelName',
                             html: 'name'
-                        }, {
-                            html: '，'
-                        }, {
-							cls:'pretxt',
-                            html: '您的角色是:'
-                        }, {
-                            name: 'labelRole',
-                            html: 'role'
                         }
                     ]
                 }
@@ -68,7 +64,7 @@ Ext.define("wzqr.view.Top", {
     items: [
         {
             xtype: 'panel',
-			id:'panelxtop',
+            id: 'panelxtop',
             layout: {
                 type: 'vbox',
                 align: 'stretch',
@@ -83,7 +79,7 @@ Ext.define("wzqr.view.Top", {
                         align: 'left'
                     },
                     xtype: 'tabbar',
-					id:'tabbarvBox',
+                    id: 'tabbarvBox',
                     ui: 'wzmaintab',
 //                    xtype: 'container',
                     margin: '0 0 0 10',
@@ -94,7 +90,7 @@ Ext.define("wzqr.view.Top", {
 //                    },
                     defaults: {
                         xtype: 'tab',
-						//id:'defBox',
+                        //id:'defBox',
                         closable: false
                     },
                     items: [
@@ -112,7 +108,7 @@ Ext.define("wzqr.view.Top", {
                 {
 //            left:10,
                     xtype: 'component',
-					id:'titvBox',
+                    id: 'titvBox',
                     margin: '20 0 0 10',
                     style: 'font-size:26px;',
                     html: ''

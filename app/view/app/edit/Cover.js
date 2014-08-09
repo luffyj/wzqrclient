@@ -219,6 +219,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
         }, {
             xtype: 'cfield',
             xxtype: 'datefield',
+            format:'Y年m月d日',
             colspan: 8,
             name: 'comletionDate',
             emptyText: '请选择填表日期',

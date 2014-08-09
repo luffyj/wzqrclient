@@ -2,7 +2,7 @@ Ext.define('wzqr.controller.ManageOrg', {
     extend: 'wzqr.controller.BaseController',
     views: ['org.Add', 'org.AddUnit'],
     models: ['Org', 'User'],
-    stores: ['UnderOrg', 'Org', 'User'],
+    stores: ['UnderOrg', 'Org', 'User','SubOrg'],
     onViewActivate: function(view) {
         debug('activate me', view);
         this.getUnderOrgStore().proxy.extraParams = {
@@ -59,6 +59,7 @@ Ext.define('wzqr.controller.ManageOrg', {
                                                     Ext.Msg.alert('完成', '成功添加！');
                                                     button.up('window').close();
                                                     this.getUnderOrgStore().reload();
+                                                    this.getSubOrgStore().reload();
                                                 }
                                             });
 

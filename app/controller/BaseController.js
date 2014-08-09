@@ -233,7 +233,7 @@ Ext.define('wzqr.controller.BaseController', {
                                 Ext.log('Dash已插入！');
 
                                 dashboard.down('xtop component[name=labelName]').update(data.realName);
-                                dashboard.down('xtop component[name=labelRole]').update(data.role.name);
+//                                dashboard.down('xtop component[name=labelRole]').update(data.role.name);
 //                    dashboard.down('xtop component[name=labelRole]').html  = data.role.name;
 //                    dashboard.down('xtop').doLayout();
                             } else {

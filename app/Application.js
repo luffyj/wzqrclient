@@ -65,6 +65,7 @@ Ext.define('wzqr.Application', {
         'ManageApplication'
     ],
     stores: [
+        'SubOrg',
         'GxStore',
         'SpecialtyStore',
         'AppStatusStore',

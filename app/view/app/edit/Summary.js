@@ -85,6 +85,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'datefield',
+                            format:'Y年m月d日',
                             cellCls: 'wzformborder',
                             width: 120,
                             fieldLabel: '',

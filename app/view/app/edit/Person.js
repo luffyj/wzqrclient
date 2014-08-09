@@ -52,6 +52,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                         {
                             xtype: 'datefield',
                             cellCls: 'wzformborder',
+                            format:'Y年m月d日',
                             fieldLabel: '',
                             name: 'comletionDate'
                         },

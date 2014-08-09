@@ -31,16 +31,16 @@ Ext.define("wzqr.view.app.ContextManager", {
                 }
             }},
         {text: '编号', dataIndex: 'number', flex: 1},
-        {text: '申报人', dataIndex: 'realName', flex: 1},
+        {text: '申报人', dataIndex: 'realName', flex: 2},
         {text: '申报批次', dataIndex: 'batch', flex: 1},
-        {text: '人才类型', flex: 1, dataIndex: 'type'},
+        {text: '人才类型', flex: 2, dataIndex: 'type'},
         {text: '专业领域', flex: 2, dataIndex: 'specialty'},
-        {text: '申报单位名称', flex: 2, dataIndex: 'appOrgName'},
-        {text: '上报时间', flex: 2, dataIndex: 'submitDate', xtype: 'datecolumn', format: 'Y-m-d G:i'},
-        {text: '申报状态', flex: 1, dataIndex: 'status'},
+        {text: '申报单位名称', flex: 3, dataIndex: 'appOrgName'},
+        {text: '上报时间', flex: 2, dataIndex: 'submitDate', xtype: 'datecolumn', format: 'Y-m-d'},
+        {text: '申报状态', flex: 2, dataIndex: 'status'},
         {
             text: '操作',
-            flex: 1,
+            flex: 3,
             xtype: 'jcactioncolumn',
             items: [
                 {
