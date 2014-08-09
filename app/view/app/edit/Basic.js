@@ -1,10 +1,8 @@
 Ext.define('wzqr.view.app.edit.Basic', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.xappeditbasic',
-
     title: '基本信息',
-    id:'baseTab',
-
+    id: 'baseTab',
     layout: {
         type: 'table',
         columns: 11,
@@ -15,7 +13,6 @@ Ext.define('wzqr.view.app.edit.Basic', {
             }
         }
     },
-
     initComponent: function() {
         var me = this;
 
@@ -35,6 +32,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 3,
                     fieldLabel: '',
                     name: 'realName',
@@ -49,6 +47,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 2,
                     width: 105,
                     fieldLabel: '',
@@ -80,6 +79,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     items: [
                         {
                             xtype: 'textfield',
+                            cls: 'wzsizefixedtable',
                             fieldLabel: '',
                             name: 'realEnglishName',
                             allowBlank: false,
@@ -99,7 +99,8 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'datefield',
-                    format:'Y年m月d日',
+                    format: 'Y年m月d日',
+                    cls: 'wzsizefixedtable',
                     cellCls: 'wzformborder',
                     colspan: 2,
                     rowspan: 1,
@@ -129,6 +130,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     items: [
                         {
                             xtype: 'textfield',
+                            cls: 'wzsizefixedtable',
                             fieldLabel: '',
                             name: 'birthPlace',
                             allowBlank: false,
@@ -154,6 +156,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     items: [
                         {
                             xtype: 'combobox',
+                            cls: 'wzsizefixedtable',
                             width: 120,
                             fieldLabel: '',
                             name: 'nationality',
@@ -215,6 +218,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     width: 105,
                     fieldLabel: '',
                     name: 'mgChineseCountry',
@@ -226,6 +230,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 2,
                     fieldLabel: '',
                     name: 'mgChineseSchool',
@@ -236,6 +241,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 2,
                     fieldLabel: '',
                     name: 'mgChineseMajor',
@@ -246,6 +252,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     width: 100,
                     fieldLabel: '',
                     name: 'mgChineseDegree',
@@ -262,6 +269,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     width: 105,
                     fieldLabel: '',
                     name: 'mgEnglishCountry',
@@ -274,6 +282,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 2,
                     fieldLabel: '',
                     name: 'mgEnglishSchool',
@@ -284,6 +293,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 2,
                     fieldLabel: '',
                     name: 'mgEnglishMajor',
@@ -294,6 +304,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     width: 100,
                     fieldLabel: '',
                     name: 'mgEnglishDegree',
@@ -328,8 +339,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     items: [
                         {
                             xtype: 'textfield',
-                            width: 400,
+//                            cls:'wzsizefixedtable',
                             fieldLabel: '',
+                            width:300,
                             name: 'foreignJobChinese'
                         },
                         {
@@ -345,8 +357,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+//                    cls:'wzsizefixedtable',
+                    width:300,
                     colspan: 8,
-                    width: 400,
                     fieldLabel: '',
                     name: 'foreignJobEnglish'
                 },
@@ -359,8 +372,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+//                    cls:'wzsizefixedtable',
+                    width:300,
                     colspan: 4,
-                    width: 300,
                     fieldLabel: '',
                     name: 'employer'
                 },
@@ -371,6 +385,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 3,
                     width: 200,
                     fieldLabel: '',
@@ -385,8 +400,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+//                    cls:'wzsizefixedtable',
+                    width:300,
                     colspan: 4,
-                    width: 300,
                     fieldLabel: '',
                     name: 'employerAddress'
                 },
@@ -397,6 +413,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
+                    cls: 'wzsizefixedtable',
                     colspan: 3,
                     width: 200,
                     fieldLabel: '',
