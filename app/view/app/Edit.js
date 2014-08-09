@@ -23,7 +23,9 @@ Ext.define("wzqr.view.app.Edit", {
         'wzqr.view.app.edit.Summary',
         'wzqr.view.app.edit.Work',
         'wzqr.view.app.edit.EntInfo1',
-        'wzqr.view.app.edit.EntInfo2',
+        'wzqr.view.app.edit.EntInfo21',
+        'wzqr.view.app.edit.EntInfo22',
+        'wzqr.view.app.edit.EntInfo23',
         'Ext.form.field.ComboBox',
         'Ext.tab.Panel',
         'Ext.form.FieldSet'
@@ -40,75 +42,78 @@ Ext.define("wzqr.view.app.Edit", {
             this._citems = [
                 {
                     xtype: 'xappeditcover',
-						id:'wcoverBox'
+                    id: 'wcoverBox'
                 }, {
                     xtype: 'xappeditbasic',
-						id:'wbaseBox',
-                    cdname1:'公司名称及职务',
-                    cdname2:'公司地址'
+                    id: 'wbaseBox',
+                    cdname1: '公司名称及职务',
+                    cdname2: '公司地址'
                 }, {
                     xtype: 'xappediteducation',
-						id:'ducatBox'
+                    id: 'ducatBox'
                 }, {
                     xtype: 'xappeditwork',
-						id:'workBox'
+                    id: 'workBox'
                 }, {
                     xtype: 'xappeditentinfo1',
-						id:'winforBox'
+                    id: 'winforBox'
                 }, {
-                    xtype: 'xappeditentinfo2',
-						id:'winforBox2'
+                    xtype: 'xappeditentinfo21'
+                }, {
+                    xtype: 'xappeditentinfo22'
+                }, {
+                    xtype: 'xappeditentinfo23'
                 }, {
                     xtype: 'xappeditperson',
-						id:'wpersonBox'
+                    id: 'wpersonBox'
                 }, {
                     xtype: 'xappeditsummary',
-						id:'wmaryBox'
+                    id: 'wmaryBox'
                 }, {
                     xtype: 'xappeditattach',
-						id:'wattachBox'
+                    id: 'wattachBox'
                 }
             ];
         } else {
             this._citems = [
                 {
                     xtype: 'xappeditcover',
-						id:'wcoverBox'
+                    id: 'wcoverBox'
                 }, {
                     xtype: 'xappeditbasic',
-						id:'wbaseBox',
-                    cdname1:'拟（现）任职单位名称<br/>Current or Expected Employer',
-                    cdname2:'单位地址<br/>Current or Expected Employer Address'
+                    id: 'wbaseBox',
+                    cdname1: '拟（现）任职单位名称<br/>Current or Expected Employer',
+                    cdname2: '单位地址<br/>Current or Expected Employer Address'
                 }, {
                     xtype: 'xappediteducation',
-						id:'ducatBox'
+                    id: 'ducatBox'
                 }, {
                     xtype: 'xappeditwork',
-						id:'workBox'
+                    id: 'workBox'
                 }, {
                     xtype: 'xappeditspecialty',
-						id:'cialtyBox'
+                    id: 'cialtyBox'
                 }, {
                     xtype: 'xappeditproject',
-						id:'ojectBox'
+                    id: 'ojectBox'
                 }, {
                     xtype: 'xappeditresultmain',
-						id:'sultmainBox'
+                    id: 'sultmainBox'
                 }, {
                     xtype: 'xappeditresultother',
-						id:'otherBox'
+                    id: 'otherBox'
                 }, {
                     xtype: 'xappeditplan',
-						id:'editplan'
+                    id: 'editplan'
                 }, {
                     xtype: 'xappeditperson',
-						id:'wpersonBox'
+                    id: 'wpersonBox'
                 }, {
                     xtype: 'xappeditsummary',
-						id:'wmaryBox'
+                    id: 'wmaryBox'
                 }, {
                     xtype: 'xappeditattach',
-						id:'wattachBox'
+                    id: 'wattachBox'
                 }
             ];
         }
