@@ -15,7 +15,7 @@ Ext.define("wzqr.view.app.ContextUser", {
         stripeRows: true
     },
     columnLines: true,
-    selModel: {selType: 'rowmodel', mode: 'SIMPLE'},
+    selModel: {selType: 'checkboxmodel', mode: 'SIMPLE'},
     columns: [
         {text: '序号', xtype: 'rownumberer', listeners: {
                 headerclick: function(ct, column, e, t, eOpts) {
