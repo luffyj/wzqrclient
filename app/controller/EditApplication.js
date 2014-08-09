@@ -15,6 +15,7 @@
 Ext.define('wzqr.controller.EditApplication', {
     extend: 'wzqr.controller.BaseController',
     views: [
+        'Ext.menu.Menu',
         'Ext.ComponentQuery',
         'app.edit.window.Submit',
         'app.edit.window.ChangeOwner',
@@ -59,20 +60,20 @@ Ext.define('wzqr.controller.EditApplication', {
         } else if (button.text.indexOf('通过') !== -1) {
             result = 1;
         }
-        
+
         //如果是将 当前通过状态 改成 当前其他状态或者通过状态
-        if(window.app.get('status')==='形审通过' && button.text.indexOf('形审') !== -1){
-            result = (1<<8)|result;
+        if (window.app.get('status') === '形审通过' && button.text.indexOf('形审') !== -1) {
+            result = (1 << 8) | result;
         }
-        
-        if(window.app.get('status')==='复审通过' && button.text.indexOf('复审') !== -1){
-            result = (1<<8)|result;
+
+        if (window.app.get('status') === '复审通过' && button.text.indexOf('复审') !== -1) {
+            result = (1 << 8) | result;
         }
-        
-        if(window.app.get('status').indexOf('评审') !== -1 && button.text.indexOf('复审') !== -1){
-            result = (1<<8)|result;
+
+        if (window.app.get('status').indexOf('评审') !== -1 && button.text.indexOf('复审') !== -1) {
+            result = (1 << 8) | result;
         }
-        
+
         var app = window.down('form').getRecord();
         app.save({
             scope: this,
@@ -268,11 +269,19 @@ Ext.define('wzqr.controller.EditApplication', {
                     });
                 }
             },
-            'xappcontext button[name=export]': {
-                click: function(button) {
+            'menuitem[name=_exportall]': {
+                click: function() {
+                    window.open(Utils.toApi('reports?ids=all'));
+                }
+            },
+            'menuitem[name=_exportselect]': {
+                click: function() {
                     var records = this.getAppGrid().getSelectionModel().getSelection();
-                    //ids
                     var ids = "";
+                    if (records.length === 0) {
+                        Ext.Msg.alert('提示', '没有选择任何申报信息');
+                        return;
+                    }
                     records.forEach(function(record) {
                         if (ids.length === 0) {
                             ids = "" + record.getId();
@@ -282,6 +291,28 @@ Ext.define('wzqr.controller.EditApplication', {
                     });
 
                     window.open(Utils.toApi('reports?ids=' + ids));
+                }
+            },
+            'xappcontext button[name=export]': {
+                click: function(button, e) {
+                    debug(e);
+                    debug(e.getXY());
+                    var mn = Ext.create('Ext.menu.Menu', {
+                        width: 100,
+                        margin: '0 0 0 0',
+                        floating: true, // usually you want this set to True (default)
+                        items: [{
+                                text: '导出全部',
+                                name: '_exportall'
+                            }, {
+                                text: '导出选择',
+                                name: '_exportselect'
+                            }]
+                    });
+                    var xy = e.getXY();
+                    xy[0] = xy[0] + 30;
+                    xy[1] = xy[1] - 30;
+                    mn.showAt(xy);
                 }
             },
             //

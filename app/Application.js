@@ -45,6 +45,7 @@ Ext.define('wzqr.Application', {
     name: 'wzqr',
     extend: 'Ext.app.Application',
     requires: [
+        'Ext.menu.Menu',
         'wzqr.overrides.form.Basic',
         'wzqr.spring.data.RestProxy',
         'wzqr.Utils'
