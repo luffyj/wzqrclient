@@ -65,7 +65,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             name: 'actualCurrentFunds',
                             allowBlank: false,
                             blankText: '请输入目前到位资金',
-                            emptyText: '请输入目前到位资金',
+                            RemovedemptyText: '请输入目前到位资金',
                             decimalPrecision: 3
                         },
                         {
@@ -79,7 +79,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             name: 'actualCurrentFundsPer',
                             allowBlank: false,
                             blankText: '百分比',
-                            emptyText: '百分比',
+                            RemovedemptyText: '百分比',
                             decimalPrecision: 3,
                             maxValue: 100,
                             minValue: 0
@@ -109,7 +109,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             columnWidth: 0.15,
                             fieldLabel: '',
                             name: 'partnerName',
-                            emptyText: '请输入投资者姓名'
+                            RemovedemptyText: '请输入投资者姓名'
                         },
                         {
                             xtype: 'textfield',
@@ -117,7 +117,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             columnWidth: 0.175,
                             fieldLabel: '',
                             name: 'partnerContent',
-                            emptyText: '请输入投资额'
+                            RemovedemptyText: '请输入投资额'
                         },
                         {
                             xtype: 'textfield',
@@ -125,7 +125,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             columnWidth: 0.175,
                             fieldLabel: '',
                             name: 'partnerType',
-                            emptyText: '请输入出资方式'
+                            RemovedemptyText: '请输入出资方式'
                         },
                         {
                             xtype: 'textfield',
@@ -133,7 +133,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             columnWidth: 0.25,
                             fieldLabel: '',
                             name: 'partnerPer',
-                            emptyText: '请输入占资比例'
+                            RemovedemptyText: '请输入占资比例'
                         },
                         {
                             xtype: 'textfield',
@@ -141,7 +141,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             columnWidth: 0.25,
                             fieldLabel: '',
                             name: 'partnerPosition',
-                            emptyText: '请输入职务'
+                            RemovedemptyText: '请输入职务'
                         }
                     ]
                 },
@@ -161,7 +161,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             name: 'myFundsPer',
                             allowBlank: false,
                             blankText: '百分比',
-                            emptyText: '百分比',
+                            RemovedemptyText: '百分比',
                             decimalPrecision: 3,
                             maxValue: 100,
                             minValue: 0
@@ -176,7 +176,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             name: 'actualFunds',
                             allowBlank: false,
                             blankText: '请输入实收资金',
-                            emptyText: '请输入实收资金',
+                            RemovedemptyText: '请输入实收资金',
                             decimalPrecision: 3
                         }
                     ]

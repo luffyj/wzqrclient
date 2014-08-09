@@ -48,7 +48,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.2,
                             fieldLabel: '',
                             name: 'paperTime',
-                            emptyText: '请输入发表时间'
+                            RemovedemptyText: '请输入发表时间'
                         },
                         {
                             xtype: 'textfield',
@@ -56,7 +56,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.4,
                             fieldLabel: '',
                             name: 'paperTitle',
-                            emptyText: '请输入名称'
+                            RemovedemptyText: '请输入名称'
                         },
                         {
                             xtype: 'textfield',
@@ -64,7 +64,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.2,
                             fieldLabel: '',
                             name: 'paperMedia',
-                            emptyText: '请输入发表载体'
+                            RemovedemptyText: '请输入发表载体'
                         },
                         {
                             xtype: 'textfield',
@@ -72,7 +72,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.2,
                             fieldLabel: '',
                             name: 'paperAuthor',
-                            emptyText: '请输入作者'
+                            RemovedemptyText: '请输入作者'
                         }
                     ]
                 },
@@ -95,7 +95,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.2,
                             fieldLabel: '',
                             name: 'patentTime',
-                            emptyText: '请输入专利保护期'
+                            RemovedemptyText: '请输入专利保护期'
                         },
                         {
                             xtype: 'textfield',
@@ -103,7 +103,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.4,
                             fieldLabel: '',
                             name: 'patentName',
-                            emptyText: '请输入专利名称'
+                            RemovedemptyText: '请输入专利名称'
                         },
                         {
                             xtype: 'textfield',
@@ -111,7 +111,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.2,
                             fieldLabel: '',
                             name: 'patentCountry',
-                            emptyText: '请输入授权国家'
+                            RemovedemptyText: '请输入授权国家'
                         },
                         {
                             xtype: 'textfield',
@@ -119,7 +119,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                             columnWidth: 0.2,
                             fieldLabel: '',
                             name: 'patentAuthor',
-                            emptyText: '请输入专利所有者'
+                            RemovedemptyText: '请输入专利所有者'
                         }
                     ]
                 },

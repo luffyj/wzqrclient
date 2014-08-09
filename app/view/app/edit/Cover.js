@@ -28,7 +28,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'textfield',
             colspan: 8,
             name: 'number',
-            emptyText: '请输入编号',
+            RemovedemptyText: '请输入编号',
             msg: '(由温州市委组织部填写。)'
 //        }, {
 //            xtype: 'mlabel',
@@ -51,7 +51,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             ],
             colspan: 8,
             name: 'type',
-            emptyText: '请选择申报类型',
+            RemovedemptyText: '请选择申报类型',
             blankText: '请选择申报类型',
             allowBlank: false
         },
@@ -75,7 +75,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'textfield',
             colspan: 8,
             name: 'realName',
-            emptyText: '请输入中文名',
+            RemovedemptyText: '请输入中文名',
             blankText: '请输入中文名',
             allowBlank: false
         }, {
@@ -90,7 +90,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'textfield',
             colspan: 8,
             name: 'realEnglishName',
-            emptyText: '请输入英文名',
+            RemovedemptyText: '请输入英文名',
             blankText: '请输入英文名',
             allowBlank: false,
             msg: '(如无外文名，请填写汉语拼音。)'
@@ -108,7 +108,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'textfield',
             colspan: 8,
             name: 'appOrgName',
-            emptyText: '请输入申报单位',
+            RemovedemptyText: '请输入申报单位',
             blankText: '请输入申报单位',
             allowBlank: false,
             msg: '(指用人单位。填写时，请将单位的隶属关系写清楚。比如，生命科学院申报，需填写“浙江大学生命科学院”。)',
@@ -130,7 +130,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             ],
             colspan: 8,
             name: 'specialty',
-            emptyText: '请选择专业领域',
+            RemovedemptyText: '请选择专业领域',
             blankText: '请选择专业领域',
             allowBlank: false
         }, {
@@ -146,7 +146,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'textfield',
             colspan: 8,
             name: 'profession',
-            emptyText: '请输入专业方向',
+            RemovedemptyText: '请输入专业方向',
             blankText: '请输入专业方向',
             allowBlank: false,
             msg: '(请填写具体的专业方向。例如，数理科学领域的凝聚态物理。)'
@@ -164,7 +164,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             colspan: 8,
             name: 'people',
             width:100,
-            emptyText: '请输入联系人',
+            RemovedemptyText: '请输入联系人',
             blankText: '请输入联系人',
             allowBlank: false,
             msg: '(指申报单位的联系人，联系人应为具体负责该项工作的人员，熟悉申报人、申报材料的相关情况。)'
@@ -188,7 +188,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'textfield',
             colspan: 8,
             name: 'phone',
-            emptyText: '请输入单位电话',
+            RemovedemptyText: '请输入单位电话',
             blankText: '请输入单位电话',
             allowBlank: false,
             msg: '(指申报单位的联系电话，保证联系畅通。)'
@@ -204,7 +204,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             xxtype: 'textfield',
             colspan: 8,
             name: 'mobile',
-            emptyText: '请输入手机',
+            RemovedemptyText: '请输入手机',
             blankText: '请输入手机',
             allowBlank: false,
             msg: '(请同时填写手机号码，保证联系畅通。)'
@@ -222,7 +222,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
             format:'Y年m月d日',
             colspan: 8,
             name: 'comletionDate',
-            emptyText: '请选择填表日期',
+            RemovedemptyText: '请选择填表日期',
             submitFormat:'time'
         }
     ]

@@ -78,7 +78,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             name: 'idType',
                             allowBlank: false,
                             blankText: '必须输入证件名称',
-                            emptyText: '请输入证件名称 比如身份证'
+                            RemovedemptyText: '请输入证件名称 比如身份证'
                         },
                         {
                             xtype: 'tlabel',
@@ -91,7 +91,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             name: 'idNumber',
                             allowBlank: false,
                             blankText: '必须输入证件号码',
-                            emptyText: '请输入证件号码'
+                            RemovedemptyText: '请输入证件号码'
                         },
                         {
                             xtype: 'tlabel',
@@ -105,7 +105,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             fieldLabel: '',
                             name: 'address',
                             blankText: '必须输入证件号码',
-                            emptyText: '请填写国内详细地址'
+                            RemovedemptyText: '请填写国内详细地址'
                         },
                         {
                             xtype: 'tlabel',
@@ -121,7 +121,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             fieldLabel: '',
                             name: 'personPhone',
                             blankText: '',
-                            emptyText: '填写固定电话'
+                            RemovedemptyText: '填写固定电话'
                         },
                         {
                             xtype: 'tlabel',
@@ -133,7 +133,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             fieldLabel: '',
                             name: 'personMobile',
                             blankText: '必须输入证件名称',
-                            emptyText: '请填写手机号码'
+                            RemovedemptyText: '请填写手机号码'
                         },
                         {
                             xtype: 'tlabel',
@@ -147,7 +147,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             fieldLabel: '',
                             name: 'addressOut',
                             blankText: '必须输入证件号码',
-                            emptyText: '国外的详细地址'
+                            RemovedemptyText: '国外的详细地址'
                         },
                         {
                             xtype: 'tlabel',
@@ -160,7 +160,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             fieldLabel: '',
                             name: 'phoneOut',
                             blankText: '必须输入证件号码',
-                            emptyText: '国外的联系电话'
+                            RemovedemptyText: '国外的联系电话'
                         },
                         {
                             xtype: 'tlabel',
@@ -173,7 +173,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             fieldLabel: '',
                             name: 'email',
                             blankText: '必须输入证件号码',
-                            emptyText: '请填写电子邮件地址',
+                            RemovedemptyText: '请填写电子邮件地址',
                             vtype: 'email',
                             vtypeText: '请填写有效的电子邮件地址'
                         }
@@ -214,7 +214,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                     columnWidth: 0.15,
                                     fieldLabel: '',
                                     name: 'relationshipName',
-                                    emptyText: '请输入姓名'
+                                    RemovedemptyText: '请输入姓名'
                                 },
                                 {
                                     xtype: 'textfield',
@@ -222,7 +222,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                     columnWidth: 0.15,
                                     fieldLabel: '',
                                     name: 'relationshipAge',
-                                    emptyText: '请输入年龄'
+                                    RemovedemptyText: '请输入年龄'
                                 },
                                 {
                                     xtype: 'textfield',
@@ -230,7 +230,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                     columnWidth: 0.15,
                                     fieldLabel: '',
                                     name: 'relationshipCountry',
-                                    emptyText: '请输入国籍'
+                                    RemovedemptyText: '请输入国籍'
                                 },
                                 {
                                     xtype: 'textfield',
@@ -238,7 +238,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                     columnWidth: 0.4,
                                     fieldLabel: '',
                                     name: 'relationshipJob',
-                                    emptyText: ''
+                                    RemovedemptyText: ''
                                 }
                             ]
                         }

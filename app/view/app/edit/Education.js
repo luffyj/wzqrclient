@@ -49,7 +49,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                             title: '时间 Time',
                             fieldLabel: '',
                             name: 'time',
-                            emptyText: '请输入起止时间'
+                            RemovedemptyText: '请输入起止时间'
                         },
                         {
                             xtype: 'textfield',
@@ -57,7 +57,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                             columnWidth: 0.19,
                             fieldLabel: '',
                             name: 'country',
-                            emptyText: '请输入国家'
+                            RemovedemptyText: '请输入国家'
                         },
                         {
                             xtype: 'textfield',
@@ -65,7 +65,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                             columnWidth: 0.25,
                             fieldLabel: '',
                             name: 'university',
-                            emptyText: '请输入院校'
+                            RemovedemptyText: '请输入院校'
                         },
                         {
                             xtype: 'textfield',
@@ -73,7 +73,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                             columnWidth: 0.25,
                             fieldLabel: '',
                             name: 'major',
-                            emptyText: '请输入专业'
+                            RemovedemptyText: '请输入专业'
                         }
                     ]
                 }

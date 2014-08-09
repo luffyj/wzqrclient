@@ -24,7 +24,7 @@ Ext.define('wzqr.view.app.edit.Attach', {
                     width: 329,
                     fieldLabel: '附件',
                     name: 'file',
-                    emptyText: '请上传你的附件',
+                    RemovedemptyText: '请上传你的附件',
                     buttonText: '浏览'
                 },
                 {

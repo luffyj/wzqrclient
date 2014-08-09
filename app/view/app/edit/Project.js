@@ -43,7 +43,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                             columnWidth: 0.15,
                             fieldLabel: '',
                             name: 'projectTime',
-                            emptyText: '请输入起止时间'
+                            RemovedemptyText: '请输入起止时间'
                         },
                         {
                             xtype: 'textfield',
@@ -51,7 +51,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                             columnWidth: 0.3,
                             fieldLabel: '',
                             name: 'projectDesc',
-                            emptyText: '简要说明项目性质和来源'
+                            RemovedemptyText: '简要说明项目性质和来源'
                         },
                         {
                             xtype: 'textfield',
@@ -59,7 +59,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                             columnWidth: 0.125,
                             fieldLabel: '',
                             name: 'projectBudget',
-                            emptyText: '经费总额'
+                            RemovedemptyText: '经费总额'
                         },
                         {
                             xtype: 'textfield',
@@ -67,7 +67,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                             columnWidth: 0.125,
                             fieldLabel: '',
                             name: 'projectPeoples',
-                            emptyText: '参与人数'
+                            RemovedemptyText: '参与人数'
                         },
                         {
                             xtype: 'textfield',
@@ -75,7 +75,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                             columnWidth: 0.3,
                             fieldLabel: '',
                             name: 'projectResponsibility',
-                            emptyText: '请输入具体职位和任务'
+                            RemovedemptyText: '请输入具体职位和任务'
                         }
                     ]
                 }

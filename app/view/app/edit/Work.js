@@ -43,7 +43,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                             columnWidth: 0.225,
                             fieldLabel: '',
                             name: 'jobPosition',
-                            emptyText: '请输入职务'
+                            RemovedemptyText: '请输入职务'
                         },
                         {
                             xtype: 'textfield',
@@ -51,7 +51,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                             columnWidth: 0.225,
                             fieldLabel: '',
                             name: 'jobTime',
-                            emptyText: '请输入工作时间'
+                            RemovedemptyText: '请输入工作时间'
                         },
                         {
                             xtype: 'textfield',
@@ -59,7 +59,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                             columnWidth: 0.25,
                             fieldLabel: '',
                             name: 'jobCountry',
-                            emptyText: '请输入工作所在国家'
+                            RemovedemptyText: '请输入工作所在国家'
                         },
                         {
                             xtype: 'textfield',
@@ -67,7 +67,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                             columnWidth: 0.3,
                             fieldLabel: '',
                             name: 'jobOrg',
-                            emptyText: '请输入工作单位'
+                            RemovedemptyText: '请输入工作单位'
                         }
                     ]
                 }

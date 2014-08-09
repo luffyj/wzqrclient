@@ -73,7 +73,7 @@ Ext.define('wzqr.view.app.edit.Xingshen', {
                     flex: 4,
                     fieldLabel: '',
                     name: 'pogeReason',
-                    emptyText: '对申报材料的审核意见'
+                    RemovedemptyText: '对申报材料的审核意见'
                 },
                 {
                     xtype: 'container',
@@ -98,7 +98,7 @@ Ext.define('wzqr.view.app.edit.Xingshen', {
                     flex: 4,
                     fieldLabel: '',
                     name: 'unitApproveReason',
-                    emptyText: '推荐理由'
+                    RemovedemptyText: '推荐理由'
                 },
                 {
                     xtype: 'container',
@@ -123,7 +123,7 @@ Ext.define('wzqr.view.app.edit.Xingshen', {
                     flex: 4,
                     fieldLabel: '',
                     name: 'unitApproveSupport',
-                    emptyText: '支持措施'
+                    RemovedemptyText: '支持措施'
                 }
             ],
             dockedItems: [

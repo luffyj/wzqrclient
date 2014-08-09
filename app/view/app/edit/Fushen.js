@@ -36,7 +36,7 @@ Ext.define('wzqr.view.app.edit.Fushen', {
                     flex: 7,
                     fieldLabel: '',
                     name: 'orgApproveReason',
-                    emptyText: '复审意见'
+                    RemovedemptyText: '复审意见'
                 }
             ],
             dockedItems: [

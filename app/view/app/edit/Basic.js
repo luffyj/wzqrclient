@@ -40,7 +40,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'realName',
                     allowBlank: false,
                     blankText: '请输入中文名',
-                    emptyText: '请输入中文名'
+                    RemovedemptyText: '请输入中文名'
                 },
                 {
                     xtype: 'tlabel',
@@ -55,7 +55,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'sex',
                     allowBlank: false,
                     blankText: '请选择性别',
-                    emptyText: '请选择性别',
+                    RemovedemptyText: '请选择性别',
                     editable: false,
                     displayField: 'name',
                     store: 'SexStore',
@@ -84,7 +84,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                             name: 'realEnglishName',
                             allowBlank: false,
                             blankText: '如无外文名，请填写汉语拼音',
-                            emptyText: '如无外文名，请填写汉语拼音'
+                            RemovedemptyText: '如无外文名，请填写汉语拼音'
                         },
                         {
                             xtype: 'label',
@@ -109,7 +109,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     value: '07/25/1979',
                     allowBlank: false,
                     blankText: '请选择出生日期',
-                    emptyText: '请选择出生日期',
+                    RemovedemptyText: '请选择出生日期',
                     editable: false,
                     maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -20),
                     minValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -120),
@@ -133,7 +133,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                             name: 'birthPlace',
                             allowBlank: false,
                             blankText: '请输入出生地',
-                            emptyText: '请输入出生地'
+                            RemovedemptyText: '请输入出生地'
                         },
                         {
                             xtype: 'label',
@@ -159,7 +159,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                             name: 'nationality',
                             allowBlank: false,
                             blankText: '请选择国籍',
-                            emptyText: '请选择国籍',
+                            RemovedemptyText: '请选择国籍',
                             store: 'CountryStore'
                         },
                         {
@@ -220,7 +220,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgChineseCountry',
                     allowBlank: false,
                     blankText: '请选择国家',
-                    emptyText: '请选择国家',
+                    RemovedemptyText: '请选择国家',
                     store: 'CountryStore'
                 },
                 {
@@ -231,7 +231,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgChineseSchool',
                     allowBlank: false,
                     blankText: '请输入毕业学校',
-                    emptyText: '请输入毕业学校'
+                    RemovedemptyText: '请输入毕业学校'
                 },
                 {
                     xtype: 'textfield',
@@ -241,7 +241,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgChineseMajor',
                     allowBlank: false,
                     blankText: '请输入专业',
-                    emptyText: '请输入专业'
+                    RemovedemptyText: '请输入专业'
                 },
                 {
                     xtype: 'combobox',
@@ -251,7 +251,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgChineseDegree',
                     allowBlank: false,
                     blankText: '请选择',
-                    emptyText: '请选择',
+                    RemovedemptyText: '请选择',
                     editable: false,
                     store: 'DegreeStore'
                 },
@@ -267,7 +267,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgEnglishCountry',
                     allowBlank: false,
                     blankText: '请选择国家',
-                    emptyText: '请选择国家',
+                    RemovedemptyText: '请选择国家',
                     displayField: 'entext',
                     store: 'CountryStore'
                 },
@@ -279,7 +279,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgEnglishSchool',
                     allowBlank: false,
                     blankText: '请输入毕业学校',
-                    emptyText: '请输入毕业学校'
+                    RemovedemptyText: '请输入毕业学校'
                 },
                 {
                     xtype: 'textfield',
@@ -289,7 +289,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgEnglishMajor',
                     allowBlank: false,
                     blankText: '请输入专业',
-                    emptyText: '请输入专业'
+                    RemovedemptyText: '请输入专业'
                 },
                 {
                     xtype: 'combobox',
@@ -299,7 +299,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     name: 'mgEnglishDegree',
                     allowBlank: false,
                     blankText: '请选择',
-                    emptyText: '请选择',
+                    RemovedemptyText: '请选择',
                     editable: false,
                     displayField: 'entext',
                     store: 'DegreeStore'

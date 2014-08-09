@@ -63,7 +63,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             readOnly: true,
                             allowBlank: false,
                             blankText: '请选择性别',
-                            emptyText: '请选择性别',
+                            RemovedemptyText: '请选择性别',
                             editable: false,
                             displayField: 'name',
                             store: 'SexStore',
@@ -94,7 +94,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             readOnly: true,
                             allowBlank: false,
                             blankText: '请选择出生日期',
-                            emptyText: '请选择出生日期',
+                            RemovedemptyText: '请选择出生日期',
                             editable: false,
                             maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -20),
                             minValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -120),
@@ -174,7 +174,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             },
                             fieldLabel: '',
                             name: 'patentDesc',
-                            emptyText: '请输入专利授权或者研发成果情况',
+                            RemovedemptyText: '请输入专利授权或者研发成果情况',
                             maxLength: 200,
                             maxLengthText: '最长只能输入{0}'
                         },
@@ -184,7 +184,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
-                            emptyText: '请输入落地城市',
+                            RemovedemptyText: '请输入落地城市',
                             cellCls: 'wzformborder',
                             colspan: 3,
                             fieldLabel: '',
@@ -216,7 +216,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
-                            emptyText: '请输入大致到中国时间',
+                            RemovedemptyText: '请输入大致到中国时间',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'borderDate'
@@ -227,7 +227,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
-                            emptyText: '请输入签订合同时间',
+                            RemovedemptyText: '请输入签订合同时间',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'wdate'
@@ -238,7 +238,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
-                            emptyText: '请输入引进平台',
+                            RemovedemptyText: '请输入引进平台',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'platform'
@@ -287,7 +287,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             },
                             fieldLabel: '',
                             name: 'comment',
-                            emptyText: '备注',
+                            RemovedemptyText: '备注',
                             maxLength: 200,
                             maxLengthText: '最长只能输入{0}'
                         }

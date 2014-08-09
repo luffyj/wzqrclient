@@ -57,7 +57,7 @@ Ext.define('wzqr.view.app.edit.window.ChangeOwner', {
                                             name:'username',
                                             allowBlank:false,
                                             blankText:'请输入登录名',
-                                            emptyText:'请输入登录名',
+                                            RemovedemptyText:'请输入登录名',
                                             fieldLabel: ''
                                         },
                                         {
@@ -88,7 +88,7 @@ Ext.define('wzqr.view.app.edit.window.ChangeOwner', {
                                             xtype: 'textfield',
                                             fieldLabel: '',
                                             inputType: 'password',
-                                            emptyText:'请输入密码',
+                                            RemovedemptyText:'请输入密码',
                                             name:'password'
                                         },
                                         {

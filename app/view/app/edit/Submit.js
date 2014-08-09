@@ -69,7 +69,7 @@ Ext.define('wzqr.view.app.edit.Submit', {
                     flex: 4,
                     fieldLabel: '',
                     name: 'submitReason',
-                    emptyText: '推荐理由'
+                    RemovedemptyText: '推荐理由'
                 },
                 {
                     xtype: 'container',
@@ -95,7 +95,7 @@ Ext.define('wzqr.view.app.edit.Submit', {
                     flex: 4,
                     fieldLabel: '',
                     name: 'submitSupport',
-                    emptyText: '支持措施'
+                    RemovedemptyText: '支持措施'
                 }
             ],
             dockedItems: [

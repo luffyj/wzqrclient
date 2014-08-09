@@ -36,7 +36,7 @@ Ext.define('wzqr.view.app.edit.Pingshen', {
                     flex: 7,
                     fieldLabel: '',
                     name: 'managerReason',
-                    emptyText: '评审意见'
+                    RemovedemptyText: '评审意见'
                 }
             ],
             dockedItems: [
