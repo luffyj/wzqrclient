@@ -26,7 +26,7 @@ Ext.define("wzqr.view.Top", {
             dockedItems: [
                 {
                     xtype: 'panel',
-					cls:'rightPanelBox',
+					id:'rightPanelBox',
 					//id:'topPan',
                     dock: 'top',
                     layout: 'hbox',
@@ -54,7 +54,8 @@ Ext.define("wzqr.view.Top", {
                         }, {
                             html: '，'
                         }, {
-                            html: '您的角色是'
+							cls:'pretxt',
+                            html: '您的角色是:'
                         }, {
                             name: 'labelRole',
                             html: 'role'
@@ -85,7 +86,7 @@ Ext.define("wzqr.view.Top", {
 					id:'tabbarvBox',
                     ui: 'wzmaintab',
 //                    xtype: 'container',
-                    margin: '0 0 0 30',
+                    margin: '0 0 0 10',
 //                    layout: {
 //                        type: 'hbox',
 //                        pack: 'start',
@@ -114,7 +115,7 @@ Ext.define("wzqr.view.Top", {
 					id:'titvBox',
                     margin: '20 0 0 10',
                     style: 'font-size:26px;',
-                    html: '温州市“580海外精英引进计划”网上申报系统'
+                    html: ''
                 }
             ]
         }

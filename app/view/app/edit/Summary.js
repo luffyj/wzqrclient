@@ -268,6 +268,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'checkboxfield',
+								id:'pogeBox',
                             cellCls: 'wzformborder',
                             name: 'poge',
                             boxLabel: '破格'
