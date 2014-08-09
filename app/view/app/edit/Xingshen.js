@@ -28,7 +28,7 @@ Ext.define('wzqr.view.app.edit.Xingshen', {
                 {
                     xtype: 'label',
                     flex: 1,
-                    html: '<center>主管部门、各县（市、区）委组织部或省、市属单位推荐意见<center>',
+                    html: '<center>主管部门、各县（市、区）委组织部或省、市属单位推荐意见</center>',
                     style: {
                         'border-color': 'aliceblue',
                         'border-style': 'solid',

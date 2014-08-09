@@ -28,7 +28,7 @@ Ext.define('wzqr.view.app.edit.Submit', {
                 {
                     xtype: 'label',
                     flex: 1,
-                    html: '<center>用人单位意见<center>',
+                    html: '<center>用人单位意见</center>',
                     style: {
                         'border-color': 'aliceblue',
                         'border-style': 'solid',

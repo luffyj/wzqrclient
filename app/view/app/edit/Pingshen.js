@@ -23,7 +23,7 @@ Ext.define('wzqr.view.app.edit.Pingshen', {
                 {
                     xtype: 'label',
                     flex: 1,
-                    html: '<center>温州市委组织部评审意见<center>',
+                    html: '<center>温州市委组织部评审意见</center>',
                     style: {
                         'border-color': 'aliceblue',
                         'border-style': 'solid',

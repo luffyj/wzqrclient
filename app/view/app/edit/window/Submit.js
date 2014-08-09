@@ -28,7 +28,7 @@ Ext.define('wzqr.view.app.edit.window.Submit', {
                         {
                             xtype: 'tabpanel',
                             bodyPadding: 10,
-                            items: [
+                            items: [                      
                                 {
                                     xtype: 'appeditsubmit'
                                 }

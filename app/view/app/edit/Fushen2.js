@@ -28,7 +28,7 @@ Ext.define('wzqr.view.app.edit.Fushen2', {
                     xtype: 'label',
                     flex: 1,
                     name: 'labelManagerTitle',
-                    html: '<center>部门审核意见<center>',
+                    html: '<center>部门审核意见</center>',
                     style: {
                         'border-color': 'aliceblue',
                         'border-style': 'solid',
