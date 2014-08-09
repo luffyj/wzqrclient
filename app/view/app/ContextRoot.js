@@ -32,6 +32,7 @@ Ext.define("wzqr.view.app.ContextRoot", {
             }},
         {text: '编号', dataIndex: 'number', flex: 1},
         {text: '申报人', dataIndex: 'realName', flex: 2},
+        {text: '管理部门', dataIndex: 'orgSubName', flex: 2},
         {text: '申报批次', dataIndex: 'batch', flex: 1},
         {text: '人才类型', flex: 2, dataIndex: 'type'},
         {text: '专业领域', flex: 2, dataIndex: 'specialty'},
