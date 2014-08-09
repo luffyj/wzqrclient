@@ -5,7 +5,7 @@ Ext.define("wzqr.view.app.ContextUser", {
     extend: 'wzqr.spring.grid.Panel',
     requires: [
         'Ext.grid.column.RowNumberer',
-        'Ext.grid.column.Action',
+        'wzqr.view.util.Action',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check'
     ],
@@ -35,11 +35,12 @@ Ext.define("wzqr.view.app.ContextUser", {
         {text: '人才类型', flex: 1, dataIndex: 'type'},
         {text: '专业领域', flex: 2, dataIndex: 'specialty'},
         {text: '申报状态', flex: 1, dataIndex: 'status'},
-        {text: '操作', flex: 1, xtype: 'actioncolumn',
+        {text: '操作', flex: 1, xtype: 'jcactioncolumn',
             items: [
                 {
                     icon: 'resources/images/edit.png',
                     tooltip: '编辑',
+                    text:'编辑',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isWeishangbao();
                     },
@@ -49,6 +50,7 @@ Ext.define("wzqr.view.app.ContextUser", {
                 }, {
                     icon: 'resources/images/delete.png',
                     tooltip: '删除',
+                    text:'删除',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isWeishangbao();
                     },

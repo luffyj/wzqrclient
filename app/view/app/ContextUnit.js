@@ -5,7 +5,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
     extend: 'wzqr.spring.grid.Panel',
     requires: [
         'Ext.grid.column.RowNumberer',
-        'Ext.grid.column.Action',
+        'wzqr.view.util.Action',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check'
     ],
@@ -40,7 +40,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
         {
             text: '操作',
             flex: 3,
-            xtype: 'actioncolumn',            
+            xtype: 'jcactioncolumn',            
             items: [
                 {
                     icon: 'resources/images/submit.png',
@@ -55,7 +55,7 @@ Ext.define("wzqr.view.app.ContextUnit", {
                 }, {
                     icon: 'resources/images/cowner.png',
                     tooltip: '修改个人账号',
-                    text:'修改个人账号',
+                    text:'账号',
                     isDisabled: function(view, rowIndex, colIndex, item, record) {
                         return !record.isWeishangbao() && !record.isReturn();
                     },
