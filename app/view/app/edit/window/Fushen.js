@@ -11,6 +11,7 @@ Ext.define('wzqr.view.app.edit.window.Fushen', {
         'Ext.tab.Tab'
     ],
 
+    ui:'wzwindow',
     height: 472,
     width: 706,
     layout: 'fit',

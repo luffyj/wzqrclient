@@ -623,9 +623,14 @@ border-color: #c0c0c0 !important;
 	margin-bottom: 0px;
 	
 }
-.wzsizefixedtable {
-    width:120px !important;
+
+#wbaseBox-body table tbody tr td table tbody tr td.x-form-item-body {
+	padding:0 5px;
 }
+
+/*.wzsizefixedtable {
+    width:120px !important;
+}*/
 //这里的代码会导致 某些字段太短 by jc
 /*#wbaseBox-body table tbody tr td table{    
 	width:120px !important;
@@ -640,7 +645,7 @@ border-color: #c0c0c0 !important;
 }
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
 
-	width: 100px !important;
+	/*width: 100px !important;*/
 }
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
 	width:auto:!important;

@@ -9,6 +9,7 @@ Ext.define('wzqr.view.app.edit.window.Submit', {
         'Ext.tab.Tab'
     ],
 
+    ui:'wzwindow',
     height: 589,
     width: 706,
     layout: 'fit',

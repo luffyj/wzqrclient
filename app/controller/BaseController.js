@@ -38,7 +38,7 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return this.isAdmin() || Ext.Array.some(auths,function(auth) {
+        return this.isAdmin() || Ext.Array.some(auths, function(auth) {
             return auth.authority === 'cross';
         });
     },
@@ -52,13 +52,23 @@ Ext.define('wzqr.controller.BaseController', {
             return false;
         return user.role.name === '申报人';
     },
+    /**
+     * 是申报单位？
+     * @return {boolean} true for yes
+     * */
+    isUnit: function() {
+        var user = this.getApplication().currentUser;
+        if (!user)
+            return false;
+        return user.role.name === '申报单位';
+    },
     isAdmin: function() {
         //authority
         var user = this.getApplication().currentUser;
         if (!user)
             return false;
         var auths = user.authorities;
-        return Ext.Array.some(auths,function(auth) {
+        return Ext.Array.some(auths, function(auth) {
             return auth.authority === 'admin';
         });
     },
@@ -68,7 +78,7 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return this.isAdmin() || Ext.Array.some(auths,function(auth) {
+        return this.isAdmin() || Ext.Array.some(auths, function(auth) {
             return auth.authority === 'managePeople';
         });
     },
@@ -81,7 +91,7 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return this.isAdmin() || Ext.Array.some(auths,function(auth) {
+        return this.isAdmin() || Ext.Array.some(auths, function(auth) {
             return auth.authority === 'log';
         });
     },
@@ -100,9 +110,9 @@ Ext.define('wzqr.controller.BaseController', {
         if (!user)
             return false;
         var auths = user.authorities;
-        return this.isAdmin() || (Ext.Array.some(auths,function(auth) {
+        return this.isAdmin() || (Ext.Array.some(auths, function(auth) {
             return auth.authority === 'manageOrganization';
-        }) && (cross ? Ext.Array.some(auths,function(auth) {
+        }) && (cross ? Ext.Array.some(auths, function(auth) {
             return auth.authority === 'cross';
         }) : true));
     },
@@ -111,9 +121,10 @@ Ext.define('wzqr.controller.BaseController', {
         var pages = [
             {
                 title: '申报管理',
-                xtype: 'xmanageapp'
+                xtype: 'xmanageapp',
+                currentUser: this.getApplication().currentUser
             }];
-
+        
         if (this.isManageOrg(true)) {
             pages.push({
                 title: '管理部门',

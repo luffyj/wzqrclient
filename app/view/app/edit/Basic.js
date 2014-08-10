@@ -62,7 +62,10 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-                    html: '&nbsp',
+                    html: '&nbsp',                    
+                    tdAttrs: {
+                        width:'200px'
+                    },
                     colspan: 2,
                     rowspan: 7
                 },

@@ -11,6 +11,7 @@ Ext.define('wzqr.view.app.edit.EntInfo22', {
     width: 846,
     title: '创业项目',
     layout: 'fit',
+    bodyPadding:5,
     initComponent: function() {
         var me = this;
 

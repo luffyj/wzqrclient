@@ -6,7 +6,7 @@ Ext.define("wzqr.view.ManageApplication", {
         'wzqr.view.app.Select'
     ],
     xtype: 'xmanageapp',
-    id:'xmanageappidid',
+    id: 'xmanageappidid',
     layout: {
         type: 'border',
         regionWeights: {
@@ -16,29 +16,37 @@ Ext.define("wzqr.view.ManageApplication", {
             east: -20
         }
     },
-    items: [
-        {
-            xtype: 'xappreport',
-				id:'leftBox',
-            region: 'west'
-        }, {
-            xtype: 'container',
-				id:'contaiBox',
-            layout: 'fit',
-            padding: 5,
-            style: {
-                'background-color': 'white',
-                'border-style': 'none'
-            },
-            items: {
-                xtype: 'xappselect',
-				id:'xappsele'
-            },
-            region: 'north'
-        }, {
-            xtype: 'xappcontext',
-				id:'txtBox',
-            region: 'center'
-        }
-    ]
+    initComponent: function() {
+        var me = this;
+        Ext.applyIf(me, {
+            items: [
+                {
+                    xtype: 'xappreport',
+                    id: 'leftBox',
+                    region: 'west'
+                }, {
+                    xtype: 'container',
+                    id: 'contaiBox',
+                    layout: 'fit',
+                    padding: 5,
+                    style: {
+                        'background-color': 'white',
+                        'border-style': 'none'
+                    },
+                    items: {
+                        xtype: 'xappselect',
+                        id: 'xappsele',
+                        currentUser:me.currentUser
+                    },
+                    region: 'north'
+                }, {
+                    xtype: 'xappcontext',
+                    id: 'txtBox',
+                    region: 'center'
+                }
+            ]
+        });
+        
+        me.callParent(arguments);
+    }
 });

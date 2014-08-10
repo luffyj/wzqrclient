@@ -12,6 +12,7 @@ Ext.define('wzqr.view.app.edit.window.Pingshen', {
         'Ext.tab.Tab'
     ],
 
+    ui:'wzwindow',
     height: 472,
     width: 706,
     layout: 'fit',

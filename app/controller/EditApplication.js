@@ -293,10 +293,51 @@ Ext.define('wzqr.controller.EditApplication', {
                     window.open(Utils.toApi('reports?ids=' + ids));
                 }
             },
+            //删除
+            'xappcontext button[name=deleteapps]': {
+                click: function(button, e) {
+                    var records = this.getAppGrid().getSelectionModel().getSelection();
+                    if (records.length === 0) {
+                        Ext.Msg.alert('提示', '没有选择任何申报信息');
+                        return;
+                    }
+                    Ext.Array.each(records, function(record) {
+                        if (record.isWeishangbao() || record.isReturn()) {
+                            //可以
+                            Ext.Msg.confirm('请确认', '确实要删除' + record.get('realName') + '的申报信息么？', function(bt) {
+                                if (bt === 'yes') {
+                                    record.set('status', '已删除');
+                                    record.save({
+                                        scope: this,
+                                        success: function() {
+                                            this.getAppGrid().getStore().reload();
+                                        }
+                                    });
+                                }
+                            }, this);
+                        } else {
+                            Ext.Msg.alert('提示', record.get('realName') + '的申报信息正在各级管局审核中，无法删除。');
+                        }
+                    }, this);
+                }
+            },
+            //导出申报书
+            'xappcontext button[name=exportword]': {
+                click: function(button, e) {
+                    var records = this.getAppGrid().getSelectionModel().getSelection();
+                    if (records.length === 0) {
+                        Ext.Msg.alert('提示', '没有选择任何申报信息');
+                        return;
+                    }
+                    if (records.length !== 1) {
+                        Ext.Msg.alert('提示', '请选择“一个”申报信息');
+                        return;
+                    }
+                    window.open(Utils.toApi('report/' + records[0].getId() + '.doc'));
+                }},
+            //导出汇总表
             'xappcontext button[name=export]': {
                 click: function(button, e) {
-                    debug(e);
-                    debug(e.getXY());
                     var mn = Ext.create('Ext.menu.Menu', {
                         width: 100,
                         margin: '0 0 0 0',

@@ -12,8 +12,27 @@ Ext.define('wzqr.view.app.Select', {
     width: 903,
     layout: 'fit',
     title: '',
+    isAdmin: function() {
+        var user = this.currentUser;
+        if (!user)
+            return false;
+        var auths = user.authorities;
+        return Ext.Array.some(auths, function(auth) {
+            return auth.authority === 'admin';
+        });
+    },
+    isCross: function() {
+        var user = this.currentUser;
+        if (!user)
+            return false;
+        var auths = user.authorities;
+        return this.isAdmin() || Ext.Array.some(auths, function(auth) {
+            return auth.authority === 'cross';
+        });
+    },
     initComponent: function() {
         var me = this;
+        debug('currentUser', me.currentUser, me.isCross());
 
         me.addEvents(
                 'query'
@@ -50,21 +69,24 @@ Ext.define('wzqr.view.app.Select', {
                         },
                         {
                             xtype: 'textfield',
-                            columnWidth: 0.25,
+                            columnWidth: me.isCross() ? 0.25 : 0.375,
                             fieldLabel: '申报人',
                             name: 'realName'
                         },
-                        {
+                        me.isCross() ? {
                             xtype: 'combobox',
                             columnWidth: 0.25,
                             store: 'SubOrg',
                             fieldLabel: '管理单位',
-                            displayField:'name',
+                            displayField: 'name',
+                            name: 'subName'
+                        } : {
+                            xtype: 'hiddenfield',
                             name: 'subName'
                         },
                         {
                             xtype: 'textfield',
-                            columnWidth: 0.25,
+                            columnWidth: me.isCross() ? 0.25 : 0.375,
                             fieldLabel: '申报单位',
                             name: 'appOrgName'
                         },
@@ -103,9 +125,6 @@ Ext.define('wzqr.view.app.Select', {
                             fieldLabel: '申报状态',
                             name: 'status',
                             store: 'AppStatusStore'
-                        }, {
-                            xtype: 'hiddenfield',
-                            name: 'subName'
                         }
                     ],
                     dockedItems: [

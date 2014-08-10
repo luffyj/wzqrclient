@@ -31,7 +31,7 @@ Ext.define("wzqr.view.app.ContextUser", {
             }},
         {text: '申报人', dataIndex: 'realName', flex: 1},
         {text: '登录名', dataIndex: 'ownerLoginName', flex: 1},
-        {text: '申报批次', dataIndex: 'batch', flex: 1},
+        {text: '申报批次', dataIndex: 'batch',hidden:true, flex: 1},
         {text: '人才类型', flex: 1, dataIndex: 'type'},
         {text: '专业领域', flex: 2, dataIndex: 'specialty'},
         {text: '申报状态', flex: 1, dataIndex: 'status'},
@@ -47,17 +47,19 @@ Ext.define("wzqr.view.app.ContextUser", {
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actionedit', grid, record, rowIndex, colIndex, row, item, e);
                     }
-                }, {
-                    icon: 'resources/images/delete.png',
-                    tooltip: '删除',
-                    text:'删除',
-                    isDisabled: function(view, rowIndex, colIndex, item, record) {
-                        return !record.isWeishangbao();
-                    },
-                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
-                        grid.fireEvent('actiondelete', grid, record, rowIndex, colIndex, row, item, e);
-                    }
-                }]
+                }
+//                , {
+//                    icon: 'resources/images/delete.png',
+//                    tooltip: '删除',
+//                    text:'删除',
+//                    isDisabled: function(view, rowIndex, colIndex, item, record) {
+//                        return !record.isWeishangbao();
+//                    },
+//                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
+//                        grid.fireEvent('actiondelete', grid, record, rowIndex, colIndex, row, item, e);
+//                    }
+//                }
+            ]
         }
     ],
     dockedItems: [{

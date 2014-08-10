@@ -241,7 +241,16 @@ Ext.define('wzqr.controller.ManageApplication', {
                     this.currentStore = tstore;
                     debug('app', this.getApplication());//orgModel
 
+                    //删除按钮 适配化
+                    if (!this.isPeople() && !this.isUnit()) {
+                        var xappcontext = view.down('xappcontext');
+                        if (xappcontext.down('button[name=deleteapps]')) {
+                            xappcontext.down('button[name=deleteapps]').up('panel').remove(xappcontext.down('button[name=deleteapps]'));
+                        }
+                    }
+
                     //移除申报人的搜索和查询功能
+                    //以及导出
                     if (this.isPeople()) {
                         //removes
                         debug('申报人 意图移除xappselect', view.down('xappselect'));
@@ -255,6 +264,9 @@ Ext.define('wzqr.controller.ManageApplication', {
                         var xappcontext = view.down('xappcontext');
                         if (xappcontext.down('button[name=export]')) {
                             xappcontext.down('button[name=export]').up('panel').remove(xappcontext.down('button[name=export]'));
+                        }
+                        if (xappcontext.down('button[name=exportword]')) {
+                            xappcontext.down('button[name=exportword]').up('panel').remove(xappcontext.down('button[name=exportword]'));
                         }
                     } else if (view.down('xappreport')) {
                         this.getApplication().fireEvent('reloadCount');
@@ -328,11 +340,13 @@ Ext.define('wzqr.controller.ManageApplication', {
                     }
 
                     var field = this.getAppSelect().down('field[name=' + type + ']');
-                    this.getAppSelect().down('form').getForm().getFields().each(function(f) {
-                        f.reset();
-                    });
-                    field.setValue(value);
-                    this.getAppSelect().fireEvent('query');
+                    if (field) {
+                        this.getAppSelect().down('form').getForm().getFields().each(function(f) {
+                            f.reset();
+                        });
+                        field.setValue(value);
+                        this.getAppSelect().fireEvent('query');
+                    }
                 }
             }
         });

@@ -30,6 +30,7 @@ Ext.define("wzqr.view.app.Edit", {
         'Ext.tab.Panel',
         'Ext.form.FieldSet'
     ],
+    ui:'wzwindow',
     maximizable: true,
     xtype: 'xappedit',
     title: '申报信息编辑',

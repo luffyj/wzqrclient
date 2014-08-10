@@ -124,10 +124,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
         }, {
             xtype: 'cfield',
             xxtype: 'combobox',
-            store: [
-                '数理科学', '经济与管理', '人文社科', '文艺创作', '文化创意和文化产业经营管理人才', '现代传媒人才', '网络新技术人才', '经济金融管理', '风险投资', '国际商贸', '化学',
-                '环境与地球科学', '信息科学', '工程与材料科学', '生命科学', '其他'
-            ],
+            store: 'SpecialtyStore',
             colspan: 8,
             name: 'specialty',
             RemovedemptyText: '请选择专业领域',

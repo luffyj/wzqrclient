@@ -55,6 +55,8 @@ Ext.define("wzqr.view.Top", {
                         }, {
                             name: 'labelName',
                             html: 'name'
+                        }, {
+                            html: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
                         }
                     ]
                 }

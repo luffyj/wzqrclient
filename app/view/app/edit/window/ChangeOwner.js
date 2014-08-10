@@ -7,6 +7,7 @@ Ext.define('wzqr.view.app.edit.window.ChangeOwner', {
         'Ext.form.field.Text'
     ],
 
+    ui:'wzwindow',
     height: 173,
     width: 739,
     layout: 'fit',

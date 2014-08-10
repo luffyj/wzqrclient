@@ -29,13 +29,14 @@ Ext.define("wzqr.view.app.ContextUnit", {
                     }
                 }
             }},
-        {text: '编号', dataIndex: 'number', flex: 1},
+        {text: '编号', dataIndex: 'number',hidden:true, flex: 1},
         {text: '申报人', dataIndex: 'realName', flex: 2},
-        {text: '登录名', dataIndex: 'ownerLoginName', flex: 2},
-        {text: '申报批次', dataIndex: 'batch', flex: 1},
+        {text: '登录名', dataIndex: 'ownerLoginName',hidden:true, flex: 2},
+        {text: '申报批次', dataIndex: 'batch',hidden:true, flex: 1},
         {text: '人才类型', flex: 2, dataIndex: 'type'},
         {text: '专业领域', flex: 2, dataIndex: 'specialty'},
         {text: '申报单位名称', flex: 3, dataIndex: 'appOrgName'},
+        {text: '上报时间', flex: 2, dataIndex: 'submitDate',hidden:true, xtype: 'datecolumn', format: 'Y-m-d'},
         {text: '申报状态', flex: 2, dataIndex: 'status'},
         {
             text: '操作',
@@ -72,24 +73,25 @@ Ext.define("wzqr.view.app.ContextUnit", {
                     handler: function(grid, rowIndex, colIndex, item, e, record, row) {
                         grid.fireEvent('actionedit', grid, record, rowIndex, colIndex, row, item, e);
                     }
-                }, {
-                    icon: 'resources/images/delete.png',
-                    tooltip: '删除',
-                    text:'删除',
-                    isDisabled: function(view, rowIndex, colIndex, item, record) {
-                        return !record.isWeishangbao() && !record.isReturn();
-                    },
-                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
-                        grid.fireEvent('actiondelete', grid, record, rowIndex, colIndex, row, item, e);
-                    }
-                }, {
-                    icon: 'resources/images/export.png',
-                    tooltip: '导出',
-                    text:'导出',
-                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
-                        grid.fireEvent('actionexport', grid, record, rowIndex, colIndex, row, item, e);
-                    }
                 }
+//                , {
+//                    icon: 'resources/images/delete.png',
+//                    tooltip: '删除',
+//                    text:'删除',
+//                    isDisabled: function(view, rowIndex, colIndex, item, record) {
+//                        return !record.isWeishangbao() && !record.isReturn();
+//                    },
+//                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
+//                        grid.fireEvent('actiondelete', grid, record, rowIndex, colIndex, row, item, e);
+//                    }
+//                }, {
+//                    icon: 'resources/images/export.png',
+//                    tooltip: '导出',
+//                    text:'导出',
+//                    handler: function(grid, rowIndex, colIndex, item, e, record, row) {
+//                        grid.fireEvent('actionexport', grid, record, rowIndex, colIndex, row, item, e);
+//                    }
+//                }
             ]
         }
     ],
