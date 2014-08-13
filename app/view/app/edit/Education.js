@@ -27,6 +27,8 @@ Ext.define('wzqr.view.app.edit.Education', {
             items: [
                 {
                     xtype: 'xmutliwowpanel',
+						id:'wmutlBox',
+						cls:'wdialogInpBox',
                     region: 'center',
                     padding: 2,
                     layout: 'column',
@@ -36,6 +38,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                     baseFields: [
                         {
                             xtype: 'combobox',
+								cls:'wcommonInp2',
                             columnWidth: 0.12,
                             title: '学位 Degree',
                             fieldLabel: '',
@@ -45,6 +48,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             columnWidth: 0.19,
                             title: '时间 Time',
                             fieldLabel: '',
@@ -53,6 +57,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '国家 Country',
                             columnWidth: 0.19,
                             fieldLabel: '',
@@ -61,6 +66,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '院校 University',
                             columnWidth: 0.25,
                             fieldLabel: '',
@@ -69,6 +75,7 @@ Ext.define('wzqr.view.app.edit.Education', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '专业 Major',
                             columnWidth: 0.25,
                             fieldLabel: '',

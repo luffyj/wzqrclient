@@ -30,6 +30,7 @@ Ext.define('wzqr.view.app.edit.Work', {
             items: [
                 {
                     xtype: 'xmutliwowpanel',
+						cls:'wdialogInpBox',
                     region: 'center',
                     maxRows: 9,
                     padding: 2,
@@ -39,6 +40,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                     baseFields: [
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '职务（加注英文）',
                             columnWidth: 0.225,
                             fieldLabel: '',
@@ -47,6 +49,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '时间',
                             columnWidth: 0.225,
                             fieldLabel: '',
@@ -55,6 +58,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '国家',
                             columnWidth: 0.25,
                             fieldLabel: '',
@@ -63,6 +67,7 @@ Ext.define('wzqr.view.app.edit.Work', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '单位（加注英文）',
                             columnWidth: 0.3,
                             fieldLabel: '',

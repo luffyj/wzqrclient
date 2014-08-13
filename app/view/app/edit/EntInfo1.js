@@ -53,6 +53,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                 {
                     xtype: 'panel',
                     autoScroll: true,
+						margin:'10 0',
                     layout: 'column',
                     items: [
                         {
@@ -97,6 +98,8 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                 },
                 {
                     xtype: 'xmutliwowpanel',
+						id:'wwowpanPan',
+						cls:'wdialogInpBox',
                     maxRows: 20,
                     padding: 2,
                     layout: 'column',
@@ -105,6 +108,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                     baseFields: [
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '投资者姓名',
                             columnWidth: 0.15,
                             fieldLabel: '',
@@ -113,6 +117,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '投资额',
                             columnWidth: 0.175,
                             fieldLabel: '',
@@ -121,6 +126,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '出资方式',
                             columnWidth: 0.175,
                             fieldLabel: '',
@@ -129,6 +135,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '占总股本比例%',
                             columnWidth: 0.25,
                             fieldLabel: '',
@@ -137,6 +144,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '在公司担任职务',
                             columnWidth: 0.25,
                             fieldLabel: '',
@@ -148,6 +156,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                 {
                     xtype: 'panel',
                     autoScroll: true,
+						margin:'10 0',
                     layout: 'column',
                     items: [
                         {

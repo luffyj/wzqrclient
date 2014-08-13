@@ -5,9 +5,10 @@ Ext.define("wzqr.view.app.Add", {
         'Ext.form.FieldSet'
     ],
     xtype: 'xappadd',
+		cls:'xappaddBox',
     title: '申报信息',
     width: 349,
-    height: 565,
+    height: 500,
     layout: 'fit',
     buttons: [
         {

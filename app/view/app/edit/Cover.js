@@ -158,6 +158,7 @@ Ext.define("wzqr.view.app.edit.Cover", {
         }, {
             xtype: 'cfield',
             xxtype: 'textfield',
+				cls:'covnameInp',
             colspan: 8,
             name: 'people',
             width:100,

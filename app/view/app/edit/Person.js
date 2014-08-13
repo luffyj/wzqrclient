@@ -21,6 +21,7 @@ Ext.define('wzqr.view.app.edit.Person', {
             items: [
                 {
                     xtype: 'panel',
+						id:'myInforCont',
                     margin: '10 5 5 5',
                     title: '',
                     layout: {
@@ -47,10 +48,12 @@ Ext.define('wzqr.view.app.edit.Person', {
                         },
                         {
                             xtype: 'tlabel',
+								cls:'wmydateBox',
                             text: '填表日期 Date of Completion'
                         },
                         {
                             xtype: 'datefield',
+								id:'wmydateCon',
                             cellCls: 'wzformborder',
                             format:'Y年m月d日',
                             fieldLabel: '',
@@ -73,8 +76,10 @@ Ext.define('wzqr.view.app.edit.Person', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'myInpIdBox',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
+								width:160,
                             name: 'idType',
                             allowBlank: false,
                             blankText: '必须输入证件名称',
@@ -86,6 +91,8 @@ Ext.define('wzqr.view.app.edit.Person', {
                         },
                         {
                             xtype: 'textfield',
+								id:'myzjIdCon',
+								width:158,
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'idNumber',
@@ -101,7 +108,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             xtype: 'textfield',
                             cellCls: 'wzformborder',
                             colspan: 4,
-                            width: 495,
+                            width: 670,
                             fieldLabel: '',
                             name: 'address',
                             blankText: '必须输入证件号码',
@@ -117,6 +124,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                         },
                         {
                             xtype: 'textfield',
+								width:160,
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'personPhone',
@@ -129,6 +137,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                         },
                         {
                             xtype: 'textfield',
+								width:158,
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'personMobile',
@@ -143,7 +152,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             xtype: 'textfield',
                             cellCls: 'wzformborder',
                             colspan: 4,
-                            width: 495,
+                            width: 670,
                             fieldLabel: '',
                             name: 'addressOut',
                             blankText: '必须输入证件号码',
@@ -156,6 +165,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                         {
                             xtype: 'textfield',
                             cellCls: 'wzformborder',
+								width: 670,
                             colspan: 4,
                             fieldLabel: '',
                             name: 'phoneOut',
@@ -168,6 +178,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                         },
                         {
                             xtype: 'textfield',
+								width: 670,
                             cellCls: 'wzformborder',
                             colspan: 4,
                             fieldLabel: '',
@@ -181,6 +192,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                 },
                 {
                     xtype: 'panel',
+						id:'wmyinforCon',
                     layout: 'fit',
                     title: '',
                     dockedItems: [
@@ -194,6 +206,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                     items: [
                         {
                             xtype: 'xmutliwowpanel',
+								cls:'wdialogInpBox',
                             maxRows: 10,
                             padding: 2,
                             layout: 'column',
@@ -202,6 +215,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                             baseFields: [
                                 {
                                     xtype: 'combobox',
+										cls:'wcommonInp2',
                                     title: '关系 Relationship',
                                     columnWidth: 0.15,
                                     fieldLabel: '',
@@ -210,6 +224,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                 },
                                 {
                                     xtype: 'textfield',
+										cls:'wcommonInp',
                                     title: '姓名 Name',
                                     columnWidth: 0.15,
                                     fieldLabel: '',
@@ -218,6 +233,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                 },
                                 {
                                     xtype: 'textfield',
+										cls:'wcommonInp',
                                     title: '年龄 Age',
                                     columnWidth: 0.15,
                                     fieldLabel: '',
@@ -226,6 +242,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                 },
                                 {
                                     xtype: 'textfield',
+										cls:'wcommonInp',
                                     title: '国籍 Nationality',
                                     columnWidth: 0.15,
                                     fieldLabel: '',
@@ -234,6 +251,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                                 },
                                 {
                                     xtype: 'textfield',
+										cls:'wcommonInp',
                                     title: '工作单位及职务 Employer & Position',
                                     columnWidth: 0.4,
                                     fieldLabel: '',
@@ -246,6 +264,7 @@ Ext.define('wzqr.view.app.edit.Person', {
                 },
                 {
                     xtype: 'label',
+						id:'mycenterLabeBox',
                     html: '信息填写必须完整。如系在职人员，请填写工作单位及职务；如系已退休人员或无工作。<br/>&nbsp;&nbsp;&nbsp;请填写退休或无工作；如系未成年子女，请填写所就读的学校。',
                     margin: 10
                 }

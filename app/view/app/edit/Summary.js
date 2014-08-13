@@ -56,8 +56,9 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         {
                             xtype: 'combobox',
                             cellCls: 'wzformborder',
+								id:'huizInp',
                             colspan: 1,
-                            width: 105,
+                            width: 142,
                             fieldLabel: '',
                             name: 'sex',
                             readOnly: true,
@@ -85,9 +86,10 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'datefield',
+								id:'huizInp2',
                             format:'Y年m月d日',
                             cellCls: 'wzformborder',
-                            width: 120,
+                            width: 140,
                             fieldLabel: '',
                             name: 'birthDate',
                             value: '07/25/1979',
@@ -167,6 +169,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textareafield',
+								id:'wtextAreaCon',
                             cellCls: 'wzformborder',
                             colspan: 3,
                             style: {
@@ -184,7 +187,11 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
+								id:'wtextAreaCon2',
                             RemovedemptyText: '请输入落地城市',
+								style: {
+                                width: '100%'
+                            },
                             cellCls: 'wzformborder',
                             colspan: 3,
                             fieldLabel: '',
@@ -216,7 +223,11 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
+								id:'wtextAreaCon3',
                             RemovedemptyText: '请输入大致到中国时间',
+								style: {
+                                width: '100%'
+                            },
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'borderDate'
@@ -227,7 +238,11 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
+								id:'wtextAreaCon4',
                             RemovedemptyText: '请输入签订合同时间',
+								style: {
+                                width: '100%'
+                            },
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'wdate'
@@ -238,7 +253,11 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textfield',
+								id:'wtextAreaCon5',
                             RemovedemptyText: '请输入引进平台',
+								style: {
+                                width: '100%'
+                            },
                             cellCls: 'wzformborder',
                             fieldLabel: '',
                             name: 'platform'
@@ -280,6 +299,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                         },
                         {
                             xtype: 'textareafield',
+								id:'wtextAreaCon6',
                             cellCls: 'wzformborder',
                             colspan: 3,
                             style: {

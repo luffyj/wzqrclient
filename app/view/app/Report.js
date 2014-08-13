@@ -32,9 +32,10 @@ Ext.define('wzqr.view.app.Report', {
                     items: [
                         {
                             xtype: 'image',
-                            height: 16,
-                            width: 16,
-                            src: 'resources/images/group.png'
+                            height: 12,
+                            width: 12,
+							margin:'0 5',
+                            src: 'resources/images/ui16.gif'
                         },
                         {
                             xtype: 'label',

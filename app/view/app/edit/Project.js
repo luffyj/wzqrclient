@@ -30,6 +30,7 @@ Ext.define('wzqr.view.app.edit.Project', {
             items: [
                 {
                     xtype: 'xmutliwowpanel',
+						cls:'wdialogInpBox',
                     maxRows: 9,
                     region: 'center',
                     padding: 2,
@@ -39,6 +40,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                     baseFields: [
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '起止时间',
                             columnWidth: 0.15,
                             fieldLabel: '',
@@ -47,6 +49,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '项目性质和来源',
                             columnWidth: 0.3,
                             fieldLabel: '',
@@ -55,6 +58,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '经费总额',
                             columnWidth: 0.125,
                             fieldLabel: '',
@@ -63,6 +67,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '参与人数',
                             columnWidth: 0.125,
                             fieldLabel: '',
@@ -71,6 +76,7 @@ Ext.define('wzqr.view.app.edit.Project', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '申报人的具体职位和任务',
                             columnWidth: 0.3,
                             fieldLabel: '',

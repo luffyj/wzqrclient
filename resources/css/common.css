@@ -14,6 +14,9 @@
 	_width:0;
 	_height:0;
 }
+.x-form-type-text input.x-form-invalid-field{
+	border:1px solid #c0c0c0 !important;
+}
 /*header box bg*//*#xtop-1015*/
 /*.x-panel.x-docked.x-panel-default.x-docked-top.x-panel-docked-top.x-panel-default-docked-top.x-noborder-trl*/
 /*#xtop-1015, #xtop-1030*/
@@ -46,6 +49,8 @@
 	left: auto !important;
 	margin-top:10px !important;
 }*/
+
+/*
 #panel-1020, #panel-1035{
 	margin: 20px 0px 0px 0px !important;
 	right: 5px !important;
@@ -59,6 +64,7 @@
 	text-overflow:hidden;
 	-o-text-overflow:hidden;
 }
+*/
 
 /*logo title */
 /*#component-1017, #component-1032*/
@@ -115,7 +121,7 @@
 }
 #rightPanelBox .x-panel-body .x-box-inner .x-box-target{
 	height:20px;
-	top:5px;
+	top:6px;
 	overflow:hidden !important;
 }
 /*
@@ -165,7 +171,7 @@
 	color: #157FCC;
 }
 #perssImg{
-
+	left:160px !important;
 }
 
 .rightBox .x-panel{
@@ -188,6 +194,8 @@
 #quitBtn-btnEl span{
 	height:22px !important;
 	line-height:22px !important;
+	*height:18px;
+	*line-height:16px !important;
 	font-size:12px !important;
 	font-family:"微软雅黑", Arial !important;
 }
@@ -421,10 +429,12 @@ margin-top: 8px !important;
 	overflow:auto;
 	overflow-x:hidden;	
 }
+/*
 .x-fit-item .x-panel-body .x-box-inner{
 	overflow:auto !important;
 	overflow-x:hidden !important;	
 }
+*/
 .baseInfor{
 	
 	border:1px solid #c0c0c0;
@@ -570,6 +580,11 @@ input[type="password"]{
 }
 
 /*dialog*/
+#wcoverBox{
+	
+	overflow:auto;
+	overflow-x:hidden;
+}
 #wcoverBox-body table tbody tr td.wzformlabel {
 	padding-right:5px;
 	border-right: 1px solid #c0c0c0;
@@ -585,12 +600,17 @@ input[type="password"]{
 }
 #wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body input{
 	height: 33px;
-	width: 210px;
+	line-height:33px;
+	width: 210px !important;
+
 }
-
-#wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
-
+#wcoverBox-body table tbody tr td table.covnameInp tbody tr td input{
+	width:85px !important;
+}
+#wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input.x-form-text{
+	
 	width: 186px !important;
+	*width: 188px !important;
 }
 #wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body table{
 	border-color: #c0c0c0 !important;
@@ -601,14 +621,56 @@ input[type="password"]{
 .x-form-invalid .x-form-trigger-wrap {
 border-color: #c0c0c0 !important;
 }
+
+
+#wcoverBox .x-form-text{
+	height:24px;
+	line-height:24px;
+	padding:0px;
+	padding:0 0 0 5px;
+}
+
 #wcoverBox-body{
 	height: 450px;
 	overflow: auto;
+	overflow-x:hidden;
 }
 #wcoverBox-body table.x-table-layout{
 	height: 500px;
 }
-/*dialog 2*/
+
+
+/*dialog 2   基本信息*/
+
+#wbasealoneInp-inputCell input{
+	*width:200px !important;
+}
+#wbasealoneInp2-bodyEl input{
+	*width:138px !important;
+}
+#wbasealoneInp3-bodyEl input{
+	*width:162px !important;
+}
+#wbasealoneInp5-inputCell input{
+	*width:230px !important;
+}
+#wbasealoneInp6-bodyEl input{
+	*width:138px !important;
+}
+#wbasealoneInp7-bodyEl input{
+	*width:162px !important;
+}
+
+
+
+#wbasealoneInp12-bodyEl input{
+	*width:182px !important;
+}
+#wbasealoneInp14-bodyEl input{
+	*width:182px !important;
+}
+
+
 #wbaseBox-body table tbody tr td.wzformlabel {
 	padding-right:5px;
 	border-right: 1px solid #c0c0c0;
@@ -627,11 +689,19 @@ border-color: #c0c0c0 !important;
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-item-body {
 	padding:0 5px;
 }
-
-/*.wzsizefixedtable {
-    width:120px !important;
-}*/
-//这里的代码会导致 某些字段太短 by jc
+ #wbaseBox .x-form-text{
+	height:24px;
+	line-height:24px;
+	padding:0px;
+	padding:0 0 0 5px;
+}
+.wzsizefixedtable tbody tr td input {
+    
+}
+.wzsizefixedtable tbody tr td input.x-form-invalid-field{
+	border:1px solid #c0c0c0;
+}
+/*//这里的代码会导致 某些字段太短 by jc*/
 /*#wbaseBox-body table tbody tr td table{    
 	width:120px !important;
 	_width:130px !important;
@@ -654,171 +724,70 @@ border-color: #c0c0c0 !important;
 #wbaseBox-body{
 	height: 450px;
 	overflow: auto;
+	overflow-x:hidden;
 }
 #wbaseBox-body table.x-table-layout{
-	height: 550px;
+	height: 600px;
 }
 
 
 
-/*dialog my infor 10*/
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformlabel {
-	padding-right:5px;
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-	background:#eee;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformborder{
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table.x-table-form-item{
-	margin-bottom: 0px;
-	
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table{
-	width:140px !important;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625{
-	width:610px !important;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1618-inputEl{
-	width:605px !important;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625-inputEl{
-	width:605px !important;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body {
-	padding:0 5px;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body input{
-	height: 33px;
-	width: 210px;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
-
-	width: 120px !important;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
-	width:auto:!important;
-	border-color: #c0c0c0 !important;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body {
-	height: 450px;
-	overflow: auto;
-}
-#wpersonBox-innerCt .x-panel .x-panel-body table.x-table-layout{
-	height: 360px;
-}
-
-
-/*dialog total infor 11*/
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformlabel {
-	padding-right:5px;
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-	background:#eee;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformborder{
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table.x-table-form-item{
-	margin-bottom: 0px;
-	
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table{
-	width:140px !important;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625{
-	width:610px !important;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1618-inputEl{
-	width:605px !important;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625-inputEl{
-	width:605px !important;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body {
-	padding:0 5px;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body input{
-	height: 33px;
-	width: 210px;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
-
-	width: 120px !important;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
-	width:auto:!important;
-	border-color: #c0c0c0 !important;
-}
-#wmaryBox-innerCt .x-panel{
-	height: 450px;
-}
-#wmaryBox-body{
-	overflow:auto;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table.x-table-layout{
-	height: 530px;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td{
-	width:auto !important;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td textarea{
-	width:590px !important;
-}
-/*
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td .x-form-cb-wrap-inner .x-form-checkbox {
-	width: 15px !important;
-	height: 15px !important;
-	background-position:0 0;
-}
-#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td .x-form-cb-wrap-inner input:hover{
-	background-position:-15px 0;
-}
-*/
-
-#pogeBox-inputEl{
-	width: 15px !important;
-	height: 15px !important;
-	background-position:0 0;
-}
-#pogeBox-inputEl:hover{
-	background-position:-15px 0;
-}
 
 
 /***dialog 3 form****/
 #ducatBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 #ducatBox-body .x-panel .x-panel-body{
 	margin-top:10px;
 }
-#ducatBox-body .x-panel .x-panel-body span div label{
+
+/*input*/
+/*
+#wmutlBox-innerCt label{
 	height:30px;
 	line-height:30px;
 	border:1px solid #c0c0c0;
 }
-#ducatBox-body .x-panel .x-panel-body span div table tbody tr td>input{
+#wmutlBox-innerCt table.wcommonInp tbody tr td input{
 	height:32px;
 	line-height:32px;
+	*height:30px;
+	*line-height:30px;
 }
-#ducatBox-body .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
+*/
+#wmutlBox-innerCt table.wcommonInp2 tbody tr td table tbody tr td input{
+	height:28px;
+	line-height:18px;
+	*line-height:28px;
+}
+
+
+/*dialog 公共类*/
+.wdialogInpBox label{
+	height:28px;
+	line-height:18px;
+	*line-height:28px;
+	border:1px solid #c0c0c0;
+}
+.wdialogInpBox table.wcommonInp tbody tr td input{
 	height:30px;
-	line-height:30px;
+	line-height:18px;
+	*height:28px;
+	*line-height:28px;
 }
+
+
 
 
 /***dialog 3 form 工作经历****/
 #workBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 #workBox .x-panel .x-panel-body{
 	margin-top:10px;
 }
+/*
 #workBox .x-panel .x-panel-body span div label{
 	height:30px;
 	line-height:30px;
@@ -828,67 +797,40 @@ border-color: #c0c0c0 !important;
 	height:32px;
 	line-height:32px;
 }
-#workBox .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
-	height:30px;
-	line-height:30px;
-}
+*/
 
 
 
 /*******dialog 个人专长*********/
 #cialtyBox label.x-component{
-	color:#888;
+	color:#444;
 }
 
 
 /***dialog 4 主要项目***/
 #ojectBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 #ojectBox .x-panel .x-panel-body{
 	margin-top:10px;
 }
-#ojectBox .x-panel .x-panel-body span div label{
-	height:30px;
-	line-height:30px;
-	border:1px solid #c0c0c0;
-}
-#ojectBox .x-panel .x-panel-body span div table tbody tr td>input{
-	height:32px;
-	line-height:32px;
-}
-#ojectBox .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
-	height:30px;
-	line-height:30px;
-}
+
 
 /***dialog 4 主要成果***/
 #sultmainBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 #sultmainBox .x-panel .x-panel-body{
 	margin-top:10px;
 }
-#sultmainBox .x-panel .x-panel-body span div label{
-	height:30px;
-	line-height:30px;
-	border:1px solid #c0c0c0;
-}
-#sultmainBox .x-panel .x-panel-body span div table tbody tr td>input{
-	height:32px;
-	line-height:32px;
-}
-#sultmainBox .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
-	height:30px;
-	line-height:30px;
-}
+
 #sultmainBox-innerCt label.x-component{
-	color:#888;
+	color:#444;
 	height:30px;
 	line-height:30px;
 }
 #sultmainBox-innerCt .x-panel{
-	height:176px !important;
+	height:190px !important;
 }
 #sultmainBox-outerCt{
 	
@@ -902,13 +844,13 @@ border-color: #c0c0c0 !important;
 
 /***dialog 4 企业发展情况*///*******/
 #winforBox-innerCt label{
-	color:#888;
+	color:#444;
 	height:30px;
 	line-height:30px;
 
 }
 #winforBox-innerCt .x-component{
-	color:#888;
+	color:#444;
 	height:30px;
 	line-height:30px;
 }
@@ -923,7 +865,7 @@ border-color: #c0c0c0 !important;
 /***dialog 5 textarea****/
 #winforBox2-targetEl .x-panel .x-component{
 	margin:0 10px !important;
-	color:#888;
+	color:#444;
 	height:30px;
 	line-height:30px;
 }
@@ -934,11 +876,11 @@ border-color: #c0c0c0 !important;
 
 /*dialog 5  text*/
 #specBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 /*dialog 6 form*/
 #itemBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 
 #itemBox-body .x-panel .x-panel-body{
@@ -960,7 +902,7 @@ border-color: #c0c0c0 !important;
 
 /*dialog 7 form*/
 #gainBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 #gainBox-body{
 	overflow-x:hidden !important;
@@ -994,25 +936,65 @@ border-color: #c0c0c0 !important;
 
 /**dialog 8 text*/
 #otherBox label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 
 /**dialog 9 text*/
 #imagineBox-targetEl .x-panel label.x-docked-top{
-	color:#888;
+	color:#444;
 }
 
-/**dialog 10 text form*/
+/**dialog 10 text form 个人信息*/
 #wpersonBox-innerCt .x-panel .x-panel-body{
 	overflow:hidden;
 }
+/*
 #wpersonBox-innerCt .x-panel .x-panel-body span div > label{
 	height: 30px;
 	line-height: 30px;
 	display: block;
 	color:#444;
 }
+*/
+ #wpersonBox .x-form-text{
+	/*height:24px;
+	line-height:24px;*/
+	padding:0px;
+	padding:0 0 0 5px;
+}
 
+
+/*dialog my infor 10 个人中心*/
+/*个人中心*/
+#myInforCont-body table tbody tr td.wzformborder table tbody tr td input {
+	*line-height:30px !important;
+}
+#wmyinforCon-body .wdialogInpBox .x-panel-body{
+	height:195px !important;
+}
+#wmyinforCon-body .wdialogInpBox .x-panel-body div div label{
+	height:28px;
+	line-height:28px;
+	border:1px solid #c0c0c0;
+}
+#wmyinforCon-body .wdialogInpBox .x-panel-body div div table.wcommonInp tbody tr td input{
+	height:30px !important;
+	line-height:30px !important;
+	*height:28px;
+	*line-height:28px;
+}
+#wmyinforCon-body .wdialogInpBox .x-panel-body div div table.wcommonInp2 tbody tr td table tbody tr td input{
+	height:28px !important;
+	line-height:28px !important;
+	*height:30px !important;
+	*line-height:30px !important;
+}
+#mycenterLabeBox
+{
+	height:22px;
+	line-height:22px;
+}
+/*
 #wpersonBox-innerCt .x-panel .x-panel-body span div label{
 	height:30px;
 	line-height:30px;
@@ -1030,6 +1012,8 @@ border-color: #c0c0c0 !important;
 	height:20px;
 	line-height:20px;
 }
+*/
+/*
 table[wzform="1"] {
 	border-left: 1px solid #c0c0c0 !important;
 	border-top: 1px solid #c0c0c0 !important;
@@ -1038,13 +1022,196 @@ table[wzform="1"] {
 	border-left: 1px solid #c0c0c0 !important;
 	border-top: 1px solid #c0c0c0 !important;
 }
-
+*/
+/*
 #wpersonBox-innerCt  .x-panel label.x-component{
 	color:#888;
 }
 #wpersonBox-innerCt label.x-component{
 	color:#888;
 }
+*/
+
+
+
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformlabel {
+	padding-right:5px;
+	border-right: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	background:#eee;
+}
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformborder{
+	border-right: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+}
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table.x-table-form-item{
+	margin-bottom: 0px;
+	
+}
+/*
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table{
+	width:140px !important;
+}
+
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625{
+	width:610px !important;
+}*/
+/*
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1618-inputEl{
+	width:605px !important;
+}
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625-inputEl{
+	width:605px !important;
+}
+*/
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body {
+	padding:0 5px;
+}
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body input{
+	height: 33px;
+	width: 210px;
+}
+#wmydateCon-inputEl{
+	width:120px !important;
+	*width:140px !important;
+}
+/*
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
+
+	width: 120px !important;
+}
+*/
+#wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
+	width:auto:!important;
+	border-color: #c0c0c0 !important;
+}
+#wpersonBox-innerCt .x-panel .x-panel-body {
+	height: 450px;
+	overflow: auto;
+}
+#wpersonBox-innerCt .x-panel .x-panel-body table.x-table-layout{
+	height: 360px;
+}
+
+
+/*dialog total infor 11 汇总信息*/
+#wtextAreaCon, #wtextAreaCon2, #wtextAreaCon6{
+	*width:725px !important;
+}
+#wtextAreaCon3, #wtextAreaCon4, #wtextAreaCon5{
+	*width:235px !important;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformlabel {
+	padding-right:5px;
+	border-right: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	background:#eee;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformborder{
+	border-right: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table.x-table-form-item{
+	margin-bottom: 0px;
+	
+}
+#wmaryBox .x-form-text{
+	height:24px;
+	line-height:24px;
+	padding:0px;
+	padding:0 0 0 5px;
+}
+#wmaryBox textarea.x-form-text{
+	width:100%;
+	height:50px;
+	line-height:24px;
+	padding:0px;
+	padding:0 0px 0 5px;
+}
+/*
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table{
+	width:140px !important;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625{
+	width:610px !important;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1618-inputEl{
+	width:605px !important;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625-inputEl{
+	width:605px !important;
+}
+*/
+
+.x-form-type-text input#wbaseDateCon-inputEl {
+	border: 0px solid #c0c0c0 !important;
+}
+#huizInp2-triggerWrap{
+	border:0px solid #c0c0c0 !important;
+}
+#huizInp{
+	width:100%;
+}
+#huizInp-triggerWrap{
+	width:140px;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body {
+	padding:0 5px;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body input{
+	height: 33px;
+	*line-height:33px !important;
+	width: 210px;
+}
+/*
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
+
+	width: 120px !important;
+}
+*/
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
+	width:auto:!important;
+	border-color: #c0c0c0 !important;
+}
+#wmaryBox-innerCt .x-panel{
+	height: 450px;
+}
+#wmaryBox-body{
+	overflow:auto;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table.x-table-layout{
+	height: 530px;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td{
+	width:auto !important;
+}
+/*
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td textarea{
+	width:100% !important;
+}
+*/
+/*
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td .x-form-cb-wrap-inner .x-form-checkbox {
+	width: 15px !important;
+	height: 15px !important;
+	background-position:0 0;
+}
+#wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td .x-form-cb-wrap-inner input:hover{
+	background-position:-15px 0;
+}
+*/
+
+#pogeBox-inputEl{
+	width: 15px !important;
+	height: 15px !important;
+	background-position:0 0;
+}
+#pogeBox-inputEl:hover{
+	background-position:-15px 0;
+}
+
+
+
 
 /***dialog 12****/
 

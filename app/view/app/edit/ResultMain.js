@@ -36,6 +36,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                 },
                 {
                     xtype: 'xmutliwowpanel',
+						cls:'wdialogInpBox',
                     maxRows: 20,
                     padding: 2,
                     layout: 'column',
@@ -44,6 +45,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                     baseFields: [
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '发表时间',
                             columnWidth: 0.2,
                             fieldLabel: '',
@@ -52,6 +54,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '论著（论文）名称',
                             columnWidth: 0.4,
                             fieldLabel: '',
@@ -60,6 +63,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '发表载体',
                             columnWidth: 0.2,
                             fieldLabel: '',
@@ -68,6 +72,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '论著（论文）作者',
                             columnWidth: 0.2,
                             fieldLabel: '',
@@ -83,6 +88,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                 },
                 {
                     xtype: 'xmutliwowpanel',
+						cls:'wdialogInpBox',
                     maxRows: 20,
                     padding: 2,
                     layout: 'column',
@@ -91,6 +97,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                     baseFields: [
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '专利保护期',
                             columnWidth: 0.2,
                             fieldLabel: '',
@@ -99,6 +106,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '专利名称',
                             columnWidth: 0.4,
                             fieldLabel: '',
@@ -107,6 +115,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '授权国家',
                             columnWidth: 0.2,
                             fieldLabel: '',
@@ -115,6 +124,7 @@ Ext.define('wzqr.view.app.edit.ResultMain', {
                         },
                         {
                             xtype: 'textfield',
+								cls:'wcommonInp',
                             title: '专利所有者',
                             columnWidth: 0.2,
                             fieldLabel: '',
