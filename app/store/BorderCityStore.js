@@ -21,9 +21,6 @@ Ext.define('wzqr.store.BorderCityStore', {
                     text: '龙湾区'
                 },
                 {
-                    text: '信息技术'
-                },
-                {
                     text: '瑞安市'
                 },
                 {

@@ -280,6 +280,22 @@ Ext.define('wzqr.spring.data.Model', {
         sortType: Ext.data.SortTypes.asUCString,
         type: 'sstring'
     };
+
+    Ext.data.Types.SFLOAT = {
+        convert: function(v) {
+            if (typeof v === 'number') {
+                return v;
+            }
+            if (Ext.isArray(v)) {
+                v = v[0];
+            }
+            return v !== undefined && v !== null && v !== '' ?
+                    parseFloat(String(v).replace(Ext.data.Types.stripRe, ''), 10) : (this.useNull ? null : 0);
+        },
+        sortType: Ext.data.SortTypes.none,
+        type: 'sfloat'
+    };
+
     Ext.data.Types.SBOOLEAN = {
         convert: function(v) {
             if (typeof v === 'boolean') {

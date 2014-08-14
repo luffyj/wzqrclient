@@ -170,7 +170,7 @@ Ext.define('wzqr.view.app.edit.SummaryEnt', {
                             xtype: 'displayfield',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
-                            name: 'myFundsPer'
+                            name: 'actualFunds'
                         },
                         
                         {
