@@ -37,7 +37,7 @@ Ext.define('wzqr.Utils', {
             default:
                 if (data.code / 100 === 2) {
                     data.success = true;
-                    if (!data.message && data.originalMessage){
+                    if (!data.message && data.originalMessage) {
                         data.message = data.originalMessage;
                     }
                 } else {
@@ -121,6 +121,16 @@ Ext.define('wzqr.Utils', {
         var vp = Utils.viewport();
         vp.removeAll();
         vp.add(view);
+    },
+    toLoginFrame: function(loginClass) {
+        var isDebugMode = false;
+//<debug>
+        isDebugMode = true;
+        Utils.push(loginClass.create());
+//</debug>
+        if (!isDebugMode)
+            window.location.reload();
+
     }
 });
 

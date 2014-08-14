@@ -21,6 +21,7 @@ Ext.define("wzqr.view.app.Edit", {
         'wzqr.view.app.edit.ResultOther',
         'wzqr.view.app.edit.Specialty',
         'wzqr.view.app.edit.Summary',
+        'wzqr.view.app.edit.SummaryEnt',
         'wzqr.view.app.edit.Work',
         'wzqr.view.app.edit.EntInfo1',
         'wzqr.view.app.edit.EntInfo21',
@@ -68,7 +69,7 @@ Ext.define("wzqr.view.app.Edit", {
                     xtype: 'xappeditperson',
                     id: 'wpersonBox'
                 }, {
-                    xtype: 'xappeditsummary',
+                    xtype: 'xappeditsummaryent',
                     id: 'wmaryBox'
                 }, {
                     xtype: 'xappeditattach',

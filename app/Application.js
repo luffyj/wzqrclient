@@ -66,6 +66,7 @@ Ext.define('wzqr.Application', {
         'ManageApplication'
     ],
     stores: [
+        'BorderCityStore',
         'SubOrg',
         'GxStore',
         'SpecialtyStore',

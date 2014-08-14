@@ -26,7 +26,7 @@ Ext.define('wzqr.view.app.edit.Plan', {
             items: [
                 {
                     xtype: 'panel',
-                    flex: 1,
+                    flex: 5,
                     layout: 'fit',
                     dockedItems: [
                         {
@@ -59,7 +59,7 @@ Ext.define('wzqr.view.app.edit.Plan', {
                 },
                 {
                     xtype: 'panel',
-                    flex: 1,
+                    flex: 2,
                     layout: 'fit',
                     dockedItems: [
                         {

@@ -1,6 +1,6 @@
-Ext.define('wzqr.view.app.edit.Summary', {
+Ext.define('wzqr.view.app.edit.SummaryEnt', {
     extend: 'Ext.panel.Panel',
-    alias: 'widget.xappeditsummary',
+    alias: 'widget.xappeditsummaryent',
     requires: [
         'Ext.Date',
         'Ext.panel.Panel',
@@ -148,44 +148,40 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             xtype: 'displayfield',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
+                            colspan: 3,
                             name: 'specialty'
                         },
+                        
                         {
                             xtype: 'tlabel',
-                            text: '专业方向'
+                            text: '目前实际到位资金占比%'
                         },
                         {
                             xtype: 'displayfield',
                             cellCls: 'wzformborder',
                             fieldLabel: '',
-                            name: 'profession'
+                            name: 'actualCurrentFundsPer'
                         },
                         {
                             xtype: 'tlabel',
-                            text: '专利授权或研发成果情况 （200字以内）'
+                            text: '个人或风投的占股比例或资金额度'
                         },
                         {
-                            xtype: 'textareafield',
-                            id: 'wtextAreaCon',
+                            xtype: 'displayfield',
                             cellCls: 'wzformborder',
-                            colspan: 3,
-                            style: {
-                                width: '100%'
-                            },
                             fieldLabel: '',
-                            name: 'patentDesc',
-                            RemovedemptyText: '请输入专利授权或者研发成果情况',
-                            maxLength: 200,
-                            maxLengthText: '最长只能输入{0}'
+                            name: 'myFundsPer'
                         },
+                        
                         {
                             xtype: 'tlabel',
-                            text: '落地市'
+                            text: '落地区域'
                         },
                         {
-                            xtype: 'textfield',
+                            xtype: 'combobox',
+                            store: 'BorderCityStore',
                             id: 'wtextAreaCon2',
-                            RemovedemptyText: '请输入落地城市',
+                            RemovedemptyText: '请输入落地区域',
                             style: {
                                 width: '100%'
                             },
@@ -193,7 +189,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             colspan: 3,
                             fieldLabel: '',
                             name: 'city'
-                        },
+                        },                        
                         {
                             xtype: 'tlabel',
                             text: '到中国前单位'
@@ -249,7 +245,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             text: '引进平台'
                         },
                         {
-                            xtype: 'textfield',
+                            xtype: 'displayfield',
                             id: 'wtextAreaCon5',
                             RemovedemptyText: '请输入引进平台',
                             style: {
@@ -257,7 +253,7 @@ Ext.define('wzqr.view.app.edit.Summary', {
                             },
                             cellCls: 'wzformborder',
                             fieldLabel: '',
-                            name: 'platform'
+                            name: 'appOrgName'
                         },
                         {
                             xtype: 'tlabel',

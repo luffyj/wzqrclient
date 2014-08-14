@@ -34,6 +34,7 @@ Ext.define('wzqr.view.app.edit.EntInfo1', {
                             xtype: 'htmleditor',
                             fieldLabel: '',
                             name: 'entInfo',
+                            height:200,
                             fontFamilies: [
                                 '宋体',
                                 '微软雅黑',

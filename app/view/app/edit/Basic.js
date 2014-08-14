@@ -33,6 +33,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
                     cls: 'wzsizefixedtable',
+                    width:200,
                     colspan: 3,
                     fieldLabel: '',
                     name: 'realName',
@@ -62,9 +63,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-                    html: '&nbsp',                    
+                    html: '&nbsp',
                     tdAttrs: {
-                        width:'1px'
+                        width: '1px'
                     },
                     colspan: 2,
                     rowspan: 7
@@ -84,6 +85,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                             xtype: 'textfield',
                             cls: 'wzsizefixedtable',
                             fieldLabel: '',
+                            width:200,
                             name: 'realEnglishName',
                             allowBlank: false,
                             blankText: '如无外文名，请填写汉语拼音',
@@ -102,7 +104,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'datefield',
-						id:'wbaseDateCon',
+                    id: 'wbaseDateCon',
                     format: 'Y年m月d日',
                     cls: 'wdtable',
                     cellCls: 'wzformborder',
@@ -136,6 +138,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                             xtype: 'textfield',
                             cls: 'wzsizefixedtable',
                             fieldLabel: '',
+                            width:200,
                             name: 'birthPlace',
                             allowBlank: false,
                             blankText: '请输入出生地',
@@ -187,7 +190,15 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-						width: 190,
+                    width: 70,
+                    tdAttrs: {
+                        align: 'center'
+                    },
+                    html: '学位'
+                },
+                {
+                    xtype: 'tlabel',
+                    width: 100,
                     tdAttrs: {
                         align: 'center'
                     },
@@ -203,21 +214,13 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-					width:180,
+                    width: 180,
                     tdAttrs: {
                         align: 'center'
                     },
                     html: '专业',
                     colspan: 2
-                },
-                {
-                    xtype: 'tlabel',
-						width: 190,
-                    tdAttrs: {
-                        align: 'center'
-                    },
-                    html: '学位'
-                },
+                },                
                 {
                     xtype: 'tlabel',
                     html: '中文<br/>Chinese'
@@ -225,9 +228,23 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
-						id:'wbasealoneInp',
+                    id: 'wbasealoneInp4',
                     cls: 'wzsizefixedtable',
-                    width: 190,
+                    width: 80,
+                    fieldLabel: '',
+                    name: 'mgChineseDegree',
+                    allowBlank: false,
+                    blankText: '请选择',
+                    RemovedemptyText: '请选择',
+                    editable: false,
+                    store: 'DegreeStore'
+                },
+                {
+                    xtype: 'combobox',
+                    cellCls: 'wzformborder',
+                    id: 'wbasealoneInp',
+                    cls: 'wzsizefixedtable',
+                    width: 120,
                     fieldLabel: '',
                     name: 'mgChineseCountry',
                     allowBlank: false,
@@ -237,7 +254,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'textfield',
-						id:'wbasealoneInp2',
+                    id: 'wbasealoneInp2',
                     cellCls: 'wzformborder',
                     cls: 'wzsizefixedtable',
                     colspan: 2,
@@ -249,9 +266,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'textfield',
-						width:180,
+                    width: 180,
                     cellCls: 'wzformborder',
-						id:'wbasealoneInp3',
+                    id: 'wbasealoneInp3',
                     cls: 'wzsizefixedtable',
                     colspan: 2,
                     fieldLabel: '',
@@ -259,21 +276,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     allowBlank: false,
                     blankText: '请输入专业',
                     RemovedemptyText: '请输入专业'
-                },
-                {
-                    xtype: 'combobox',
-                    cellCls: 'wzformborder',
-						id:'wbasealoneInp4',
-                    cls: 'wzsizefixedtable',
-                    width: 190,
-                    fieldLabel: '',
-                    name: 'mgChineseDegree',
-                    allowBlank: false,
-                    blankText: '请选择',
-                    RemovedemptyText: '请选择',
-                    editable: false,
-                    store: 'DegreeStore'
-                },
+                },                
                 {
                     xtype: 'tlabel',
                     html: '英文<br/>English'
@@ -281,9 +284,24 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
-						id:'wbasealoneInp5',
+                    id: 'wbasealoneInp8',
                     cls: 'wzsizefixedtable',
-                    width: 190,
+                    width: 80,
+                    fieldLabel: '',
+                    name: 'mgEnglishDegree',
+                    allowBlank: false,
+                    blankText: '请选择',
+                    RemovedemptyText: '请选择',
+                    editable: false,
+                    displayField: 'entext',
+                    store: 'DegreeStore'
+                },
+                {
+                    xtype: 'combobox',
+                    cellCls: 'wzformborder',
+                    id: 'wbasealoneInp5',
+                    cls: 'wzsizefixedtable',
+                    width: 120,
                     fieldLabel: '',
                     name: 'mgEnglishCountry',
                     allowBlank: false,
@@ -295,7 +313,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
-						id:'wbasealoneInp6',
+                    id: 'wbasealoneInp6',
                     cls: 'wzsizefixedtable',
                     colspan: 2,
                     fieldLabel: '',
@@ -306,9 +324,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'textfield',
-					width:180,
+                    width: 180,
                     cellCls: 'wzformborder',
-						id:'wbasealoneInp7',
+                    id: 'wbasealoneInp7',
                     cls: 'wzsizefixedtable',
                     colspan: 2,
                     fieldLabel: '',
@@ -316,22 +334,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     allowBlank: false,
                     blankText: '请输入专业',
                     RemovedemptyText: '请输入专业'
-                },
-                {
-                    xtype: 'combobox',
-                    cellCls: 'wzformborder',
-						id:'wbasealoneInp8',
-                    cls: 'wzsizefixedtable',
-                    width: 190,
-                    fieldLabel: '',
-                    name: 'mgEnglishDegree',
-                    allowBlank: false,
-                    blankText: '请选择',
-                    RemovedemptyText: '请选择',
-                    editable: false,
-                    displayField: 'entext',
-                    store: 'DegreeStore'
-                },
+                },                
                 {
                     xtype: 'label',
                     cellCls: 'wzformborder',
@@ -356,10 +359,10 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     items: [
                         {
                             xtype: 'textfield',
-								id:'wbasealoneInp9',
+                            id: 'wbasealoneInp9',
 //                            cls:'wzsizefixedtable',
                             fieldLabel: '',
-                            width:300,
+                            width: 500,
                             name: 'foreignJobChinese'
                         },
                         {
@@ -375,9 +378,9 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
-						id:'wbasealoneInp10',
+                    id: 'wbasealoneInp10',
 //                    cls:'wzsizefixedtable',
-                    width:300,
+                    width: 500,
                     colspan: 8,
                     fieldLabel: '',
                     name: 'foreignJobEnglish'
@@ -390,10 +393,10 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'textfield',
-						id:'wbasealoneInp11',
+                    id: 'wbasealoneInp11',
                     cellCls: 'wzformborder',
 //                    cls:'wzsizefixedtable',
-                    width:300,
+                    width: 350,
                     colspan: 4,
                     fieldLabel: '',
                     name: 'employer'
@@ -404,7 +407,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'textfield',
-						id:'wbasealoneInp12',
+                    id: 'wbasealoneInp12',
                     cellCls: 'wzformborder',
                     cls: 'wzsizefixedtable',
                     colspan: 3,
@@ -420,10 +423,10 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'textfield',
-						id:'wbasealoneInp13',
+                    id: 'wbasealoneInp13',
                     cellCls: 'wzformborder',
 //                    cls:'wzsizefixedtable',
-                    width:300,
+                    width: 350,
                     colspan: 4,
                     fieldLabel: '',
                     name: 'employerAddress'
@@ -434,7 +437,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'textfield',
-						id:'wbasealoneInp14',
+                    id: 'wbasealoneInp14',
                     cellCls: 'wzformborder',
                     cls: 'wzsizefixedtable',
                     colspan: 3,

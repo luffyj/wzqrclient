@@ -8,6 +8,10 @@
 
 *{margin:0;padding:0;}
 
+.wzsizefixedtable{
+    width:100%;
+}
+
 .x-css-shadow{
 	_box-shadow: none;
 	_top:0;
@@ -736,7 +740,7 @@ border-color: #c0c0c0 !important;
 
 /***dialog 3 form****/
 #ducatBox label.x-docked-top{
-	color:#444;
+	color:black;
 }
 #ducatBox-body .x-panel .x-panel-body{
 	margin-top:10px;
@@ -1183,7 +1187,7 @@ table[wzform="1"] {
 	height: 530px;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td{
-	width:auto !important;
+	/*width:auto !important;*/
 }
 /*
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td textarea{

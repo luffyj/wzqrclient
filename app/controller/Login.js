@@ -39,6 +39,9 @@ Ext.define('wzqr.controller.Login', {
             },
             'button[name=quit]': {
                 click: function(button) {
+                    var isDebugMode = false;
+//<debug>
+                    isDebugMode = true;
                     Ext.Ajax.request({
                         url: Utils.toApi('login?logout'),
                         callback: function(options, success, response) {
@@ -46,7 +49,9 @@ Ext.define('wzqr.controller.Login', {
                         },
                         scope: this
                     });
-
+//</debug>
+                    if (!isDebugMode)
+                        window.location.href = Utils.toApi('logout');
                 }
             },
             'button[name=savePassword]': {

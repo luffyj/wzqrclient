@@ -188,10 +188,7 @@ Ext.define('wzqr.controller.BaseController', {
                     delete this._task_checkAuth;
                 }
                 if (data.responseText === 'anonymousUser') {
-                    //to login page
-                    Utils.push(this.getView('Login').create());
-//                    Utils.viewport().removeAll();
-//                    Utils.viewport().add(Ext.create('wzqr.view.Login'));
+                    Utils.toLoginFrame(this.getView('Login'));
                 } else {
 
                     var data = Ext.JSON.decode(data.responseText);
@@ -248,7 +245,7 @@ Ext.define('wzqr.controller.BaseController', {
 //                    dashboard.down('xtop component[name=labelRole]').html  = data.role.name;
 //                    dashboard.down('xtop').doLayout();
                             } else {
-                                Utils.push(this.getView('Login').create());
+                                Utils.toLoginFrame(this.getView('Login'));
                             }
                         }
                     });

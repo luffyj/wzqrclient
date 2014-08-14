@@ -12,6 +12,7 @@ Ext.define('wzqr.view.app.edit.ResultOther', {
     layout: 'border',
     title: '其他成果',
     id:'otherBox',
+    bodyPadding:10,
 
     initComponent: function() {
         var me = this;

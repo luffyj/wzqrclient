@@ -12,6 +12,7 @@ Ext.define('wzqr.view.app.edit.Specialty', {
     layout: 'border',
     title: '个人专长',
     id:'specBox',
+    bodyPadding:10,
 
     initComponent: function() {
         var me = this;
