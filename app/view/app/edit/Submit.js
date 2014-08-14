@@ -53,14 +53,14 @@ Ext.define('wzqr.view.app.edit.Submit', {
                             text: ' (请简要说明推荐申报人的主要理由，重点是申报人对本单位的不可或缺性。请注明是否破格推荐:'
                         },
                         {
+                            xtype: 'label',
+                            text: '属于破格推荐的，请同时说明理由)'
+                        },
+                        {
                             xtype: 'checkboxfield',
                             fieldLabel: '',
                             name: 'poge',
                             boxLabel: '破格推荐'
-                        },
-                        {
-                            xtype: 'label',
-                            text: '属于破格推荐的，请同时说明理由)'
                         }
                     ]
                 },

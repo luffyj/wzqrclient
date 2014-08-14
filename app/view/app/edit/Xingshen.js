@@ -53,18 +53,18 @@ Ext.define('wzqr.view.app.edit.Xingshen', {
                             text: '(请注明是否破格推荐'
                         },
                         {
-                            xtype: 'checkboxfield',
-                            fieldLabel: '',
-                            name: 'poge',
-                            boxLabel: '破格推荐'
-                        },
-                        {
                             xtype: 'label',
                             text: '属于破格推荐的，请同时说明理由)'
                         },
                         {
                             xtype: 'label',
                             text: '属于破格推荐的，由相关主管部门或省部属单位填写是否同意破格的意见。'
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            fieldLabel: '',
+                            name: 'poge',
+                            boxLabel: '破格推荐'
                         }
                     ]
                 },

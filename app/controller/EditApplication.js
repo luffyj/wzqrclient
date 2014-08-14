@@ -338,9 +338,16 @@ Ext.define('wzqr.controller.EditApplication', {
             //导出汇总表
             'xappcontext button[name=export]': {
                 click: function(button, e) {
+                    if (true) {
+                        Ext.Msg.alert('提示','汇总表功能正在开发中');
+                        return;
+                    }
                     var mn = Ext.create('Ext.menu.Menu', {
                         width: 100,
                         margin: '0 0 0 0',
+                        style: {
+                            background: '#fff'
+                        },
                         floating: true, // usually you want this set to True (default)
                         items: [{
                                 text: '导出全部',
