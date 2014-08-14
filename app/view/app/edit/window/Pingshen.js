@@ -13,6 +13,7 @@ Ext.define('wzqr.view.app.edit.window.Pingshen', {
     ],
 
     ui:'wzwindow',
+		id:'psdialogBox1',
     height: 472,
     width: 706,
     layout: 'fit',
@@ -31,30 +32,36 @@ Ext.define('wzqr.view.app.edit.window.Pingshen', {
             items: [
                 {
                     xtype: 'form',
+						id:'psdialogBox2',
                     layout: 'fit',
                     bodyPadding: 0,
                     title: '',
                     items: [
                         {
                             xtype: 'tabpanel',
+								id:'psdialogBox3',
                             bodyPadding: 10,
                             activeTab: 3,
                             items: [
                                 {
                                     xtype: 'appeditsubmit',
+										id:'psdialogBox4',
                                     removeButtons: true
                                 },
                                 {
                                     xtype: 'appeditxingshen',
+										id:'psdialogBox5',
                                     removeButtons: true
                                 },
                                 {
                                     xtype: 'appeditfushen',
+										id:'psdialogBox6',
                                     removeButtons: true,
                                     height: 492
                                 },
                                 {
                                     xtype: 'appeditpingshen',
+										id:'psdialogBox7',
                                     nofs:me.app.get('status')==='复审通过'
                                 }
                             ]

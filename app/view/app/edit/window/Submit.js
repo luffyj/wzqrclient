@@ -10,6 +10,7 @@ Ext.define('wzqr.view.app.edit.window.Submit', {
     ],
 
     ui:'wzwindow',
+		id:'sbdialogBox1',
     height: 589,
     width: 706,
     layout: 'fit',
@@ -22,16 +23,19 @@ Ext.define('wzqr.view.app.edit.window.Submit', {
             items: [
                 {
                     xtype: 'form',
+						id:'sbdialogBox2',
                     layout: 'fit',
                     bodyPadding: 0,
                     title: '',
                     items: [
                         {
                             xtype: 'tabpanel',
+								id:'sbdialogBox3',
                             bodyPadding: 10,
                             items: [                      
                                 {
-                                    xtype: 'appeditsubmit'
+                                    xtype: 'appeditsubmit',
+										id:'sbdialogBox4'
                                 }
                             ]
                         }

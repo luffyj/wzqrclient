@@ -40,12 +40,11 @@
 	 background: none ;
 }
 /*#panel-1013-body, #panel-1028-body*/
-#centerBox{
-	background:url(../images/content_bg.jpg) repeat-x left top;	
-}
+
 #xpanstop .x-tab-bar{
 	margin: 0px 0px 0px 10px !important;
 }
+
 /*header right box*/
 /*body .x-fit-item .ux-layout-center-item .x-docked .x-docked-right .x-docked-top{
 	margin: 20px 0px 0px 0px !important;
@@ -196,10 +195,10 @@
 	height:20px !important;
 }
 #quitBtn-btnEl span{
-	height:22px !important;
-	line-height:22px !important;
-	*height:18px;
-	*line-height:16px !important;
+	height:18px !important;
+	line-height:16px !important;
+	/**height:18px;
+	*line-height:16px !important;*/
 	font-size:12px !important;
 	font-family:"微软雅黑", Arial !important;
 }
@@ -229,7 +228,7 @@
 	border-bottom-left-radius:0px;
 	border-bottom-right-radius:0px;
 	height:32px !important;
-	*height:26px !important;
+	*height:22px !important;
 	*padding-bottom:0px !important;
 
 }
@@ -262,6 +261,7 @@
 
 #leftBox-body .smallTit .x-panel-body .x-box-inner .x-box-target .x-panel .x-panel-body{
 	top:32px !important;
+	*top:22px !important;
 	border:1px solid #c0c0c0 !important;
 	border-top:0px solid #c0c0c0 !important;
 	border-top-left-radius:0px;
@@ -429,6 +429,13 @@ margin-top: 8px !important;
 	line-height:30px;
 }
 /*my center*/
+#centerBox{
+	background:url(../images/content_bg.jpg) repeat-x left top;	
+}
+#centerBox-body .x-panel .x-panel-body .x-box-inner {
+	overflow:auto;
+	overflow-x:hidden;	
+}
 #panel-1105-body #panel-1105-innerCt{
 	overflow:auto;
 	overflow-x:hidden;	
@@ -645,7 +652,23 @@ border-color: #c0c0c0 !important;
 
 
 /*dialog 2   基本信息*/
+#wslideBaseBox-inputEl{
+	border:0px solid #c0c0c0 !important;
+}
+#wbasealoneInp4-inputEl{
+	border:0px solid #c0c0c0 !important;
+}
+#wbasealoneInp-inputEl{
+	border:0px solid #c0c0c0 !important;
+}
+#wbasealoneInp8-inputEl{
+	border:0px solid #c0c0c0 !important;
+}
+#wbasealoneInp5-inputEl{
+	border:0px solid #c0c0c0 !important;
+}
 
+/*
 #wbasealoneInp-inputCell input{
 	*width:200px !important;
 }
@@ -655,23 +678,81 @@ border-color: #c0c0c0 !important;
 #wbasealoneInp3-bodyEl input{
 	*width:162px !important;
 }
+
 #wbasealoneInp5-inputCell input{
 	*width:230px !important;
 }
-#wbasealoneInp6-bodyEl input{
-	*width:138px !important;
-}
+
 #wbasealoneInp7-bodyEl input{
 	*width:162px !important;
 }
 
 
 
-#wbasealoneInp12-bodyEl input{
-	*width:182px !important;
-}
+
 #wbasealoneInp14-bodyEl input{
 	*width:182px !important;
+}
+*/
+#baseSexBox1{
+	display:table !important;
+}
+#baseSexBox1-inputEl{
+	
+}
+#wbasealoneInp2{
+	display:table !important;
+}
+#wbasealoneInp2-inputEl{
+	
+}
+#wbasealoneInp6{
+	display:table !important;
+}
+#wbasealoneInp6-inputEl{
+	
+}
+#wbaseInp1-inputEl{
+	*width:238px !important;
+}
+#wbaseInp2-inputEl{
+	*width:238px !important;
+}
+#wbaseInp3-inputEl{
+	*width:300px !important;
+}
+#wbasealoneInp9-inputEl{
+	*width:752px !important;
+}
+#wbasealoneInp10-inputEl{
+	*width:752px !important;
+}
+#wbasealoneInp11-inputEl{
+	*width:300px !important;
+}
+#wbasealoneInp13-inputEl{
+	*width:300px !important;
+}
+#wbasealoneInp12-inputEl{
+	*width:305px !important;
+}
+#wbasealoneInp14-inputEl{
+	*width:305px !important;
+}
+#wbasealoneInp2-bodyEl input{
+	*width:173px !important;
+}
+#wbasealoneInp2-inputEl{
+	*width:185px !important;
+}
+#wbasealoneInp3-bodyEl input{
+	*width:305px !important;
+}
+#wbasealoneInp6-bodyEl input{
+	*width:173px !important;
+}
+#wbasealoneInp7-bodyEl input{
+	*width:305px !important;
 }
 
 
@@ -699,12 +780,34 @@ border-color: #c0c0c0 !important;
 	padding:0px;
 	padding:0 0 0 5px;
 }
-.wzsizefixedtable tbody tr td input {
-    
+.wzsizefixedtable{
+	width:100% !important;
 }
-.wzsizefixedtable tbody tr td input.x-form-invalid-field{
-	border:1px solid #c0c0c0;
+.wzsizefixedtable tbody tr td.x-form-item-body  {
+	width:100% !important;
 }
+.wzsizefixedtable tbody tr td table tbody tr td.x-form-trigger-input-cell{
+	width:100% !important;
+}
+.wzsizefixedtable tbody tr td table{
+    width:100% !important;
+}
+.wzsizefixedtable tbody tr td table tbody tr td.x-trigger-cell{
+	width:22px !important;
+}
+#wbaseDateCon{
+	width:100% !important;
+}
+#wbaseDateCon tbody tr td table tbody tr td.x-form-trigger-input-cell{
+	width:100%;
+}
+#wbaseDateCon tbody tr td table{
+    width:100% !important;
+}
+#wbaseDateCon tbody tr td table tbody tr td.x-trigger-cell{
+	width:22px !important;
+}
+
 /*//这里的代码会导致 某些字段太短 by jc*/
 /*#wbaseBox-body table tbody tr td table{    
 	width:120px !important;
@@ -824,6 +927,9 @@ border-color: #c0c0c0 !important;
 #sultmainBox label.x-docked-top{
 	color:#444;
 }
+#sultmainBox-body{
+	overflow-x:hidden !important;
+}
 #sultmainBox .x-panel .x-panel-body{
 	margin-top:10px;
 }
@@ -842,7 +948,7 @@ border-color: #c0c0c0 !important;
 
 /***dialog 4 企业发展情况*//*******/
 #editplan-targetEl .x-panel label.x-component{
-	color:#888;
+	color:#444;
 }
 
 
@@ -1354,3 +1460,131 @@ body .x-container{
 	top:8px !important;	
 	color:#aaa;
 }
+
+
+
+
+/*评审*/
+#psdialogBox4-targetEl .x-container div label.x-column{
+	float:none;
+	height:22px;
+	line-height:22px;
+}
+#psdialogBox4-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+#psdialogBox5-targetEl  .x-container div label.x-column{
+	/*float:none;*/
+	height:22px;
+	line-height:22px;
+}
+/*
+#psdialogBox5-targetEl  .x-container div span tabel.x-column{
+	float:right !important;
+	display:inline;
+}
+*/
+#psdialogBox5-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+#psdialogBox6-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+#psdialogBox7-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+/*复审*/
+#fsdialogBox4-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#fsdialogBox4-targetEl  .x-container div label.x-column{
+	float:none;
+	height:22px;
+	line-height:22px;
+}
+/*
+#fsdialogBox5-targetEl  .x-container div tabel.x-column{
+	float:right !important;
+	display:inline;
+}
+*/
+#fsdialogBox5-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#fsdialogBox5-targetEl  .x-container div label.x-column{
+	/*float:none;*/
+	height:22px;
+	line-height:22px;
+}
+
+#fsdialogBox6-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+
+/*复审2*/
+#fs2dialogBox4-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#fs2dialogBox4-targetEl  .x-container div label.x-column{
+	float:none;
+	height:22px;
+	line-height:22px;
+}
+/*
+#fs2dialogBox5-targetEl  .x-container div tabel.x-column{
+	float:right !important;
+	display:inline;
+}
+*/
+#fs2dialogBox5-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#fs2dialogBox5-targetEl  .x-container div label.x-column{
+	/*float:none;*/
+	height:22px;
+	line-height:22px;
+}
+
+#fs2dialogBox6-targetEl label center{
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+
+
+
