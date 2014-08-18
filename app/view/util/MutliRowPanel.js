@@ -1,5 +1,8 @@
 /* 
  * 多行 而且可变的panel
+ * 
+ * 增加功能 支持只读模式
+ * readOnly:true
  */
 Ext.define("wzqr.view.util.MutliRowPanel", {
     extend: 'Ext.panel.Panel',
@@ -29,6 +32,10 @@ Ext.define("wzqr.view.util.MutliRowPanel", {
     processConfig: function(config) {
         //默认展示几行 最大几行 以及在编辑时 将获取事件 并且自动绘制
         //baseFields
+        if (config.readOnly) {
+            config.dockedItems = null;
+        }
+
         Ext.applyIf(config, {
             minRows: 3,
             maxRows: 10,
@@ -43,14 +50,21 @@ Ext.define("wzqr.view.util.MutliRowPanel", {
             config.items.push({
                 xtype: 'label',
                 html: '<center>' + field.title + '</center>',
+                style: {
+                    'background-color': '#dbeaf8'
+//                    height:20,
+//                    'background-image':'url("resources/images/rowtheaderbk.png")',
+//                    'background-size':'100%'
+                },
                 columnWidth: field.columnWidth
             });
         });
 
         //当前已经有多少行了 请自行脑补
-        for (var i = 1; i <= config.minRows; i++) {
-            this.newRow(config.items);
-        }
+        if (!config.readOnly)
+            for (var i = 1; i <= config.minRows; i++) {
+                this.newRow(config.items);
+            }
     },
     newRow: function(tobe) {
         if (this.currentRows >= this.maxRows)

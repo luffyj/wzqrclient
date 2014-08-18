@@ -23,6 +23,7 @@ Ext.define('wzqr.controller.EditApplication', {
         'app.edit.window.Fushen',
         'app.edit.window.Fushen2',
         'app.edit.window.Pingshen',
+        'app.View',
         'app.Edit'
     ],
     models: ['Application', 'User'],
@@ -170,7 +171,7 @@ Ext.define('wzqr.controller.EditApplication', {
             'jcgridview': {
                 itemdblclick: function(grid, record, item, index, e, eOpts) {
                     if (grid.up('xappcontext')) {
-                        var win = this.getView('app.Edit').create(record);
+                        var win = this.getView('app.View').create(record);
                         Ext.Array.each(Ext.ComponentQuery.query('field', win), function(field) {
                             field.setReadOnly(true);
                         });
@@ -338,7 +339,7 @@ Ext.define('wzqr.controller.EditApplication', {
             //导出汇总表
             'xappcontext button[name=export]': {
                 click: function(button, e) {
-                    if (true) {
+                    if (false) {
                         Ext.Msg.alert('提示','汇总表功能正在开发中');
                         return;
                     }

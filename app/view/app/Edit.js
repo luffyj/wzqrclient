@@ -37,7 +37,7 @@ Ext.define("wzqr.view.app.Edit", {
     title: '申报信息编辑',
     layout: 'fit',
     width: 1024,
-    height: 500,
+    height: 615,
     constructor: function(app) {
         this.app = app;
         if ('创业人才' === app.get('type')) {
