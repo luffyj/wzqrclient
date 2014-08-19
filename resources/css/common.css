@@ -6,6 +6,25 @@
 *wyl
 ********/
 
+/*通常用于描述表格 一个是外框 一个是元素*/
+/*#0099CC*/
+/*{ margin:0 auto; text-align:center}
+{ position:relative; left:0px; right:0px; top:0px;}*/
+
+.centerinbox{
+    text-align: center;
+}
+
+.wztableelement{
+    border-right:1px solid;
+    border-bottom:1px solid;
+}
+
+.wztablelayout{
+    border-left:1px solid!important;
+    border-top:1px solid!important;
+}
+
 *{margin:0;padding:0;}
 
 .wzsizefixedtable{

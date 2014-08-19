@@ -47,17 +47,16 @@ Ext.define("wzqr.view.util.MutliRowPanel", {
 
         //表格头
         Ext.Array.each(config.baseFields, function(field) {
-            config.items.push({
+            config.items.push(Ext.apply({
                 xtype: 'label',
                 html: '<center>' + field.title + '</center>',
                 style: {
                     'background-color': '#dbeaf8'
-//                    height:20,
-//                    'background-image':'url("resources/images/rowtheaderbk.png")',
-//                    'background-size':'100%'
                 },
                 columnWidth: field.columnWidth
-            });
+            }, config.readOnly ? {
+                cls: 'wztableelement'
+            } : {}));
         });
 
         //当前已经有多少行了 请自行脑补

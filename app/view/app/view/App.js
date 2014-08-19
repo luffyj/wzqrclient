@@ -2,6 +2,7 @@ Ext.define('wzqr.view.app.view.App', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.xappviewapp',
     requires: [
+        'wzqr.view.app.view.Work',
         'wzqr.view.app.view.Education',
         'wzqr.view.app.view.AppQuick',
         'wzqr.view.app.view.Basic',
@@ -15,6 +16,8 @@ Ext.define('wzqr.view.app.view.App', {
     title: '申报信息',
     initComponent: function() {
         var me = this;
+        
+        //在这里根据传入的参数 构建大的子参数 然后直接使用
 
         Ext.applyIf(me, {
             items: [
@@ -48,19 +51,21 @@ Ext.define('wzqr.view.app.view.App', {
                                     xtype: 'label',
                                     margin: '10 10 10 20',
                                     text: '快速导航'
-                                },
+                                },                                
                                 {
                                     xtype: 'xappviewquick',
                                     targetid:'xappviewbasicid',
                                     html: '基本信息'
                                 },
                                 {
-                                    xtype: 'label',
-                                    text: '教育经历'
+                                    xtype: 'xappviewquick',
+                                    targetid:'xappvieweducationid',
+                                    html: '教育经历'
                                 },
                                 {
-                                    xtype: 'label',
-                                    text: '工作经历'
+                                    xtype: 'xappviewquick',
+                                    targetid:'xappviewworkid',
+                                    html: '工作经历'
                                 },
                                 {
                                     xtype: 'label',
@@ -120,8 +125,13 @@ Ext.define('wzqr.view.app.view.App', {
                                     id:'xappviewbasicid'
                                 },
                                 {
-                                    xtype:'xappvieweducation'
+                                    xtype:'xappvieweducation',
+                                    id:'xappvieweducationid'
                                 },
+                                {
+                                    xtype:'xappviewwork',
+                                    id:'xappviewworkid'
+                                },                                
                                 {
                                     xtype: 'panel',
                                     padding: 10,

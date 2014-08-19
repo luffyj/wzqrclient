@@ -21,11 +21,36 @@ Ext.define('wzqr.model.Application', {
     },
     getmgenglish: function() {
         //中国, 温州大学, 物理, 博士
-        return this.get('mgEnglishCountry') + ', ' + this.get('mgEnglishSchool') + ', ' + this.get('mgEnglishMajor') + ', ' + this.get('mgEnglishDegree');
+        var rs = '';
+        if(this.get('mgEnglishCountry').length>0){
+            rs =  rs + this.get('mgEnglishCountry') + ', ';
+        }
+        if(this.get('mgEnglishSchool').length>0){
+            rs =  rs + this.get('mgEnglishSchool') + ', ';
+        }
+        if(this.get('mgEnglishSchool').length>0){
+            rs =  rs + this.get('mgEnglishSchool') + ', ';
+        }
+        if(this.get('mgEnglishDegree').length>0){
+            rs =  rs + this.get('mgEnglishDegree');
+        }
+        return rs;
     },
     getmgchina: function() {
-        //中国, 温州大学, 物理, 博士
-        return this.get('mgChineseCountry') + ', ' + this.get('mgChineseSchool') + ', ' + this.get('mgChineseMajor') + ', ' + this.get('mgChineseDegree');
+        var rs = '';
+        if(this.get('mgChineseCountry').length>0){
+            rs =  rs + this.get('mgChineseCountry') + ', ';
+        }
+        if(this.get('mgChineseSchool').length>0){
+            rs =  rs + this.get('mgChineseSchool') + ', ';
+        }
+        if(this.get('mgChineseMajor').length>0){
+            rs =  rs + this.get('mgChineseMajor') + ', ';
+        }
+        if(this.get('mgChineseDegree').length>0){
+            rs =  rs + this.get('mgChineseDegree');
+        }
+        return rs;
     },
     fields: [
         {name: 'owner', link: true},
