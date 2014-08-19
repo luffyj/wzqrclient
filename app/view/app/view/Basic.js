@@ -30,7 +30,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                         height: 20
                     },
                     height: 10,
-                    html: '<center>温州市“580海外精英引进计划”申报书</center><br/><center>（创业人才）</center>',
+                    html: '<center>温州市“580海外精英引进计划”申报书</center><br/><center>（'+me.app.get('type')+'）</center>',
                     text: ''
                 },
                 {
@@ -42,6 +42,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'orgSubName'
                 },
@@ -70,6 +71,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'type'
                 },
@@ -81,6 +83,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 2,
                     fieldLabel: '',
                     name: 'number'
@@ -108,6 +111,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 4,
                     fieldLabel: '',
                     name: 'realName'
@@ -120,6 +124,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 4,
                     fieldLabel: '',
                     name: 'realEnglishName'
@@ -133,6 +138,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 4,
                     fieldLabel: '',
                     name: 'appOrgName'
@@ -146,6 +152,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 4,
                     fieldLabel: '',
                     name: 'specialty'
@@ -159,6 +166,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 4,
                     fieldLabel: '',
                     name: 'people'
@@ -186,6 +194,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 4,
                     fieldLabel: '',
                     name: 'phone'
@@ -198,6 +207,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 4,
                     fieldLabel: '',
                     name: 'mobile'
@@ -225,6 +235,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'realName'
                 },
@@ -269,6 +280,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'realEnglishName'
                 },
@@ -296,6 +308,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'birthPlace'
                 },
@@ -311,6 +324,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'nationality'
                 },
@@ -337,6 +351,10 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'xappviewhtml',
                     cellCls: 'wzformborder',
+                    height: 25,
+                    style: {
+                        'line-height': '25px'
+                    },
                     colspan: 3,
                     fieldLabel: '',
                     name: 'mgchina'
@@ -353,6 +371,10 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'xappviewhtml',
                     cellCls: 'wzformborder',
+                    height: 25,
+                    style: {
+                        'line-height': '25px'
+                    },
                     colspan: 3,
                     fieldLabel: '',
                     name: 'mgenglish'
@@ -380,6 +402,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 3,
                     fieldLabel: '',
                     name: 'foreignJobChinese'
@@ -396,6 +419,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     colspan: 3,
                     fieldLabel: '',
                     name: 'foreignJobEnglish'
@@ -409,6 +433,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'employer'
                 },
@@ -421,6 +446,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'position'
                 },
@@ -433,6 +459,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'employerAddress'
                 },
@@ -445,6 +472,7 @@ Ext.define('wzqr.view.app.view.Basic', {
                 {
                     xtype: 'displayfield',
                     cellCls: 'wzformborder',
+                    cls: 'nomargin',
                     fieldLabel: '',
                     name: 'zip'
                 }

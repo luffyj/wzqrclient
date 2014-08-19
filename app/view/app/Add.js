@@ -7,8 +7,8 @@ Ext.define("wzqr.view.app.Add", {
     xtype: 'xappadd',
 		cls:'xappaddBox',
     title: '申报信息',
-    width: 349,
-    height: 500,
+    width: 352,
+    height: 570,
     layout: 'fit',
     buttons: [
         {

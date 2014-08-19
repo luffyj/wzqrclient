@@ -11,6 +11,10 @@
 /*{ margin:0 auto; text-align:center}
 { position:relative; left:0px; right:0px; top:0px;}*/
 
+.nomargin{
+    margin:0!important;
+}
+
 .centerinbox{
     text-align: center;
 }
@@ -32,296 +36,296 @@
 }
 
 .x-css-shadow{
-	_box-shadow: none;
-	_top:0;
-	_width:0;
-	_height:0;
+    _box-shadow: none;
+    _top:0;
+    _width:0;
+    _height:0;
 }
 .x-form-type-text input.x-form-invalid-field{
-	border:1px solid #c0c0c0 !important;
+    border:1px solid #c0c0c0 !important;
 }
 /*header box bg*//*#xtop-1015*/
 /*.x-panel.x-docked.x-panel-default.x-docked-top.x-panel-docked-top.x-panel-default-docked-top.x-noborder-trl*/
 /*#xtop-1015, #xtop-1030*/
 #headBox{
-	height:86px;
-	background:url(../images/header_bk.jpg) no-repeat 0 0;
+    height:86px;
+    background:url(../images/header_bk.jpg) no-repeat 0 0;
 }
 
 .x-panel-body-default{
     background: none ;
-	border-color: #c0c0c0;
+    border-color: #c0c0c0;
 }
 #headBox-body{
-   background: none ;
+    background: none ;
 }
 #xmanageappidid-body{
-	 background: none ;
+    background: none ;
 }
 /*#panel-1013-body, #panel-1028-body*/
 
 #xpanstop .x-tab-bar{
-	margin: 0px 0px 0px 10px !important;
+    margin: 0px 0px 0px 10px !important;
 }
 
 /*header right box*/
 /*body .x-fit-item .ux-layout-center-item .x-docked .x-docked-right .x-docked-top{
-	margin: 20px 0px 0px 0px !important;
-	right: 5px !important;
-	left: auto !important;
-	margin-top:10px !important;
+        margin: 20px 0px 0px 0px !important;
+        right: 5px !important;
+        left: auto !important;
+        margin-top:10px !important;
 }*/
 
 /*
 #panel-1020, #panel-1035{
-	margin: 20px 0px 0px 0px !important;
-	right: 5px !important;
-	left: auto !important;
+        margin: 20px 0px 0px 0px !important;
+        right: 5px !important;
+        left: auto !important;
 }
 #panel-1021-innerCt, #panel-1036-innerCt{
-	width:320px;
-	max-width:320px;
-	overflow: hidden;
+        width:320px;
+        max-width:320px;
+        overflow: hidden;
     white-space: nowrap;
-	text-overflow:hidden;
-	-o-text-overflow:hidden;
+        text-overflow:hidden;
+        -o-text-overflow:hidden;
 }
 */
 
 /*logo title */
 /*#component-1017, #component-1032*/
 #titvBox{
-	color:#333;
-	font-family:"微软雅黑", Arial
+    color:#333;
+    font-family:"微软雅黑", Arial
 }
 
 /*loginout*/
 #button-1028, #button-1043{
-	padding:1px 3px !important;	
+    padding:1px 3px !important;	
 }
 #button-1028-btnEl, #button-1043-btnEl{
-	height:12px !important;	
+    height:12px !important;	
 }
 #button-1028-btnInnerEl, #button-1043-btnInnerEl{
-	line-height: 12px !important;
-	font-weight:normal !important;
-	font-family: 微软雅黑,arial,verdana,sans-serif !important;
+    line-height: 12px !important;
+    font-weight:normal !important;
+    font-family: 微软雅黑,arial,verdana,sans-serif !important;
 }
 
 /*header menu*/
 /*#tabbar-1018, #tabbar-1033{
-	margin-left:10px !important;
+        margin-left:10px !important;
 }
 */
 /*header menu menu bg*//*.x-tab-wzmaintab-bottom */
 /*#tabbar-1018-targetEl a, #tabbar-1033-targetEl a*/
 #tabbarvBox-targetEl a{
-	width:95px;
-	height:29px;
-	text-align:center;
-	margin:0 auto;
+    width:95px;
+    height:29px;
+    text-align:center;
+    margin:0 auto;
 }
 
 #tabbarvBox-targetEl a table tbody tr td{
-	background:none !important;
+    background:none !important;
 }
 .x-grid-row-selected .x-grid-td {
-	
+
 }
 /*#tabbar-1018-targetEl a table tbody tr td, #tabbar-1033-targetEl a table tbody tr td*/
 #tabbarvBox-targetEl{
-	/*overflow:hidden;*/
-	background:none !important;
+    /*overflow:hidden;*/
+    background:none !important;
 }
 #rightPanelBox .x-panel-body{
-	height:20px !important;
-	overflow:hidden !important;
+    height:20px !important;
+    overflow:hidden !important;
 }
 #rightPanelBox .x-panel-body .x-box-inner{
-	height:20px !important;
-	overflow:hidden !important;
+    height:20px !important;
+    overflow:hidden !important;
 }
 #rightPanelBox .x-panel-body .x-box-inner .x-box-target{
-	height:20px;
-	top:6px;
-	overflow:hidden !important;
+    height:20px;
+    top:6px;
+    overflow:hidden !important;
 }
 /*
 #rightPanelBox-targetEl .x-component{
-	top:2px !important;
+        top:2px !important;
 }
 */
 #rightPanelBox-targetEl .pretxt{
-	top:0px !important;
+    top:0px !important;
 }
 #tabbarvBox-innerCt{
-	overflow:hidden !important;
+    overflow:hidden !important;
 }
 /*IE6 menu bg*/
 .x-tab-wzmaintab-bottom-active .x-frame-mc {
-	BACKGROUND-COLOR: none !important;
+    BACKGROUND-COLOR: none !important;
 }
 .x-tab-wzmaintab-bottom-mc {
-	BACKGROUND-COLOR: none !important;
+    BACKGROUND-COLOR: none !important;
 }
 /*#tabbar-1018-targetEl .x-tab-wzmaintab-bottom, #tabbar-1033-targetEl .x-tab-wzmaintab-bottom*/
 #tabbarvBox-targetEl .x-tab-wzmaintab-bottom{
-	width:95px;
-	height:29px;
-	border-radius: 0px;
-	background:url(../images/nav_item_current.gif) no-repeat;
-	background-color: none !important;
+    width:95px;
+    height:29px;
+    border-radius: 0px;
+    background:url(../images/nav_item_current.gif) no-repeat;
+    background-color: none !important;
 }
 /*header menu menu bg active*/
 /*#tabbar-1018-innerCt #tabbar-1018-targetEl .x-tab-wzmaintab-active, #tabbar-1033-innerCt #tabbar-1033-targetEl .x-tab-wzmaintab-active*/
 #tabbarvBox-targetEl .x-tab-wzmaintab-active{
-	background:url(../images/nav_item_normal.gif) no-repeat;
+    background:url(../images/nav_item_normal.gif) no-repeat;
 }
 
 /*header menu menu bg active font*/
 /*#tabbar-1018-innerCt #tabbar-1018-targetEl .x-tab-wzmaintab-active .x-tab-inner, #tabbar-1033-innerCt #tabbar-1033-targetEl .x-tab-wzmaintab-active .x-tab-inner*/ 
 #tabbarvBox-targetEl .x-tab-wzmaintab-active .x-tab-inner{
-	font-weight:bold !important;
-	color: white !important;
+    font-weight:bold !important;
+    color: white !important;
 }
 /*header menu menu bg  font*/
 /*#tabbar-1018-innerCt #tabbar-1018-targetEl a span span span.x-tab-inner, #tabbar-1033-innerCt #tabbar-1033-targetEl a span span span.x-tab-inner*/
 #tabbarvBox-targetEl a span{
-	font-size: 13px;
-	font-weight:normal !important;
-	font-family: verdana,宋体b8b\4f53,tahoma,arial;
-	color: #157FCC;
+    font-size: 13px;
+    font-weight:normal !important;
+    font-family: verdana,宋体b8b\4f53,tahoma,arial;
+    color: #157FCC;
 }
 #perssImg{
-	left:160px !important;
+    left:160px !important;
 }
 
 .rightBox .x-panel{
-	height:30px !important;
+    height:30px !important;
 }
 #quitBtn{
-	height:26px !important;
-	line-height:26px !important;
+    height:26px !important;
+    line-height:26px !important;
 }
 #quitBtn-frame1Table{
-	height:24px !important;
-	line-height:24px !important;
+    height:24px !important;
+    line-height:24px !important;
 }
 #quitBtn-btnWrap{
-	height:14px !important;
+    height:14px !important;
 }
 #quitBtn-btnEl{
-	height:20px !important;
+    height:20px !important;
 }
 #quitBtn-btnEl span{
-	height:18px !important;
-	line-height:16px !important;
-	/**height:18px;
-	*line-height:16px !important;*/
-	font-size:12px !important;
-	font-family:"微软雅黑", Arial !important;
+    height:18px !important;
+    line-height:16px !important;
+    /**height:18px;
+    *line-height:16px !important;*/
+    font-size:12px !important;
+    font-family:"微软雅黑", Arial !important;
 }
 /*left box
 #xappreport-1031, #xappreport-1046*/
 #leftBox{
-	top: 5px !important;
+    top: 5px !important;
 }
 /*left tit*/
 #leftBox-body{
-	background:#fff;
+    background:#fff;
 }
 #leftBox-body .tjTit{
-	border-bottom: 1px solid #CBC9CA;
-	height:28px !important;
-	line-height: 28px !important;
+    border-bottom: 1px solid #CBC9CA;
+    height:28px !important;
+    line-height: 28px !important;
 
-	background:url(../images/xbg20.gif) repeat-x 0 0 !important;	
+    background:url(../images/xbg20.gif) repeat-x 0 0 !important;	
 }
 
 .smallTit .x-panel-body .x-box-inner .x-box-target .x-panel .x-panel-header{
-	cursor:pointer;
+    cursor:pointer;
 
-	border:1px solid #c0c0c0 !important;
-	border-top-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-left-radius:0px;
-	border-bottom-right-radius:0px;
-	height:32px !important;
-	*height:22px !important;
-	*padding-bottom:0px !important;
+    border:1px solid #c0c0c0 !important;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+    height:32px !important;
+    *height:22px !important;
+    *padding-bottom:0px !important;
 
 }
 
 #image-1026, #image-1048{
-	width:12px !important;
-	height:12px !important;
-	margin:0 5px;	
+    width:12px !important;
+    height:12px !important;
+    margin:0 5px;	
 }
 
 #leftBox-body .smallTit{
-	background:#fff !important;
-	top:28px !important;	
+    background:#fff !important;
+    top:28px !important;	
 }
 
 /*left tit menu*/
 .x-accordion-item .x-accordion-hd{
-	background:url(../images/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x !important;
+    background:url(../images/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x !important;
 }
 .x-accordion-item .x-accordion-hd-over{
-	
-	background:url(../images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x !important;
+
+    background:url(../images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x !important;
 }
 /*left menu unclick*/
 /*#panel-1031-targetEl .x-panel .x-collapsed*//*.x-panel-header*/
 #leftBox-body .smallTit .x-panel-body .x-box-inner .x-box-target .x-panel .x-collapsed{
-	border-bottom-left-radius:5px;
-	border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
 }
 
 #leftBox-body .smallTit .x-panel-body .x-box-inner .x-box-target .x-panel .x-panel-body{
-	top:32px !important;
-	*top:22px !important;
-	border:1px solid #c0c0c0 !important;
-	border-top:0px solid #c0c0c0 !important;
-	border-top-left-radius:0px;
-	border-top-right-radius:0px;
-	border-bottom-left-radius:5px;
-	border-bottom-right-radius:5px;
+    top:32px !important;
+    *top:22px !important;
+    border:1px solid #c0c0c0 !important;
+    border-top:0px solid #c0c0c0 !important;
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
 }
 /*
 #panel-1025-innerCt div#panel-1038-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a, #panel-1053-innerCt div#panel-1053-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a
 */
 .tjcon a{
-	text-decoration:none;
-	color:#2F58AC;
-	background: url(../images/box1_item_prefix.gif) -2px 5px no-repeat;
-	padding: 1px 0 0px 13px;
-	display: block;
-	left:10px;
-	line-height: 22px;
-	margin-top: 2px !important;
-	margin-left:10px;
+    text-decoration:none;
+    color:#2F58AC;
+    background: url(../images/box1_item_prefix.gif) -2px 5px no-repeat;
+    padding: 1px 0 0px 13px;
+    display: block;
+    left:10px;
+    line-height: 22px;
+    margin-top: 2px !important;
+    margin-left:10px;
 }
 /*
 #panel-1031-innerCt div#panel-1038-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a.currentCountItem, #panel-1053-innerCt div#panel-1053-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a.currentCountItem 
 */
 .tjcon a.currentCountItem{
-	color: #FA670E;
-	font-weight: bold;
+    color: #FA670E;
+    font-weight: bold;
 }
 /*
 #panel-1031-innerCt div#panel-1038-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a:hover, #panel-1053-innerCt div#panel-1053-targetEl .x-panel .x-panel-body .x-box-inner .x-box-target a:hover
 */
 .tjcon a:hover{
-color: #FF5A00;
-text-decoration: none;
+    color: #FF5A00;
+    text-decoration: none;
 }
 #ext-comp-1206-innerCt{
-	width:100%;
+    width:100%;
 }
 /*right box*/
 #contaiBox{
-	background:none !important;
+    background:none !important;
 }
 #panel-1038-innerCt #panel-1038-targetEl .x-panel .x-noborder-trl, #panel-1053-innerCt #panel-1053-targetEl .x-panel .x-noborder-trl{
     border-left-width: 1px !important;
@@ -334,11 +338,11 @@ text-decoration: none;
 
 /**/
 #txtBox-body .x-panel{
-	border:1px solid #c0c0c0;
+    border:1px solid #c0c0c0;
 }
 
 .glbmGrid{
-	border:1px solid #c0c0c0;
+    border:1px solid #c0c0c0;
 }
 /*
 #panel-1038-innerCt div#panel-1038-targetEl .x-panel .x-panel-header, #panel-1053-innerCt div#panel-1053-targetEl .x-panel .x-panel-header
@@ -346,47 +350,47 @@ text-decoration: none;
 
 
 #xmanageappidid-body .x-container{
-	background:none !important;
+    background:none !important;
 }
 #xappsele-body .x-panel .x-toolbar{
-	background:none !important;
+    background:none !important;
 }
 #xappsele-body .x-panel .x-toolbar .x-box-inner {
-	height:53px;
-	top:8px;
+    height:53px;
+    top:8px;
 }
 #xappsele-body  .x-panel{
-	border-color: #c0c0c0;
+    border-color: #c0c0c0;
 }
 /*table input*/
 #combobox-1047, #combobox-1062{
-	margin:0 !important;
+    margin:0 !important;
 }
 
 /*right check clear btn bg*/
 #toolbar-1055, #toolbar-1070, #toolbar-1144{
-	background:none !important;
+    background:none !important;
 }
 #toolbar-1055-innerCt, #toolbar-1070{
-	height:57px !important;
-	margin-top:8px;	
+    height:57px !important;
+    margin-top:8px;	
 }
 /*right top form*/
 #form-1046, #form-1061, #form-1139, #form-1154{
-	border-color: #C0C0C0 !important;
+    border-color: #C0C0C0 !important;
 }
 #form-1154{
-	background:none !important;
+    background:none !important;
 }
 /*#form-1046-innerCt{
-	padding: 4px 10px 0 !important;	
+        padding: 4px 10px 0 !important;	
 }*/
 /*table outline*/
 #xappcontext-1058-body, #xappcontext-1073-body, #jcgrid-1090, #xlogcontext-1147{
-	border: 1px solid #C0C0C0 !important;
+    border: 1px solid #C0C0C0 !important;
 }
 table tbody tr td table{
-	border-color: C0C0C0 !important;
+    border-color: C0C0C0 !important;
 }
 /*table header tit*/
 .x-column-header-inner .x-column-header-text {
@@ -398,462 +402,462 @@ table tbody tr td table{
 }
 /*table slide bg*/
 #menu-1242 .x-panel-body .x-box-inner{
-	background:#fff;	
+    background:#fff;	
 }
 #headercontainer-1182-innerCt .x-box-target .x-column-header .x-column-header-inner, #headercontainer-1196-innerCt .x-box-target .x-column-header .x-column-header-inner{
-	padding:7px 0 !important;	
+    padding:7px 0 !important;	
 }
 #jcgridview-1193-table tbody tr td, #jcgridview-1207-table tbody tr td{
-	/*cursor:pointer;*/	
+    /*cursor:pointer;*/	
 }
 table tbody tr td .x-grid-cell-inner {/*#jcgridview-1193-table*/
-	text-align:center !important;
+    text-align:center !important;
 }
 table tbody tr td .x-grid-cell-inner img{
-	margin:0 2px;
+    margin:0 2px;
 }
 
 
 /*manage*/
 #jcgrid-1090{
-	
+
 }
 #x-toolbar-default{
-	background:none !important;
+    background:none !important;
 }
 #worgForm{
-	background:#fff !important;
+    background:#fff !important;
 }
 #worgForm-form Table tbody tr td lable{
-	height:30px;
-	line-height:30px;
-	margin-top:8px !important;
+    height:30px;
+    line-height:30px;
+    margin-top:8px !important;
 }
 .x-form-item-label {
-margin-top: 8px !important;
+    margin-top: 8px !important;
 }
 .worgBtn{
-	left:200px !important;
+    left:200px !important;
 }
 #worgForm-formTable tbody tr td input{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 #worgForm-formTable tbody tr td table tr td lable{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 #worgForm-formTable tbody tr td table tr td input{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 /*my center*/
 #centerBox{
-	background:url(../images/content_bg.jpg) repeat-x left top;	
+    background:url(../images/content_bg.jpg) repeat-x left top;	
 }
 #centerBox-body .x-panel .x-panel-body .x-box-inner {
-	overflow:auto;
-	overflow-x:hidden;	
+    overflow:auto;
+    overflow-x:hidden;	
 }
 #panel-1105-body #panel-1105-innerCt{
-	overflow:auto;
-	overflow-x:hidden;	
+    overflow:auto;
+    overflow-x:hidden;	
 }
 /*
 .x-fit-item .x-panel-body .x-box-inner{
-	overflow:auto !important;
-	overflow-x:hidden !important;	
+        overflow:auto !important;
+        overflow-x:hidden !important;	
 }
 */
 .baseInfor{
-	
-	border:1px solid #c0c0c0;
-	border-radius:5px;
-	background:#fff !important;
+
+    border:1px solid #c0c0c0;
+    border-radius:5px;
+    background:#fff !important;
 }
 .baseInfo .x-panel-header{
-	border-top-left-radius:5px;
-	border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
 }
 .passInfor{
-	border:1px solid #c0c0c0;
-	border-radius:5px;
-	background:#fff !important;
+    border:1px solid #c0c0c0;
+    border-radius:5px;
+    background:#fff !important;
 }
 .passInfor .x-panel-header{
-	border-top-left-radius:5px;
-	border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
 }
 .baseInfor .x-panel-body table tbody tr td{
-	width:200px !important;
+    width:200px !important;
 }
 .baseInfor .x-panel-body table tbody tr td div{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 .baseInfor .x-panel-body table tbody tr td label{
-	height:30px;
-	line-height:30px;
-	width:200px !important;
+    height:30px;
+    line-height:30px;
+    width:200px !important;
 }
 .baseInfor .x-panel-body table tbody tr td input{
-	height:30px;
-	line-height:30px;
-	width:200px !important;
+    height:30px;
+    line-height:30px;
+    width:200px !important;
 }
 .passInfor .x-panel-body table tbody tr td{
-	width:200px !important;
+    width:200px !important;
 }
 .passInfor .x-panel-body table tbody tr td div{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 .passInfor .x-panel-body table tbody tr td label{
-	height:30px;
-	line-height:30px;
-	width:200px !important;
+    height:30px;
+    line-height:30px;
+    width:200px !important;
 }
 .passInfor .x-panel-body table tbody tr td input{
-	height:30px;
-	line-height:30px;
-	width:200px !important;
+    height:30px;
+    line-height:30px;
+    width:200px !important;
 }
 #baseSave{
-	left:260px !important;
+    left:260px !important;
 }
 #passSave{
-	left:260px !important;
+    left:260px !important;
 }
 .x-panel-header-default {
-	background-color: #70aaea;	
+    background-color: #70aaea;	
 }
 table tbody tr td label{
-	text-align:right;
-	color:#333;
+    text-align:right;
+    color:#333;
 }
 #xinfoorg-1133-body{
-	background:#fff !important;	
+    background:#fff !important;	
 }
 
 /*table tbody tr td input{
-	height:30px !important;
-	line-height:30px !important;
+        height:30px !important;
+        line-height:30px !important;
 }*/
 
 input[type="password"]{
-	color:#888 !important;	
+    color:#888 !important;	
 }
 #xinfoorg-1118-body{
-	background:#fff !important;	
+    background:#fff !important;	
 }
 /*操作日志*/
 /*#xlog-1152{
-	border:1px solid #C0C0C0 !important;
+        border:1px solid #C0C0C0 !important;
 }*/
 #button-1160, #button-1058, #button-1072{
-	top:0 !important;	
+    top:0 !important;	
 }
 #button-1161, #button-1059, #button-1072{
-	top:30px !important;	
+    top:30px !important;	
 }
 #logForm{
-	background:none !important;	
+    background:none !important;	
 }
 #logForml{
-	height:91px !important;
+    height:91px !important;
 }
 #logForm .x-panel-body-default{
-	height:81px !important;
+    height:81px !important;
 }
 #logForm .x-panel-body-default .x-fit-item{
-	border:1px solid #c0c0c0;
-	height:80px !important;
+    border:1px solid #c0c0c0;
+    height:80px !important;
 }
 #logCent{
-	top:101px;
-	border:1px solid #c0c0c0;
+    top:101px;
+    border:1px solid #c0c0c0;
 }
 #logForm-body .x-panel .x-toolbar{
-	background:none !important;
+    background:none !important;
 }
 #logForm-body .x-panel .x-toolbar .x-box-inner {
-	top:8px;
+    top:8px;
 }
 /*footer*/
 #footer{
-	height:35px;
-	background:url(../images/sep_20_d.gif) repeat-x 0 0;
+    height:35px;
+    background:url(../images/sep_20_d.gif) repeat-x 0 0;
 }
 #footer-body{
-	height:35px;
+    height:35px;
 }
 #footer-targetEl div{
-	height:35px;
-	line-height:35px;
-	color:#888;
+    height:35px;
+    line-height:35px;
+    color:#888;
 }
 #component-1030, #component-1045{
-	height:35px !important;
-	line-height:35px !important;
-	color:#888 !important;	
+    height:35px !important;
+    line-height:35px !important;
+    color:#888 !important;	
 }
 #toolbar-1144, #toolbar-1159{
-	background:#fff !important;
+    background:#fff !important;
 }
 #toolbar-1144-innerCt, #toolbar-1159-innerCt{
-	height:57px !important;
-	margin-top:2px;	
+    height:57px !important;
+    margin-top:2px;	
 }
 
 #form-1139-innerCt, #form-1154-innerCt{
-	padding: 5px 10px !important;
+    padding: 5px 10px !important;
 }
 
 /*dialog*/
 #wcoverBox{
-	
-	overflow:auto;
-	overflow-x:hidden;
+
+    overflow:auto;
+    overflow-x:hidden;
 }
 #wcoverBox-body table tbody tr td.wzformlabel {
-	padding-right:5px;
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-	background:#eee;
+    padding-right:5px;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    background:#eee;
 }
 #wcoverBox-body table tbody tr td.wzformborder{
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
 }
 #wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body {
-	padding:0 5px;
+    padding:0 5px;
 }
 #wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body input{
-	height: 33px;
-	line-height:33px;
-	width: 210px !important;
+    height: 33px;
+    line-height:33px;
+    width: 210px !important;
 
 }
 #wcoverBox-body table tbody tr td table.covnameInp tbody tr td input{
-	width:85px !important;
+    width:85px !important;
 }
 #wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input.x-form-text{
-	
-	width: 186px !important;
-	*width: 188px !important;
+
+    width: 186px !important;
+    *width: 188px !important;
 }
 #wcoverBox-body table tbody tr td table tbody tr td.x-form-item-body table{
-	border-color: #c0c0c0 !important;
+    border-color: #c0c0c0 !important;
 }
 #wcoverBox-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
-	border-color: #c0c0c0 !important;
+    border-color: #c0c0c0 !important;
 }
 .x-form-invalid .x-form-trigger-wrap {
-border-color: #c0c0c0 !important;
+    border-color: #c0c0c0 !important;
 }
 
 
 #wcoverBox .x-form-text{
-	height:24px;
-	line-height:24px;
-	padding:0px;
-	padding:0 0 0 5px;
+    height:24px;
+    line-height:24px;
+    padding:0px;
+    padding:0 0 0 5px;
 }
 
 #wcoverBox-body{
-	height: 450px;
-	overflow: auto;
-	overflow-x:hidden;
+    height: 450px;
+    overflow: auto;
+    overflow-x:hidden;
 }
 #wcoverBox-body table.x-table-layout{
-	height: 500px;
+    height: 500px;
 }
 
 
 /*dialog 2   基本信息*/
 #wslideBaseBox-inputEl{
-	border:0px solid #c0c0c0 !important;
+    border:0px solid #c0c0c0 !important;
 }
 #wbasealoneInp4-inputEl{
-	border:0px solid #c0c0c0 !important;
+    border:0px solid #c0c0c0 !important;
 }
 #wbasealoneInp-inputEl{
-	border:0px solid #c0c0c0 !important;
+    border:0px solid #c0c0c0 !important;
 }
 #wbasealoneInp8-inputEl{
-	border:0px solid #c0c0c0 !important;
+    border:0px solid #c0c0c0 !important;
 }
 #wbasealoneInp5-inputEl{
-	border:0px solid #c0c0c0 !important;
+    border:0px solid #c0c0c0 !important;
 }
 
 /*
 #wbasealoneInp-inputCell input{
-	*width:200px !important;
+        *width:200px !important;
 }
 #wbasealoneInp2-bodyEl input{
-	*width:138px !important;
+        *width:138px !important;
 }
 #wbasealoneInp3-bodyEl input{
-	*width:162px !important;
+        *width:162px !important;
 }
 
 #wbasealoneInp5-inputCell input{
-	*width:230px !important;
+        *width:230px !important;
 }
 
 #wbasealoneInp7-bodyEl input{
-	*width:162px !important;
+        *width:162px !important;
 }
 
 
 
 
 #wbasealoneInp14-bodyEl input{
-	*width:182px !important;
+        *width:182px !important;
 }
 */
 #baseSexBox1{
-	display:table !important;
+    display:table !important;
 }
 #baseSexBox1-inputEl{
-	
+
 }
 #wbasealoneInp2{
-	display:table !important;
+    display:table !important;
 }
 #wbasealoneInp2-inputEl{
-	
+
 }
 #wbasealoneInp6{
-	display:table !important;
+    display:table !important;
 }
 #wbasealoneInp6-inputEl{
-	
+
 }
 #wbaseInp1-inputEl{
-	*width:238px !important;
+    *width:238px !important;
 }
 #wbaseInp2-inputEl{
-	*width:238px !important;
+    *width:238px !important;
 }
 #wbaseInp3-inputEl{
-	*width:300px !important;
+    *width:300px !important;
 }
 #wbasealoneInp9-inputEl{
-	*width:752px !important;
+    *width:752px !important;
 }
 #wbasealoneInp10-inputEl{
-	*width:752px !important;
+    *width:752px !important;
 }
 #wbasealoneInp11-inputEl{
-	*width:300px !important;
+    *width:300px !important;
 }
 #wbasealoneInp13-inputEl{
-	*width:300px !important;
+    *width:300px !important;
 }
 #wbasealoneInp12-inputEl{
-	*width:305px !important;
+    *width:305px !important;
 }
 #wbasealoneInp14-inputEl{
-	*width:305px !important;
+    *width:305px !important;
 }
 #wbasealoneInp2-bodyEl input{
-	*width:173px !important;
+    *width:173px !important;
 }
 #wbasealoneInp2-inputEl{
-	*width:185px !important;
+    *width:185px !important;
 }
 #wbasealoneInp3-bodyEl input{
-	*width:305px !important;
+    *width:305px !important;
 }
 #wbasealoneInp6-bodyEl input{
-	*width:173px !important;
+    *width:173px !important;
 }
 #wbasealoneInp7-bodyEl input{
-	*width:305px !important;
+    *width:305px !important;
 }
 
 
 #wbaseBox-body table tbody tr td.wzformlabel {
-	padding-right:5px;
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-	background:#eee;
+    padding-right:5px;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    background:#eee;
 }
 #wbaseBox-body table tbody tr td.wzformborder{
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
 }
 #wbaseBox-body table tbody tr td table.x-table-form-item{
-	margin-bottom: 0px;
-	
+    margin-bottom: 0px;
+
 }
 
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-item-body {
-	padding:0 5px;
+    padding:0 5px;
 }
- #wbaseBox .x-form-text{
-	height:24px;
-	line-height:24px;
-	padding:0px;
-	padding:0 0 0 5px;
+#wbaseBox .x-form-text{
+    height:24px;
+    line-height:24px;
+    padding:0px;
+    padding:0 0 0 5px;
 }
 .wzsizefixedtable{
-	width:100% !important;
+    width:100% !important;
 }
 .wzsizefixedtable tbody tr td.x-form-item-body  {
-	width:100% !important;
+    width:100% !important;
 }
 .wzsizefixedtable tbody tr td table tbody tr td.x-form-trigger-input-cell{
-	width:100% !important;
+    width:100% !important;
 }
 .wzsizefixedtable tbody tr td table{
     width:100% !important;
 }
 .wzsizefixedtable tbody tr td table tbody tr td.x-trigger-cell{
-	width:22px !important;
+    width:22px !important;
 }
 #wbaseDateCon{
-	width:100% !important;
+    width:100% !important;
 }
 #wbaseDateCon tbody tr td table tbody tr td.x-form-trigger-input-cell{
-	width:100%;
+    width:100%;
 }
 #wbaseDateCon tbody tr td table{
     width:100% !important;
 }
 #wbaseDateCon tbody tr td table tbody tr td.x-trigger-cell{
-	width:22px !important;
+    width:22px !important;
 }
 
 /*//这里的代码会导致 某些字段太短 by jc*/
 /*#wbaseBox-body table tbody tr td table{    
-	width:120px !important;
-	_width:130px !important;
+        width:120px !important;
+        _width:130px !important;
 }*/
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-item-body {
-	padding:0 5px;
+    padding:0 5px;
 }
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-item-body input{
-	height: 33px;
-	width: 210px;
+    height: 33px;
+    width: 210px;
 }
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
 
-	/*width: 100px !important;*/
+    /*width: 100px !important;*/
 }
 #wbaseBox-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
-	width:auto:!important;
-	border-color: #c0c0c0 !important;
+    width:auto:!important;
+    border-color: #c0c0c0 !important;
 }
 #wbaseBox-body{
-	height: 450px;
-	overflow: auto;
-	overflow-x:hidden;
+    height: 450px;
+    overflow: auto;
+    overflow-x:hidden;
 }
 #wbaseBox-body table.x-table-layout{
-	height: 600px;
+    height: 600px;
 }
 
 
@@ -862,45 +866,45 @@ border-color: #c0c0c0 !important;
 
 /***dialog 3 form****/
 #ducatBox label.x-docked-top{
-	color:black;
+    color:black;
 }
 #ducatBox-body .x-panel .x-panel-body{
-	margin-top:10px;
+    margin-top:10px;
 }
 
 /*input*/
 /*
 #wmutlBox-innerCt label{
-	height:30px;
-	line-height:30px;
-	border:1px solid #c0c0c0;
+        height:30px;
+        line-height:30px;
+        border:1px solid #c0c0c0;
 }
 #wmutlBox-innerCt table.wcommonInp tbody tr td input{
-	height:32px;
-	line-height:32px;
-	*height:30px;
-	*line-height:30px;
+        height:32px;
+        line-height:32px;
+        *height:30px;
+        *line-height:30px;
 }
 */
 #wmutlBox-innerCt table.wcommonInp2 tbody tr td table tbody tr td input{
-	height:28px;
-	line-height:18px;
-	*line-height:28px;
+    height:28px;
+    line-height:18px;
+    *line-height:28px;
 }
 
 
 /*dialog 公共类*/
 .wdialogInpBox label{
-	height:28px;
-	line-height:18px;
-	*line-height:28px;
-	border:1px solid #c0c0c0;
+    height:28px;
+    line-height:18px;
+    *line-height:28px;
+    border:1px solid #c0c0c0;
 }
 .wdialogInpBox table.wcommonInp tbody tr td input{
-	height:30px;
-	line-height:18px;
-	*height:28px;
-	*line-height:28px;
+    height:30px;
+    line-height:18px;
+    *height:28px;
+    *line-height:28px;
 }
 
 
@@ -908,20 +912,20 @@ border-color: #c0c0c0 !important;
 
 /***dialog 3 form 工作经历****/
 #workBox label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 #workBox .x-panel .x-panel-body{
-	margin-top:10px;
+    margin-top:10px;
 }
 /*
 #workBox .x-panel .x-panel-body span div label{
-	height:30px;
-	line-height:30px;
-	border:1px solid #c0c0c0;
+        height:30px;
+        line-height:30px;
+        border:1px solid #c0c0c0;
 }
 #workBox .x-panel .x-panel-body span div table tbody tr td>input{
-	height:32px;
-	line-height:32px;
+        height:32px;
+        line-height:32px;
 }
 */
 
@@ -929,414 +933,414 @@ border-color: #c0c0c0 !important;
 
 /*******dialog 个人专长*********/
 #cialtyBox label.x-component{
-	color:#444;
+    color:#444;
 }
 
 
 /***dialog 4 主要项目***/
 #ojectBox label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 #ojectBox .x-panel .x-panel-body{
-	margin-top:10px;
+    margin-top:10px;
 }
 
 
 /***dialog 4 主要成果***/
 #sultmainBox label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 #sultmainBox-body{
-	overflow-x:hidden !important;
+    overflow-x:hidden !important;
 }
 #sultmainBox .x-panel .x-panel-body{
-	margin-top:10px;
+    margin-top:10px;
 }
 
 #sultmainBox-innerCt label.x-component{
-	color:#444;
-	height:30px;
-	line-height:30px;
+    color:#444;
+    height:30px;
+    line-height:30px;
 }
 #sultmainBox-innerCt .x-panel{
-	height:190px !important;
+    height:190px !important;
 }
 #sultmainBox-outerCt{
-	
+
 }
 
 /***dialog 4 企业发展情况*//*******/
 #editplan-targetEl .x-panel label.x-component{
-	color:#444;
+    color:#444;
 }
 
 
 /***dialog 4 企业发展情况*///*******/
 #winforBox-innerCt label{
-	color:#444;
-	height:30px;
-	line-height:30px;
+    color:#444;
+    height:30px;
+    line-height:30px;
 
 }
 #winforBox-innerCt .x-component{
-	color:#444;
-	height:30px;
-	line-height:30px;
+    color:#444;
+    height:30px;
+    line-height:30px;
 }
 
 #winforBox-innerCt .x-panel .x-panel-body table tr td .x-html-editor-container{
-	height:150px;
+    height:150px;
 }
 #winforBox-innerCt .x-panel .x-panel-body span{
-	padding-top:10px;
+    padding-top:10px;
 }
 
 /***dialog 5 textarea****/
 #winforBox2-targetEl .x-panel .x-component{
-	margin:0 10px !important;
-	color:#444;
-	height:30px;
-	line-height:30px;
+    margin:0 10px !important;
+    color:#444;
+    height:30px;
+    line-height:30px;
 }
 #winforBox2-targetEl .x-panel .x-panel-body{
-	top:40px !important;
+    top:40px !important;
 }
 
 
 /*dialog 5  text*/
 #specBox label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 /*dialog 6 form*/
 #itemBox label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 
 #itemBox-body .x-panel .x-panel-body{
-	margin-top:10px;
+    margin-top:10px;
 }
 #itemBox-body .x-panel .x-panel-body span div label{
-	height:30px;
-	line-height:30px;
-	border:1px solid #c0c0c0;
+    height:30px;
+    line-height:30px;
+    border:1px solid #c0c0c0;
 }
 #itemBox-body .x-panel .x-panel-body span div table tbody tr td>input{
-	height:32px;
-	line-height:32px;
+    height:32px;
+    line-height:32px;
 }
 #itemBox-body .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 
 /*dialog 7 form*/
 #gainBox label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 #gainBox-body{
-	overflow-x:hidden !important;
+    overflow-x:hidden !important;
 }
 #gainBox-innerCt > label{
-	height: 30px;
-	line-height: 30px;
-	display: block;
-	color:#444;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color:#444;
 }
 #gainBox-innerCt .x-panel{
-	height:176px !important;
+    height:176px !important;
 }
 #gainBox-body .x-panel .x-panel-body{
-	margin-top:10px;
+    margin-top:10px;
 }
 #gainBox-body .x-panel .x-panel-body span div label{
-	height:30px;
-	line-height:30px;
-	border:1px solid #c0c0c0;
+    height:30px;
+    line-height:30px;
+    border:1px solid #c0c0c0;
 }
 #gainBox-body .x-panel .x-panel-body span div table tbody tr td>input{
-	height:32px;
-	line-height:32px;
+    height:32px;
+    line-height:32px;
 }
 #gainBox-body .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 
 
 /**dialog 8 text*/
 #otherBox label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 
 /**dialog 9 text*/
 #imagineBox-targetEl .x-panel label.x-docked-top{
-	color:#444;
+    color:#444;
 }
 
 /**dialog 10 text form 个人信息*/
 #wpersonBox-innerCt .x-panel .x-panel-body{
-	overflow:hidden;
+    overflow:hidden;
 }
 /*
 #wpersonBox-innerCt .x-panel .x-panel-body span div > label{
-	height: 30px;
-	line-height: 30px;
-	display: block;
-	color:#444;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        color:#444;
 }
 */
- #wpersonBox .x-form-text{
-	/*height:24px;
-	line-height:24px;*/
-	padding:0px;
-	padding:0 0 0 5px;
+#wpersonBox .x-form-text{
+    /*height:24px;
+    line-height:24px;*/
+    padding:0px;
+    padding:0 0 0 5px;
 }
 
 
 /*dialog my infor 10 个人中心*/
 /*个人中心*/
 #myInforCont-body table tbody tr td.wzformborder table tbody tr td input {
-	*line-height:30px !important;
+    *line-height:30px !important;
 }
 #wmyinforCon-body .wdialogInpBox .x-panel-body{
-	height:195px !important;
+    height:195px !important;
 }
 #wmyinforCon-body .wdialogInpBox .x-panel-body div div label{
-	height:28px;
-	line-height:28px;
-	border:1px solid #c0c0c0;
+    height:28px;
+    line-height:28px;
+    border:1px solid #c0c0c0;
 }
 #wmyinforCon-body .wdialogInpBox .x-panel-body div div table.wcommonInp tbody tr td input{
-	height:30px !important;
-	line-height:30px !important;
-	*height:28px;
-	*line-height:28px;
+    height:30px !important;
+    line-height:30px !important;
+    *height:28px;
+    *line-height:28px;
 }
 #wmyinforCon-body .wdialogInpBox .x-panel-body div div table.wcommonInp2 tbody tr td table tbody tr td input{
-	height:28px !important;
-	line-height:28px !important;
-	*height:30px !important;
-	*line-height:30px !important;
+    height:28px !important;
+    line-height:28px !important;
+    *height:30px !important;
+    *line-height:30px !important;
 }
 #mycenterLabeBox
 {
-	height:22px;
-	line-height:22px;
+    height:22px;
+    line-height:22px;
 }
 /*
 #wpersonBox-innerCt .x-panel .x-panel-body span div label{
-	height:30px;
-	line-height:30px;
-	border:1px solid #c0c0c0;
+        height:30px;
+        line-height:30px;
+        border:1px solid #c0c0c0;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body span div table tbody tr td>input{
-	height:32px;
-	line-height:32px;
+        height:32px;
+        line-height:32px;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body span div table tbody tr td table tbody tr td input{
-	height:30px;
-	line-height:30px;
+        height:30px;
+        line-height:30px;
 }
 #wpersonBox-innerCt > label{
-	height:20px;
-	line-height:20px;
+        height:20px;
+        line-height:20px;
 }
 */
 /*
 table[wzform="1"] {
-	border-left: 1px solid #c0c0c0 !important;
-	border-top: 1px solid #c0c0c0 !important;
+        border-left: 1px solid #c0c0c0 !important;
+        border-top: 1px solid #c0c0c0 !important;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body>table{
-	border-left: 1px solid #c0c0c0 !important;
-	border-top: 1px solid #c0c0c0 !important;
+        border-left: 1px solid #c0c0c0 !important;
+        border-top: 1px solid #c0c0c0 !important;
 }
 */
 /*
 #wpersonBox-innerCt  .x-panel label.x-component{
-	color:#888;
+        color:#888;
 }
 #wpersonBox-innerCt label.x-component{
-	color:#888;
+        color:#888;
 }
 */
 
 
 
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformlabel {
-	padding-right:5px;
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-	background:#eee;
+    padding-right:5px;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    background:#eee;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformborder{
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table.x-table-form-item{
-	margin-bottom: 0px;
-	
+    margin-bottom: 0px;
+
 }
 /*
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table{
-	width:140px !important;
+        width:140px !important;
 }
 
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625{
-	width:610px !important;
+        width:610px !important;
 }*/
 /*
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1618-inputEl{
-	width:605px !important;
+        width:605px !important;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625-inputEl{
-	width:605px !important;
+        width:605px !important;
 }
 */
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body {
-	padding:0 5px;
+    padding:0 5px;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body input{
-	height: 33px;
-	width: 210px;
+    height: 33px;
+    width: 210px;
 }
 #wmydateCon-inputEl{
-	width:120px !important;
-	*width:140px !important;
+    width:120px !important;
+    *width:140px !important;
 }
 /*
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
 
-	width: 120px !important;
+        width: 120px !important;
 }
 */
 #wpersonBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
-	width:auto:!important;
-	border-color: #c0c0c0 !important;
+    width:auto:!important;
+    border-color: #c0c0c0 !important;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body {
-	height: 450px;
-	overflow: auto;
+    height: 450px;
+    overflow: auto;
 }
 #wpersonBox-innerCt .x-panel .x-panel-body table.x-table-layout{
-	height: 360px;
+    height: 360px;
 }
 
 
 /*dialog total infor 11 汇总信息*/
 #wtextAreaCon, #wtextAreaCon2, #wtextAreaCon6{
-	*width:725px !important;
+    *width:725px !important;
 }
 #wtextAreaCon3, #wtextAreaCon4, #wtextAreaCon5{
-	*width:235px !important;
+    *width:235px !important;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformlabel {
-	padding-right:5px;
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
-	background:#eee;
+    padding-right:5px;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
+    background:#eee;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td.wzformborder{
-	border-right: 1px solid #c0c0c0;
-	border-bottom: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    border-bottom: 1px solid #c0c0c0;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table.x-table-form-item{
-	margin-bottom: 0px;
-	
+    margin-bottom: 0px;
+
 }
 #wmaryBox .x-form-text{
-	height:24px;
-	line-height:24px;
-	padding:0px;
-	padding:0 0 0 5px;
+    height:24px;
+    line-height:24px;
+    padding:0px;
+    padding:0 0 0 5px;
 }
 #wmaryBox textarea.x-form-text{
-	width:100%;
-	height:50px;
-	line-height:24px;
-	padding:0px;
-	padding:0 0px 0 5px;
+    width:100%;
+    height:50px;
+    line-height:24px;
+    padding:0px;
+    padding:0 0px 0 5px;
 }
 /*
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table{
-	width:140px !important;
+        width:140px !important;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625{
-	width:610px !important;
+        width:610px !important;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1618-inputEl{
-	width:605px !important;
+        width:605px !important;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td #textfield-1625-inputEl{
-	width:605px !important;
+        width:605px !important;
 }
 */
 
 .x-form-type-text input#wbaseDateCon-inputEl {
-	border: 0px solid #c0c0c0 !important;
+    border: 0px solid #c0c0c0 !important;
 }
 #huizInp2-triggerWrap{
-	border:0px solid #c0c0c0 !important;
+    border:0px solid #c0c0c0 !important;
 }
 #huizInp{
-	width:100%;
+    width:100%;
 }
 #huizInp-triggerWrap{
-	width:140px;
+    width:140px;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body {
-	padding:0 5px;
+    padding:0 5px;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body input{
-	height: 33px;
-	*line-height:33px !important;
-	width: 210px;
+    height: 33px;
+    *line-height:33px !important;
+    width: 210px;
 }
 /*
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-item-body table tbody tr td.x-form-trigger-input-cell input{
 
-	width: 120px !important;
+        width: 120px !important;
 }
 */
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td.x-form-trigger-wrap-focus table{
-	width:auto:!important;
-	border-color: #c0c0c0 !important;
+    width:auto:!important;
+    border-color: #c0c0c0 !important;
 }
 #wmaryBox-innerCt .x-panel{
-	height: 450px;
+    height: 450px;
 }
 #wmaryBox-body{
-	overflow:auto;
+    overflow:auto;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table.x-table-layout{
-	height: 530px;
+    height: 530px;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td{
-	/*width:auto !important;*/
+    /*width:auto !important;*/
 }
 /*
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td textarea{
-	width:100% !important;
+        width:100% !important;
 }
 */
 /*
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td .x-form-cb-wrap-inner .x-form-checkbox {
-	width: 15px !important;
-	height: 15px !important;
-	background-position:0 0;
+        width: 15px !important;
+        height: 15px !important;
+        background-position:0 0;
 }
 #wmaryBox-innerCt .x-panel .x-panel-body table tbody tr td table tbody tr td .x-form-cb-wrap-inner input:hover{
-	background-position:-15px 0;
+        background-position:-15px 0;
 }
 */
 
 #pogeBox-inputEl{
-	width: 15px !important;
-	height: 15px !important;
-	background-position:0 0;
+    width: 15px !important;
+    height: 15px !important;
+    background-position:0 0;
 }
 #pogeBox-inputEl:hover{
-	background-position:-15px 0;
+    background-position:-15px 0;
 }
 
 
@@ -1345,25 +1349,25 @@ table[wzform="1"] {
 /***dialog 12****/
 
 #wattachBox-innerCt table tbody tr td .x-form-item-label{
-	margin-top:5px !important;
+    margin-top:5px !important;
 }
 #wattachBox-innerCt > label{
-	margin: 10px 10px 10px 18px !important;
-	margin-top:5px !important;
+    margin: 10px 10px 10px 18px !important;
+    margin-top:5px !important;
 }
 
 
 /******/
 #xmutliwowpanel-1660-innerCt label.x-component-default{
-	height:30px;
-	line-height:30px;
+    height:30px;
+    line-height:30px;
 }
 #xmutliwowpanel-1660-innerCt tabel tbody tr td input.x-form-field{
-	height:30px !important;
-	line-height:30px !important;
+    height:30px !important;
+    line-height:30px !important;
 }
 #xmutliwowpanel-1660-innerCt tabel tbody tr td tabel tr td{
-	padding:0 !important;
+    padding:0 !important;
 }
 
 
@@ -1378,106 +1382,106 @@ panel-1635-body    table
 
 /*login*/
 body.x-body{
-	overflow:hidden;
-	background:#eee url(../images/bg.jpg) no-repeat 50% 30% !important;	
+    overflow:hidden;
+    background:#eee url(../images/bg.jpg) no-repeat 50% 30% !important;	
 }
 body .x-container{
-	background:#fff;	
+    background:#fff;	
 }
 
 #loginBox{
-	/*background:url(../images/box1-bk.jpg) repeat-x 0 0;*/
-	background:url(../images/bg2.jpg) no-repeat left top ;
+    /*background:url(../images/box1-bk.jpg) repeat-x 0 0;*/
+    background:url(../images/bg2.jpg) no-repeat left top ;
 }
 
 #loginBox_header{
-	top:0 !important;
-		
+    top:0 !important;
+
 }
 #loginBox-body{
-	height:350px !important;
+    height:350px !important;
 }
 #loginBox-innerCt, #form-2233-body{
-	height:350px !important;
-	/*border-left:1px solid #C0C0C0;	
-	border-right:1px solid #C0C0C0;*/	
-	background:#FFF;
+    height:350px !important;
+    /*border-left:1px solid #C0C0C0;	
+    border-right:1px solid #C0C0C0;*/	
+    background:#FFF;
 }
 #loginBox-targetEl table.nameBox{
-	top:10px !important;
+    top:10px !important;
 }
 #loginBox-targetEl table.nameBox tbody tr td input{
-	height:40px !important;
-	line-height:35px !important;
-	border:1px solid #C0C0C0 !important;	
+    height:40px !important;
+    line-height:35px !important;
+    border:1px solid #C0C0C0 !important;	
 }
 #loginBox-targetEl table.passBox{
-	top:65px !important;
+    top:65px !important;
 }
 #loginBox-targetEl table.passBox tbody tr td input{
-	height:40px !important;
-	line-height:35px !important;
-	border:1px solid #C0C0C0 !important;	
+    height:40px !important;
+    line-height:35px !important;
+    border:1px solid #C0C0C0 !important;	
 }
 
 #loginBox{
-	border:1px solid #C0C0C0;
-	border-radius:5px;
-	left:360px !important;
-	top:60px; !important;
-	padding:0 !important;
-	height:334px !important;
-	_height:364px !important;
+    border:1px solid #C0C0C0;
+    border-radius:5px;
+    left:360px !important;
+    top:60px; !important;
+    padding:0 !important;
+    height:334px !important;
+    _height:364px !important;
 }
 #loginBox .x-toolbar{
-	padding: 3px 0 10px 6px !important;
+    padding: 3px 0 10px 6px !important;
 }
 #loginBox-targetEl .wlogimgBox{
-	height:80px !important;
-	width:300px !important;
-	left:15px !important;
-	top:120px !important;
-	_top:140px !important;	
+    height:80px !important;
+    width:300px !important;
+    left:15px !important;
+    top:120px !important;
+    _top:140px !important;	
 }
 #loginBox-targetEl .yzmBox{
-	top:205px !important;
+    top:205px !important;
 }
 .wtextBox tbody tr td input{
 
 }
 .pass{
-	line-height:30px;
-	_line-height:38px;
+    line-height:30px;
+    _line-height:38px;
 }
 
 #loginBox .x-docked{
-	top:290px !important;
-	_top:320px !important;
+    top:290px !important;
+    _top:320px !important;
 }
 #loginBox .x-docked .x-box-inner {
-	height:50px !important;	
+    height:50px !important;	
 }
 
 #loginBox .x-toolbar .x-box-inner .x-box-target a.wsimiBox{
-	width:100px;
-	height:35px;
-	line-height:35px;
-	top:2px !important;
+    width:100px;
+    height:35px;
+    line-height:35px;
+    top:2px !important;
 }
 #loginBox .x-toolbar .x-box-inner .x-box-target a.wsimiBox span span{
-	height:35px !important;
+    height:35px !important;
 }
 #loginBox .x-toolbar .x-box-inner .x-box-target a.wsimiBox span span span{
-	font-size:16px;
-	font-family:"微软雅黑", Arial;
-	padding:6px 5px 0
+    font-size:16px;
+    font-family:"微软雅黑", Arial;
+    padding:6px 5px 0
 }
 /*忘记密码*/
 #text-1019{
-	font-family:"微软雅黑", Arial;
-	font-size:14px;
-	top:8px !important;	
-	color:#aaa;
+    font-family:"微软雅黑", Arial;
+    font-size:14px;
+    top:8px !important;	
+    color:#aaa;
 }
 
 
@@ -1485,123 +1489,123 @@ body .x-container{
 
 /*评审*/
 #psdialogBox4-targetEl .x-container div label.x-column{
-	float:none;
-	height:22px;
-	line-height:22px;
+    float:none;
+    height:22px;
+    line-height:22px;
 }
 #psdialogBox4-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 #psdialogBox5-targetEl  .x-container div label.x-column{
-	/*float:none;*/
-	height:22px;
-	line-height:22px;
+    /*float:none;*/
+    height:22px;
+    line-height:22px;
 }
 /*
 #psdialogBox5-targetEl  .x-container div span tabel.x-column{
-	float:right !important;
-	display:inline;
+        float:right !important;
+        display:inline;
 }
 */
 #psdialogBox5-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 #psdialogBox6-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 #psdialogBox7-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 
 /*复审*/
 #fsdialogBox4-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 
 #fsdialogBox4-targetEl  .x-container div label.x-column{
-	float:none;
-	height:22px;
-	line-height:22px;
+    float:none;
+    height:22px;
+    line-height:22px;
 }
 /*
 #fsdialogBox5-targetEl  .x-container div tabel.x-column{
-	float:right !important;
-	display:inline;
+        float:right !important;
+        display:inline;
 }
 */
 #fsdialogBox5-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 
 #fsdialogBox5-targetEl  .x-container div label.x-column{
-	/*float:none;*/
-	height:22px;
-	line-height:22px;
+    /*float:none;*/
+    height:22px;
+    line-height:22px;
 }
 
 #fsdialogBox6-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 
 
 /*复审2*/
 #fs2dialogBox4-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 
 #fs2dialogBox4-targetEl  .x-container div label.x-column{
-	float:none;
-	height:22px;
-	line-height:22px;
+    float:none;
+    height:22px;
+    line-height:22px;
 }
 /*
 #fs2dialogBox5-targetEl  .x-container div tabel.x-column{
-	float:right !important;
-	display:inline;
+        float:right !important;
+        display:inline;
 }
 */
 #fs2dialogBox5-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 
 #fs2dialogBox5-targetEl  .x-container div label.x-column{
-	/*float:none;*/
-	height:22px;
-	line-height:22px;
+    /*float:none;*/
+    height:22px;
+    line-height:22px;
 }
 
 #fs2dialogBox6-targetEl label center{
-	height:22px;
-	line-height:22px;
-	font-size:14px;
-	font-weight:bold;
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:bold;
 }
 
 

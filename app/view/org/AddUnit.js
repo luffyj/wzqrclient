@@ -2,7 +2,7 @@ Ext.define("wzqr.view.org.AddUnit", {
     extend: 'Ext.window.Window',
     xtype: 'xorgaddunit',
     title: '添加申报单位',
-    width: 295, // height/goldraid(0.618)
+    width: 395, // height/goldraid(0.618)
     height: 476,
     layout: 'fit',
     buttons: [

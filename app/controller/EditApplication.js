@@ -33,6 +33,10 @@ Ext.define('wzqr.controller.EditApplication', {
             selector: 'xappedit'
         },
         {
+            ref: 'viewWindow',
+            selector: 'xappview'
+        },
+        {
             ref: 'editForm',
             selector: 'xappedit form'
         }, {
@@ -183,9 +187,7 @@ Ext.define('wzqr.controller.EditApplication', {
                 },
                 actionpingshen: function(grid, record, rowIndex, colIndex, row, item, e) {
                     //打开形审
-                    var xs = this.getView('app.edit.window.Pingshen').create(record);
-                    xs.app = record;
-                    xs.down('form').loadRecord(xs.app);
+                    var xs = this.getView('app.edit.window.Pingshen').create(record);                    
                     xs.show();
                 },
                 actionfushen: function(grid, record, rowIndex, colIndex, row, item, e) {
@@ -193,18 +195,14 @@ Ext.define('wzqr.controller.EditApplication', {
                     if (this.isManageOrg(true)) {
                         xs = this.getView('app.edit.window.Fushen').create(record);
                     } else {
-                        xs = this.getView('app.edit.window.Fushen2').create();
+                        xs = this.getView('app.edit.window.Fushen2').create(record);
                     }
-
-
-                    xs.app = record;
-                    xs.down('form').loadRecord(xs.app);
+                    
                     xs.show();
                 },
                 actionxingshen: function(grid, record, rowIndex, colIndex, row, item, e) {
                     //打开形审
                     var xs = this.getView('app.edit.window.Xingshen').create(record);
-                    xs.down('form').loadRecord(xs.app);
                     xs.show();
                 },
                 actioncowner: function(grid, record, rowIndex, colIndex, row, item, e) {
@@ -217,9 +215,9 @@ Ext.define('wzqr.controller.EditApplication', {
                     win.show();
                 },
                 actionsubmit: function(grid, record, rowIndex, colIndex, row, item, e) {
-                    var xs = this.getView('app.edit.window.Submit').create();
-                    xs.app = record;
-                    xs.down('form').loadRecord(xs.app);
+                    var xs = this.getView('app.edit.window.Submit').create(record);
+//                    xs.app = record;
+//                    xs.down('form').loadRecord(xs.app);
                     xs.show();
                 },
                 actionedit: function(grid, record, rowIndex, colIndex, row, item, e) {
@@ -365,6 +363,11 @@ Ext.define('wzqr.controller.EditApplication', {
                 }
             },
             //
+            'xappview button[name=downloadpdf]': {
+                click: function(button) {
+                    window.open(Utils.toApi('attachment/' + this.getViewWindow().app.getId() + '.pdf'));
+                }
+            },
             'xappeditattach button[name=download]': {
                 click: function(button) {
                     window.open(Utils.toApi('attachment/' + this.getEditWindow().app.getId() + '.pdf'));

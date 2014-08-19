@@ -61,7 +61,11 @@ Ext.define('wzqr.view.app.ReportType', {
     initComponent: function() {
         var me = this;
 
-        var items = [];
+        var items = [
+            {
+                html:'&nbsp'
+            }
+        ];
         Ext.Array.each(me._datas, function(data) {
             items.push({
                 //其实本身也提供了 renderTpl 和 renderData

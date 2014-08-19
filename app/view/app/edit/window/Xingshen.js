@@ -1,27 +1,33 @@
 Ext.define('wzqr.view.app.edit.window.Xingshen', {
     extend: 'Ext.window.Window',
     alias: 'widget.xappeditxingshen',
-
     requires: [
+        'wzqr.view.app.View',
         'wzqr.view.app.edit.Submit',
         'wzqr.view.app.edit.Xingshen',
         'Ext.form.Panel',
         'Ext.tab.Panel',
         'Ext.tab.Tab'
     ],
-
-    ui:'wzwindow',
+    ui: 'wzwindow',
     height: 589,
     width: 706,
     layout: 'fit',
     title: '形审',
-    
     constructor: function(app) {
         this.app = app;
-        //对形审已通过的重审 无法继续通过
+        this._citems = Ext.Array.push(wzqr.view.app.View.createAppInfos(app), [
+            {
+                xtype: 'appeditsubmit',
+                removeButtons: true
+            },
+            {
+                xtype: 'appeditxingshen',
+                iscs: app.get('status') === '形审通过'
+            }
+        ]);
         this.callParent();
     },
-
     initComponent: function() {
         var me = this;
 
@@ -36,17 +42,8 @@ Ext.define('wzqr.view.app.edit.window.Xingshen', {
                         {
                             xtype: 'tabpanel',
                             bodyPadding: 10,
-                            activeTab: 1,
-                            items: [
-                                {
-                                    xtype: 'appeditsubmit',
-                                    removeButtons: true
-                                },
-                                {
-                                    xtype: 'appeditxingshen',
-                                    iscs:me.app.get('status')==='形审通过'
-                                }
-                            ]
+                            activeTab: 4,
+                            items: me._citems
                         }
                     ]
                 }
@@ -54,8 +51,13 @@ Ext.define('wzqr.view.app.edit.window.Xingshen', {
         });
 
         me.callParent(arguments);
-    },
 
+        Ext.Array.each(Ext.ComponentQuery.query('xmutliwowpanel', me), function(view) {
+            view.beforeLoadRecord(this.app);
+        }, me);
+
+        me.down('form').loadRecord(me.app);
+    },
     toReason: function() {
         return this.down('textarea[name=unitApproveReason]').getValue();
     }

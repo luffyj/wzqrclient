@@ -4,6 +4,9 @@
 Ext.define("wzqr.view.app.View", {
     extend: 'Ext.window.Window',
     requires: [
+        'wzqr.view.app.edit.Person',
+        'wzqr.view.app.edit.Summary',
+        'wzqr.view.app.edit.SummaryEnt',
         'wzqr.view.app.view.App',
         'Ext.ComponentQuery',
         'wzqr.view.common.CommonField',
@@ -24,25 +27,41 @@ Ext.define("wzqr.view.app.View", {
     layout: 'fit',
     width: 1024,
     height: 615,
+    statics: {
+        createAppInfos: function(app) {
+            return ('创业人才' === app.get('type')) ?
+                    [
+                        {
+                            xtype: 'xappviewapp',
+                            id: 'xappviewappid',
+                            app: app
+                        }, {
+                            xtype: 'xappeditperson',
+                            id: 'wpersonBox'
+                        }, {
+                            xtype: 'xappeditsummaryent',
+                            id: 'wmaryBox'
+                        }
+                    ]
+                    :
+                    [
+                        {
+                            xtype: 'xappviewapp',
+                            id: 'xappviewappid',
+                            app: app
+                        }, {
+                            xtype: 'xappeditperson',
+                            id: 'wpersonBox'
+                        }, {
+                            xtype: 'xappeditsummary',
+                            id: 'wmaryBox'
+                        }
+                    ];
+        }
+    },
     constructor: function(app) {
         this.app = app;
-        if ('创业人才' === app.get('type')) {
-            this._citems = [
-                {
-                    xtype: 'xappviewapp',
-                    id: 'xappviewappid',
-                    app: this.app
-                }
-            ];
-        } else {
-            this._citems = [
-                {
-                    xtype: 'xappviewapp',
-                    id: 'xappviewappid',
-                    app: this.app
-                }
-            ];
-        }
+        this._citems = wzqr.view.app.View.createAppInfos(app);
         this.callParent();
     },
     initComponent: function() {
@@ -76,24 +95,6 @@ Ext.define("wzqr.view.app.View", {
         Ext.Array.each(Ext.ComponentQuery.query('xmutliwowpanel', me), function(view) {
             view.beforeLoadRecord(this.app);
         }, me);
-
-        Ext.Array.each(Ext.ComponentQuery.query('xappviewhtml', me), function(view) {
-            var name = view.name;
-            var theValue = me.app.get(name);
-            if (name === 'sex') {
-                theValue = theValue === 0 ? '男' : '女';
-            }
-            if (theValue) {
-                view.setValue(theValue);
-            } else {
-                if (me.app['get' + name]) {
-                    theValue = Ext.callback(me.app['get' + name], me.app);
-                    if (theValue) {
-                        view.setValue(theValue);
-                    }
-                }
-            }
-        });
 
         me.down('form').loadRecord(me.app);
 

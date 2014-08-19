@@ -19,6 +19,70 @@ Ext.define('wzqr.model.Application', {
     isBeableSubEdit: function() {
         return this.get('status') === '形审未过' || this.get('status') === '形审通过' || this.get('status') === '等待形审'
     },
+    getpapersmsg:function(){
+        var rs = '';
+        for(var i=1;i<=20;i++){
+            var time = this.get('paperTime'+i);
+            var desc = this.get('paperTitle'+i);
+            var budget = this.get('paperMedia'+i);
+            var peoples = this.get('paperAuthor'+i);
+            if(time.length>0 && desc.length>0){
+                rs = rs + time+'&nbsp;'+desc+'&nbsp;'+budget+'&nbsp;'+peoples+'<br />';
+            }
+        }
+        return rs;
+    },
+    
+    getpatentsmsg:function(){
+        var rs = '';
+        for(var i=1;i<=20;i++){
+            var time = this.get('patentTime'+i);
+            var desc = this.get('patentName'+i);
+            var budget = this.get('patentCountry'+i);
+            var peoples = this.get('patentAuthor'+i);
+            if(time.length>0 && desc.length>0){
+                rs = rs + time+'&nbsp;'+desc+'&nbsp;'+budget+'&nbsp;'+peoples+'<br />';
+            }
+        }
+        return rs;
+    },
+    
+    getprojectsmsg:function(){
+        var rs = '';
+        for(var i=1;i<=9;i++){
+            var time = this.get('projectTime'+i);
+            var desc = this.get('projectDesc'+i);
+            var budget = this.get('projectBudget'+i);
+            var peoples = this.get('projectPeoples'+i);
+            var resp = this.get('projectResponsibility'+i);
+            if(time.length>0 && desc.length>0){
+                rs = rs + time+'&nbsp;'+desc+'&nbsp;'+budget+'&nbsp;'+peoples+'&nbsp;'+resp+'<br />';
+            }
+        }
+        return rs;
+    },
+    
+    getpartnersmsg:function(){
+        var rs = '';
+        for(var i=1;i<=20;i++){
+            var name = this.get('partnerName'+i);
+            var content = this.get('partnerContent'+i);
+            var type = this.get('partnerType'+i);
+            var per = this.get('partnerPer'+i);
+            var position = this.get('partnerPosition'+i);
+            
+            if(name.length>0 && content.length>0 && type.length>0 && per.length>0){
+                rs = rs+name+'以'+type+'入股'+content+'占'+per;
+                if(position.length>0){
+                    rs = rs+'，担任'+position+'<br />';
+                }else{
+                    rs = rs+'<br />';
+                }
+            }
+            
+        }
+        return rs;
+    },
     getmgenglish: function() {
         //中国, 温州大学, 物理, 博士
         var rs = '';
