@@ -20,13 +20,17 @@
 }
 
 .wztableelement{
-    border-right:1px solid;
-    border-bottom:1px solid;
+    border-right:1px solid #0099CC;
+    border-bottom:1px solid #0099CC;
 }
 
 .wztablelayout{
-    border-left:1px solid!important;
-    border-top:1px solid!important;
+    border-left:1px solid #0099CC!important;
+    border-top:1px solid #0099CC!important;
+}
+
+.simpleborder{
+    border:1px solid #0099CC;
 }
 
 *{margin:0;padding:0;}
@@ -954,7 +958,7 @@ input[type="password"]{
     overflow-x:hidden !important;
 }
 #sultmainBox .x-panel .x-panel-body{
-    margin-top:10px;
+    /*margin-top:10px;*/
 }
 
 #sultmainBox-innerCt label.x-component{
@@ -963,7 +967,7 @@ input[type="password"]{
     line-height:30px;
 }
 #sultmainBox-innerCt .x-panel{
-    height:190px !important;
+    /*height:190px !important;*/
 }
 #sultmainBox-outerCt{
 

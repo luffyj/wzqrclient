@@ -41,7 +41,7 @@ Ext.define('wzqr.view.app.view.App', {
 
         var mainPanels = [{
                 xtype: 'xappviewbasic',
-                id: 'xappviewbasicid',
+                id: 'xappviewbasicid',                
                 app: me.app
             },
             {
@@ -115,6 +115,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'entInfo'
                                 },
                                 {
@@ -127,6 +128,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'partnersmsg'
                                 },
                                 {
@@ -139,6 +141,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'entTeam'
                                 },
                                 {
@@ -151,6 +154,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'entProject'
                                 },
                                 {
@@ -163,6 +167,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'entPlan'
                                 }
                             ]
@@ -244,6 +249,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'expertTo'
                                 },
                                 {
@@ -256,6 +262,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'projectsmsg'
                                 },
                                 {
@@ -268,6 +275,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'papersmsg'
                                 },
                                 {
@@ -280,6 +288,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'patentsmsg'
                                 },
                                 {
@@ -292,6 +301,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'product'
                                 }, {
                                     html: '&nbsp'
@@ -303,6 +313,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'otherProduct'
                                 }
                             ]
@@ -323,6 +334,7 @@ Ext.define('wzqr.view.app.view.App', {
                             items: [
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'objectives'
                                 }
                             ]
@@ -343,6 +355,7 @@ Ext.define('wzqr.view.app.view.App', {
                             items: [
                                 {
                                     xtype: 'xappviewhtml',
+                                    cls:'simpleborder',
                                     name: 'agreement'
                                 }
                             ]
