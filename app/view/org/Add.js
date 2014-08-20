@@ -6,7 +6,7 @@ Ext.define("wzqr.view.org.Add", {
     title: '添加部门',
     style: 'background:red;',
     width: 558, // height/goldraid(0.618)
-    height: 345,
+    height: Ext.isIE?345:296,
 //    html:'???'
     layout: 'fit',
     buttons: [
