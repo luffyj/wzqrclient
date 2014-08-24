@@ -44,7 +44,7 @@ Ext.define('wzqr.spring.data.Model', {
         if (obj.isModel) {
             return obj.get(propertyName);
         }
-        return obj[propertyName];
+        return Utils.getValue(obj,propertyName);
     },
     /**
      * 自动连接

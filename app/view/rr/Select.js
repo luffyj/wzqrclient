@@ -1,6 +1,6 @@
-Ext.define('wzqr.view.log.Select', {
+Ext.define('wzqr.view.rr.Select', {
     extend: 'Ext.panel.Panel',
-    alias: 'widget.xlogselect',
+    alias: 'widget.xrrselect',
     requires: [
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
@@ -38,39 +38,29 @@ Ext.define('wzqr.view.log.Select', {
                     items: [
                         {
                             xtype: 'combobox',
-                            columnWidth: 0.5,
-                            fieldLabel: '操作类型',
-                            name: 'type',
+                            columnWidth: 0.33333,
+                            fieldLabel: '状态',
+                            name: 'status',
+                            value:'申请',
                             store: [
-                                '审核',
-                                '上报',
-                                '申请注册',
-                                '处理注册'
+                                '申请',
+                                '拒绝',
+                                '允许'
                             ]
-                        },
-                        {
-                            xtype: 'combobox',
-                            columnWidth: 0.5,
-                            fieldLabel: '用户角色',
-                            name: 'roleName',
-                            store: [
-                                '次级机构管理员',
-                                '申报单位',
-                                '申报人'
-                            ]
-                        },
-                        {
-                            xtype: 'datefield',
-                            columnWidth: 0.5,
-                            fieldLabel: '操作时间',
-                            name: 'time',
-                            submitFormat: 'time'
                         },
                         {
                             xtype: 'textfield',
-                            columnWidth: 0.5,
-                            fieldLabel: '登录名',
-                            name: 'loginName'
+                            columnWidth: 0.33333,
+                            fieldLabel: '单位名称',
+                            name: 'name'
+                        },
+                        {
+                            xtype: 'combobox',
+                            columnWidth: 0.33333,
+                            fieldLabel: '申请管区',
+                            name: 'supername',
+                            displayField: 'name',
+                            store: 'SubOrg'
                         }
                     ],
                     dockedItems: [
@@ -81,7 +71,7 @@ Ext.define('wzqr.view.log.Select', {
                                 {
                                     xtype: 'button',
                                     handler: function(button, e) {
-                                        var xappselect = button.up('xlogselect');
+                                        var xappselect = button.up('xrrselect');
                                         xappselect.doQuery();
                                     },
                                     text: '查询'
@@ -90,10 +80,11 @@ Ext.define('wzqr.view.log.Select', {
                                     xtype: 'button',
                                     handler: function(button, e) {
                                         var form = button.up('form');
-                                        var xappselect = form.up('xlogselect');
+                                        var xappselect = form.up('xrrselect');
                                         form.getForm().getFields().each(function(field) {
                                             field.reset();
                                         });
+                                        form.down('combobox[name=status]').setValue('申请');
                                         xappselect.doQuery();
                                     },
                                     text: '清除'

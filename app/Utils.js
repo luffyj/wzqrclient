@@ -131,6 +131,29 @@ Ext.define('wzqr.Utils', {
         if (!isDebugMode)
             window.location.reload();
 
+    },
+    getValue:function(me,field){
+        if (!me || !field)
+            return null;
+        if (me.isModel) {
+            return me.get(field);
+        }
+        var index = field.indexOf('.');
+        if (index === -1) {
+            return me[field];
+        }
+        var objName = field.substring(0, index);
+        var propertyName = field.substring(index + 1, field.length);
+        var obj = Utils.getValue(me,objName);
+        if (!Ext.isDefined(obj))
+            return null;
+        if (!obj)
+            return null;
+//        debug('obj',obj);
+        if (obj.isModel) {
+            return obj.get(propertyName);
+        }
+        return Utils.getValue(obj,propertyName);
     }
 });
 

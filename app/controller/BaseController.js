@@ -2,6 +2,7 @@ Ext.define('wzqr.controller.BaseController', {
     extend: 'Ext.app.Controller',
     models: ['Org', 'User', 'Role'],
     requires: [
+        'wzqr.view.rr.Index',
         'Ext.Ajax',
 //        'wzqr.view.ManagePeople',
         'wzqr.view.ManageApplication',
@@ -129,6 +130,11 @@ Ext.define('wzqr.controller.BaseController', {
             pages.push({
                 title: '管理部门',
                 xtype: 'xmanageorg'
+            });
+            
+            pages.push({
+                title: '注册申请',
+                xtype: 'xrrindex'
             });
         } else if (this.isManageOrg(false)) {
             pages.push({

@@ -554,6 +554,32 @@ input[type="password"]{
 #xinfoorg-1118-body{
     background:#fff !important;	
 }
+
+/*注册申请*/
+#rrForm{
+    background:none !important;	
+}
+/*#logForml{
+    height:91px !important;
+}*/
+#rrForm .x-panel-body-default{
+    height:81px !important;
+}
+#rrForm .x-panel-body-default .x-fit-item{
+    border:1px solid #c0c0c0;
+    height:80px !important;
+}
+#rrCent{
+    top:101px;
+    border:1px solid #c0c0c0;
+}
+#rrForm-body .x-panel .x-toolbar{
+    background:none !important;
+}
+#rrForm-body .x-panel .x-toolbar .x-box-inner {
+    top:8px;
+}
+
 /*操作日志*/
 /*#xlog-1152{
         border:1px solid #C0C0C0 !important;

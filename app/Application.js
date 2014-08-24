@@ -58,6 +58,7 @@ Ext.define('wzqr.Application', {
 
 
         'LoaderController',
+        'RegisterRequest',
         'Login',
         'ManageOrg',
         'ManageLog',
@@ -66,6 +67,7 @@ Ext.define('wzqr.Application', {
         'ManageApplication'
     ],
     stores: [
+        'RegisterRequest',
         'BorderCityStore',
         'SubOrg',
         'GxStore',
