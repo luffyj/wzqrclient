@@ -44,7 +44,7 @@ Ext.define('wzqr.spring.data.Model', {
         if (obj.isModel) {
             return obj.get(propertyName);
         }
-        return Utils.getValue(obj,propertyName);
+        return Utils.getValue(obj, propertyName);
     },
     /**
      * 自动连接
@@ -204,6 +204,35 @@ Ext.define('wzqr.spring.data.Model', {
         }
     }
 }, function(model) {
+
+    Ext.data.Types.SINT = {
+        convert: function(v) {
+            if (Ext.isArray(v)) {
+                var finalValue;
+                for (var i = 0; i < v.length; i++) {
+                    if (!finalValue) {
+                        finalValue = v[i];
+                    }
+                    if (typeof v[i] === 'number') {
+                        finalValue = v[i];
+                        break;
+                    }
+                }
+                v = finalValue;
+//                return parseInt(finalValue);
+            }
+            // Handle values which are already numbers.
+            // Value truncation behaviour of parseInt is historic and must be maintained.
+            // parseInt(35.9)  and parseInt("35.9") returns 35
+            if (typeof v === 'number') {
+                return parseInt(v);
+            }
+            return v !== undefined && v !== null && v !== '' ?
+                    parseInt(String(v).replace(Ext.data.Types.stripRe, ''), 10) : (this.useNull ? null : 0);
+        },
+        sortType: Ext.data.SortTypes.none,
+        type: 'sint'
+    };
 
     Ext.data.Types.SDATE = {
         convert: function(v) {

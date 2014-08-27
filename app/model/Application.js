@@ -568,7 +568,7 @@ Ext.define('wzqr.model.Application', {
         {name: 'mobile', type: 'sstring'},
         {name: 'phone', type: 'sstring'},
         {name: 'comletionDate', type: 'sdate', dateFormat: 'time'},
-        {name: 'sex', type: 'int'},
+        {name: 'sex', type: 'sint'},
         {name: 'birthDate', type: 'sdate', dateFormat: 'time'},
         {name: 'submitDate', type: 'sdate', dateFormat: 'time'},
         {name: 'birthPlace', type: 'sstring'},
