@@ -116,6 +116,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                     var user = null;
                     if (Utils.isValidString(obj.loginName) && Utils.isValidString(obj.password)) {
                         user = this.getModel('User').create(obj);
+                        user.set('loginName',Ext.String.trim(user.get('loginName')));
                         user.set('role', null);
                         user.set('org', this.getMyorgModel().getLink('self'));
                         user.set('enabled', true);

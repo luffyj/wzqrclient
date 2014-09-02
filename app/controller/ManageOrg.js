@@ -1,8 +1,8 @@
 Ext.define('wzqr.controller.ManageOrg', {
     extend: 'wzqr.controller.BaseController',
-    views: ['org.Add', 'org.AddUnit'],
+    views: ['org.Add', 'org.AddUnit', 'SetPassword'],
     models: ['Org', 'User'],
-    stores: ['UnderOrg', 'Org', 'User','SubOrg'],
+    stores: ['UnderOrg', 'Org', 'User', 'SubOrg'],
     onViewActivate: function(view) {
         debug('activate me', view);
         this.getUnderOrgStore().proxy.extraParams = {
@@ -31,6 +31,7 @@ Ext.define('wzqr.controller.ManageOrg', {
                     org = record;
                     //创建 用户 关联部门
                     var user = this.getModel('User').create(obj);
+                    user.set('loginName',Ext.String.trim(user.get('loginName')));
                     user.set('role', null);
                     user.set('org', org.getLink('self'));
                     user.set('enabled', true);
@@ -105,6 +106,37 @@ Ext.define('wzqr.controller.ManageOrg', {
         });
 
         this.control({
+            'xsetpassword button[name=save]': {
+                click: function(button) {
+                    Utils.startLoading();
+                    var win = button.up('window');
+                    Ext.Ajax.request({
+                        scope: win,
+                        url: Utils.toApi('setPassword'),
+                        params: win.down('form').getForm().getValues(),
+                        callback: function(options, success, response) {
+                            Utils.stopLoading();
+                            var data = Utils.extraResponseData(response);
+                            data.alert();
+                            if (data.success) {
+                                this.close();
+                            }
+                        }
+                    });
+                }
+            },
+            'jcgridview': {
+                itemdblclick: function(grid, record, item, index, e, eOpts) {
+                    if (grid.up('xmanageorg') || grid.up('xmanageunit')) {
+                        var managerLoginName = record.get('managerLoginName');
+                        debug(managerLoginName);
+                        if (managerLoginName && managerLoginName.length > 0) {
+                            var window = this.getView('SetPassword').create(managerLoginName);
+                            window.show();
+                        }
+                    }
+                }
+            },
             'xmanageunit': {
                 activate: 'onViewActivate'
             },

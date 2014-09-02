@@ -1,6 +1,11 @@
 Ext.define('wzqr.model.User', {
     extend: 'wzqr.spring.data.Model',
     resourceURI: Utils.toApi('api/user'),
+//    constructor: function() {
+//        var me = this;
+//        me.callParent();
+//        debug('new user!',me.get('loginName'));
+//    },
     fields: [
         {name: 'id', type: 'int'},
         {name: 'loginName', type: 'string'},
