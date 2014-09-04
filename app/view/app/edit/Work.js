@@ -13,7 +13,7 @@ Ext.define('wzqr.view.app.edit.Work', {
     width: 803,
     layout: 'border',
     title: '工作经历',
-    id:'workBox',
+    id:'workBox',    
 
     initComponent: function() {
         var me = this;
@@ -30,9 +30,10 @@ Ext.define('wzqr.view.app.edit.Work', {
             items: [
                 {
                     xtype: 'xmutliwowpanel',
+                    autoScroll: true,
 						cls:'wdialogInpBox',
                     region: 'center',
-                    maxRows: 9,
+                    maxRows: 20,
                     padding: 2,
                     layout: 'column',
                     bodyPadding: '',

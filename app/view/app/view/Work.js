@@ -24,6 +24,7 @@ Ext.define('wzqr.view.app.view.Work', {
             items: [
                 {
                     xtype: 'xmutliwowpanel',
+                    autoScroll: true,
                     readOnly: true,
                     region: 'center',
                     bodyCls: 'wztablelayout',
@@ -31,7 +32,7 @@ Ext.define('wzqr.view.app.view.Work', {
                     layout: 'column',
                     bodyPadding: '',
                     title: '',
-                    maxRows: 9,
+                    maxRows: 20,
                     baseFields: [
                         {
                             xtype: 'displayfield',

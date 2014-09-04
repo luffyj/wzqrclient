@@ -9,11 +9,11 @@ Ext.define('wzqr.view.app.edit.Project', {
         'Ext.form.field.Text'
     ],
 
-    height: 424,
+//    height: 424,
     width: 803,
     layout: 'border',
     title: '主要项目',
-    id:'itemBox',
+    id:'itemBox',    
 
     initComponent: function() {
         var me = this;
@@ -30,8 +30,9 @@ Ext.define('wzqr.view.app.edit.Project', {
             items: [
                 {
                     xtype: 'xmutliwowpanel',
+                    autoScroll: true,
 						cls:'wdialogInpBox',
-                    maxRows: 9,
+                    maxRows: 20,
                     region: 'center',
                     padding: 2,
                     layout: 'column',

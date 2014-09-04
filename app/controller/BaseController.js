@@ -132,14 +132,14 @@ Ext.define('wzqr.controller.BaseController', {
                 xtype: 'xmanageorg'
             });
             
-            pages.push({
-                title: '注册申请',
-                xtype: 'xrrindex'
-            });
         } else if (this.isManageOrg(false)) {
             pages.push({
                 title: '申报单位',
                 xtype: 'xmanageunit'
+            });
+            pages.push({
+                title: '注册申请',
+                xtype: 'xrrindex'
             });
         }
 //        else if (this.isManagePeople()) {
