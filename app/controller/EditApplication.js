@@ -44,7 +44,7 @@ Ext.define('wzqr.controller.EditApplication', {
             selector: 'xappcontext jcgrid'
         }
     ],
-    reloadCount: function() {
+    reloadCount: function () {
         this.getController('ManageApplication').reloadCount();
     },
     /**
@@ -52,7 +52,7 @@ Ext.define('wzqr.controller.EditApplication', {
      * 众多情况都会发生
      * 还可能是上报哦
      * */
-    doApproval: function(window, button) {
+    doApproval: function (window, button) {
         Utils.startLoading();
         window.down('form').updateRecord();
 
@@ -82,7 +82,7 @@ Ext.define('wzqr.controller.EditApplication', {
         var app = window.down('form').getRecord();
         app.save({
             scope: this,
-            callback: function(record, operation, success) {
+            callback: function (record, operation, success) {
                 if (success) {
 
                     if (!window.toReason) {
@@ -92,7 +92,7 @@ Ext.define('wzqr.controller.EditApplication', {
                             params: {
                                 appid: record.getId()
                             },
-                            callback: function(options, success, response) {
+                            callback: function (options, success, response) {
                                 Utils.stopLoading();
                                 var data = Utils.extraResponseData(response);
                                 data.alert();
@@ -110,7 +110,7 @@ Ext.define('wzqr.controller.EditApplication', {
                                 reason: reason,
                                 result: result
                             },
-                            callback: function(options, success, response) {
+                            callback: function (options, success, response) {
                                 Utils.stopLoading();
                                 var data = Utils.extraResponseData(response);
                                 data.alert();
@@ -127,7 +127,7 @@ Ext.define('wzqr.controller.EditApplication', {
             }});
 
     },
-    defaultOP: function(options, success, response) {
+    defaultOP: function (options, success, response) {
         Utils.stopLoading();
         var data = Utils.extraResponseData(response);
         this.reloadCount();
@@ -138,7 +138,7 @@ Ext.define('wzqr.controller.EditApplication', {
      * 保存app
      * 并且执行相应动作
      * */
-    saveApp: function(config) {
+    saveApp: function (config) {
         var me = this;
         Utils.startLoading();
         if (!config) {
@@ -158,7 +158,7 @@ Ext.define('wzqr.controller.EditApplication', {
         var app = this.getEditForm().getRecord();
         app.save({
             scope: config.scope,
-            callback: function(record, operation, success) {
+            callback: function (record, operation, success) {
                 Utils.stopLoading();
                 if (success) {
                     me.getAppGrid().store.reload();
@@ -170,42 +170,42 @@ Ext.define('wzqr.controller.EditApplication', {
                 }
             }});
     },
-    init: function(app) {
+    init: function (app) {
         this.control({
             'jcgridview': {
-                itemdblclick: function(grid, record, item, index, e, eOpts) {
+                itemdblclick: function (grid, record, item, index, e, eOpts) {
                     if (grid.up('xappcontext')) {
                         var win = this.getView('app.View').create(record);
-                        Ext.Array.each(Ext.ComponentQuery.query('field', win), function(field) {
+                        Ext.Array.each(Ext.ComponentQuery.query('field', win), function (field) {
                             field.setReadOnly(true);
                         });
                         win.show();
                     }
                 },
-                actionexport: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actionexport: function (grid, record, rowIndex, colIndex, row, item, e) {
                     window.open(Utils.toApi('report/' + record.getId() + '.doc'));
                 },
-                actionpingshen: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actionpingshen: function (grid, record, rowIndex, colIndex, row, item, e) {
                     //打开形审
-                    var xs = this.getView('app.edit.window.Pingshen').create(record);                    
+                    var xs = this.getView('app.edit.window.Pingshen').create(record);
                     xs.show();
                 },
-                actionfushen: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actionfushen: function (grid, record, rowIndex, colIndex, row, item, e) {
                     var xs;
                     if (this.isManageOrg(true)) {
                         xs = this.getView('app.edit.window.Fushen').create(record);
                     } else {
                         xs = this.getView('app.edit.window.Fushen2').create(record);
                     }
-                    
+
                     xs.show();
                 },
-                actionxingshen: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actionxingshen: function (grid, record, rowIndex, colIndex, row, item, e) {
                     //打开形审
                     var xs = this.getView('app.edit.window.Xingshen').create(record);
                     xs.show();
                 },
-                actioncowner: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actioncowner: function (grid, record, rowIndex, colIndex, row, item, e) {
                     var win = this.getView('app.edit.window.ChangeOwner').create();
                     win.app = record;
                     var owner = record.get('owner');
@@ -214,22 +214,22 @@ Ext.define('wzqr.controller.EditApplication', {
                     }
                     win.show();
                 },
-                actionsubmit: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actionsubmit: function (grid, record, rowIndex, colIndex, row, item, e) {
                     var xs = this.getView('app.edit.window.Submit').create(record);
 //                    xs.app = record;
 //                    xs.down('form').loadRecord(xs.app);
                     xs.show();
                 },
-                actionedit: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actionedit: function (grid, record, rowIndex, colIndex, row, item, e) {
                     this.getView('app.Edit').create(record).show();
                 },
-                actiondelete: function(grid, record, rowIndex, colIndex, row, item, e) {
+                actiondelete: function (grid, record, rowIndex, colIndex, row, item, e) {
                     debug(record, record.get('owner'));
-                    Ext.Msg.confirm('请确认', '确实要删除这个审核么？', function(bt) {
+                    Ext.Msg.confirm('请确认', '确实要删除这个审核么？', function (bt) {
                         if (bt === 'yes') {
                             record.set('status', '已删除');
                             record.save({
-                                success: function() {
+                                success: function () {
                                     grid.getStore().reload();
                                 }
                             });
@@ -238,8 +238,8 @@ Ext.define('wzqr.controller.EditApplication', {
                 }
             },
             'xappedit button[name=saveandnext]': {
-                click: function(button) {
-                    this.saveApp(function(record) {
+                click: function (button) {
+                    this.saveApp(function (record) {
                         this.getEditForm().loadRecord(record);
                         var tabpanel = button.up('tabpanel');
                         var actived = tabpanel.getActiveTab();
@@ -249,14 +249,14 @@ Ext.define('wzqr.controller.EditApplication', {
                 }
             },
             'xappedit button[name=save]': {
-                click: function(button) {
-                    this.saveApp(function(record) {
+                click: function (button) {
+                    this.saveApp(function (record) {
                         Ext.Msg.alert('提示', '保存成功！');
                     });
                 }
             },
             'xappeditcowner button[name=save]': {
-                click: function(button) {
+                click: function (button) {
                     var win = button.up('xappeditcowner');
                     var form = win.down('form');
                     var data = Ext.apply({appid: win.app.getId()}, form.getValues());
@@ -269,19 +269,19 @@ Ext.define('wzqr.controller.EditApplication', {
                 }
             },
             'menuitem[name=_exportall]': {
-                click: function() {
+                click: function () {
                     window.open(Utils.toApi('reports?ids=all'));
                 }
             },
             'menuitem[name=_exportselect]': {
-                click: function() {
+                click: function () {
                     var records = this.getAppGrid().getSelectionModel().getSelection();
                     var ids = "";
                     if (records.length === 0) {
                         Ext.Msg.alert('提示', '没有选择任何申报信息');
                         return;
                     }
-                    records.forEach(function(record) {
+                    records.forEach(function (record) {
                         if (ids.length === 0) {
                             ids = "" + record.getId();
                         } else {
@@ -294,21 +294,21 @@ Ext.define('wzqr.controller.EditApplication', {
             },
             //删除
             'xappcontext button[name=deleteapps]': {
-                click: function(button, e) {
+                click: function (button, e) {
                     var records = this.getAppGrid().getSelectionModel().getSelection();
                     if (records.length === 0) {
                         Ext.Msg.alert('提示', '没有选择任何申报信息');
                         return;
                     }
-                    Ext.Array.each(records, function(record) {
+                    Ext.Array.each(records, function (record) {
                         if (record.isWeishangbao() || record.isReturn()) {
                             //可以
-                            Ext.Msg.confirm('请确认', '确实要删除' + record.get('realName') + '的申报信息么？', function(bt) {
+                            Ext.Msg.confirm('请确认', '确实要删除' + record.get('realName') + '的申报信息么？', function (bt) {
                                 if (bt === 'yes') {
                                     record.set('status', '已删除');
                                     record.save({
                                         scope: this,
-                                        success: function() {
+                                        success: function () {
                                             this.getAppGrid().getStore().reload();
                                         }
                                     });
@@ -322,7 +322,7 @@ Ext.define('wzqr.controller.EditApplication', {
             },
             //导出申报书
             'xappcontext button[name=exportword]': {
-                click: function(button, e) {
+                click: function (button, e) {
                     var records = this.getAppGrid().getSelectionModel().getSelection();
                     if (records.length === 0) {
                         Ext.Msg.alert('提示', '没有选择任何申报信息');
@@ -336,9 +336,9 @@ Ext.define('wzqr.controller.EditApplication', {
                 }},
             //导出汇总表
             'xappcontext button[name=export]': {
-                click: function(button, e) {
+                click: function (button, e) {
                     if (false) {
-                        Ext.Msg.alert('提示','汇总表功能正在开发中');
+                        Ext.Msg.alert('提示', '汇总表功能正在开发中');
                         return;
                     }
                     var mn = Ext.create('Ext.menu.Menu', {
@@ -364,21 +364,50 @@ Ext.define('wzqr.controller.EditApplication', {
             },
             //
             'xappview button[name=downloadpdf]': {
-                click: function(button) {
+                click: function (button) {
                     window.open(Utils.toApi('attachment/' + this.getViewWindow().app.getId() + '.pdf'));
                 }
             },
             'xappeditattach button[name=download]': {
-                click: function(button) {
+                click: function (button) {
                     window.open(Utils.toApi('attachment/' + this.getEditWindow().app.getId() + '.pdf'));
+                }
+            },
+            'xappeditcpicture button[name=upload]': {
+                //上传
+                click: function (button) {
+                    var me  = this;
+                    var file = button.up('form').down('filefield[name=file]').getValue();
+                    if (!file || file.length === 0) {
+                        Ext.Msg.alert('提示', '请先选择附件后再点击上传');
+                        return;
+                    }
+                    
+                    var work = function(){
+                        button.up('window').close();
+                        var pic = me.getEditWindow().down('image[name=apppicture]');
+                        pic.setSrc(Utils.toApi('picture/'+me.getEditWindow().app.getId()+'.png?rdm='+ new Date().getTime()));
+                    };
+
+//                    Utils.startLoading();
+                    button.up('form').submit({
+                        url: Utils.toApi('uploadpicture'), //?id=' + this.getEditWindow().app.getId()
+                        clientValidation: false,
+                        method: 'POST',
+                        waitTitle: '请稍候',
+                        waitMsg: '正在上传附件 ...',
+                        success: work,
+                        failure: work,
+                        callback: work
+                    });
                 }
             },
             'xappeditattach button[name=upload]': {
                 //上传
-                click: function(button) {
+                click: function (button) {
                     var file = button.up('form').down('filefield[name=file]').getValue();
                     if (!file || file.length === 0) {
-                        Ext.Msg.alert('提示', '请先选择附件后再点击上传')
+                        Ext.Msg.alert('提示', '请先选择附件后再点击上传');
                         return;
                     }
 
@@ -395,26 +424,26 @@ Ext.define('wzqr.controller.EditApplication', {
             },
             'xappeditxingshen button[actionButton=true]': {
                 //形审完成
-                click: function(button) {
+                click: function (button) {
                     this.doApproval(button.up('xappeditxingshen'), button);
                 }
             }, 'xappeditfushen button[actionButton=true]': {
                 //形审完成
-                click: function(button) {
+                click: function (button) {
                     this.doApproval(button.up('xappeditfushen'), button);
                 }
             }, 'xappeditfushen2 button[actionButton=true]': {
                 //形审完成
-                click: function(button) {
+                click: function (button) {
                     this.doApproval(button.up('xappeditfushen2'), button);
                 }
             }, 'xappeditpingshen button[actionButton=true]': {
                 //形审完成
-                click: function(button) {
+                click: function (button) {
                     this.doApproval(button.up('xappeditpingshen'), button);
                 }
             }, 'xappeditsubmit button[actionButton=true]': {
-                click: function(button) {
+                click: function (button) {
                     this.doApproval(button.up('xappeditsubmit'), button);
                 }
                 //点击了上报！
@@ -422,7 +451,7 @@ Ext.define('wzqr.controller.EditApplication', {
             }
             //labelManagerTitle 部门审核意见的标题
             , 'xappeditfushen2': {
-                render: function(view) {
+                render: function (view) {
                     var label = view.down('label[name=labelManagerTitle]');
                     label.html = '<center>' + this.getMyorgModel().get('name') + '审核意见</center>';
                     debug('部门情况label', label);

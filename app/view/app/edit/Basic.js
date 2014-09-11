@@ -1,11 +1,14 @@
 Ext.define('wzqr.view.app.edit.Basic', {
     extend: 'Ext.panel.Panel',
+    requires:[
+        'wzqr.view.app.edit.window.ChangePicture'
+    ],
     alias: 'widget.xappeditbasic',
     title: '基本信息',
     id: 'baseTab',
     layout: {
         type: 'table',
-        columns: 11,
+        columns: 7,
         tableAttrs: {
             wzform: 1,
             style: {
@@ -21,17 +24,15 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'tlabel',
                     html: '名字<br/>Name',
-                    colspan: 6,
                     rowspan: 2
                 },
                 {
                     xtype: 'tlabel',
                     html: '中文<br/>Chinese',
-                    colspan: 1
                 },
                 {
                     xtype: 'textfield',
-							id:'wbaseInp1',
+                    id: 'wbaseInp1',
                     cellCls: 'wzformborder',
                     cls: 'wzsizefixedtable',
                     colspan: 2,
@@ -43,24 +44,24 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-						colspan: 1,
-						style:{
-							width:'185px',
-							display:'block'
-					},
+                    colspan: 1,
+                    style: {
+                        width: '185px',
+                        display: 'block'
+                    },
                     html: '性别<br/>Sex'
                 },
                 {
                     xtype: 'combobox',
                     cellCls: 'wzformborder',
-						id:'baseSexBox1',
+                    id: 'baseSexBox1',
                     cls: 'wzsizefixedtable',
-                    colspan: 2,
+                    colspan: 1,
                     fieldLabel: '',
-						style:{
-							width:'185px',
-							display:'block'
-					},
+                    style: {
+                        width: '185px',
+                        display: 'block'
+                    },
                     name: 'sex',
                     allowBlank: false,
                     blankText: '请选择性别',
@@ -70,19 +71,36 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     store: 'SexStore',
                     valueField: 'value'
                 },
-                /*{
-                    xtype: 'tlabel',
-                    html: '&nbsp',
+                {
+                    xtype: 'image',
+                    cellCls: 'wzformlabel',
                     tdAttrs: {
-                        width: '1px'
+                        align: 'right'
                     },
-                    colspan: 2,
-                    rowspan: 7
-                },*/
+                    name:'apppicture',
+                    align: 'right',
+                    alt: '点击更换',
+                    title: '点击更换',
+                    src: Utils.toApi('picture/'+me.appid+'.png'),
+                    listeners: {
+                        el: {
+                            click: function(e, t) {
+                                var window = new wzqr.view.app.edit.window.ChangePicture(me.appid);
+                                window.show();
+                            }
+                        }
+                    },
+                    style: {
+                        width: '185px',
+                        display: 'block'
+                    },
+                    colspan: 1,
+                    rowspan: 6
+                },
                 {
                     xtype: 'tlabel',
                     html: '外文<br/>Foreign Language',
-						colspan: 1,
+                    colspan: 1,
                     rowspan: 1
                 },
                 {
@@ -93,7 +111,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     items: [
                         {
                             xtype: 'textfield',
-								id:'wbaseInp2',
+                            id: 'wbaseInp2',
                             cls: 'wzsizefixedtable',
                             fieldLabel: '',
                             name: 'realEnglishName',
@@ -110,7 +128,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'tlabel',
                     html: '出生日期<br/>Date of Birth',
-						colspan: 1,
+                    colspan: 1,
                     rowspan: 1
                 },
                 {
@@ -119,7 +137,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     format: 'Y年m月d日',
                     cls: 'wdtable',
                     cellCls: 'wzformborder',
-                    colspan: 2,
+                    colspan: 1,
                     rowspan: 1,
                     fieldLabel: '',
                     name: 'birthDate',
@@ -135,7 +153,6 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'tlabel',
                     html: '出生地<br/>Place of Birth',
-                    colspan: 6,
                     rowspan: 1
                 },
                 {
@@ -146,7 +163,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     items: [
                         {
                             xtype: 'textfield',
-								id:'wbaseInp3',
+                            id: 'wbaseInp3',
                             cls: 'wzsizefixedtable',
                             fieldLabel: '',
                             name: 'birthPlace',
@@ -163,19 +180,19 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'tlabel',
                     html: '国籍<br/>Nationality',
-						colspan: 1,
+                    colspan: 1,
                     rowspan: 1
                 },
                 {
                     xtype: 'container',
-						id:'wwbaseBox',
+                    id: 'wwbaseBox',
                     cellCls: 'wzformborder',
                     colspan: 1,
                     rowspan: 1,
                     items: [
                         {
                             xtype: 'combobox',
-								id:'wslideBaseBox',
+                            id: 'wslideBaseBox',
                             cls: 'wzsizefixedtable',
                             fieldLabel: '',
                             name: 'nationality',
@@ -193,12 +210,11 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'tlabel',
                     html: '毕业院校及专业、学位 <br/>Highest Degree <br/>Granted，Major，<br/>Institution Attended',
-                    colspan: 6,
                     rowspan: 4,
-					style:{
-							width:'150px',
-							display:'block'
-					}
+                    style: {
+                        width: '150px',
+                        display: 'block'
+                    }
                 },
                 {
                     xtype: 'tlabel',
@@ -231,7 +247,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                         align: 'center'
                     },
                     html: '专业'
-                },                
+                },
                 {
                     xtype: 'tlabel',
                     html: '中文<br/>Chinese'
@@ -248,7 +264,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     RemovedemptyText: '请选择',
                     editable: false,
                     store: 'DegreeStore',
-						colspan: 1
+                    colspan: 1
                 },
                 {
                     xtype: 'combobox',
@@ -261,17 +277,17 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     blankText: '请选择国家',
                     RemovedemptyText: '请选择国家',
                     store: 'CountryStore',
-						colspan: 1
+                    colspan: 1
                 },
                 {
                     xtype: 'textfield',
                     id: 'wbasealoneInp2',
                     cellCls: 'wzformborder',
                     cls: 'wzsizefixedtable',
-						style:{
-							width:'185px',
-							display:'block'
-					},
+                    style: {
+                        width: '185px',
+                        display: 'block'
+                    },
                     colspan: 1,
                     fieldLabel: '',
                     name: 'mgChineseSchool',
@@ -290,7 +306,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     allowBlank: false,
                     blankText: '请输入专业',
                     RemovedemptyText: '请输入专业'
-                },                
+                },
                 {
                     xtype: 'tlabel',
                     html: '英文<br/>English'
@@ -308,7 +324,7 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     editable: false,
                     displayField: 'entext',
                     store: 'DegreeStore',
-						colspan: 1
+                    colspan: 1
                 },
                 {
                     xtype: 'combobox',
@@ -322,17 +338,17 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     RemovedemptyText: '请选择国家',
                     displayField: 'entext',
                     store: 'CountryStore',
-						colspan: 1
+                    colspan: 1
                 },
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
                     id: 'wbasealoneInp6',
                     cls: 'wzsizefixedtable',
-						style:{
-							width:'185px',
-							display:'block'
-					},
+                    style: {
+                        width: '185px',
+                        display: 'block'
+                    },
                     colspan: 1,
                     fieldLabel: '',
                     name: 'mgEnglishSchool',
@@ -351,34 +367,33 @@ Ext.define('wzqr.view.app.edit.Basic', {
                     allowBlank: false,
                     blankText: '请输入专业',
                     RemovedemptyText: '请输入专业'
-                },  
+                },
                 {
                     xtype: 'label',
                     cellCls: 'wzformborder',
-                    colspan: 9,
+                    colspan: 6,
                     text: '(请填写申报人毕业院校、专业及学位的中、英文全称。请同时提供毕业证书复印件和教育部留学人员服务中心出具的《国外学历学位认证书》作为附件。)'
                 },
                 {
                     xtype: 'tlabel',
                     html: '回国前工作单位及职务<br/> Former Employer and<br/>Position in Foreign Countries',
-                    colspan: 6,
                     rowspan: 2
                 },
                 {
                     xtype: 'tlabel',
-						id:'baseInp4',
+                    id: 'baseInp4',
                     html: '中文<br/>Chinese'
                 },
                 {
                     xtype: 'container',
                     cellCls: 'wzformborder',
-                    colspan: 4,
+                    colspan: 6,
                     rowspan: 1,
                     items: [
                         {
                             xtype: 'textfield',
                             id: 'wbasealoneInp9',
-								width:'100%',
+                            width: '100%',
 //                            cls:'wzsizefixedtable',
                             fieldLabel: '',
                             name: 'foreignJobChinese'
@@ -396,32 +411,31 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 {
                     xtype: 'textfield',
                     cellCls: 'wzformborder',
-						width:'100%',
+                    width: '100%',
                     id: 'wbasealoneInp10',
 //                    cls:'wzsizefixedtable',
-                    colspan: 4,
+                    colspan: 5,
                     fieldLabel: '',
                     name: 'foreignJobEnglish'
                 },
                 {
                     xtype: 'tlabel',
-                    html: me.cdname1,
+                    html: me.cdname1
 //                    html: '拟（现）任职单位名称<br/>Current or Expected Employer',
-                    colspan: 6
                 },
                 {
                     xtype: 'textfield',
                     id: 'wbasealoneInp11',
-						width:'100%',
+                    width: '100%',
                     cellCls: 'wzformborder',
 //                    cls:'wzsizefixedtable',
-                    colspan: 3,
+                    colspan: 4,
                     fieldLabel: '',
                     name: 'employer'
                 },
                 {
                     xtype: 'tlabel',
-						colspan: 1,
+                    colspan: 1,
                     html: '职务（岗位）<br/>Position'
                 },
                 {
@@ -435,23 +449,22 @@ Ext.define('wzqr.view.app.edit.Basic', {
                 },
                 {
                     xtype: 'tlabel',
-                    html: me.cdname2,
+                    html: me.cdname2
 //                    html: '单位地址<br/>Current or Expected Employer Address',
-                    colspan: 6
                 },
                 {
                     xtype: 'textfield',
-						width:'100%',
+                    width: '100%',
                     id: 'wbasealoneInp13',
                     cellCls: 'wzformborder',
 //                    cls:'wzsizefixedtable',
-                    colspan: 3,
+                    colspan: 4,
                     fieldLabel: '',
                     name: 'employerAddress'
                 },
                 {
                     xtype: 'tlabel',
-						colspan: 1,
+                    colspan: 1,
                     html: '邮编<br/>Postal Code'
                 },
                 {

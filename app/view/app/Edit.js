@@ -48,6 +48,7 @@ Ext.define("wzqr.view.app.Edit", {
                 }, {
                     xtype: 'xappeditbasic',
                     id: 'wbaseBox',
+                    appid:app.getId(),
                     cdname1: '公司名称及职务',
                     cdname2: '公司地址'
                 }, {
@@ -83,6 +84,7 @@ Ext.define("wzqr.view.app.Edit", {
                     id: 'wcoverBox'
                 }, {
                     xtype: 'xappeditbasic',
+                    appid:app.getId(),
                     id: 'wbaseBox',
                     cdname1: '拟（现）任职单位名称<br/>Current or Expected Employer',
                     cdname2: '单位地址<br/>Current or Expected Employer Address'

@@ -259,13 +259,20 @@ Ext.define('wzqr.view.app.view.Basic', {
                     name: 'sex'
                 },
                 {
-                    xtype: 'tlabel',
+//                    xtype: 'tlabel',
+                    xtype: 'image',
+                    cellCls: 'wzformlabel',
                     tdAttrs: {
                         align: 'center',
                         width: 160
                     },
-                    html: '',
-                    text: '照片',
+                    style:{
+                        width: '160px',
+                        height: '170px'
+                    },
+                    src: Utils.toApi('picture/'+me.app.getId()+'.png'),
+//                    html: '',
+//                    text: '照片',
                     rowspan: 7
                 },
                 {
