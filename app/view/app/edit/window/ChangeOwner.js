@@ -69,7 +69,7 @@ Ext.define('wzqr.view.app.edit.window.ChangeOwner', {
                                 },
                                 {
                                     xtype: 'label',
-                                    text: '同一个登录账户可以关联多个申报信息'
+                                    text: '同一个登录账户可以关联多个申报信息;如果用户已存在也可以用于修改密码'
                                 }
                             ]
                         },

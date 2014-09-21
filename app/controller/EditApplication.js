@@ -208,9 +208,9 @@ Ext.define('wzqr.controller.EditApplication', {
                 actioncowner: function (grid, record, rowIndex, colIndex, row, item, e) {
                     var win = this.getView('app.edit.window.ChangeOwner').create();
                     win.app = record;
-                    var owner = record.get('owner');
-                    if (owner !== null && Ext.isObject(owner)) {
-                        win.down('textfield[name=username]').setValue(owner.get('loginName'));
+                    var owner = record.get('ownerLoginName');
+                    if (owner !== null && Ext.isString(owner)) {
+                        win.down('textfield[name=username]').setValue(owner);
                     }
                     win.show();
                 },
