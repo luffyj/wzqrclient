@@ -6,6 +6,11 @@
 *wyl
 ********/
 
+div#xappviewbasicid-body table tbody tr td {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
 /*通常用于描述表格 一个是外框 一个是元素*/
 /*#0099CC*/
 /*{ margin:0 auto; text-align:center}

@@ -111,7 +111,7 @@ Ext.define('wzqr.controller.ManageOrg', {
                     Utils.startLoading();
                     var win = button.up('window');
                     Ext.Ajax.request({
-                        scope: win,
+                        scope: this,
                         url: Utils.toApi('setPassword'),
                         params: win.down('form').getForm().getValues(),
                         callback: function(options, success, response) {
@@ -119,7 +119,9 @@ Ext.define('wzqr.controller.ManageOrg', {
                             var data = Utils.extraResponseData(response);
                             data.alert();
                             if (data.success) {
-                                this.close();
+                                win.close();
+                                this.getUnderOrgStore().reload();
+                                this.getSubOrgStore().reload();
                             }
                         }
                     });

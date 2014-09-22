@@ -3,8 +3,8 @@ Ext.define("wzqr.view.SetPassword", {
     requires: ['Ext.form.field.Hidden'],
     xtype: 'xsetpassword',
 //    title: '更改密码',
-    width: 220, // height/goldraid(0.618)
-    height: Ext.isIE ? 136 : 136,
+    width: 278, // height/goldraid(0.618)
+    height: Ext.isIE ? 151 : 151,
 //    html:'???'
     layout: 'fit',
     buttons: [
@@ -43,6 +43,12 @@ Ext.define("wzqr.view.SetPassword", {
                             xtype:'hiddenfield',
                             name: 'user',
                             value: me.username
+                        },
+                        {
+                            fieldLabel: '新用户名',
+                            xtype:'textfield',
+                            name: 'newUsername',
+                            emptyText: '设置该值将修改用户名'
                         },
                         {
                             xtype: 'textfield',
