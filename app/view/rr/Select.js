@@ -38,7 +38,7 @@ Ext.define('wzqr.view.rr.Select', {
                     items: [
                         {
                             xtype: 'combobox',
-                            columnWidth: 0.33333,
+                            columnWidth: 0.5,
                             fieldLabel: '状态',
                             name: 'status',
                             value:'申请',
@@ -50,18 +50,19 @@ Ext.define('wzqr.view.rr.Select', {
                         },
                         {
                             xtype: 'textfield',
-                            columnWidth: 0.33333,
+                            columnWidth: 0.5,
                             fieldLabel: '单位名称',
                             name: 'name'
-                        },
-                        {
-                            xtype: 'combobox',
-                            columnWidth: 0.33333,
-                            fieldLabel: '申请管区',
-                            name: 'supername',
-                            displayField: 'name',
-                            store: 'SubOrg'
                         }
+//                        ,
+//                        {
+//                            xtype: 'combobox',
+//                            columnWidth: 0.33333,
+//                            fieldLabel: '申请管区',
+//                            name: 'supername',
+//                            displayField: 'name',
+//                            store: 'SubOrg'
+//                        }
                     ],
                     dockedItems: [
                         {

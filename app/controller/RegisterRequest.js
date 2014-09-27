@@ -40,11 +40,12 @@ Ext.define('wzqr.controller.RegisterRequest', {
             'xrrindex': {
                 activate: function(view) {
                     debug('激活RR');
+                    this.getRegisterRequestStore().proxy.extraParams = {
+                        supername: this.getMyorgModel().get('name'),
+                        name:'',
+                        status:''
+                    };
                     this.getRegisterRequestStore().reload();
-//                    this.getUnderUserStore().proxy.extraParams = {
-//                        orgid: this.getMyorg()
-//                    };
-//                    this.getUnderUserStore().load();
                 }
             },
             'xrrselect': {
