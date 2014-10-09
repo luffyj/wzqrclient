@@ -16,6 +16,35 @@ div#xappviewbasicid-body table tbody tr td {
 /*{ margin:0 auto; text-align:center}
 { position:relative; left:0px; right:0px; top:0px;}*/
 
+// 这里用于查看数据时显示自动换行的table
+.wztablebreak{
+    word-break: break-word;
+    word-wrap:break-word;
+}
+
+.wzwidth225p{
+    width:22.5%
+}
+.wzwidth3p{
+    width:30%
+}
+
+.wzwidth12p{
+    width:12%
+}
+
+.wzwidth19p{
+    width:19%
+}
+
+.wzwidth25p{
+    width:25%
+}
+
+.wztableheader{
+    background-color: #dbeaf8
+}
+
 .nomargin{
     margin:0!important;
 }
@@ -25,6 +54,8 @@ div#xappviewbasicid-body table tbody tr td {
 }
 
 .wztableelement{
+    word-break: break-word;
+    word-wrap:break-word;
     border-right:1px solid #0099CC;
     border-bottom:1px solid #0099CC;
 }
