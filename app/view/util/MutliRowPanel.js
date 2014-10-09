@@ -43,7 +43,8 @@ Ext.define("wzqr.view.util.MutliRowPanel", {
         });
         config.currentRows = 0;
         config.items = [];
-        config.layout = 'column';
+        if (!config.layout)
+            config.layout = 'column';
 
         //表格头
         Ext.Array.each(config.baseFields, function(field) {
@@ -55,7 +56,8 @@ Ext.define("wzqr.view.util.MutliRowPanel", {
                 },
                 columnWidth: field.columnWidth
             }, config.readOnly ? {
-                cls: 'wztableelement'
+                cls: 'wztableelement',
+                cellCls: 'wztableelement wztableheader'
             } : {}));
         });
 
