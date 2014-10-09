@@ -28,14 +28,18 @@ Ext.define('wzqr.view.app.view.Education', {
                     region: 'center',
                     bodyCls:'wztablelayout',
                     padding: 10,
-                    layout: 'column',
+                    layout: {
+                        type: 'table',
+                        // The total column count must be specified here
+                        columns: 5
+                    },
                     bodyPadding: '',
                     title: '',
                     maxRows: 7,
                     baseFields: [
                         {
                             xtype: 'displayfield',
-                            cls:'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth12p',
                             columnWidth: 0.12,
                             title: '学位 Degree',
                             fieldLabel: '',
@@ -45,7 +49,7 @@ Ext.define('wzqr.view.app.view.Education', {
                         },
                         {
                             xtype: 'displayfield',
-                            cls:'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth19p',
                             columnWidth: 0.19,
                             title: '时间 Time',
                             fieldLabel: '',
@@ -54,7 +58,7 @@ Ext.define('wzqr.view.app.view.Education', {
                         },
                         {
                             xtype: 'displayfield',
-                            cls:'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth19p',
                             title: '国家 Country',
                             columnWidth: 0.19,
                             fieldLabel: '',
@@ -63,7 +67,7 @@ Ext.define('wzqr.view.app.view.Education', {
                         },
                         {
                             xtype: 'displayfield',
-                            cls:'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth25p',
                             title: '院校 University',
                             columnWidth: 0.25,
                             fieldLabel: '',
@@ -72,7 +76,7 @@ Ext.define('wzqr.view.app.view.Education', {
                         },
                         {
                             xtype: 'displayfield',
-                            cls:'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth25p',                            
                             title: '专业 Major',
                             columnWidth: 0.25,
                             fieldLabel: '',
