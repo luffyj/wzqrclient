@@ -9,7 +9,7 @@ Ext.define('wzqr.view.app.view.Work', {
     ],
     layout: 'fit',
 //    title: '教育经历',
-    initComponent: function() {
+    initComponent: function () {
         var me = this;
 
         Ext.applyIf(me, {
@@ -29,14 +29,18 @@ Ext.define('wzqr.view.app.view.Work', {
                     region: 'center',
                     bodyCls: 'wztablelayout',
                     padding: 10,
-                    layout: 'column',
+                    layout: {
+                        type: 'table',
+                        // The total column count must be specified here
+                        columns: 4
+                    },
                     bodyPadding: '',
                     title: '',
                     maxRows: 20,
                     baseFields: [
                         {
                             xtype: 'displayfield',
-                            cls: 'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth225p',
                             title: '职务（加注英文）',
                             columnWidth: 0.225,
                             fieldLabel: '',
@@ -45,7 +49,7 @@ Ext.define('wzqr.view.app.view.Work', {
                         },
                         {
                             xtype: 'displayfield',
-                            cls: 'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth225p',
                             title: '时间',
                             columnWidth: 0.225,
                             fieldLabel: '',
@@ -54,7 +58,7 @@ Ext.define('wzqr.view.app.view.Work', {
                         },
                         {
                             xtype: 'displayfield',
-                            cls: 'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth25p',
                             title: '国家',
                             columnWidth: 0.25,
                             fieldLabel: '',
@@ -63,7 +67,7 @@ Ext.define('wzqr.view.app.view.Work', {
                         },
                         {
                             xtype: 'displayfield',
-                            cls: 'wztableelement centerinbox',
+                            cellCls:'wztableelement centerinbox wztablebreak wzwidth3p',
                             title: '单位（加注英文）',
                             columnWidth: 0.3,
                             fieldLabel: '',
