@@ -7,6 +7,10 @@ Ext.define('wzqr.view.app.view.App', {
         'wzqr.view.app.view.AppQuick',
         'wzqr.view.app.view.Basic',
         'wzqr.view.app.view.HTML',
+        'wzqr.view.app.view.EntInfo1',
+        'wzqr.view.app.view.Project',
+        'wzqr.view.app.view.Patent',
+        'wzqr.view.app.view.Paper',
         'Ext.panel.Panel',
         'Ext.form.Label'
     ],
@@ -127,10 +131,15 @@ Ext.define('wzqr.view.app.view.App', {
                                     text: ' 2、资本构成和股权结构'
                                 },
                                 {
-                                    xtype: 'xappviewhtml',
-                                    cls:'simpleborder',
-                                    name: 'partnersmsg'
+                                    xtype: 'xappviewentinfo1'
+//                                    cls:'simpleborder',
+//                                    name: 'partnersmsg'
                                 },
+//                                {
+//                                    xtype: 'xappviewhtml',
+//                                    cls:'simpleborder',
+//                                    name: 'partnersmsg'
+//                                },
                                 {
                                     html: '&nbsp'
                                 },
@@ -261,9 +270,9 @@ Ext.define('wzqr.view.app.view.App', {
                                     text: ' 2、领导参与过的主要项目'
                                 },
                                 {
-                                    xtype: 'xappviewhtml',
-                                    cls:'simpleborder',
-                                    name: 'projectsmsg'
+                                    xtype: 'xappviewproject'
+//                                    cls:'simpleborder',
+//                                    name: 'projectsmsg'
                                 },
                                 {
                                     html: '&nbsp'
@@ -274,9 +283,9 @@ Ext.define('wzqr.view.app.view.App', {
                                     text: '3、论著(论文)'
                                 },
                                 {
-                                    xtype: 'xappviewhtml',
-                                    cls:'simpleborder',
-                                    name: 'papersmsg'
+                                    xtype: 'xappviewpaper'
+//                                    cls:'simpleborder',
+//                                    name: 'papersmsg'
                                 },
                                 {
                                     html: '&nbsp'
@@ -287,9 +296,9 @@ Ext.define('wzqr.view.app.view.App', {
                                     text: '4、专利'
                                 },
                                 {
-                                    xtype: 'xappviewhtml',
-                                    cls:'simpleborder',
-                                    name: 'patentsmsg'
+                                    xtype: 'xappviewpatent'
+//                                    cls:'simpleborder',
+//                                    name: 'patentsmsg'
                                 },
                                 {
                                     html: '&nbsp'

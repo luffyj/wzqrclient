@@ -22,6 +22,22 @@ div#xappviewbasicid-body table tbody tr td {
     word-wrap:break-word;
 }
 
+.wzwidth125p{
+    width:12.5%
+}
+.wzwidth2p {
+    width:20%
+}
+.wzwidth4p {
+    width:40%
+}
+.wzwidth175p{
+    width:17.5%
+}
+.wzwidth15p{
+    width:15%
+}
+
 .wzwidth225p{
     width:22.5%
 }
