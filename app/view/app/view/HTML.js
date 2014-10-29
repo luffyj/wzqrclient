@@ -4,8 +4,10 @@ Ext.define('wzqr.view.app.view.HTML', {
     initComponent: function () {
         var me = this;
         me.p1 = /<font[^<>]+>/g;
-        me.p2 = /font-size:\s*[^;]+;\s*font-family:[^;]+;/g;
-        me.p3 = /font-family:[^;]+;/g;
+        me.p2 = /font-size:\s*[^;]+;\s*font-family:[^;]+;/ig;
+        me.p3 = /font-family:[^;]+;/ig;
+        me.p4 = /font:[^;]+;/ig;
+        me.p5 = /font-size:[^;]+;/ig;
         //me.p2 = /<font\s+face="\w+"\s*>/;
         me.callParent(arguments);
     },
@@ -17,8 +19,12 @@ Ext.define('wzqr.view.app.view.HTML', {
                 value = value.replace(this.p1,'<font face="宋体">');
                 value = value.replace(this.p2,'');
                 value = value.replace(this.p3,'');
+                value = value.replace(this.p4,'');
+                value = value.replace(this.p5,'');
             }
-//            debug(value);
+//            if (console && console.info) {
+//                console.info(value);
+//            }
             this.html = (value);
         }
     }
