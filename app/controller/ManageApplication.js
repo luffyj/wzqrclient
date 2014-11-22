@@ -237,10 +237,10 @@ Ext.define('wzqr.controller.ManageApplication', {
                             context.add(this.getView('app.ContextUnit').create());
                         }
                     }
-
+                    
                     tstore.reload();
                     this.currentStore = tstore;
-                    debug('app', this.getApplication());//orgModel
+                    debug('app', this.getApplication(), 'timeout:',tstore.getProxy().timeout);//orgModel
 
                     //删除按钮 适配化
                     if (!this.isPeople() && !this.isUnit()) {

@@ -83,6 +83,7 @@ div#xappviewbasicid-body table tbody tr td {
 
 .simpleborder{
     border:1px solid #0099CC;
+    margin-left: 10px;
 }
 
 *{margin:0;padding:0;}

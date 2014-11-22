@@ -5,6 +5,8 @@ Ext.define('wzqr.spring.data.RestProxy', {
     alias: 'proxy.springrest',
     limitParam: 'size',
     reader: 'springReader',
+    
+    timeout:3000000,
     /**
      * 覆盖错误处理
      * 因为编码限制我们无法在服务端给出更为具体的错误消息
