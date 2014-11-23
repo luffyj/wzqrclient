@@ -227,12 +227,12 @@ Ext.define('wzqr.view.app.edit.SummaryEnt', {
                         },
                         {
                             xtype: 'tlabel',
-                            text: '签订合同时间'
+                            text: '工商注册时间'
                         },
                         {
                             xtype: 'textfield',
                             id: 'wtextAreaCon4',
-                            RemovedemptyText: '请输入签订合同时间',
+                            RemovedemptyText: '请输入工商注册时间',
                             style: {
                                 width: '100%'
                             },
