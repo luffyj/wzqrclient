@@ -175,7 +175,7 @@ Ext.define('wzqr.controller.EditApplication', {
             'jcgridview': {
                 itemdblclick: function (grid, record, item, index, e, eOpts) {
                     if (grid.up('xappcontext')) {
-                        var win = this.getView('app.View').create(record);
+                        var win = this.getView('app.View').create(record,true);
                         Ext.Array.each(Ext.ComponentQuery.query('field', win), function (field) {
                             field.setReadOnly(true);
                         });

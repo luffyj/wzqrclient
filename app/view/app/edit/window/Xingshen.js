@@ -59,7 +59,7 @@ Ext.define('wzqr.view.app.edit.window.Xingshen', {
         me.down('form').loadRecord(me.app);
     },
     toReason: function() {
-        return this.down('textarea[name=unitApproveReason]').getValue();
+        return this.down('textarea[name=pogeReason]').getValue();
     }
 
 });
