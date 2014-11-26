@@ -276,14 +276,14 @@ Ext.define('wzqr.controller.EditApplication', {
                         Ext.Msg.alert('提示', '没有选择任何申报信息');
                         return;
                     }
-                    records.forEach(function (record) {
+                    Ext.Array.each(records, function (record) {
                         if (ids.length === 0) {
                             ids = "" + record.getId();
                         } else {
                             ids = ids + "," + record.getId();
                         }
                     });
-
+                    
                     window.open(Utils.toApi('reports?ids=' + ids));
                 }
             },
