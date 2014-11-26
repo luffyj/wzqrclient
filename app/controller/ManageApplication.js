@@ -22,7 +22,7 @@ Ext.define('wzqr.controller.ManageApplication', {
             selector: 'xappselect'
         }
     ],
-    reloadCount: function() {
+    reloadCount: function () {
         var view = Ext.getCmp('xmanageappidid');
         if (view.down('xappreport')) {
             var me = this;
@@ -30,7 +30,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                 scope: view.down('xappreport'),
                 method: 'GET',
                 url: Utils.toApi('countapplication'),
-                callback: function(options, success, response) {
+                callback: function (options, success, response) {
                     if (success) {
                         var data = Utils.extraResponseData(response);
                         data = data.data;
@@ -67,7 +67,7 @@ Ext.define('wzqr.controller.ManageApplication', {
      * 创建app
      * 如果失败 将用户也删除
      * */
-    createApp: function(ui, data, user) {
+    createApp: function (ui, data, user) {
         var app = this.getModel('Application').create(data);
         app.set('myorg', this.getMyorgModel().getLink('self'));
         if (user) {
@@ -79,7 +79,7 @@ Ext.define('wzqr.controller.ManageApplication', {
 
         app.save({
             scope: this,
-            callback: function(record, operation, success) {
+            callback: function (record, operation, success) {
                 if (success) {
                     Utils.stopLoading();
                     Ext.Msg.alert('成功', '成功增加！');
@@ -95,11 +95,11 @@ Ext.define('wzqr.controller.ManageApplication', {
                 }
             }});
     },
-    init: function(app) {
+    init: function (app) {
         this.control({
             'xappadd textfield[name=appOrgName]': {
                 //自动填写当前单位名字
-                render: function(field) {
+                render: function (field) {
                     var org = this.getApplication().orgModel;
                     if (org) {
                         field.setValue(org.get('name'));
@@ -107,7 +107,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                 }
             },
             'xappadd button[name=save]': {
-                click: function(button) {
+                click: function (button) {
                     Utils.startLoading();
                     var form = button.up('window').down('form');
                     // conver fields into object
@@ -116,13 +116,13 @@ Ext.define('wzqr.controller.ManageApplication', {
                     var user = null;
                     if (Utils.isValidString(obj.loginName) && Utils.isValidString(obj.password)) {
                         user = this.getModel('User').create(obj);
-                        user.set('loginName',Ext.String.trim(user.get('loginName')));
+                        user.set('loginName', Ext.String.trim(user.get('loginName')));
                         user.set('role', null);
                         user.set('org', this.getMyorgModel().getLink('self'));
                         user.set('enabled', true);
                         user.save({
                             scope: this,
-                            callback: function(record, operation, success) {
+                            callback: function (record, operation, success) {
                                 if (success) {
                                     //设置密码 根据已经设置的部门自动设置好角色                                                                                        
                                     Ext.Ajax.request({
@@ -133,7 +133,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                                             userid: record.getId(),
                                             password: obj.password
                                         },
-                                        callback: function(options, success, response) {
+                                        callback: function (options, success, response) {
                                             debug('initUserPassword response:', response);
                                             if (success) {
                                                 this.createApp(button, obj, record);
@@ -158,13 +158,13 @@ Ext.define('wzqr.controller.ManageApplication', {
             },
             'xmanageapp button[name=addapp]': {
                 //打开新增审批界面
-                click: function(button) {
+                click: function (button) {
                     var window = this.getView('app.Add').create();
                     window.show();
                 }
             },
             'xmanageapp': {
-                activate: function(view) {
+                activate: function (view) {
                     debug('激活了 开始梳理store', view);
                     //xappcontextorg                    
                     var context = view.down('xappcontext');
@@ -237,10 +237,10 @@ Ext.define('wzqr.controller.ManageApplication', {
                             context.add(this.getView('app.ContextUnit').create());
                         }
                     }
-                    
+
                     tstore.reload();
                     this.currentStore = tstore;
-                    debug('app', this.getApplication(), 'timeout:',tstore.getProxy().timeout);//orgModel
+                    debug('app', this.getApplication(), 'timeout:', tstore.getProxy().timeout);//orgModel
 
                     //删除按钮 适配化
                     if (!this.isPeople() && !this.isUnit()) {
@@ -286,11 +286,28 @@ Ext.define('wzqr.controller.ManageApplication', {
                         });
                     }
                 },
-                render: function(view) {
+                render: function (view) {
+                }
+            },
+            'menuitem[name=_exportall]': {
+                click: function () {
+                    if (this.currentStore) {
+                        var allps = this.currentStore.proxy.extraParams;
+//                        var toserver = '';
+//                        for (var pname in allps) {
+//                            if (allps.hasOwnProperty(pname)) {
+//                                toserver = toserver+'&';
+//                                toserver = toserver+pname;
+//                                toserver = toserver+'=';
+//                                toserver = toserver+allps[pname];
+//                            }
+//                        }
+                        window.open(Utils.toApi('reports?ids=all&' + Ext.Object.toQueryString(allps)));
+                    }
                 }
             },
             'xappselect field': {
-                change: function(field, newValue, oldValue, eOpts) {
+                change: function (field, newValue, oldValue, eOpts) {
                     if (this.currentStore) {
                         var toapply = {};
                         toapply[field.getName()] = newValue;
@@ -299,7 +316,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                 }
             },
             'xappselect': {
-                query: function(view, form, fields) {
+                query: function (view, form, fields) {
                     this.currentStore.reload();
 //                    var obj = form.getForm().getValues();
 //                    debug('查询', view, form, fields, obj);
@@ -324,7 +341,7 @@ Ext.define('wzqr.controller.ManageApplication', {
                 }
             },
             'xappreport': {
-                query: function(view, type, value) {
+                query: function (view, type, value) {
                     // covter type 2 type
                     debug('doquery', type, value);
                     //myorg.name
@@ -342,7 +359,7 @@ Ext.define('wzqr.controller.ManageApplication', {
 
                     var field = this.getAppSelect().down('field[name=' + type + ']');
                     if (field) {
-                        this.getAppSelect().down('form').getForm().getFields().each(function(f) {
+                        this.getAppSelect().down('form').getForm().getFields().each(function (f) {
                             f.reset();
                         });
                         field.setValue(value);

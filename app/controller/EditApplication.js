@@ -267,12 +267,7 @@ Ext.define('wzqr.controller.EditApplication', {
                         callback: this.defaultOP
                     });
                 }
-            },
-            'menuitem[name=_exportall]': {
-                click: function () {
-                    window.open(Utils.toApi('reports?ids=all'));
-                }
-            },
+            },            
             'menuitem[name=_exportselect]': {
                 click: function () {
                     var records = this.getAppGrid().getSelectionModel().getSelection();
