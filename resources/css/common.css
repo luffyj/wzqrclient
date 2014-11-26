@@ -6,6 +6,11 @@
 *wyl
 ********/
 
+
+#returnjglb{
+    width:30%
+}
+
 div#xappviewbasicid-body table tbody tr td {
     padding-right: 2px;
     padding-left: 2px;
@@ -1420,10 +1425,10 @@ table[wzform="1"] {
 #pogeBox-inputEl{
     width: 15px !important;
     height: 15px !important;
-    background-position:0 0;
+    /*background-position:0 0;*/
 }
 #pogeBox-inputEl:hover{
-    background-position:-15px 0;
+    /*background-position:-15px 0;*/
 }
 
 

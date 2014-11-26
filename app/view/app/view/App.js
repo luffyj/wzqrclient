@@ -101,19 +101,21 @@ Ext.define('wzqr.view.app.view.App', {
 
             Ext.Array.push(mainPanels, [{
                     xtype: 'panel',
-                    padding: 10,
+//                    padding: 10,
                     items: [
                         {
                             xtype: 'label',
+                            padding: 10,
                             text: '企业发展情况、优势和前景'
                         },
                         {
                             xtype: 'panel',
-                            padding: 10,
+//                            padding: 10,
                             title: '',
                             items: [
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent1',
                                     text: '1、企业基本情况'
                                 },
@@ -127,6 +129,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent2',
                                     text: ' 2、资本构成和股权结构'
                                 },
@@ -145,6 +148,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent3',
                                     text: '3、技术团队和管理团队'
                                 },
@@ -158,6 +162,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent4',
                                     text: '4、创业项目'
                                 },
@@ -172,6 +177,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 {
                                     xtype: 'label',
                                     id: 'appviewent5',
+                                    padding: 10,
                                     text: '5、市场前景'
                                 },
                                 {
@@ -240,19 +246,21 @@ Ext.define('wzqr.view.app.view.App', {
 
             Ext.Array.push(mainPanels, [{
                     xtype: 'panel',
-                    padding: 10,
+//                    padding: 10,
                     items: [
                         {
                             xtype: 'label',
+                            padding: 10,
                             text: '专长及代表性成果'
                         },
                         {
                             xtype: 'panel',
-                            padding: 10,
+//                            padding: 10,
                             title: '',
                             items: [
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent1',
                                     text: '1、个人专长'
                                 },
@@ -266,6 +274,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent2',
                                     text: ' 2、领导参与过的主要项目'
                                 },
@@ -279,6 +288,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent3',
                                     text: '3、论著(论文)'
                                 },
@@ -292,6 +302,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 },
                                 {
                                     xtype: 'label',
+                                    padding: 10,
                                     id: 'appviewent4',
                                     text: '4、专利'
                                 },
@@ -306,6 +317,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 {
                                     xtype: 'label',
                                     id: 'appviewent5',
+                                    padding: 10,
                                     text: '5、产品'
                                 },
                                 {
@@ -318,6 +330,7 @@ Ext.define('wzqr.view.app.view.App', {
                                 {
                                     xtype: 'label',
                                     id: 'appviewent6',
+                                    padding: 10,
                                     text: '5、其他'
                                 },
                                 {
@@ -330,16 +343,18 @@ Ext.define('wzqr.view.app.view.App', {
                     ]
                 }, {
                     xtype: 'panel',
-                    padding: 10,
+                    margin:'10 0 0 0',
+//                    padding: 10,
                     id: 'xappviewplanid',
                     items: [
                         {
                             xtype: 'label',
+                            padding: 10,
                             text: '工作设想'
                         },
                         {
-                            xtype: 'panel',
-                            padding: 10,
+                            xtype: 'panel',                            
+//                            padding: 10,
                             items: [
                                 {
                                     xtype: 'xappviewhtml',
@@ -351,16 +366,18 @@ Ext.define('wzqr.view.app.view.App', {
                     ]
                 }, {
                     xtype: 'panel',
-                    padding: 10,
+                    margin:'10 0 0 0',
+//                    padding: 10,
                     id: 'xappviewagreementid',
                     items: [
                         {
                             xtype: 'label',
+                            padding: 10,
                             text: '竞业禁止协议'
                         },
                         {
                             xtype: 'panel',
-                            padding: 10,
+//                            padding: 10,
                             items: [
                                 {
                                     xtype: 'xappviewhtml',
@@ -442,25 +459,7 @@ Ext.define('wzqr.view.app.view.App', {
         });
 
         me.callParent(arguments);
-
-
-        Ext.Array.each(Ext.ComponentQuery.query('xappviewhtml', me), function(view) {
-            var name = view.name;
-            var theValue = me.app.get(name);
-            if (name === 'sex') {
-                theValue = theValue === 0 ? '男' : '女';
-            }
-            if (theValue) {
-                view.setValue(theValue);
-            } else {
-                if (me.app['get' + name]) {
-                    theValue = Ext.callback(me.app['get' + name], me.app);
-                    if (theValue) {
-                        view.setValue(theValue);
-                    }
-                }
-            }
-        });
+        
     }
 
 });

@@ -92,7 +92,13 @@ Ext.define('wzqr.view.app.edit.Pingshen', {
             ]
         });
 
+        me.processAppeditPingshen(me);
         me.callParent(arguments);
+    },
+    processAppeditPingshen: function(config) {
+        if (config.removeButtons) {
+            delete config.dockedItems;
+        }
     }
 
 });
