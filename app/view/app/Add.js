@@ -2,7 +2,8 @@ Ext.define("wzqr.view.app.Add", {
     extend: 'Ext.window.Window',
     requires: [
         'Ext.form.field.ComboBox',
-        'Ext.form.FieldSet'
+        'Ext.form.FieldSet',
+        'Ext.Date'
     ],
     xtype: 'xappadd',
 		cls:'xappaddBox',
@@ -49,7 +50,7 @@ Ext.define("wzqr.view.app.Add", {
                             xtype: 'displayfield',
                             fieldLabel: '申报批次',
                             name: 'batch',
-                            value: '2014'
+                            value: Ext.Date.format(new Date(),'Y')
                         }, {
                             xtype: 'combobox',
                             fieldLabel: '人才类型',

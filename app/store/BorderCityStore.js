@@ -46,6 +46,8 @@ Ext.define('wzqr.store.BorderCityStore', {
                 },
                 {
                     text: '经开区'
+                },{
+                    text: '瓯江口新区'
                 }
             ],
             fields: [

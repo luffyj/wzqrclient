@@ -38,6 +38,16 @@ Ext.define('wzqr.view.app.Select', {
                 'query'
                 );
 
+        // create a array from 2012 to current year
+        var years = [];
+        var currentYear = new Date().getFullYear();
+        var year = 2012;
+        var countFlag = 0;
+        while(year == 2012 || year <=currentYear){
+            years[countFlag++] = ''+year;
+            year++;
+        }
+
         Ext.applyIf(me, {
             items: [
                 {
@@ -61,11 +71,7 @@ Ext.define('wzqr.view.app.Select', {
                             columnWidth: 0.25,
                             fieldLabel: '申报批次',
                             name: 'batch',
-                            store: [
-                                '2014',
-                                '2013',
-                                '2012'
-                            ]
+                            store: years
                         },
                         {
                             xtype: 'textfield',

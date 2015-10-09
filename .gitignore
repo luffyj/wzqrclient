@@ -1,2 +1,5 @@
 /bootstrap.js
 /*.log
+*.iml
+.idea
+nbproject
